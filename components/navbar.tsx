@@ -17,7 +17,13 @@ export function Navbar() {
         <div className="flex items-start">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.png" alt="Logo" width={60} height={60} />
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={60}
+              height={80}
+              className="w-[60px] h-auto"
+            />
           </Link>
         </div>
         {/* Navigation Links */}
