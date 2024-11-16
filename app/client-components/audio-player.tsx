@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -13,10 +13,50 @@ import {
   Volume2,
 } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
+import { useSurah } from "@/contexts/surah-context";
 
 export default function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const { selectedSurah, selectedQiraat } = useSurah();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio(
+      `/audio/${selectedSurah}/${selectedQiraat}/aaar-al-hudhoudi/001.mp3`
+    );
+
+    audioRef.current.addEventListener("loadedmetadata", () => {
+      setDuration(audioRef.current?.duration || 0);
+    });
+
+    audioRef.current.addEventListener("timeupdate", () => {
+      setCurrentTime(audioRef.current?.currentTime || 0);
+    });
+
+    return () => {
+      audioRef.current?.pause();
+      audioRef.current = null;
+    };
+  }, []);
+
+  const togglePlayPause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  };
 
   return (
     <Card className="">
@@ -34,7 +74,7 @@ export default function AudioPlayer() {
               <Button
                 size="icon"
                 className="h-12 w-12 rounded-full bg-primary hover:bg-primary/90"
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={togglePlayPause}
               >
                 {isPlaying ? (
                   <Pause className="h-6 w-6" />
@@ -54,15 +94,20 @@ export default function AudioPlayer() {
           {/* Progress Bar */}
           <div className="space-y-2">
             <Slider
-              defaultValue={[0]}
-              max={100}
+              value={[currentTime]}
+              max={duration}
               step={1}
               className="cursor-pointer"
-              onValueChange={([value]) => setCurrentTime(value)}
+              onValueChange={([value]) => {
+                if (audioRef.current) {
+                  audioRef.current.currentTime = value;
+                  setCurrentTime(value);
+                }
+              }}
             />
             <div className="flex justify-between text-sm ">
-              <span>00:00</span>
-              <span>00:40</span>
+              <span>{formatTime(currentTime)}</span>
+              <span>{formatTime(duration)}</span>
             </div>
           </div>
 
@@ -74,6 +119,11 @@ export default function AudioPlayer() {
               max={100}
               step={1}
               className="w-[120px]"
+              onValueChange={([value]) => {
+                if (audioRef.current) {
+                  audioRef.current.volume = value / 100;
+                }
+              }}
             />
           </div>
         </div>

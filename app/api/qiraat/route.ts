@@ -13,7 +13,7 @@ export async function GET(req: Request) {
     );
   }
 
-  const audioDir = path.join(process.cwd(), `app/audio/${surah}`);
+  const audioDir = path.join(process.cwd(), `public/audio/${surah}`);
   const surahs = await readdir(audioDir);
   return NextResponse.json(surahs);
 }
