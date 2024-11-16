@@ -1,10 +1,5 @@
 import { Navbar } from "@/components/navbar";
 
 export default function Home() {
-  return (
-    <div>
-      <Navbar />
-      {/* QiraatHub */}
-    </div>
-  );
+  return <div>{/* QiraatHub */}</div>;
 }
