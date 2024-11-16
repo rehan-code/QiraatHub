@@ -19,27 +19,40 @@ export default function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [path, setPath] = useState("");
   const { selectedSurah, selectedQiraat } = useSurah();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio(
-      `/audio/${selectedSurah}/${selectedQiraat}/aaar-al-hudhoudi/001.mp3`
-    );
-
-    audioRef.current.addEventListener("loadedmetadata", () => {
-      setDuration(audioRef.current?.duration || 0);
-    });
-
-    audioRef.current.addEventListener("timeupdate", () => {
-      setCurrentTime(audioRef.current?.currentTime || 0);
-    });
-
-    return () => {
-      audioRef.current?.pause();
-      audioRef.current = null;
+    const fetchPath = async () => {
+      const response = await fetch(
+        `/api/filePath?surah=${selectedSurah}&qiraat=${selectedQiraat}`
+      );
+      const data = await response.json();
+      setPath(data);
     };
-  }, []);
+    fetchPath();
+    setIsPlaying(false);
+  }, [selectedSurah, selectedQiraat]);
+
+  useEffect(() => {
+    if (path != "") {
+      audioRef.current = new Audio(path);
+
+      audioRef.current.addEventListener("loadedmetadata", () => {
+        setDuration(audioRef.current?.duration || 0);
+      });
+
+      audioRef.current.addEventListener("timeupdate", () => {
+        setCurrentTime(audioRef.current?.currentTime || 0);
+      });
+
+      return () => {
+        audioRef.current?.pause();
+        audioRef.current = null;
+      };
+    }
+  }, [path]);
 
   const togglePlayPause = () => {
     if (audioRef.current) {
@@ -63,7 +76,9 @@ export default function AudioPlayer() {
       <CardContent>
         <div className="space-y-6 p-6">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-8">Al-Qaria</h2>
+            <h2 className="text-3xl font-bold mb-8">
+              {selectedSurah.slice(4)}
+            </h2>
             <div className="flex justify-center gap-4 mb-8">
               <Button size="icon" variant="ghost" className="">
                 <Shuffle className="h-5 w-5" />
