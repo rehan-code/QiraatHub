@@ -4,15 +4,25 @@ import { createContext, useContext, useState, ReactNode } from "react";
 interface SurahContextType {
   selectedSurah: string;
   setSelectedSurah: (surah: string) => void;
+  selectedQiraat: string;
+  setSelectedQiraat: (surah: string) => void;
 }
 
 const SurahContext = createContext<SurahContextType | undefined>(undefined);
 
 export function SurahProvider({ children }: { children: ReactNode }) {
-  const [selectedSurah, setSelectedSurah] = useState<string>("001 Al-fatiha");
+  const [selectedSurah, setSelectedSurah] = useState<string>("001 Al-Fatiha");
+  const [selectedQiraat, setSelectedQiraat] = useState<string>("Hafs");
 
   return (
-    <SurahContext.Provider value={{ selectedSurah, setSelectedSurah }}>
+    <SurahContext.Provider
+      value={{
+        selectedSurah,
+        setSelectedSurah,
+        selectedQiraat,
+        setSelectedQiraat,
+      }}
+    >
       {children}
     </SurahContext.Provider>
   );
