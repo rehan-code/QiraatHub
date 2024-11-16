@@ -24,6 +24,7 @@ export default function QiraatButtons() {
       {qiraat.map((style) => (
         <Button
           key={style}
+          variant={"outline"}
           className={`px-8 py-6 text-lg font-semibold ${
             selectedQiraat === style &&
             "bg-theme_primary text-primary hover:bg-theme_primary/80"

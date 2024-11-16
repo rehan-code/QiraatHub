@@ -1,3 +1,4 @@
+import AudioPlayer from "@/app/client-components/audio-player";
 import QiraatButtons from "@/app/client-components/qiraat-buttons";
 import SurahList from "@/app/client-components/surah-list";
 
@@ -8,6 +9,7 @@ export default function AudioResources() {
         <SurahList />
         <div className="mx-auto space-y-8">
           <QiraatButtons />
+          <AudioPlayer />
         </div>
       </div>
     </div>
