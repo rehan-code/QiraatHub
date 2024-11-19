@@ -1,4 +1,3 @@
-import AudioPlayer from "@/app/client-components/audio-player";
 import AudioPlayers from "@/app/client-components/audio-players";
 import QiraatButtons from "@/app/client-components/qiraat-buttons";
 import SurahList from "@/app/client-components/surah-list";

@@ -43,7 +43,7 @@ export default function AudioPlayer({
       fetchPath();
       setIsPlaying(false);
     }
-  }, [selectedSurah, selectedQiraat]);
+  }, [selectedSurah, selectedQiraat, path]);
 
   useEffect(() => {
     if (path != "") {
