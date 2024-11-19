@@ -14,7 +14,6 @@ export default function SurahList() {
     const fetchSurahs = async () => {
       const response = await fetch("/api/surahs");
       const data = await response.json();
-      console.log(data);
       setSurahs(data);
     };
 

@@ -14,18 +14,22 @@ export async function GET(req: Request) {
     );
   }
 
-  let audioDir = path.join(process.cwd(), `public/audio/${surah}/${qiraat}`);
-  const reciter = await readdir(audioDir);
-  audioDir = path.join(
-    process.cwd(),
-    `public/audio/${surah}/${qiraat}/${reciter[0]}`
-  );
-  const file = await readdir(audioDir);
-  audioDir = path.join(
-    process.cwd(),
-    `public/audio/${surah}/${qiraat}/${reciter[0]}/${file[0]}`
-  );
-  return NextResponse.json(
-    `/audio/${surah}/${qiraat}/${reciter[0]}/${file[0]}`
-  );
+  const audioDir = path.join(process.cwd(), `public/audio/${surah}/${qiraat}`);
+  const reciters = await readdir(audioDir);
+
+  // create a list of the paths for all the audio files in each reciter
+  const pathList = [];
+  for (let index = 0; index < reciters.length; index++) {
+    const recitersDir = path.join(
+      process.cwd(),
+      `public/audio/${surah}/${qiraat}/${reciters[index]}`
+    );
+    const files = await readdir(recitersDir);
+    pathList.push({
+      path: `/audio/${surah}/${qiraat}/${reciters[index]}/${files[0]}`,
+      reciter: reciters[index],
+    });
+  }
+
+  return NextResponse.json(pathList);
 }

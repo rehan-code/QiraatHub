@@ -15,24 +15,34 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { useSurah } from "@/contexts/surah-context";
 
-export default function AudioPlayer() {
+export default function AudioPlayer({
+  filePath,
+  reciter,
+}: {
+  filePath?: string;
+  reciter?: string;
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [path, setPath] = useState("");
+  const [path, setPath] = useState(filePath == undefined ? "" : filePath);
   const { selectedSurah, selectedQiraat } = useSurah();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // get file path from server if not supplied
   useEffect(() => {
-    const fetchPath = async () => {
-      const response = await fetch(
-        `/api/filePath?surah=${selectedSurah}&qiraat=${selectedQiraat}`
-      );
-      const data = await response.json();
-      setPath(data);
-    };
-    fetchPath();
-    setIsPlaying(false);
+    if (path == "") {
+      const fetchPath = async () => {
+        const response = await fetch(
+          `/api/filePath?surah=${selectedSurah}&qiraat=${selectedQiraat}`
+        );
+        const data = await response.json();
+        console.log(data);
+        setPath(data[0]["path"]);
+      };
+      fetchPath();
+      setIsPlaying(false);
+    }
   }, [selectedSurah, selectedQiraat]);
 
   useEffect(() => {
@@ -72,12 +82,12 @@ export default function AudioPlayer() {
   };
 
   return (
-    <Card className="">
+    <Card className="w-[800px]">
       <CardContent>
         <div className="space-y-6 p-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-8">
-              {selectedSurah.slice(4)}
+              {reciter ? `${reciter}` : selectedSurah.slice(4)}
             </h2>
             <div className="flex justify-center gap-4 mb-8">
               <Button size="icon" variant="ghost" className="">

@@ -12,7 +12,6 @@ export default function QiraatButtons() {
     const fetchQiraat = async () => {
       const response = await fetch(`/api/qiraat?surah=${selectedSurah}`);
       const data = await response.json();
-      console.log(data);
       setQiraat(data);
     };
 
