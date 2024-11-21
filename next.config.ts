@@ -34,6 +34,10 @@ const nextConfig: NextConfig = {
 
     return config;
   },
+  // images
+  images: {
+    domains: ["qiraathub.com"],
+  },
 };
 
 export default nextConfig;
