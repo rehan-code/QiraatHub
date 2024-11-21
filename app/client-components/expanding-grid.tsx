@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Image from "next/image";
 
 interface Scholar {
@@ -82,32 +82,55 @@ export default function ExpandingGrid() {
     return `${100 / 5}%`;
   };
 
+  const getGridTemplateColumns = useCallback(
+    (hoverIndex: number | null): string => {
+      if (hoverIndex === null) return "repeat(5, 1fr)";
+      const columns = Array(5).fill("1fr");
+      columns[hoverIndex % 5] = "2.25fr";
+      return columns.join(" ");
+    },
+    []
+  );
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-wrap h-[1000px] gap-y-6">
-        {scholars.map((scholar, index) => (
+      <div className="grid grid-rows-2 gap-1 h-[1000px] gap-y-6">
+        {[0, 1].map((rowIndex) => (
           <div
-            key={index}
-            className="relative overflow-hidden cursor-pointer transition-all duration-1000 ease-in rounded-lg"
+            key={rowIndex}
+            className="grid grid-cols-5 transition-all duration-300 ease-in-out"
             style={{
-              width: getWidt(index),
-              //   transitionTimingFunction: "cubic-bezier(0.4, 0, 0.4, 1)",
+              gridTemplateColumns: getGridTemplateColumns(
+                hoveredIndex !== null &&
+                  Math.floor(hoveredIndex / 5) === rowIndex
+                  ? hoveredIndex % 5
+                  : null
+              ),
             }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <Image
-              src={scholar.image}
-              alt={scholar.name}
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <h2 className="text-white text-lg font-semibold truncate px-4">
-                {scholar.name}
-              </h2>
-            </div>
+            {scholars
+              .slice(rowIndex * 5, (rowIndex + 1) * 5)
+              .map((scholar, index) => (
+                <div
+                  key={index}
+                  className="relative overflow-hidden cursor-pointer"
+                  onMouseEnter={() => setHoveredIndex(rowIndex * 5 + index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <Image
+                    src={scholar.image}
+                    alt={scholar.name}
+                    fill
+                    className="object-cover px-1 rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-black/20 mx-1 rounded-lg" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h2 className="text-white text-lg font-semibold truncate px-4">
+                      {scholar.name}
+                    </h2>
+                  </div>
+                </div>
+              ))}
           </div>
         ))}
       </div>
