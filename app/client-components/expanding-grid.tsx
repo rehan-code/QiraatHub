@@ -63,24 +63,24 @@ export default function ExpandingGrid() {
     },
   ];
 
-  const getWidth = (index: number) => {
-    if (hoveredIndex === null) return "19%";
-    if (index === hoveredIndex) return "29%";
-    if (Math.floor(index / 5) === Math.floor(hoveredIndex / 5)) return "15%";
-    return "19%";
-  };
+  // const getWidth = (index: number) => {
+  //   if (hoveredIndex === null) return "19%";
+  //   if (index === hoveredIndex) return "29%";
+  //   if (Math.floor(index / 5) === Math.floor(hoveredIndex / 5)) return "15%";
+  //   return "19%";
+  // };
 
-  const getWidt = (index: number) => {
-    const expandedWidth = 30;
-    if (hoveredIndex === null) return `${100 / 5}%`;
-    if (index === hoveredIndex) {
-      return `${expandedWidth}%`;
-    }
-    if (Math.floor(index / 5) === Math.floor(hoveredIndex / 5)) {
-      return `${(100 - expandedWidth) / 4}%`;
-    }
-    return `${100 / 5}%`;
-  };
+  // const getWidt = (index: number) => {
+  //   const expandedWidth = 30;
+  //   if (hoveredIndex === null) return `${100 / 5}%`;
+  //   if (index === hoveredIndex) {
+  //     return `${expandedWidth}%`;
+  //   }
+  //   if (Math.floor(index / 5) === Math.floor(hoveredIndex / 5)) {
+  //     return `${(100 - expandedWidth) / 4}%`;
+  //   }
+  //   return `${100 / 5}%`;
+  // };
 
   const getGridTemplateColumns = useCallback(
     (hoverIndex: number | null): string => {
