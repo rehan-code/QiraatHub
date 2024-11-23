@@ -37,8 +37,12 @@ export async function GET(req: Request) {
 
     // Get files from the domains directory
     const files = await client.list();
+    const qiraats = files
+      .map((qiraat) => qiraat.name)
+      .filter((name) => !name.startsWith("."))
+      .sort();
 
-    return NextResponse.json({ files });
+    return NextResponse.json(qiraats);
   } catch (err) {
     console.error("FTP Error:", err);
     return NextResponse.json(

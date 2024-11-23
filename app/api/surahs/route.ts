@@ -28,8 +28,12 @@ export async function GET() {
 
     // Get files(surahs) from the domains directory
     const files = await client.list();
+    const surahList = files
+      .map((surah) => surah.name)
+      .filter((name) => !name.startsWith("."))
+      .sort();
 
-    return NextResponse.json({ files });
+    return NextResponse.json(surahList);
   } catch (err) {
     console.error("FTP Error:", err);
     return NextResponse.json(
