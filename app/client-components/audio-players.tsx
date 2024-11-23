@@ -9,6 +9,13 @@ export default function AudioPlayers() {
   const [pathList, setPathList] = useState([]);
 
   useEffect(() => {
+    const connect = async () => {
+      const response = await fetch(`/api/connect`);
+      const data = await response.json();
+      console.log(data);
+    };
+    connect();
+
     const fetchPaths = async () => {
       const response = await fetch(
         `/api/filePath?surah=${selectedSurah}&qiraat=${selectedQiraat}`
