@@ -20,7 +20,11 @@ export async function GET() {
       secureOptions: { rejectUnauthorized: false },
     });
 
-    // List contents of root directory
+    const path = "domains/qiraathub.com/public_html/all-surahs";
+    // Navigate to the domains directory
+    await client.cd(path);
+
+    // Get files from the domains directory
     const files = await client.list();
 
     return NextResponse.json({ files });
