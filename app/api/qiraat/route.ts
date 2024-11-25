@@ -1,5 +1,3 @@
-import { readdir } from "fs/promises";
-import path from "path";
 import { NextResponse } from "next/server";
 import * as ftp from "basic-ftp";
 

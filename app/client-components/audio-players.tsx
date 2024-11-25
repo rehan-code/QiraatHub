@@ -11,18 +11,15 @@ export default function AudioPlayers() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(" players loading");
     setLoading(true);
     const get_files = async () => {
       const response = await fetch(
         `/api/surah-files?surah=${selectedSurah}&qiraat=${selectedQiraat}`
       );
       const data = await response.json();
-      console.log(data);
       setPathList(data);
 
       setLoading(false);
-      console.log(" players loading comp");
     };
     get_files();
   }, [selectedSurah, selectedQiraat]);

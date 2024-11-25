@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import * as ftp from "basic-ftp";
+import { PassThrough } from "stream";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -29,11 +30,10 @@ export async function GET(req: NextRequest) {
     const path = `domains/qiraathub.com/public_html/all-surahs/${surah}/${qiraat}/${reciter}`;
     await client.cd(path);
     const files = await client.list();
-    const filePath = `${path}/${files[0].name}`;
+    // const filePath = `${path}/${files[0].name}`;
     // console.log(files[0]);
     // console.log(filePath);
 
-    const { PassThrough } = require("stream");
     const passThrough = new PassThrough();
     const chunks: Buffer[] = [];
 

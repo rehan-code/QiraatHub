@@ -26,7 +26,7 @@ export default function AudioPlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [path, setPath] = useState(filePath == undefined ? "" : filePath);
+  const [path] = useState(filePath == undefined ? "" : filePath);
   const { selectedSurah } = useSurah();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [loading, setLoading] = useState(true);
