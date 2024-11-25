@@ -11,6 +11,7 @@ import {
   SkipForward,
   Maximize2,
   Volume2,
+  Loader2,
 } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { useSurah } from "@/contexts/surah-context";
@@ -26,8 +27,9 @@ export default function AudioPlayer({
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [path, setPath] = useState(filePath == undefined ? "" : filePath);
-  const { selectedSurah, selectedQiraat } = useSurah();
+  const { selectedSurah } = useSurah();
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [loading, setLoading] = useState(true);
 
   // get file path from server if not supplied
   // useEffect(() => {
@@ -46,12 +48,19 @@ export default function AudioPlayer({
   // }, [selectedSurah, selectedQiraat, path]);
 
   useEffect(() => {
+    setLoading(true);
     console.log(path);
     if (path != "") {
       audioRef.current = new Audio(path);
 
       audioRef.current.addEventListener("loadedmetadata", () => {
         setDuration(audioRef.current?.duration || 0);
+      });
+
+      audioRef.current.addEventListener("canplay", () => {
+        if (audioRef.current?.readyState != 0) {
+          setLoading(false);
+        }
       });
 
       audioRef.current.addEventListener("timeupdate", () => {
@@ -101,8 +110,11 @@ export default function AudioPlayer({
                 size="icon"
                 className="h-12 w-12 rounded-full bg-primary hover:bg-primary/90"
                 onClick={togglePlayPause}
+                disabled={loading}
               >
-                {isPlaying ? (
+                {loading ? (
+                  <Loader2 className="h-6 w-6 animate-spin" />
+                ) : isPlaying ? (
                   <Pause className="h-6 w-6" />
                 ) : (
                   <Play className="h-6 w-6 ml-1" />
