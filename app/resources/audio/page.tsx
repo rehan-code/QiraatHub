@@ -9,7 +9,7 @@ export default function AudioResources() {
         <SurahList />
         <div className="mx-auto space-y-8">
           <QiraatButtons />
-          {/* <AudioPlayers /> */}
+          <AudioPlayers />
         </div>
       </div>
     </div>

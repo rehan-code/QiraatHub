@@ -9,28 +9,25 @@ export default function AudioPlayers() {
   const [pathList, setPathList] = useState([]);
 
   useEffect(() => {
-    const connect = async () => {
-      const response = await fetch(`/api/connect`);
-      const data = await response.json();
-      console.log(data);
-    };
-    connect();
-
-    const fetchPaths = async () => {
+    const get_files = async () => {
       const response = await fetch(
-        `/api/filePath?surah=${selectedSurah}&qiraat=${selectedQiraat}`
+        `/api/surah-files?surah=${selectedSurah}&qiraat=${selectedQiraat}`
       );
       const data = await response.json();
       console.log(data);
       setPathList(data);
     };
-    fetchPaths();
+    get_files();
   }, [selectedSurah, selectedQiraat]);
 
   return (
     <div className="flex flex-col gap-3">
-      {pathList.map(({ path, reciter }, index) => (
-        <AudioPlayer key={index} filePath={path} reciter={reciter} />
+      {pathList.map(({ reciter, audioUrl }, index) => (
+        <AudioPlayer
+          key={`${selectedSurah} ${selectedQiraat} ${reciter} ${index}`}
+          filePath={audioUrl}
+          reciter={reciter}
+        />
       ))}
     </div>
   );

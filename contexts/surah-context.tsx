@@ -12,7 +12,7 @@ const SurahContext = createContext<SurahContextType | undefined>(undefined);
 
 export function SurahProvider({ children }: { children: ReactNode }) {
   const [selectedSurah, setSelectedSurah] = useState<string>("001 Al-Fatiha");
-  const [selectedQiraat, setSelectedQiraat] = useState<string>("Hafs");
+  const [selectedQiraat, setSelectedQiraat] = useState<string>("Abul Harith");
 
   return (
     <SurahContext.Provider

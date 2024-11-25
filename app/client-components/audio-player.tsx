@@ -30,22 +30,23 @@ export default function AudioPlayer({
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // get file path from server if not supplied
-  useEffect(() => {
-    if (path == "") {
-      const fetchPath = async () => {
-        const response = await fetch(
-          `/api/filePath?surah=${selectedSurah}&qiraat=${selectedQiraat}`
-        );
-        const data = await response.json();
-        console.log(data);
-        setPath(data[0]["path"]);
-      };
-      fetchPath();
-      setIsPlaying(false);
-    }
-  }, [selectedSurah, selectedQiraat, path]);
+  // useEffect(() => {
+  //   if (path == "") {
+  //     const fetchPath = async () => {
+  //       const response = await fetch(
+  //         `/api/filePath?surah=${selectedSurah}&qiraat=${selectedQiraat}`
+  //       );
+  //       const data = await response.json();
+  //       console.log(data);
+  //       setPath(data[0]["path"]);
+  //     };
+  //     fetchPath();
+  //     setIsPlaying(false);
+  //   }
+  // }, [selectedSurah, selectedQiraat, path]);
 
   useEffect(() => {
+    console.log(path);
     if (path != "") {
       audioRef.current = new Audio(path);
 
