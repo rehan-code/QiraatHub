@@ -19,12 +19,12 @@ export default function QiraatButtons() {
   }, [selectedSurah]);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
       {qiraat.map((style) => (
         <Button
           key={style}
           variant={"outline"}
-          className={`px-8 py-6 text-lg font-semibold ${
+          className={`px-4 md:px-8 py-4 md:py-6 text-base md:text-lg font-medium md:font-semibold ${
             selectedQiraat === style &&
             "bg-theme_primary text-primary hover:bg-theme_primary/80"
           }`}
