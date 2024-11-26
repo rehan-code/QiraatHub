@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 
 interface Scholar {
@@ -10,6 +10,18 @@ interface Scholar {
 
 export default function ExpandingGrid() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const scholars: Scholar[] = [
     {
@@ -63,76 +75,85 @@ export default function ExpandingGrid() {
     },
   ];
 
-  // const getWidth = (index: number) => {
-  //   if (hoveredIndex === null) return "19%";
-  //   if (index === hoveredIndex) return "29%";
-  //   if (Math.floor(index / 5) === Math.floor(hoveredIndex / 5)) return "15%";
-  //   return "19%";
-  // };
-
-  // const getWidt = (index: number) => {
-  //   const expandedWidth = 30;
-  //   if (hoveredIndex === null) return `${100 / 5}%`;
-  //   if (index === hoveredIndex) {
-  //     return `${expandedWidth}%`;
-  //   }
-  //   if (Math.floor(index / 5) === Math.floor(hoveredIndex / 5)) {
-  //     return `${(100 - expandedWidth) / 4}%`;
-  //   }
-  //   return `${100 / 5}%`;
-  // };
-
   const getGridTemplateColumns = useCallback(
     (hoverIndex: number | null): string => {
+      if (isMobile) return "repeat(2, 1fr)";
       if (hoverIndex === null) return "repeat(5, 1fr)";
       const columns = Array(5).fill("1fr");
       columns[hoverIndex % 5] = "2.25fr";
       return columns.join(" ");
     },
-    []
+    [isMobile]
   );
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-rows-2 gap-1 h-[1000px] gap-y-6">
-        {[0, 1].map((rowIndex) => (
-          <div
-            key={rowIndex}
-            className="grid grid-cols-5 transition-all duration-300 ease-in-out"
-            style={{
-              gridTemplateColumns: getGridTemplateColumns(
-                hoveredIndex !== null &&
-                  Math.floor(hoveredIndex / 5) === rowIndex
-                  ? hoveredIndex % 5
-                  : null
-              ),
-            }}
-          >
-            {scholars
-              .slice(rowIndex * 5, (rowIndex + 1) * 5)
-              .map((scholar, index) => (
-                <div
-                  key={index}
-                  className="relative overflow-hidden cursor-pointer"
-                  onMouseEnter={() => setHoveredIndex(rowIndex * 5 + index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <Image
-                    src={scholar.image}
-                    alt={scholar.name}
-                    fill
-                    className="object-cover px-1 rounded-lg"
-                  />
-                  <div className="absolute inset-0 bg-black/20 mx-1 rounded-lg" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <h2 className="text-white text-lg font-semibold truncate px-4">
-                      {scholar.name}
-                    </h2>
-                  </div>
+      <div className={`grid gap-4 ${isMobile ? 'h-auto' : 'grid-rows-2 h-[1000px] gap-y-6'}`}>
+        {isMobile ? (
+          // Mobile Layout
+          <div className="grid grid-cols-2 gap-4">
+            {scholars.map((scholar, index) => (
+              <div
+                key={index}
+                className="relative aspect-square overflow-hidden cursor-pointer rounded-lg group hover:ring-2 hover:ring-theme_primary transition-all duration-300"
+                onClick={() => setHoveredIndex(hoveredIndex === index ? null : index)}
+              >
+                <Image
+                  src={scholar.image}
+                  alt={scholar.name}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-3 flex items-end justify-center">
+                  <h2 className="text-white text-base md:text-lg font-semibold text-center px-2 drop-shadow-lg">
+                    {scholar.name}
+                  </h2>
                 </div>
-              ))}
+              </div>
+            ))}
           </div>
-        ))}
+        ) : (
+          // Desktop Layout
+          [0, 1].map((rowIndex) => (
+            <div
+              key={rowIndex}
+              className="grid grid-cols-5 transition-all duration-300 ease-in-out"
+              style={{
+                gridTemplateColumns: getGridTemplateColumns(
+                  hoveredIndex !== null &&
+                    Math.floor(hoveredIndex / 5) === rowIndex
+                    ? hoveredIndex % 5
+                    : null
+                ),
+              }}
+            >
+              {scholars
+                .slice(rowIndex * 5, (rowIndex + 1) * 5)
+                .map((scholar, index) => (
+                  <div
+                    key={index}
+                    className="relative overflow-hidden cursor-pointer rounded-lg"
+                    onMouseEnter={() => setHoveredIndex(rowIndex * 5 + index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    <Image
+                      src={scholar.image}
+                      alt={scholar.name}
+                      fill
+                      className="object-cover px-1"
+                    />
+                    <div className="absolute inset-0 bg-black/20 mx-1"/>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <h2 className="text-white text-lg font-semibold truncate px-4">
+                        {scholar.name}
+                      </h2>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
