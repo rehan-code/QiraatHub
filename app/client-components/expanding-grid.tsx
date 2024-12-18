@@ -87,7 +87,7 @@ export default function ExpandingGrid() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 py-12">
       <div className={`grid gap-4 ${isMobile ? 'h-auto' : 'grid-rows-2 h-[1000px] gap-y-6'}`}>
         {isMobile ? (
           // Mobile Layout
