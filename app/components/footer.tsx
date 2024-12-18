@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4">Popular Courses</h3>
             <ul className="space-y-2">
-              <li><Link href="/courses/nafi-al-madani" className="text-gray-600 hover:text-gray-900">Nafi' al-Madani</Link></li>
+              <li><Link href="/courses/nafi-al-madani" className="text-gray-600 hover:text-gray-900">Nafi&apos; al-Madani</Link></li>
               <li><Link href="/courses/ibn-kathir" className="text-gray-600 hover:text-gray-900">Ibn Kathir</Link></li>
               <li><Link href="/courses/abu-amr-al-basri" className="text-gray-600 hover:text-gray-900">Abu Amr Al Basri</Link></li>
               <li><Link href="/courses/ibn-amir-dimashqi" className="text-gray-600 hover:text-gray-900">Ibn Amir Dimashqi</Link></li>

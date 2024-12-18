@@ -52,7 +52,7 @@ export default function PopularCourse() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <button className="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+              <button className="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
                 View Details
               </button>
               <div className="text-gray-800">

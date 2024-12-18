@@ -12,12 +12,12 @@ export default function TypingAnimation({ text, className = '' }: TypingAnimatio
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const typeText = useCallback(() => {
-    setDisplayText(prev => text.substring(0, currentIndex + 1));
+    setDisplayText(() => text.substring(0, currentIndex + 1));
     setCurrentIndex(prev => prev + 1);
   }, [currentIndex, text]);
 
   const eraseText = useCallback(() => {
-    setDisplayText(prev => text.substring(0, currentIndex - 1));
+    setDisplayText(() => text.substring(0, currentIndex - 1));
     setCurrentIndex(prev => prev - 1);
   }, [currentIndex, text]);
   
