@@ -54,6 +54,7 @@ export default function SurahList() {
 
   return (
     <>
+    {/* mobile view */}
       <div className="md:hidden">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
@@ -72,6 +73,7 @@ export default function SurahList() {
           </SheetContent>
         </Sheet>
       </div>
+      {/* desktop view */}
       <div className="hidden md:block h-full">
         <Card className="h-[calc(100vh-14rem)] flex flex-col">
           <SurahContent />
