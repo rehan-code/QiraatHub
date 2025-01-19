@@ -1,21 +1,36 @@
+"use client";
+
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useEffect, useState } from "react";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  onSearch: (query: string) => void;
+  initialValue?: string;
+}
+
+export default function SearchBar({ onSearch, initialValue = "" }: SearchBarProps) {
+  const [searchTerm, setSearchTerm] = useState(initialValue);
+
+  // Debounce search to avoid too many updates
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onSearch(searchTerm);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [searchTerm, onSearch]);
+
   return (
     <div className="relative flex-1">
       <Input
-        placeholder="Type to start searching..."
-        className="pl-4 pr-10 h-12"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search by surah name or number..."
+        className="pl-10 pr-10 h-12 bg-gray-50 border-gray-200 focus:bg-white"
       />
-      <Button
-        size="icon"
-        className="absolute right-1 top-1 h-10 w-10"
-        variant="ghost"
-      >
-        <Search className="h-4 w-4" />
-      </Button>
+      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
     </div>
   );
 }
