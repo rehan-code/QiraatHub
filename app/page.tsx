@@ -1,5 +1,6 @@
 import ExpandingGrid from "./client-components/expanding-grid";
 import PopularCourse from "./components/popular-course";
+import UserReviews from "./components/user-reviews";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </div>
       <ExpandingGrid />
       <PopularCourse />
+      <UserReviews />
     </div>
   );
 }
