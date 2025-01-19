@@ -84,7 +84,7 @@ export default function UserReviews() {
                                     </div>
                                     <div className="mb-6 pt-2">
                                         <p className="text-gray-700 text-lg leading-relaxed italic">
-                                            "{review.review}"
+                                            &quot;{review.review}&quot;
                                         </p>
                                     </div>
                                     <div className="flex items-center justify-between mt-auto">

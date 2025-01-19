@@ -81,7 +81,7 @@ export default function SurahList() {
               >
                 <Search className="h-12 w-12 mx-auto text-gray-300 mb-4" />
                 <p className="text-gray-500 text-sm">
-                  No surahs found matching "{searchQuery}"
+                  No surahs found matching &quot;{searchQuery}&quot;
                 </p>
               </motion.div>
             ) : (
