@@ -5,9 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useEffect, useState, useMemo } from "react";
 import { useSurah } from "@/contexts/surah-context";
 import SearchBar from "./search-bar";
-import { Menu, BookOpen, ChevronRight } from "lucide-react";
+import { Menu, BookOpen, ChevronRight, Search } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface SurahInfo {
   name: string;
@@ -61,54 +62,80 @@ export default function SurahList() {
 
   const SurahContent = () => (
     <>
-      <CardHeader className="sticky top-0 bg-background z-10 border-b pb-4">
+      <CardHeader className="sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-10 pb-4 border-b">
         <div className="flex items-center gap-2 mb-4">
           <BookOpen className="h-6 w-6 text-yellow-500" />
           <CardTitle className="text-xl md:text-2xl">Surahs</CardTitle>
         </div>
         <SearchBar onSearch={handleSearch} initialValue={searchQuery} />
       </CardHeader>
-      <ScrollArea className="flex-1">
-        <CardContent className="space-y-1 p-4 md:p-6">
-          {filteredSurahs.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              No surahs found matching "{searchQuery}"
-            </div>
-          ) : (
-            filteredSurahs.map((surah) => (
-              <Button
-                key={surah.number}
-                variant="ghost"
-                className={`w-full justify-between group text-sm md:text-base h-auto py-3 ${
-                  selectedSurah === surah.fullName
-                    ? "bg-yellow-50 text-yellow-900 hover:bg-yellow-100 border-yellow-200"
-                    : "hover:bg-gray-50"
-                }`}
-                onClick={() => {
-                  setSelectedSurah(surah.fullName);
-                  setOpen(false);
-                }}
+      <ScrollArea className="flex-1 relative">
+        <CardContent className="p-4 md:p-6">
+          <AnimatePresence mode="wait">
+            {filteredSurahs.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="text-center py-12"
               >
-                <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium ${
-                    selectedSurah === surah.fullName
-                      ? "bg-yellow-200 text-yellow-900"
-                      : "bg-gray-100"
-                  }`}>
-                    {parseInt(surah.number)}
-                  </div>
-                  <div className="text-left font-medium">
-                    {surah.name}
-                  </div>
-                </div>
-                <ChevronRight className={`h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity ${
-                  selectedSurah === surah.fullName
-                    ? "text-yellow-500"
-                    : "text-gray-400"
-                }`} />
-              </Button>
-            ))
-          )}
+                <Search className="h-12 w-12 mx-auto text-gray-300 mb-4" />
+                <p className="text-gray-500 text-sm">
+                  No surahs found matching "{searchQuery}"
+                </p>
+              </motion.div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="space-y-1"
+              >
+                {filteredSurahs.map((surah, index) => (
+                  <motion.div
+                    key={surah.number}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: 0,
+                      transition: { delay: index * 0.05 }
+                    }}
+                  >
+                    <Button
+                      variant="ghost"
+                      className={`w-full justify-between group text-sm md:text-base h-auto py-3 ${
+                        selectedSurah === surah.fullName
+                          ? "bg-yellow-50 text-yellow-900 hover:bg-yellow-100 border-yellow-200"
+                          : "hover:bg-gray-50"
+                      }`}
+                      onClick={() => {
+                        setSelectedSurah(surah.fullName);
+                        setOpen(false);
+                      }}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium transition-colors ${
+                          selectedSurah === surah.fullName
+                            ? "bg-yellow-200 text-yellow-900"
+                            : "bg-gray-100 group-hover:bg-gray-200"
+                        }`}>
+                          {parseInt(surah.number)}
+                        </div>
+                        <div className="text-left font-medium">
+                          {surah.name}
+                        </div>
+                      </div>
+                      <ChevronRight className={`h-4 w-4 transition-all ${
+                        selectedSurah === surah.fullName
+                          ? "text-yellow-500 opacity-100 translate-x-0"
+                          : "text-gray-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
+                      }`} />
+                    </Button>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </CardContent>
       </ScrollArea>
     </>
