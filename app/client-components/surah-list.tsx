@@ -5,19 +5,40 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { useSurah } from "@/contexts/surah-context";
 import SearchBar from "./search-bar";
-import { Menu } from "lucide-react";
+import { Menu, BookOpen, ChevronRight } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { ScrollArea } from "@/components/ui/scroll-area";
+
+interface SurahInfo {
+  name: string;
+  number: string;
+  fullName: string;
+}
 
 export default function SurahList() {
-  const [surahs, setSurahs] = useState<string[]>([]);
+  const [surahs, setSurahs] = useState<SurahInfo[]>([]);
   const { selectedSurah, setSelectedSurah } = useSurah();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fetchSurahs = async () => {
-      const response = await fetch("/api/surahs");
-      const data = await response.json();
-      setSurahs(data);
+      try {
+        const response = await fetch("/api/surahs");
+        const data = await response.json();
+        const surahInfoArray = data.map((fullName: string) => {
+          const match = fullName.match(/^(\d{3})\s+(.+)$/);
+          if (!match) return null;
+          const [, number, name] = match;
+          return {
+            fullName,
+            number,
+            name
+          };
+        }).filter(Boolean);
+        setSurahs(surahInfoArray);
+      } catch (error) {
+        console.error('Error fetching surahs:', error);
+      }
     };
 
     fetchSurahs();
@@ -25,42 +46,64 @@ export default function SurahList() {
 
   const SurahContent = () => (
     <>
-      <CardHeader className="sticky top-0 bg-background z-10">
-        <CardTitle className="text-xl md:text-2xl">Surahs</CardTitle>
+      <CardHeader className="sticky top-0 bg-background z-10 border-b pb-4">
+        <div className="flex items-center gap-2">
+          <BookOpen className="h-6 w-6 text-yellow-500" />
+          <CardTitle className="text-xl md:text-2xl">Surahs</CardTitle>
+        </div>
       </CardHeader>
-      <div className="px-4 md:px-6 pb-2">
+      <div className="px-4 md:px-6 py-4 border-b">
         <SearchBar />
       </div>
-      <CardContent className="flex-1 overflow-y-auto min-h-0 space-y-2 px-4 md:px-6">
-        {surahs.map((surah) => (
-          <Button
-            key={surah}
-            variant="ghost"
-            className={`w-full justify-start text-sm md:text-base ${
-              selectedSurah === surah &&
-              "bg-theme_primary text-primary hover:bg-theme_primary/80"
-            }`}
-            onClick={() => {
-              setSelectedSurah(surah);
-              setOpen(false);
-            }}
-          >
-            {surah.slice(4)}
-          </Button>
-        ))}
-      </CardContent>
+      <ScrollArea className="flex-1">
+        <CardContent className="space-y-1 p-4 md:p-6">
+          {surahs.map((surah) => (
+            <Button
+              key={surah.number}
+              variant="ghost"
+              className={`w-full justify-between group text-sm md:text-base h-auto py-3 ${
+                selectedSurah === surah.fullName
+                  ? "bg-yellow-50 text-yellow-900 hover:bg-yellow-100 border-yellow-200"
+                  : "hover:bg-gray-50"
+              }`}
+              onClick={() => {
+                setSelectedSurah(surah.fullName);
+                setOpen(false);
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium ${
+                  selectedSurah === surah.fullName
+                    ? "bg-yellow-200 text-yellow-900"
+                    : "bg-gray-100"
+                }`}>
+                  {parseInt(surah.number)}
+                </div>
+                <div className="text-left font-medium">
+                  {surah.name}
+                </div>
+              </div>
+              <ChevronRight className={`h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity ${
+                selectedSurah === surah.fullName
+                  ? "text-yellow-500"
+                  : "text-gray-400"
+              }`} />
+            </Button>
+          ))}
+        </CardContent>
+      </ScrollArea>
     </>
   );
 
   return (
     <>
-    {/* mobile view */}
+      {/* mobile view */}
       <div className="md:hidden">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
-              className="top-[5.5rem] left-4 z-40 flex items-center gap-2 border w-full justify-start"
+              className="top-[5.5rem] left-4 z-40 flex items-center gap-2 border w-full justify-start hover:bg-gray-50"
             >
               <Menu className="h-6 w-6" />
               <span>Surah List</span>
@@ -75,7 +118,7 @@ export default function SurahList() {
       </div>
       {/* desktop view */}
       <div className="hidden md:block h-full">
-        <Card className="h-[calc(100vh-14rem)] flex flex-col">
+        <Card className="h-[calc(100vh-14rem)] flex flex-col border-gray-200">
           <SurahContent />
         </Card>
       </div>
