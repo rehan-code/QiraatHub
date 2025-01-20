@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CoursesPage = () => {
   const courses = [
@@ -44,7 +44,7 @@ const CoursesPage = () => {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Qira'at Courses</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">Qira&apos;at Courses</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
           <div

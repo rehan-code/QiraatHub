@@ -18,7 +18,7 @@ const AboutPage = () => {
             About QiraatHub
           </h1>
           <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto leading-relaxed">
-            Empowering Muslims worldwide to master the authentic Qira'at of the Holy Quran
+            Empowering Muslims worldwide to master the authentic Qira&apos;at of the Holy Quran
           </p>
         </div>
       </div>
@@ -30,7 +30,7 @@ const AboutPage = () => {
             <h2 className="text-4xl font-bold mb-8 text-gray-800">Our Mission</h2>
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                At QiraatHub, we are dedicated to preserving and teaching the authentic Qira'at 
+                At QiraatHub, we are dedicated to preserving and teaching the authentic Qira&apos;at 
                 of the Holy Quran. Our platform makes it possible for students worldwide to learn 
                 from qualified instructors and master the various authentic readings of the Quran.
               </p>
@@ -95,7 +95,7 @@ const AboutPage = () => {
           <h2 className="text-4xl font-bold mb-8">Start Your Journey Today</h2>
           <p className="text-xl mb-12 max-w-2xl mx-auto opacity-90">
             Join thousands of students worldwide who are discovering the beauty of 
-            the various Qira'at through our comprehensive online platform.
+            the various Qira&apos;at through our comprehensive online platform.
           </p>
           <Link 
             href="/courses" 
