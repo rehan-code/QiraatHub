@@ -4,51 +4,49 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-gray-100 py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-10 lg:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-4">
           {/* Logo and Description */}
           <div className="space-y-4">
             <Image src="/logo.png" alt="QiraatHub Logo" width={60} height={60} className="mb-4" />
-            <p className="text-gray-600 w-56 text-justify">
+            <p className="text-gray-600 text-sm leading-relaxed">
               Your gateway to mastering the ten Qiraat—explore authentic resources and connect with a supportive learning community.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-600 hover:text-gray-900">Home</Link></li>
-              <li><Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link></li>
-              <li><Link href="/courses" className="text-gray-600 hover:text-gray-900">Courses</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:text-gray-900">Contact</Link></li>
+              <li><Link href="/" className="text-gray-600 hover:text-theme_primary transition-colors">Home</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-theme_primary transition-colors">About</Link></li>
+              <li><Link href="/courses" className="text-gray-600 hover:text-theme_primary transition-colors">Courses</Link></li>
+              <li><Link href="/contact" className="text-gray-600 hover:text-theme_primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           {/* Popular Courses */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Popular Courses</h3>
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold">Popular Courses</h3>
             <ul className="space-y-2">
-              <li><Link href="/courses/nafi-al-madani" className="text-gray-600 hover:text-gray-900">Nafi&apos; al-Madani</Link></li>
-              <li><Link href="/courses/ibn-kathir" className="text-gray-600 hover:text-gray-900">Ibn Kathir</Link></li>
-              <li><Link href="/courses/abu-amr-al-basri" className="text-gray-600 hover:text-gray-900">Abu Amr Al Basri</Link></li>
-              <li><Link href="/courses/ibn-amir-dimashqi" className="text-gray-600 hover:text-gray-900">Ibn Amir Dimashqi</Link></li>
+              <li><Link href="/courses/nafi-al-madani" className="text-gray-600 hover:text-theme_primary transition-colors">Nafi&apos; al-Madani</Link></li>
+              <li><Link href="/courses/ibn-kathir" className="text-gray-600 hover:text-theme_primary transition-colors">Ibn Kathir</Link></li>
+              <li><Link href="/courses/abu-amr-al-basri" className="text-gray-600 hover:text-theme_primary transition-colors">Abu Amr Al Basri</Link></li>
+              <li><Link href="/courses/ibn-amir-dimashqi" className="text-gray-600 hover:text-theme_primary transition-colors">Ibn Amir Dimashqi</Link></li>
             </ul>
           </div>
 
           {/* Stay Connected */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Stay Connected</h3>
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold">Stay Connected</h3>
             <div className="space-y-4">
-              <div>
-                <a href="mailto:info@qiraathub.com" className="text-gray-600 hover:text-gray-900 flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                  </svg>
-                  info@qiraathub.com
-                </a>
-              </div>
+              <a href="mailto:info@qiraathub.com" className="text-gray-600 hover:text-theme_primary transition-colors flex items-center gap-2">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                info@qiraathub.com
+              </a>
               <div className="flex gap-4">
                 <a href="https://www.youtube.com/@qiraat" className="text-gray-600 hover:text-gray-900" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -79,8 +77,12 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="text-center mt-8 text-gray-600">
-          Copyright © 2024 QiraatHub
+
+        {/* Copyright Section */}
+        <div className="pt-6 border-t border-gray-200">
+          <p className="text-center text-gray-500 text-sm">
+            &copy; {new Date().getFullYear()} QiraatHub. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
