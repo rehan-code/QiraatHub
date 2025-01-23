@@ -2,10 +2,12 @@
 
 import { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Scholar {
   name: string;
   image: string;
+  slug: string;
 }
 
 export default function ExpandingGrid() {
@@ -28,50 +30,60 @@ export default function ExpandingGrid() {
       name: "Nafi' al-Madani",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/quran_read20-1280x640-1-768x384.jpg",
+      slug: "nafi-al-madani"
     },
     {
       name: "Ibn Kathir",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/quran-islam-laptop-wallpaper-6114872-1-768x512.jpg",
+      slug: "ibn-kathir"
     },
     {
       name: "Abu Amr Basri",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/book-quran-open-1283468-1-768x512.jpg",
+      slug: "abu-amr-basri"
     },
     {
       name: "Ibn Amir Shami",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/quran-islam-book-6862296-1-768x512.jpg",
+      slug: "ibn-amir-shami"
     },
     {
       name: "Asim Al Koofi",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/an-quran-scripture-7741928-1-768x513.jpg",
+      slug: "asim-al-koofi"
     },
     {
       name: "Hamza Al Kufi",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/book-quran-scripture-8224121-1-768x512.png",
+      slug: "hamza-al-kufi"
     },
     {
       name: "Al-Kisa'i",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/quran-light-spirituality-5385907-1-2-768x512.jpg",
+      slug: "al-kisai"
     },
     {
       name: "Abu Jaafar",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/quran-light-recite-5385901-1-1-768x512.jpg",
+      slug: "abu-jaafar"
     },
     {
       name: "Yaqub Hadrani",
       image:
         "https://qiraathub.com/wp-content/uploads/2024/09/87948b6c923b69c5e451fcb5d3a5577a-1.webp",
+      slug: "yaqub-hadrani"
     },
     {
       name: "Khalaf Al Ashir",
       image: "https://qiraathub.com/wp-content/uploads/2024/09/i-768x768.webp",
+      slug: "khalaf-al-ashir"
     },
   ];
 
@@ -93,8 +105,9 @@ export default function ExpandingGrid() {
           // Mobile Layout
           <div className="grid grid-cols-2 gap-4">
             {scholars.map((scholar, index) => (
-              <div
+              <Link
                 key={index}
+                href={`/qiraat/${scholar.slug}`}
                 className="relative aspect-square overflow-hidden cursor-pointer rounded-lg group hover:ring-2 hover:ring-theme_primary transition-all duration-300"
                 onClick={() => setHoveredIndex(hoveredIndex === index ? null : index)}
               >
@@ -110,7 +123,7 @@ export default function ExpandingGrid() {
                     {scholar.name}
                   </h2>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         ) : (
@@ -131,8 +144,9 @@ export default function ExpandingGrid() {
               {scholars
                 .slice(rowIndex * 5, (rowIndex + 1) * 5)
                 .map((scholar, index) => (
-                  <div
+                  <Link
                     key={index}
+                    href={`/qiraat/${scholar.slug}`}
                     className="relative overflow-hidden cursor-pointer rounded-lg"
                     onMouseEnter={() => setHoveredIndex(rowIndex * 5 + index)}
                     onMouseLeave={() => setHoveredIndex(null)}
@@ -149,7 +163,7 @@ export default function ExpandingGrid() {
                         {scholar.name}
                       </h2>
                     </div>
-                  </div>
+                  </Link>
                 ))}
             </div>
           ))
