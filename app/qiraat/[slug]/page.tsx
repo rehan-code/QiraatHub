@@ -22,6 +22,12 @@ interface Scholar {
   }[];
 }
 
+const getYouTubeVideoId = (url: string) => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+};
+
 const scholars: Scholar[] = [
   {
     name: "Nafi' al-Madani",
@@ -443,7 +449,7 @@ export default async function ScholarPage({ params }: PageProps) {
                   </svg>
                 </div>
                 <div className="text-4xl font-bold text-gray-900 mb-1">{scholar.youtubeVideos.length}</div>
-                <div className="text-gray-600">Video Lessons</div>
+                <div className="text-gray-600">Videos</div>
               </div>
             </div>
           </div>
@@ -531,7 +537,7 @@ export default async function ScholarPage({ params }: PageProps) {
                               <span className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-300">{resource.title}</span>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400 group-hover:text-blue-500 transform group-hover:-translate-y-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                           </div>
                         </div>
@@ -544,37 +550,42 @@ export default async function ScholarPage({ params }: PageProps) {
               {/* YouTube Videos Section */}
               <section className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 flex flex-col flex-grow">
                 <div className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Video Lessons</h2>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Videos</h2>
                 </div>
                 <div className="px-8 pb-8 overflow-y-auto flex-grow">
-                  <div className="space-y-4">
-                    {scholar.youtubeVideos.map((video, index) => (
-                      <a 
-                        key={index}
-                        href={video.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group block"
-                      >
-                        <div className="relative">
-                          <div className="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
-                          <div className="relative p-4 bg-white rounded-lg flex items-center justify-between">
-                            <div className="flex items-center space-x-3">
-                              <div className="p-2 bg-red-100 rounded-lg group-hover:bg-red-500 transition-colors duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                              </div>
-                              <span className="text-sm font-medium text-gray-700 group-hover:text-red-600 transition-colors duration-300">{video.title}</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400 group-hover:text-red-500 transform group-hover:-translate-y-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
+                  <div className="grid grid-cols-1 gap-6">
+                    {scholar.youtubeVideos.map((video, index) => {
+                      const videoId = getYouTubeVideoId(video.url);
+                      return (
+                        <div key={index} className="space-y-3">
+                          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg">
+                            <iframe
+                              src={`https://www.youtube.com/embed/${videoId}`}
+                              title={video.title}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="absolute inset-0 w-full h-full"
+                            />
+                          </div>
+                          <div className="flex items-center justify-between px-2">
+                            <h3 className="text-sm font-medium text-gray-900 line-clamp-1">
+                              {video.title}
+                            </h3>
+                            <a
+                              href={video.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2 hover:bg-red-50 rounded-full transition-colors duration-200"
+                              title="Open in YouTube"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </a>
                           </div>
                         </div>
-                      </a>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               </section>
