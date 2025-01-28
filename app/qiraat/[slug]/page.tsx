@@ -66,11 +66,11 @@ const scholars: Scholar[] = [
     ],
     youtubeVideos: [
       {
-        title: "Learning Nafi's Qira'at",
+        title: "Surah Yusuf",
         url: "https://youtu.be/BqHgoRTL6xU"
       },
       {
-        title: "Learning Nafi's Qira'at",
+        title: "Surah Kahf",
         url: "https://youtu.be/e4KV44rhNYo"
       }
     ]
@@ -392,13 +392,13 @@ export default async function ScholarPage({ params }: PageProps) {
   const scholar = scholars.find((s) => s.slug === slug);
 
   if (!scholar) {
-    notFound();
+    return <div>Scholar not found</div>;
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       {/* Hero Section */}
-      <div className="relative h-[80vh] w-full overflow-hidden">
+      <div className="relative h-[50vh] w-full overflow-hidden">
         <Image
           src={scholar.image}
           alt={scholar.name}
@@ -409,65 +409,71 @@ export default async function ScholarPage({ params }: PageProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-transparent backdrop-blur-sm" />
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className="max-w-3xl backdrop-blur-md bg-white/10 p-8 rounded-3xl border border-white/20">
-                <h1 className="text-7xl font-bold text-white mb-6 leading-tight">{scholar.name}</h1>
-                <p className="text-2xl text-gray-200 leading-relaxed font-light">{scholar.description}</p>
+                <h1 className="text-5xl font-bold text-white mb-6 leading-tight">{scholar.name}</h1>
+                <p className="text-lg text-gray-200 leading-relaxed font-light">{scholar.description}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-6 -mt-20 relative z-10 mb-20">
-        <div className="max-w-7xl mx-auto">
-          {/* Quick Facts Bar */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-xl border border-white/50 mb-16">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-blue-600 mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <div className="text-4xl font-bold text-gray-900 mb-1">{scholar.transmission.length}</div>
-                <div className="text-gray-600">Transmissions</div>
-              </div>
-              <div className="text-center">
-                <div className="text-blue-600 mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <div className="text-4xl font-bold text-gray-900 mb-1">{scholar.resources.length}</div>
-                <div className="text-gray-600">Resources</div>
-              </div>
-              <div className="text-center">
-                <div className="text-blue-600 mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div className="text-4xl font-bold text-gray-900 mb-1">{scholar.youtubeVideos.length}</div>
-                <div className="text-gray-600">Videos</div>
-              </div>
+      {/* Quick Stats */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl shadow-xl p-6 flex items-center space-x-4">
+            <div className="p-3 bg-blue-100 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900">{scholar.transmission.length}</div>
+              <div className="text-sm text-gray-600">Transmissions</div>
             </div>
           </div>
+          <div className="bg-white rounded-2xl shadow-xl p-6 flex items-center space-x-4">
+            <div className="p-3 bg-emerald-100 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900">{scholar.resources.length}</div>
+              <div className="text-sm text-gray-600">Resources</div>
+            </div>
+          </div>
+          <div className="bg-white rounded-2xl shadow-xl p-6 flex items-center space-x-4">
+            <div className="p-3 bg-red-100 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900">{scholar.youtubeVideos.length}</div>
+              <div className="text-sm text-gray-600">Videos</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Main Content Column */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Early Life Section */}
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Column */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Early Life Section */}
               <section className="bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/50">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Early Life and Legacy</h2>
-                <p className="text-xl text-gray-700 leading-relaxed">{scholar.earlyLife}</p>
-              </section>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Early Life and Legacy</h2>
+                <p className="text-lg text-gray-700 leading-relaxed">{scholar.earlyLife}</p>
+            </section>
 
-              {/* Did You Know Section */}
+            {/* Did You Know Section */}
               <section className="bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/50">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Did You Know?</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Did You Know?</h2>
                 <div className="space-y-6">
-                  {scholar.didYouKnow.map((fact, index) => (
+                {scholar.didYouKnow.map((fact, index) => (
                     <div 
                       key={index} 
                       className="flex items-start space-x-6 group"
@@ -476,120 +482,114 @@ export default async function ScholarPage({ params }: PageProps) {
                         <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center transform -rotate-6 group-hover:rotate-0 transition-all duration-300">
                           <span className="text-white font-bold text-lg">{index + 1}</span>
                         </div>
-                      </div>
-                      <div className="flex-1 bg-blue-50/50 p-6 rounded-2xl">
+                    </div>
+                      <div className="flex-1 bg-blue-50/50 p-5 rounded-2xl">
                         <p className="text-lg text-gray-700">{fact}</p>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
+                  </div>
+                ))}
+              </div>
+            </section>
 
               {/* Transmission Section */}
               <section className="bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/50">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">Transmission</h2>
-                <div className="grid gap-6">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Transmission</h2>
+              <div className="grid gap-6">
                   {scholar.transmission.map((transmitter, index) => (
                     <div 
                       key={index} 
                       className="group relative"
                     >
                       <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
-                      <div className="relative p-6 bg-white rounded-xl">
-                        <div className="flex items-center space-x-4 mb-4">
+                      <div className="relative p-4 bg-white rounded-xl">
+                        <div className="flex items-center space-x-4 mb-2">
                           <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                           <h3 className="text-2xl font-bold text-gray-900">{transmitter.name}</h3>
                         </div>
                         <p className="text-lg text-gray-600 leading-relaxed pl-6">{transmitter.details}</p>
-                      </div>
                     </div>
-                  ))}
-                </div>
-              </section>
-            </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
 
-            {/* Sidebar */}
-            <div className="lg:sticky lg:top-8 lg:h-[calc(100vh-4rem)] space-y-8 flex flex-col">
-              {/* Resources Section */}
-              <section className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 flex flex-col flex-grow">
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Resources</h2>
-                </div>
-                <div className="px-8 pb-8 overflow-y-auto flex-grow">
-                  <div className="space-y-4">
-                    {scholar.resources.map((resource, index) => (
-                      <a 
-                        key={index}
-                        href={resource.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group block"
-                      >
-                        <div className="relative">
-                          <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
-                          <div className="relative p-4 bg-white rounded-lg flex items-center justify-between">
-                            <div className="flex items-center space-x-3">
-                              <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-blue-500 transition-colors duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                </svg>
-                              </div>
-                              <span className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors duration-300">{resource.title}</span>
-                            </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400 group-hover:text-blue-500 transform group-hover:-translate-y-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          {/* Sidebar */}
+          <div className="space-y-8">
+            {/* Resources Section */}
+            <section className="bg-white rounded-2xl shadow-xl">
+              <div className="p-6 pb-2">
+                <h2 className="text-2xl font-bold text-gray-900">Resources</h2>
+              </div>
+              <div className="p-6">
+                <div className="space-y-4">
+                  {scholar.resources.map((resource, index) => (
+                    <a 
+                      key={index}
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block"
+                    >
+                      <div className="relative">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+                        <div className="relative p-4 bg-white rounded-lg border border-gray-200 flex items-center space-x-3">
+                          <div className="p-2 bg-emerald-100 rounded-lg group-hover:bg-emerald-500 transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-emerald-600 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
                           </div>
+                          <span className="text-sm font-medium text-gray-700 group-hover:text-emerald-600 transition-colors duration-300">{resource.title}</span>
                         </div>
-                      </a>
-                    ))}
-                  </div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
-              </section>
+              </div>
+            </section>
 
-              {/* YouTube Videos Section */}
-              <section className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 flex flex-col flex-grow">
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Videos</h2>
-                </div>
-                <div className="px-8 pb-8 overflow-y-auto flex-grow">
-                  <div className="grid grid-cols-1 gap-6">
-                    {scholar.youtubeVideos.map((video, index) => {
-                      const videoId = getYouTubeVideoId(video.url);
-                      return (
-                        <div key={index} className="space-y-3">
-                          <div className="relative aspect-video w-full rounded-xl overflow-hidden shadow-lg">
-                            <iframe
-                              src={`https://www.youtube.com/embed/${videoId}`}
-                              title={video.title}
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                              className="absolute inset-0 w-full h-full"
-                            />
-                          </div>
-                          <div className="flex items-center justify-between px-2">
-                            <h3 className="text-sm font-medium text-gray-900 line-clamp-1">
-                              {video.title}
-                            </h3>
-                            <a
-                              href={video.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-2 hover:bg-red-50 rounded-full transition-colors duration-200"
-                              title="Open in YouTube"
-                            >
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                              </svg>
-                            </a>
-                          </div>
+            {/* Videos Section */}
+            <section className="bg-white rounded-2xl shadow-xl">
+              <div className="p-6 pb-2">
+                <h2 className="text-2xl font-bold text-gray-900">Videos</h2>
+              </div>
+              <div className="p-6">
+                <div className="space-y-6">
+                  {scholar.youtubeVideos.map((video, index) => {
+                    const videoId = getYouTubeVideoId(video.url);
+                    return (
+                      <div key={index} className="space-y-3">
+                        <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                          <iframe
+                            src={`https://www.youtube.com/embed/${videoId}`}
+                            title={video.title}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="absolute inset-0 w-full h-full"
+                          />
                         </div>
-                      );
-                    })}
-                  </div>
+                        <div className="flex items-center justify-between">
+                          <h3 className="text-sm font-medium text-gray-900 line-clamp-1">
+                            {video.title}
+                          </h3>
+                          <a
+                            href={video.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 hover:bg-red-50 rounded-full transition-colors duration-200"
+                            title="Open in YouTube"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              </section>
-            </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
