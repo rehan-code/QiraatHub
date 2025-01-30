@@ -1,21 +1,24 @@
 export interface Resource {
   title: string;
-  description: string;
-  link: string;
+  url: string;
 }
 
 export interface YouTubeVideo {
   title: string;
-  description: string;
-  videoId: string;
+  url: string;
 }
 
 export interface Scholar {
   name: string;
-  description: string;
   image: string;
-  transmission: string[];
+  slug: string;
+  description: string;
+  earlyLife: string;
+  didYouKnow: string[];
+  transmission: {
+    name: string;
+    details: string;
+  }[];
   resources: Resource[];
   youtubeVideos: YouTubeVideo[];
-  facts: string[];
 }
