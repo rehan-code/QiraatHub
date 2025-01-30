@@ -19,26 +19,29 @@ export const scholars: Scholar[] = [
         {
           name: "Qalun",
           details:
-            "One of the primary transmitters of Nafi's Qira'at, known for his precise recitation",
+            "This recitation is widely practiced in regions like Libya and parts of Tunisia",
+          description:
+            "His full name was Abu Musa ‘Isa ibn Mina, but he was known by his nickname Qalun, which means “good” in Roman. Qalun was born in Medina and was one of the most prominent students of Imam Nafiʽ. He was known for his clear and precise recitation, which is still followed by many Muslims. Qalun passed away in the year 220 AH.",
         },
         {
           name: "Warsh",
           details:
-            "Another main transmitter who spread Nafi's reading throughout North Africa",
+            "Known for the popular recitation, used predominantly in North and West Africa",
+          description: "Uthman ibn Sa’id al-Qutbi, known as Warsh, was another significant student of Imam Nafiʽ. He was born in Egypt in 110 AH (728 CE) and was sent by his teacher to spread the recitation method of Imam Nafiʽ in Egypt and North Africa. Warsh’s recitation became the most popular in these regions. Warsh passed away in the year 197 AH.",
         },
       ],
       resources: [
         {
-          title: "Mushaf Qaloon An Nafi Shatibiyyah",
-          url: "https://example.com/nafi-introduction.pdf",
+          title: "Mushaf Warsh An Nafi Asbahani",
+          url: "http://www.alwa7y.com/downloads/TayseerWarshAsbhany.pdf",
+        },
+        {
+          title: "Mushaf Warsh An Nafi Azraq",
+          url: "http://www.alwa7y.com/downloads/TayseerKaloon.pdf",
         },
         {
           title: "Mushaf Qaloon An Nafi Shatibiyyah",
-          url: "https://example.com/nafi-introduction.pdf",
-        },
-        {
-          title: "Mushaf Qaloon An Nafi Shatibiyyah",
-          url: "https://example.com/nafi-introduction.pdf",
+          url: "http://www.alwa7y.com/downloads/TayseerWarsh.pdf",
         },
       ],
       youtubeVideos: [
@@ -70,24 +73,30 @@ export const scholars: Scholar[] = [
         {
           name: "Al-Bazzi",
           details:
-            "One of the primary transmitters of Ibn Kathir's Qira'at, known for his precise recitation",
+            "He was the muadthin at the Masjid al-Ḥarām at Makkah, and the leading qārī of Makkah during his time",
+          description: "Al-Bazzi (Abu Hasan Ahmad ibn Abdullah ibn Al-Qasim) was born in 170 AH and passed away in 250 AH. He was the chief reciter of Makkah and also the muezzin (caller to prayer) at Masjid Al-Haram"
         },
         {
           name: "Qunbul",
           details:
-            "Another main transmitter who spread Ibn Kathir's reading throughout the Arabian Peninsula",
+            "He was also one of the teachers of Abi Bakr ibn Mujāhid (d. 324 A.H.), the author of Kitāb al-Qirā-āt",
+          description: "Qunbul (Abu Amr Muhammad ibn Abdur-Rahman ibn Khalid Al-Makki) was born in 195 AH and passed away in 291 AH. He was regarded as one of the leading Quranic reciters of his time, particularly in the Hijaz region"
         },
       ],
       resources: [
         {
-          title: "Introduction to Ibn Kathir's Qira'at",
-          url: "https://example.com/ibn-kathir-introduction.pdf",
+          title: "Mushaf Ibn Kathir Makki",
+          url: "http://www.alwa7y.com/downloads/TayseerKathir.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Ibn Kathir's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Surah Al Furqan, Bazzi",
+          url: "https://youtu.be/5CC_GPFuwGw",
+        },
+        {
+          title: "Surah Waqiah, Bazzi",
+          url: "https://youtu.be/rnBmY6iFUqI",
         },
       ],
     },
@@ -109,24 +118,34 @@ export const scholars: Scholar[] = [
         {
           name: "Al-Duri",
           details:
-            "One of the primary transmitters of Abu Amr's Qira'at, known for his precise recitation",
+            "He was the chief qārī and the first to compile different qiraāt, despite the fact that he was blind.",
+          description: "He is Ḥafṣ ibn ˘Umar ibn ˘Abdul Azīz ad-Dūrī (150- 246 A.H.). He was born in ad-Dūr, close to Baghdād. He was the chief qārī and the first to compile different qiraāt, despite the fact that he was blind."
         },
         {
           name: "Al-Susi",
           details:
-            "Another main transmitter who spread Abu Amr's reading throughout the Middle East",
+            "He taught the Qurān to Imām an-Nasāī, the great scholar of Hadith.",
+          description: "He is Abū Shu˘ayb Sāliḥ ibn Ziyād as-Sūsī (171-261 A.H.). He taught the Qur-ān to Imām an-Nasā-ī (d. 303 A.H.), the great scholar of Hadith and the author of one of the six most recognized books of Hadith."
         },
       ],
       resources: [
         {
-          title: "Introduction to Abu Amr's Qira'at",
-          url: "https://example.com/abu-amr-introduction.pdf",
+          title: "Mushaf Doori An Abi Amru",
+          url: "http://www.alwa7y.com/downloads/TayseerDoryBasry.pdf",
+        },
+        {
+          title: "Mushaf Soosi An Abi Amru",
+          url: "http://www.alwa7y.com/downloads/TayseerSosy.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Abu Amr's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Surah Al Ra'd, Doori",
+          url: "https://youtu.be/RQwjWZ1nU9E",
+        },
+        {
+          title: "Surah Az Zariyat, Soosi",
+          url: "https://youtu.be/w1Ka7KfZsDo",
         },
       ],
     },
@@ -148,24 +167,34 @@ export const scholars: Scholar[] = [
         {
           name: "Hisham",
           details:
-            "One of the primary transmitters of Ibn Amir's Qira'at, known for his precise recitation",
+            "Hisham was one of the teachers of Imam at Tirmidhi, the great scholar of Hadith",
+            description: "Hisham ibn Ammar was one of the primary narrators of the Qira’at of Ibn ʽAmir. Born in 153 AH in Damascus, he became a prominent scholar and reciter of the Quran. His transmission of the Quranic recitation from Ibn ʽAmir helped preserve the unique style of this Syrian recitation. Hisham passed away in 245 AH"
         },
         {
           name: "Ibn Dhakwan",
           details:
-            "Another main transmitter who spread Ibn Amir's reading throughout the Levant region",
+            "Ibn Dhakwan was the Imām of the Umayad Mosque during his time",
+          description: "Ibn Dhakwan (Ibn Zakwan), born in 173 AH (789 CE) in Damascus, was one of the primary narrators of the Qira’at of Ibn ʽAmir. He was the Imām of the Umayad Mosque during his time. He was the Chief Qārī after the death of Ayyūb ibn Tamīm. Ibn Dhakwan passed away in 242 AH (857 CE)"
         },
       ],
       resources: [
         {
-          title: "Introduction to Ibn Amir's Qira'at",
-          url: "https://example.com/ibn-amir-introduction.pdf",
+          title: "Mushaf Ibn Dhakwan An Ibn Amir",
+          url: "http://www.alwa7y.com/downloads/TayseerThakwan.pdf",
+        },
+        {
+          title: "Mushaf Hisham An Ibn Amir",
+          url: "http://www.alwa7y.com/downloads/TayseerHesham.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Ibn Amir's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Surah Ghashiyah, Ibn Dhakwan",
+          url: "https://youtu.be/YmiGHz_rZW0",
+        },
+        {
+          title: "Surah Fatir, Ibn Dhakwan",
+          url: "https://youtu.be/x4f-b8c3Hi8",
         },
       ],
     },
@@ -187,24 +216,38 @@ export const scholars: Scholar[] = [
         {
           name: "Hafs",
           details:
-            "One of the primary transmitters of Asim's Qira'at, known for his precise recitation",
+            "His recitation is considered the most famous and most widely spread recitation of all the Quran",
+          description: "Hafs ibn Sulayman al-Asadi al-Kufi (90-180 A.H.) was the stepson and most knowledgeable student of Asim. He once noted that his recitation differed from Shu'bah. Asim clarified that he had taught Hafs how he learned through Abu Abdur-Rahman as-Sulami from Ali ibn Abi Talib, while Shu'bah's method came through Zirr ibn Hubaysh from Abdullah ibn Mas'ud"
         },
         {
           name: "Shu'bah",
           details:
-            "Another main transmitter who spread Asim's reading throughout the Middle East",
+            "He recited the whole quran to ˘Āṣim three times in three years of hot summers, cold winters, and rainy seasons",
+          description: "Shu'bah ibn 'Ayyash Al-Kufi (95-193 A.H.), also known as Abu Bakr, was a prominent imam of the Sunnah. Shu'bah dedicated years to mastering the recitation under Asim. Imam Asim shared with Shu'bah the lineage of his Quranic learning, highlighting the authenticity of their qira'at"
         },
       ],
       resources: [
         {
-          title: "Introduction to Asim's Qira'at",
-          url: "https://example.com/asim-introduction.pdf",
+          title: "Mushaf Asim Shatibiyyah",
+          url: "http://www.alwa7y.com/downloads/TayseerAsem.pdf",
+        },
+        {
+          title: "Mushaf Hafs An Asim Shatibiyyah",
+          url: "http://www.alwa7y.com/downloads/TayseerHafs.pdf",
+        },
+        {
+          title: "Mushaf Hafs An Asim Munfasil",
+          url: "http://www.alwa7y.com/downloads/TayseerHafsKasr.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Asim's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Most Unique Quran Recitation",
+          url: "https://youtu.be/wTevFWy47T8",
+        },
+        {
+          title: "Juz 1, Shu'bah",
+          url: "https://youtu.be/KSc71u_wapw",
         },
       ],
     },

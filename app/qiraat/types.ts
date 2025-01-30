@@ -18,6 +18,7 @@ export interface Scholar {
   transmission: {
     name: string;
     details: string;
+    description?: string;
   }[];
   resources: Resource[];
   youtubeVideos: YouTubeVideo[];
