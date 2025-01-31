@@ -242,7 +242,7 @@ export const scholars: Scholar[] = [
       ],
       youtubeVideos: [
         {
-          title: "Most Unique Quran Recitation",
+          title: "Most Unique Quran Recitations",
           url: "https://youtu.be/wTevFWy47T8",
         },
         {
@@ -269,24 +269,38 @@ export const scholars: Scholar[] = [
         {
           name: "Khalaf",
           details:
-            "One of the primary transmitters of Hamza's Qira'at, known for his precise recitation",
+            "Khalaf memorized the Quran when he was ten years old",
+          description: "Khalaf ibn Hisham Al-Bazzar Al-Baghdadi, also known as Abu Muhammed, was a renowned scholar born in 150 A.H. He memorized the Qur'an by the age of ten and was known for his deep scholarship, ascetic lifestyle, and devotion to worship. Khalaf not only preserved the Qira'ah of Hamzah but also developed his own unique style, which is recognized as the tenth Qira'ah"
         },
         {
           name: "Khallad",
           details:
-            "Another main transmitter who spread Hamza's reading throughout the Middle East",
+            "Khallad was a reputed imām in recitation, knowledgeable, and humble",
+          description: "Khallād ibn Khālid Ash-Shaybānī Al-Ṣayrafī Al-Kūfī, also known as Abū ʿĪsā, was a prominent figure in the field of Quranic recitation, living between 119-220 A.H. He was highly regarded as an Imam of recitation, recognized for his deep knowledge, humility, and mastery of the Qira'at. Khallād studied under Sulaym ibn ʿĪsā, who had directly learned from Imam Hamzah, making Khallād a key transmitter of Hamzah's recitation"
         },
       ],
       resources: [
         {
-          title: "Introduction to Hamza's Qira'at",
-          url: "https://example.com/hamza-introduction.pdf",
+          title: "Qiraat Khalaf An Hamza Shatibiyah",
+          url: "http://www.alwa7y.com/downloads/TayseerKhalafHamza.pdf",
+        },
+        {
+          title: "Qiraat Khalaf An Hamza Thayibah",
+          url: "http://www.alwa7y.com/downloads/TayseerKhalafHamzaTayeba.pdf",
+        },
+        {
+          title: "Qiraat Khallad An Hamza",
+          url: "http://www.alwa7y.com/downloads/TayseerKhallad.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Hamza's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Surah Taha",
+          url: "https://youtu.be/uRBoGN754iE",
+        },
+        {
+          title: "Surah Yasin",
+          url: "https://youtu.be/nsHTQf9VdhM",
         },
       ],
     },
@@ -306,26 +320,32 @@ export const scholars: Scholar[] = [
       ],
       transmission: [
         {
-          name: "Al-Layth",
+          name: "Abul Harith",
           details:
-            "One of the primary transmitters of Al-Kisa'i's Qira'at, known for his precise recitation",
+            "Also known as Al Layth, he recited the Qurān directly to his best friend, Imām Al-Kisā-ī",
+          description: "Al-Layth ibn Khalid al-Baghdadi, also known as Abu al-Harith, was a close companion and dedicated student of Imam Al-Kisāʾī. He is remembered for his righteousness and commitment to the recitation of the Qur'an. Al-Layth was widely regarded for his strong connection to the Quranic sciences. He passed away in the year 240 AH"
         },
         {
           name: "Ad-Duri",
           details:
-            "Another main transmitter who spread Al-Kisa'i's reading throughout the Middle East",
+            "He is the same Dūrī who is the student of Abu Amr Al Basri",
+          description: "Ad-Dūrī, full name Hafs ibn Umar ibn Abdul Aziz ad-Dūrī (150-246 AH), was a prominent Quranic reciter born in the village of Ad-Dur near Baghdad. Despite being blind, he became a leading figure in Quranic recitation and was the first to compile the various Qira'at. He is particularly known for his transmission of the recitations of both Abu Amr al-Basri and Imam Al-Kisāʾī"
         },
       ],
       resources: [
         {
-          title: "Introduction to Al-Kisa'i's Qira'at",
-          url: "https://example.com/al-kisai-introduction.pdf",
+          title: "Mushaf Al Kisa'i Shatibiyyah",
+          url: "http://www.alwa7y.com/downloads/TayseerKesay.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Al-Kisa'i's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Most Unique Quran Recitations",
+          url: "https://youtu.be/wTevFWy47T8",
+        },
+        {
+          title: "Surah Fatihah, Duri An Kisa'i",
+          url: "https://youtu.be/DF3NWdQC99s",
         },
       ],
     },
@@ -345,26 +365,32 @@ export const scholars: Scholar[] = [
       ],
       transmission: [
         {
-          name: "Isa ibn Wardan",
+          name: "Ibn Wardan",
           details:
-            "One of the primary transmitters of Abu Ja'far's Qira'at, known for his precise recitation",
+            "He was considered to be an old companion of Nafi'",
+            description: "Abu Al-Haarith 'Eesaa bin Wardan Al-Medani was a prominent Quran reciter known for his precision. He completed his recitation under the guidance of Abu Ja'far and Shaybah and later recited fully to Naafiʽ, establishing himself as a close companion of the latter. Among his notable students were Ismail bin Ja'far and Qaloon. Ibn Wardan passed away in Medina around 160 A.H"
         },
         {
           name: "Ibn Jammaz",
           details:
-            "Another main transmitter who spread Abu Ja'far's reading throughout the Arabian Peninsula",
+            "Known for the popular recitation, used predominantly in North and West Africa",
+          description: "Abu Ar-Rabee' Sulayman bin Muslim bin Jammaaz Az-Zahree was a prominent reciter in Medina, known for his precision. He studied under Imam Abu Ja'far and Shaybah, and then recited his complete Qira’ah to Naafiʽ. Some of his notable students include Ismail bin Ja'far and Qutaybah bin Mahraan, who also presented their complete recitations to him. He passed away shortly after 170 A.H"
         },
       ],
       resources: [
         {
-          title: "Introduction to Abu Ja'far's Qira'at",
-          url: "https://example.com/abu-jaafar-introduction.pdf",
+          title: "Mushaf Abu Ja'far Al Madani",
+          url: "http://www.alwa7y.com/downloads/TayseerJafar.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Abu Ja'far's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Surah Fath",
+          url: "https://youtu.be/5ucKGuXkZ4E",
+        },
+        {
+          title: "Surah Yasin",
+          url: "https://youtu.be/FvH60JmhUEk",
         },
       ],
     },
@@ -384,27 +410,33 @@ export const scholars: Scholar[] = [
       ],
       transmission: [
         {
-          name: "Ruways",
+          name: "Ruwais",
           details:
-            "One of the primary transmitters of Yaqub's Qira'at, known for his precise recitation",
+            "Ruwais was of the brightest of Yaqoob's companions",
+          description: "Ruwais, full name Muhammad ibn Al-Mutawakkil Al-Lu'lu'ee Al-Basri, was one of the most distinguished students of Imam Ya'qub Al-Hadrami. He learned by presenting a complete recitation of the Qur'an to Ya'qub. Ruwais was known for his exceptional dedication and brilliance, being one of the brightest among Ya'qub's companions. His influence continued in Basrah, where he passed away in 238 A.H"
         },
         {
           name: "Rawh",
           details:
-            "Another main transmitter who spread Yaqub's reading throughout the Middle East",
+            "He was one of the teachers of Imam Al Bukhari",
+          description: "Rawḥ ibn ʽAbd al-Mu’min al-Hudthali al-Basri was a distinguished grammarian and a key figure in Basra. He was known for his precision in Qur'anic recitation. He studied under Ya'qub al-Hadrami, presenting his complete recitation of the Qur'an and becoming one of Ya'qub's most trusted and prominent students. Rawḥ's students included notable figures such as Imam al-Bukhari. Rawḥ passed away in 235 A.H"
         },
       ],
       resources: [
         {
-          title: "Introduction to Yaqub's Qira'at",
-          url: "https://example.com/yaqub-introduction.pdf",
+          title: "Mushaf Yaqub Hadrami",
+          url: "http://www.alwa7y.com/downloads/TayseerYakob.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Yaqub's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Most Unique Quran Recitations",
+          url: "https://youtu.be/wTevFWy47T8",
         },
+        {
+          title: "Surah Mutaffifin, Ruwais",
+          url: "https://youtu.be/risjFq3cMEA",
+        }
       ],
     },
     {
@@ -424,24 +456,30 @@ export const scholars: Scholar[] = [
         {
           name: "Ishaq",
           details:
-            "One of the primary transmitters of Khalaf's Qira'at, known for his precise recitation",
+            "In his later years, when his hearing began to decline, his son Muhammad continued to teach using his father’s methods",
+          description: "Ishaaq ibn Ibraheem ibn 'Uthman Al-Merwazī, later known as Al-Baghdaadi, was a prominent transmitter of Khalaf’s method of Qur'anic recitation. He was born in Merv but later moved to Baghdad, where he became a key figure in the preservation and transmission of Khalaf's recitation. Ishaaq was known for his precision in Qur'anic recitation and was highly regarded for his knowledge. He passed away in 286 AH"
         },
         {
           name: "Idris",
           details:
-            "Another main transmitter who spread Khalaf's reading throughout the Middle East",
+            "Al-Dhahabi referred to him as \"the Qur'an reciter of Iraq\"",
+          description: "Idrees bin Abdul Kareem Al-Haddad was a renowned reciter, teacher, and scholar of the Qur'an. Born in 199 AH, he lived to the age of 93 and passed away on the day of Eid Al-Adha in 292 AH. He is known as a narrator of Khalaf Al-Ashir. He narrated hadith from several key figures, such as Ahmad bin Hanbal and Yahya bin Ma'een, and taught prominent students like Ibn Shanbudh and Abu Al-Qasim Al-Tabarani"
         },
       ],
       resources: [
         {
-          title: "Introduction to Khalaf's Qira'at",
-          url: "https://example.com/khalaf-introduction.pdf",
+          title: "Mushaf Khalaf Al Ashir",
+          url: "http://www.alwa7y.com/downloads/TayseerKhalaf10.pdf",
         },
       ],
       youtubeVideos: [
         {
-          title: "Learning Khalaf's Qira'at",
-          url: "https://youtube.com/example",
+          title: "Most Unique Quran Recitations",
+          url: "https://youtu.be/wTevFWy47T8",
+        },
+        {
+          title: "Rewayat Idriss An Khalafil Aashir",
+          url: "https://youtu.be/gi0rcKtpy2U",
         },
       ],
     },
