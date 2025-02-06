@@ -1,7 +1,10 @@
+'use client';
+
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -14,169 +17,227 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = React.useState(false);
+
   return (
-    <div className="border-b">
-      <div className="flex h-20 md:h-24 items-center px-4 md:px-32 container mx-auto place-content-between">
-        <div className="flex items-start">
+    <motion.div 
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="relative z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80"
+    >
+      <div className="flex h-24 items-center px-4 md:px-8 lg:px-32 container mx-auto">
+        <div className="flex items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={60}
-              height={80}
-              className="w-[40px] md:w-[60px] h-auto "
-            />
+          <Link href="/" className="flex items-center space-x-2 group">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={60}
+                height={80}
+                className="w-[45px] md:w-[60px] h-auto transition-all duration-300 group-hover:brightness-110"
+              />
+            </motion.div>
           </Link>
         </div>
+
         {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex w-full">
-          <NavigationMenuList className="flex justify-evenly w-full gap-12">
+        <NavigationMenu className="hidden md:flex mx-auto">
+          <NavigationMenuList className="flex gap-1">
+            {/* Qiraat Section */}
             <NavigationMenuItem>
-              <Link
-                href="/courses"
-                className="text-md font-medium transition-colors hover:text-theme_primary"
-              >
-                Courses
-              </Link>
+              <NavigationMenuTrigger className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary data-[state=open]:bg-slate-100/80 rounded-full">
+                Qiraat
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="w-[300px] p-4 bg-white rounded-2xl shadow-lg border border-slate-200/80"
+                >
+                  <div className="grid gap-3">
+                    {[
+                      { name: "Nafi' al-Madani", slug: "nafi-al-madani" },
+                      { name: "Ibn Kathir", slug: "ibn-kathir" },
+                      { name: "Abu Amr Basri", slug: "abu-amr-basri" },
+                      { name: "Asim Al Koofi", slug: "asim-al-koofi" },
+                      { name: "Hamza Al Kufi", slug: "hamza-al-kufi" },
+                      { name: "Abu Jaafar", slug: "abu-jaafar" },
+                      { name: "Khalaf Al Ashir", slug: "khalaf-al-ashir" },
+                    ].map((scholar) => (
+                      <Link
+                        key={scholar.slug}
+                        href={`/qiraat/${scholar.slug}`}
+                        className="block p-3 text-base rounded-xl transition-all duration-200 hover:bg-slate-100/80 hover:text-theme_primary"
+                      >
+                        {scholar.name}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              </NavigationMenuContent>
             </NavigationMenuItem>
+
+            {/* Resources Section */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-md font-medium transition-colors hover:text-theme_primary">
+              <NavigationMenuTrigger className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary data-[state=open]:bg-slate-100/80 rounded-full">
                 Resources
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid w-[180px] gap-3 p-3">
-                  <li>
-                    <Link
-                      href="/resources/downloads"
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      Downloads
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/resources/video-library"
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      Video Library
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/resources/audio"
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
-                    >
-                      Audio Resources
-                    </Link>
-                  </li>
-                </ul>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="w-[240px] p-4 bg-white rounded-2xl shadow-lg border border-slate-200/80"
+                >
+                  <div className="grid gap-3">
+                    {[
+                      { name: "Downloads", href: "/resources/downloads" },
+                      { name: "Video Library", href: "/resources/video-library" },
+                      { name: "Audio Resources", href: "/resources/audio" },
+                    ].map((resource) => (
+                      <Link
+                        key={resource.href}
+                        href={resource.href}
+                        className="block p-3 text-base rounded-xl transition-all duration-200 hover:bg-slate-100/80 hover:text-theme_primary"
+                      >
+                        {resource.name}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link
-                href="/about"
-                className="text-md font-medium transition-colors hover:text-theme_primary"
-              >
-                About
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link
-                href="/contact"
-                className="text-md font-medium transition-colors hover:text-theme_primary"
-              >
-                Contact
-              </Link>
-            </NavigationMenuItem>
+
+            {/* About & Contact */}
+            {[
+              { name: "About", href: "/about" },
+              { name: "Contact", href: "/contact" },
+            ].map((item) => (
+              <NavigationMenuItem key={item.href}>
+                <Link
+                  href={item.href}
+                  className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary inline-flex items-center justify-center rounded-full hover:bg-slate-100/80"
+                >
+                  {item.name}
+                </Link>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Right side buttons - Desktop */}
-        <div className="hidden md:flex items-end space-x-4">
-          <Button
-            variant="outline"
-            size={"lg"}
-            className="bg-theme_primary hover:bg-theme_primary hover:brightness-90"
-          >
-            Book Appointment
-          </Button>
-          <Button variant="outline" size={"lg"}>
-            Login
-          </Button>
-        </div>
-
         {/* Mobile Menu */}
-        <div className="md:hidden">
-          <Sheet>
+        <div className="md:hidden ml-auto">
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="scale-125">
-                <Menu className="h-7 w-7" />
+              <Button variant="ghost" size="icon" className="relative scale-125">
+                <Menu className="h-6 w-6 transition-all duration-200 rotate-0 scale-100" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4">
-                <Link
-                  href="/courses"
-                  className="block py-2 text-lg font-medium transition-colors hover:text-theme_primary"
-                >
-                  Courses
-                </Link>
-                <div className="py-2">
-                  <p className="text-lg font-medium mb-2">Resources</p>
-                  <div className="pl-4 flex flex-col gap-2">
-                    <Link
-                      href="/resources/downloads"
-                      className="block py-1 transition-colors hover:text-theme_primary"
+            <SheetContent
+              side="right"
+              className="w-full sm:w-[400px] p-0 bg-gradient-to-b from-white to-slate-50 border-l border-slate-200/80"
+            >
+              <div className="flex flex-col h-full">
+                <div className="flex items-center justify-between p-6 border-b border-slate-200/80 bg-white">
+                  <span className="text-xl font-semibold text-slate-900">Menu</span>
+                  <SheetClose asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="rounded-full bg-slate-100/80 active:bg-slate-200/80"
                     >
-                      Downloads
-                    </Link>
-                    <Link
-                      href="/resources/video-library"
-                      className="block py-1 transition-colors hover:text-theme_primary"
-                    >
-                      Video Library
-                    </Link>
-                    <Link
-                      href="/resources/audio"
-                      className="block py-1 transition-colors hover:text-theme_primary"
-                    >
-                      Audio Resources
-                    </Link>
+                      <X className="h-5 w-5 text-slate-600" />
+                    </Button>
+                  </SheetClose>
+                </div>
+
+                <nav className="flex-1 overflow-y-auto">
+                  <div className="flex flex-col p-6 space-y-6">
+                    {/* Mobile Qiraat Menu */}
+                    <div className="space-y-3">
+                      <h2 className="text-base font-semibold text-slate-400 uppercase tracking-wider">
+                        Qiraat
+                      </h2>
+                      <div className="grid gap-2">
+                        {[
+                          { name: "Nafi' al-Madani", slug: "nafi-al-madani" },
+                          { name: "Ibn Kathir", slug: "ibn-kathir" },
+                          { name: "Abu Amr Basri", slug: "abu-amr-basri" },
+                          { name: "Asim Al Koofi", slug: "asim-al-koofi" },
+                          { name: "Hamza Al Kufi", slug: "hamza-al-kufi" },
+                          { name: "Abu Jaafar", slug: "abu-jaafar" },
+                          { name: "Khalaf Al Ashir", slug: "khalaf-al-ashir" },
+                        ].map((scholar) => (
+                          <Link
+                            key={scholar.slug}
+                            href={`/qiraat/${scholar.slug}`}
+                            className="block px-4 py-3.5 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {scholar.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Mobile Resources Menu */}
+                    <div className="space-y-3">
+                      <h2 className="text-base font-semibold text-slate-400 uppercase tracking-wider">
+                        Resources
+                      </h2>
+                      <div className="grid gap-2">
+                        {[
+                          { name: "Downloads", href: "/resources/downloads" },
+                          { name: "Video Library", href: "/resources/video-library" },
+                          { name: "Audio Resources", href: "/resources/audio" },
+                        ].map((resource) => (
+                          <Link
+                            key={resource.href}
+                            href={resource.href}
+                            className="block px-4 py-3.5 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {resource.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Mobile About & Contact */}
+                    <div className="space-y-3">
+                      <h2 className="text-base font-semibold text-slate-400 uppercase tracking-wider">
+                        Navigation
+                      </h2>
+                      <div className="grid gap-2">
+                        {[
+                          { name: "About", href: "/about" },
+                          { name: "Contact", href: "/contact" },
+                        ].map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block px-4 py-3.5 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <Link
-                  href="/about"
-                  className="block py-2 text-lg font-medium transition-colors hover:text-theme_primary"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="block py-2 text-lg font-medium transition-colors hover:text-theme_primary"
-                >
-                  Contact
-                </Link>
-                <div className="flex flex-col gap-2 mt-4">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="w-full bg-theme_primary hover:bg-theme_primary hover:brightness-90"
-                  >
-                    Book Appointment
-                  </Button>
-                  <Button variant="outline" size="lg" className="w-full">
-                    Login
-                  </Button>
-                </div>
-              </nav>
+                </nav>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

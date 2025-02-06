@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <div className="text-center max-w-2xl mx-auto pt-[5rem] px-4">
         <h1 className="text-4xl font-bold mb-6 relative inline-block">
-          Discover the HIFDH Ten Qiraat
+          Discover the Ten Qiraat
           <div className="absolute right-[-10px] bottom-[-5px] w-[190px] h-[3px] bg-yellow-400 rounded-full"></div>
         </h1>
         <p className="text-lg text-gray-700 pt-6">
@@ -15,8 +15,8 @@ export default function Home() {
         </p>
       </div>
       <ExpandingGrid />
-      <PopularCourse />
-      <UserReviews />
+      {/* <PopularCourse />
+      <UserReviews /> */}
     </div>
   );
 }
