@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { YoutubeEmbed } from "@/components/youtube-embed";
+import { Youtube } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 // YouTube video data
 const videos = [
@@ -22,11 +25,27 @@ export default function VideoResources() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
+        className="mb-12"
       >
-        <h1 className="text-4xl font-bold text-center mb-8">Video Resources</h1>
-        <p className="text-lg text-gray-600 text-center mb-12">
-          Explore our collection of educational videos to enhance your learning journey
-        </p>
+        <h1 className="text-4xl font-bold text-center mb-6">Video Resources</h1>
+        
+        <div className="flex justify-center">
+          <Button
+            asChild
+            variant="outline"
+            className="bg-white hover:bg-red-50 border-2 text-gray-800 hover:text-red-600 px-6 py-2 h-auto transition-all duration-300"
+          >
+            <Link
+              href="https://www.youtube.com/channel/UCuTil7rnBMIzYkb2mp5Z-Lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <Youtube className="w-5 h-5" />
+              <span>Subscribe to our YouTube Channel</span>
+            </Link>
+          </Button>
+        </div>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
