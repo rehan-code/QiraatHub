@@ -99,7 +99,7 @@ export function Navbar() {
                   <div className="grid gap-3">
                     {[
                       { name: "Downloads", href: "/resources/downloads" },
-                      { name: "Video Library", href: "/resources/video-library" },
+                      { name: "Video Library", href: "/resources/video" },
                       { name: "Audio Resources", href: "/resources/audio" },
                     ].map((resource) => (
                       <Link
@@ -195,7 +195,7 @@ export function Navbar() {
                       <div className="grid gap-2">
                         {[
                           { name: "Downloads", href: "/resources/downloads" },
-                          { name: "Video Library", href: "/resources/video-library" },
+                          { name: "Video Library", href: "/resources/video" },
                           { name: "Audio Resources", href: "/resources/audio" },
                         ].map((resource) => (
                           <Link
