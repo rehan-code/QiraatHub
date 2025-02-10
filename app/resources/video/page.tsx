@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 // YouTube channel ID from the URL
 const CHANNEL_ID = 'UCuTil7rnBMIzYkb2mp5Z-Lg';
 const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
+const VIDEOS_PER_PAGE = 9;
 
 interface YouTubeVideo {
   id: {
@@ -30,21 +31,37 @@ interface YouTubeVideo {
 export default function VideoResources() {
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [nextPageToken, setNextPageToken] = useState<string | null>(null);
+
+  async function fetchVideos(pageToken?: string) {
+    try {
+      const tokenParam = pageToken ? `&pageToken=${pageToken}` : '';
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${VIDEOS_PER_PAGE}&type=video${tokenParam}`
+      );
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch videos');
+      }
+
+      const data = await response.json();
+      return {
+        items: data.items as YouTubeVideo[],
+        nextPageToken: data.nextPageToken as string | undefined
+      };
+    } catch (err) {
+      throw err;
+    }
+  }
 
   useEffect(() => {
-    async function fetchVideos() {
+    async function loadInitialVideos() {
       try {
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=50&type=video`
-        );
-        
-        if (!response.ok) {
-          throw new Error('Failed to fetch videos');
-        }
-
-        const data = await response.json();
+        const data = await fetchVideos();
         setVideos(data.items);
+        setNextPageToken(data.nextPageToken || null);
       } catch (err) {
         setError('Error loading videos. Please try again later.');
         console.error('Error fetching videos:', err);
@@ -53,8 +70,24 @@ export default function VideoResources() {
       }
     }
 
-    fetchVideos();
+    loadInitialVideos();
   }, []);
+
+  const loadMore = async () => {
+    if (!nextPageToken || loadingMore) return;
+
+    setLoadingMore(true);
+    try {
+      const data = await fetchVideos(nextPageToken);
+      setVideos(prev => [...prev, ...data.items]);
+      setNextPageToken(data.nextPageToken || null);
+    } catch (err) {
+      setError('Error loading more videos. Please try again.');
+      console.error('Error fetching more videos:', err);
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -119,6 +152,26 @@ export default function VideoResources() {
           </motion.div>
         ))}
       </div>
+
+      {nextPageToken && (
+        <div className="flex justify-center mt-10">
+          <Button
+            onClick={loadMore}
+            disabled={loadingMore}
+            variant="outline"
+            className="bg-white hover:bg-theme_primary hover:border-theme_primary border-2 text-gray-800 px-6 py-3 h-auto transition-all duration-300"
+          >
+            {loadingMore ? (
+              <>
+                <div className="w-3.5 h-3.5 border-t-2 border-r-2 border-theme_primary rounded-full animate-spin" />
+                Loading...
+              </>
+            ) : (
+              'Load More Videos'
+            )}
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
