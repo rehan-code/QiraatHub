@@ -59,15 +59,19 @@ export default function BookPage({ params }: { params: { id: string } }) {
                   <h1 className="mt-6 text-4xl font-bold text-gray-900 lg:text-5xl">
                     {book.title}
                   </h1>
-                  <p className="mt-4 text-xl text-emerald-600 font-medium">
-                    {book.author}
-                  </p>
-                  <div className="mt-8">
-                    <h2 className="text-2xl font-semibold text-gray-900">About this Book</h2>
-                    <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-                      {book.description}
+                  {book.author && (
+                    <p className="mt-4 text-xl text-emerald-600 font-medium">
+                      {book.author}
                     </p>
-                  </div>
+                  )}
+                  {book.description && (
+                    <div className="mt-8">
+                      <h2 className="text-2xl font-semibold text-gray-900">About this Book</h2>
+                      <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+                        {book.description}
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-12 max-w-xs">
                   <DownloadButton downloadUrl={book.downloadUrl} />

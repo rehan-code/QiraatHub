@@ -43,12 +43,16 @@ export default function DownloadsPage() {
                       <h3 className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-200">
                         {book.title}
                       </h3>
-                      <p className="mt-2 text-sm font-medium text-emerald-600">
-                        {book.author}
-                      </p>
-                      <p className="mt-3 text-base text-gray-500 line-clamp-3">
-                        {book.description}
-                      </p>
+                      {book.author && (
+                        <p className="mt-2 text-sm font-medium text-emerald-600">
+                          {book.author}
+                        </p>
+                      )}
+                      {book.description && (
+                        <p className="mt-3 text-base text-gray-500 line-clamp-3">
+                          {book.description}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
