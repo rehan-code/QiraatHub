@@ -18,28 +18,31 @@ export default function DownloadsPage() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {books.map((book) => (
             <div
               key={book.id}
               className="group relative flex flex-col bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
               <Link href={`/resources/downloads/${book.id}`} className="flex-1">
-                <div className="relative h-56 bg-emerald-50">
+                <div className="relative pt-[140%] bg-emerald-50">
                   <Image
                     src={book.coverImage}
                     alt={book.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-contain"
+                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                 </div>
-                <div className="flex-1 p-6 flex flex-col">
+                <div className="absolute top-3 right-3">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100/90 text-emerald-800 backdrop-blur-sm">
+                    {book.category}
+                  </span>
+                </div>
+                <div className="flex-1 p-6">
                   <div className="flex-1">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 text-emerald-800">
-                      {book.category}
-                    </span>
-                    <div className="mt-4">
+                    <div>
                       <h3 className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-200">
                         {book.title}
                       </h3>
@@ -49,7 +52,7 @@ export default function DownloadsPage() {
                         </p>
                       )}
                       {book.description && (
-                        <p className="mt-3 text-base text-gray-500 line-clamp-3">
+                        <p className="mt-3 text-sm text-gray-500 line-clamp-2">
                           {book.description}
                         </p>
                       )}

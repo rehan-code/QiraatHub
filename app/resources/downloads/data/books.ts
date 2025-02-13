@@ -12,8 +12,10 @@ export const books: Book[] = [
   {
     id: '1',
     title: 'Mushaf Warsh An Nafi Asbahani',
+    author: 'Abu Muhammed',
     coverImage: 'https://www.alwa7y.com/downloads/asbhany.jpg',
     downloadUrl: 'http://www.alwa7y.com/downloads/TayseerWarshAsbhany.pdf',
-    category: 'Quran'
+    category: 'Quran',
+    description: 'test',
   },
 ];
