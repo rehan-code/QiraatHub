@@ -36,7 +36,7 @@ const nextConfig: NextConfig = {
   },
   // images
   images: {
-    domains: ["qiraathub.com"],
+    domains: ["qiraathub.com", "www.alwa7y.com"],
   },
 };
 
