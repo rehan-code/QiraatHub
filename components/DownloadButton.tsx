@@ -14,6 +14,8 @@ export default function DownloadButton({ downloadUrl }: DownloadButtonProps) {
   return (
     <a
       href={downloadUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group w-full flex items-center justify-center px-6 py-3 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 transform transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
       onClick={handleClick}
     >
