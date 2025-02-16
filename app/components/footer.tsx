@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 py-8">
       <div className="container mx-auto px-4 sm:px-10 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4">
           {/* Logo and Description */}
           <div className="space-y-4">
             <Image src="/logo.png" alt="QiraatHub Logo" width={60} height={60} className="mb-4" />
@@ -20,19 +20,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="/" className="text-gray-600 hover:text-theme_primary transition-colors">Home</Link></li>
               <li><Link href="/about" className="text-gray-600 hover:text-theme_primary transition-colors">About</Link></li>
-              <li><Link href="/courses" className="text-gray-600 hover:text-theme_primary transition-colors">Courses</Link></li>
               <li><Link href="/contact" className="text-gray-600 hover:text-theme_primary transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Popular Courses */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Popular Courses</h3>
-            <ul className="space-y-2">
-              <li><Link href="/courses/nafi-al-madani" className="text-gray-600 hover:text-theme_primary transition-colors">Nafi&apos; al-Madani</Link></li>
-              <li><Link href="/courses/ibn-kathir" className="text-gray-600 hover:text-theme_primary transition-colors">Ibn Kathir</Link></li>
-              <li><Link href="/courses/abu-amr-al-basri" className="text-gray-600 hover:text-theme_primary transition-colors">Abu Amr Al Basri</Link></li>
-              <li><Link href="/courses/ibn-amir-dimashqi" className="text-gray-600 hover:text-theme_primary transition-colors">Ibn Amir Dimashqi</Link></li>
             </ul>
           </div>
 
