@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface BlogPost {
   title: string;
   excerpt: string;
@@ -10,10 +12,12 @@ export default function BlogCard({ title, excerpt, date, author, imageUrl }: Blo
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg">
       <div className="relative h-48">
-        <img
+        <Image
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-6">

@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import BlogCard from './blog-card';
+import BlogCard from '../components/blog-card';
 
 // This is temporary mock data - will be replaced with real data in the future
 const mockBlogs = [

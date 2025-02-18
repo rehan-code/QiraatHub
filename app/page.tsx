@@ -1,5 +1,5 @@
 import ExpandingGrid from "./client-components/expanding-grid";
-import BlogSection from "./components/blog/blog-section";
+import BlogSection from "./client-components/blog-section";
 
 export default function Home() {
   return (
