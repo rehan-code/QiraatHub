@@ -36,7 +36,20 @@ const nextConfig: NextConfig = {
   },
   // images
   images: {
-    domains: ["qiraathub.com", "www.alwa7y.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'qiraathub.com',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.alwa7y.com',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
+    ],
   },
 };
 
