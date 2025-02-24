@@ -23,7 +23,22 @@ const mockBlogs = [
     date: "Oct 15, 2024",
     author: "qiraathub",
     imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-1-300x251.png"
+  },
+  {
+    title: "Mastering the 10 Qiraat: A Journey to Precision and Spiritual Growth",
+    excerpt: "Embark on a transformative journey through the 10 Qiraat, exploring their significance in Quranic recitation and the spiritual growth they offer to dedicated learners",
+    date: "Oct 15, 2024",
+    author: "qiraathub",
+    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-3-768x644.png"
+  },
+  {
+    title: "What Are the Qiraat?",
+    excerpt: "Discover the fascinating world of Qiraat, the various authentic ways of reciting the Quran, and their importance in preserving the rich oral tradition of Islamic scripture",
+    date: "Oct 15, 2024",
+    author: "qiraathub",
+    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-2-768x644.png"
   }
+
 ];
 
 export default function BlogSection() {
