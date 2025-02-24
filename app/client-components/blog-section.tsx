@@ -2,28 +2,27 @@
 
 import BlogCard from '../components/blog-card';
 
-// This is temporary mock data - will be replaced with real data in the future
 const mockBlogs = [
   {
-    title: "Understanding the Origins of Qiraat",
-    excerpt: "Explore the historical development and transmission of the various Quranic readings...",
-    date: "Feb 18, 2025",
-    author: "Dr. Ahmad Khan",
-    imageUrl: "https://qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg"
+    title: "How Long Does It Take to Read the Quran? | Tips & Insights",
+    excerpt: "Discover practical tips and insights on the time required to read the entire Quran, factors affecting reading speed, and strategies for consistent Quran reading",
+    date: "Nov 23, 2024",
+    author: "qiraathub",
+    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg"
   },
   {
-    title: "The Significance of Imam Asim's Reading",
-    excerpt: "Discover why Imam Asim's Qiraat became one of the most widely practiced readings...",
-    date: "Feb 15, 2025",
-    author: "Sarah Ahmed",
-    imageUrl: "https://qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg"
+    title: "Teaching Quran for Non Arabic Speakers",
+    excerpt: "Explore effective methods and resources for teaching the Quran to non-Arabic speakers",
+    date: "Oct 15, 2024",
+    author: "qiraathub",
+    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-300x251.png"
   },
   {
-    title: "Modern Applications of Qiraat Studies",
-    excerpt: "Learn how contemporary scholars are preserving and teaching the various Qiraat...",
-    date: "Feb 12, 2025",
-    author: "Dr. Mohammed Ali",
-    imageUrl: "https://qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg"
+    title: "Understanding the Ijazah Tradition",
+    excerpt: "Delve into the rich history and significance of the Ijazah tradition in Quranic studies, its role in preserving authentic recitations, and its relevance in modern Islamic education",
+    date: "Oct 15, 2024",
+    author: "qiraathub",
+    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-1-300x251.png"
   }
 ];
 
