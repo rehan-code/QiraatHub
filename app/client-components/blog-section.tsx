@@ -32,8 +32,8 @@ export default function BlogSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold mb-4 relative inline-block">
-            Latest from Our Blog
-            <div className="absolute right-[-10px] bottom-[-5px] w-[120px] h-[3px] bg-yellow-400 rounded-full"></div>
+            Latest from Our Blogs
+            <div className="absolute right-[-10px] bottom-[-5px] w-[154px] h-[3px] bg-yellow-400 rounded-full"></div>
           </h2>
           <p className="text-gray-600">Stay updated with our latest articles and insights</p>
         </div>

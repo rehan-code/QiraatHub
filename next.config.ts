@@ -53,7 +53,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'www.alwa7y.com',
         port: '',
-        pathname: '/wp-content/uploads/**',
+        pathname: '/downloads/**',
       },
     ],
   },
