@@ -90,17 +90,17 @@ export default function ExpandingGrid() {
   const getGridTemplateColumns = useCallback(
     (hoverIndex: number | null): string => {
       if (isMobile) return "repeat(2, 1fr)";
-      if (hoverIndex === null) return "repeat(5, 1fr)";
-      const columns = Array(5).fill("1fr");
-      columns[hoverIndex % 5] = "2.25fr";
+      if (hoverIndex === null) return "1fr 1fr 1fr 1fr 1fr";
+      const columns = Array(5).fill("0.8fr");
+      columns[hoverIndex % 5] = "1.8fr";
       return columns.join(" ");
     },
     [isMobile]
   );
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className={`grid gap-4 ${isMobile ? 'h-auto' : 'grid-rows-2 h-[1000px] gap-y-6'}`}>
+    <div className="container mx-auto px-10 py-12">
+      <div className={`grid gap-4 ${isMobile ? 'h-auto' : 'grid-rows-2 h-[900px] gap-0'}`}>
         {isMobile ? (
           // Mobile Layout
           <div className="grid grid-cols-2 gap-4">
@@ -147,7 +147,7 @@ export default function ExpandingGrid() {
                   <Link
                     key={index}
                     href={`/qiraat/${scholar.slug}`}
-                    className="relative overflow-hidden cursor-pointer rounded-lg"
+                    className="relative overflow-hidden cursor-pointer rounded-lg m-1.5 hover:m-0 transition-all duration-300"
                     onMouseEnter={() => setHoveredIndex(rowIndex * 5 + index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
@@ -155,11 +155,11 @@ export default function ExpandingGrid() {
                       src={scholar.image}
                       alt={scholar.name}
                       fill
-                      className="object-cover px-1"
+                      className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/20 mx-1"/>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/10"/>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <h2 className="text-white text-lg font-semibold truncate px-4">
+                      <h2 className="text-white text-lg font-bold truncate">
                         {scholar.name}
                       </h2>
                     </div>
