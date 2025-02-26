@@ -6,6 +6,7 @@ interface BlogPost {
   date: string;
   author: string;
   imageUrl: string;
+  slug?: string;
 }
 
 export default function BlogCard({ title, excerpt, date, author, imageUrl }: BlogPost) {
