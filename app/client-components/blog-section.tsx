@@ -2,52 +2,11 @@
 
 import Link from 'next/link';
 import BlogCard from '../components/blog-card';
-
-const mockBlogs = [
-  {
-    slug: "how-long-does-it-take-to-read-the-quran",
-    title: "How Long Does It Take to Read the Quran? | Tips & Insights",
-    excerpt: "Discover practical tips and insights on the time required to read the entire Quran, factors affecting reading speed, and strategies for consistent Quran reading",
-    date: "Nov 23, 2024",
-    author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg"
-  },
-  {
-    slug: "teaching-quran-for-non-arabic-speakers",
-    title: "Teaching Quran for Non Arabic Speakers",
-    excerpt: "Explore effective methods and resources for teaching the Quran to non-Arabic speakers",
-    date: "Oct 15, 2024",
-    author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-300x251.png"
-  },
-  {
-    slug: "understanding-the-ijazah-tradition",
-    title: "Understanding the Ijazah Tradition",
-    excerpt: "Delve into the rich history and significance of the Ijazah tradition in Quranic studies, its role in preserving authentic recitations, and its relevance in modern Islamic education",
-    date: "Oct 15, 2024",
-    author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-1-300x251.png"
-  },
-  {
-    slug: "mastering-the-10-qiraat",
-    title: "Mastering the 10 Qiraat: A Journey to Precision and Spiritual Growth",
-    excerpt: "Embark on a transformative journey through the 10 Qiraat, exploring their significance in Quranic recitation and the spiritual growth they offer to dedicated learners",
-    date: "Oct 15, 2024",
-    author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-3-768x644.png"
-  },
-  {
-    slug: "what-are-the-qiraat",
-    title: "What Are the Qiraat?",
-    excerpt: "Discover the fascinating world of Qiraat, the various authentic ways of reciting the Quran, and their importance in preserving the rich oral tradition of Islamic scripture",
-    date: "Oct 15, 2024",
-    author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-2-768x644.png"
-  }
-
-];
+import { getBlogPosts } from '../lib/blog';
 
 export default function BlogSection() {
+  const blogPosts = getBlogPosts();
+  
   return (
     <section className="py-16 px-4 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -82,7 +41,7 @@ export default function BlogSection() {
                   transform: translateX(0);
                 }
                 100% {
-                  transform: translateX(calc(-350px * ${mockBlogs.length} - 2rem * ${mockBlogs.length}));
+                  transform: translateX(calc(-350px * ${blogPosts.length} - 2rem * ${blogPosts.length}));
                 }
               }
 
@@ -91,7 +50,7 @@ export default function BlogSection() {
               }
             `}</style>
             {/* First set of cards */}
-            {mockBlogs.map((blog, index) => (
+            {blogPosts.map((blog, index) => (
               <div key={`first-${index}`} className="w-[350px]">
                 <Link href={`/blog/${blog.slug}`} className="no-underline">
                   <BlogCard {...blog} />
@@ -99,16 +58,8 @@ export default function BlogSection() {
               </div>
             ))}
             {/* Second set of cards */}
-            {mockBlogs.map((blog, index) => (
+            {blogPosts.map((blog, index) => (
               <div key={`second-${index}`} className="w-[350px]">
-                <Link href={`/blog/${blog.slug}`} className="no-underline">
-                  <BlogCard {...blog} />
-                </Link>
-              </div>
-            ))}
-            {/* Third set of cards for seamless wrapping */}
-            {mockBlogs.map((blog, index) => (
-              <div key={`third-${index}`} className="w-[350px]">
                 <Link href={`/blog/${blog.slug}`} className="no-underline">
                   <BlogCard {...blog} />
                 </Link>
