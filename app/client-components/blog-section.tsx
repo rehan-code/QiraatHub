@@ -1,28 +1,36 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import BlogCard from '../components/blog-card';
-import { getBlogPosts } from '../lib/blog';
+import Link from "next/link";
+import BlogCard from "../components/blog-card";
+import { getBlogPosts } from "../lib/blog";
 
 export default function BlogSection() {
   const blogPosts = getBlogPosts();
-  
+
   return (
     <section className="py-16 px-4 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold mb-4 relative inline-block">
-            Latest from Our Blogs
-            <div className="absolute right-[-10px] bottom-[-5px] w-[154px] h-[3px] bg-yellow-400 rounded-full"></div>
+            Latest from{" "}
+            <span className="relative inline-block">
+              Our Blogs
+              <div className="absolute left-0 right-0 bottom-[-5px] h-[3px] bg-yellow-400 rounded-full"></div>
+            </span>
           </h2>
-          <p className="text-gray-600">Stay updated with our latest articles and insights</p>
+          <p className="text-gray-600">
+            Stay updated with our latest articles and insights
+          </p>
           <div className="mt-4">
-            <Link href="/blog" className="text-yellow-600 hover:text-yellow-700 font-medium">
+            <Link
+              href="/blog"
+              className="text-yellow-600 hover:text-yellow-700 font-medium"
+            >
               View All Blogs →
             </Link>
           </div>
         </div>
-        
+
         <div className="relative overflow-hidden py-6">
           <div className="animate-scroll flex">
             <style jsx>{`
@@ -41,7 +49,11 @@ export default function BlogSection() {
                   transform: translateX(0);
                 }
                 100% {
-                  transform: translateX(calc(-350px * ${blogPosts.length} - 2rem * ${blogPosts.length}));
+                  transform: translateX(
+                    calc(
+                      -350px * ${blogPosts.length} - 2rem * ${blogPosts.length}
+                    )
+                  );
                 }
               }
 
