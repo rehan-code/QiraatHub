@@ -1,57 +1,99 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getBlogPosts } from '../lib/blog';
 
 export default function BlogPage() {
   const blogPosts = getBlogPosts();
+  const featuredPost = blogPosts[0]; // Use the first post as featured
+  const regularPosts = blogPosts.slice(1); // All other posts
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Hero Section */}
-      <div className="relative h-[300px] w-full overflow-hidden">
-        <Image
-          src="https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-2-768x644.png"
-          alt="QiraatHub Blog"
-          fill
-          className="object-cover brightness-50"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 container mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center">
-            Our Blog
-          </h1>
-          <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto leading-relaxed">
-            Insights and knowledge about Quranic recitations and the Qiraat
-          </p>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Minimalist design with refined yellow */}
+      <div className="bg-yellow-700 text-white">
+        <div className="container mx-auto px-4 py-24 max-w-5xl">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              QiraatHub Blogs
+            </h1>
+            <p className="text-lg md:text-xl text-yellow-100 max-w-2xl mx-auto leading-relaxed">
+              Explore insights about Quranic recitations and the rich tradition of Qiraat
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Blog Posts Grid */}
-      <div className="container mx-auto px-4 py-16 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
-            <Link href={`/blog/${post.slug}`} key={index} className="no-underline">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg h-[450px] flex flex-col">
-                <div className="relative h-48">
-                  <Image
-                    src={post.imageUrl}
-                    alt={post.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+      <div className="container mx-auto px-4 py-16 max-w-6xl">
+        {/* Featured Post - Cleaner design with refined yellow */}
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold mb-6 text-gray-800 border-b border-gray-100 pb-3">Featured Article</h2>
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+            <div className="md:flex">
+              <div className="md:w-1/2 relative h-[350px] md:h-auto">
+                <Image
+                  src={featuredPost.imageUrl}
+                  alt={featuredPost.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="md:w-1/2 p-8 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">{featuredPost.title}</h3>
+                  <p className="text-gray-600 mb-6 line-clamp-3">{featuredPost.excerpt}</p>
                 </div>
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-800 line-clamp-2">{post.title}</h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
-                  <div className="flex justify-between items-center text-sm text-gray-500 mt-auto">
-                    <span>{post.author}</span>
-                    <span>{post.date}</span>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-800 font-bold">
+                      {featuredPost.author.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="ml-3">
+                      <p className="text-sm font-medium text-gray-800">{featuredPost.author}</p>
+                      <p className="text-sm text-gray-500">{featuredPost.date}</p>
+                    </div>
                   </div>
+                  <Link href={`/blog/${featuredPost.slug}`} className="inline-flex items-center px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition">
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
-            </Link>
-          ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Latest Articles - Cleaner cards with refined yellow */}
+        <div>
+          <h2 className="text-2xl font-bold mb-6 text-gray-800 border-b border-gray-100 pb-3">Latest Articles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {regularPosts.map((post, index) => (
+              <Link href={`/blog/${post.slug}`} key={index} className="no-underline group">
+                <div className="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 group-hover:shadow-md group-hover:translate-y-[-3px] h-[400px] flex flex-col">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={post.imageUrl}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="text-lg font-semibold mb-3 text-gray-800 line-clamp-2">{post.title}</h3>
+                    <p className="text-gray-600 mb-4 text-sm line-clamp-3">{post.excerpt}</p>
+                    <div className="flex justify-between items-center text-sm mt-auto pt-3 border-t border-gray-100">
+                      <span className="text-gray-700 font-medium">{post.author}</span>
+                      <span className="text-gray-500">{post.date}</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>
