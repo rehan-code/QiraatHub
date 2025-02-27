@@ -160,9 +160,9 @@ export function Navbar() {
                 </div>
 
                 <nav className="flex-1 overflow-y-auto">
-                  <div className="flex flex-col p-6 space-y-6">
+                  <div className="flex flex-col p-5 px-6 space-y-5">
                     {/* Mobile Qiraat Menu */}
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <h2 className="text-base font-semibold text-slate-400 uppercase tracking-wider">
                         Qiraat
                       </h2>
@@ -179,7 +179,7 @@ export function Navbar() {
                           <Link
                             key={scholar.slug}
                             href={`/qiraat/${scholar.slug}`}
-                            className="block px-4 py-3.5 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
+                            className="block px-4 py-3 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
                             onClick={() => setIsOpen(false)}
                           >
                             {scholar.name}
@@ -189,7 +189,7 @@ export function Navbar() {
                     </div>
 
                     {/* Mobile Resources Menu */}
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <h2 className="text-base font-semibold text-slate-400 uppercase tracking-wider">
                         Resources
                       </h2>
@@ -202,7 +202,7 @@ export function Navbar() {
                           <Link
                             key={resource.href}
                             href={resource.href}
-                            className="block px-4 py-3.5 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
+                            className="block px-4 py-3 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
                             onClick={() => setIsOpen(false)}
                           >
                             {resource.name}
@@ -212,7 +212,7 @@ export function Navbar() {
                     </div>
 
                     {/* Mobile About & Contact */}
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <h2 className="text-base font-semibold text-slate-400 uppercase tracking-wider">
                         Navigation
                       </h2>
@@ -225,7 +225,7 @@ export function Navbar() {
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block px-4 py-3.5 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
+                            className="block px-4 py-3 text-base text-slate-700 font-medium rounded-xl bg-white border border-slate-200/80 active:bg-slate-100 active:scale-[0.98] transition-transform"
                             onClick={() => setIsOpen(false)}
                           >
                             {item.name}
