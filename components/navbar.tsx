@@ -117,6 +117,7 @@ export function Navbar() {
 
             {/* About & Contact */}
             {[
+              { name: "Blog", href: "/blog" },
               { name: "About", href: "/about" },
               { name: "Contact", href: "/contact" },
             ].map((item) => (
@@ -217,7 +218,8 @@ export function Navbar() {
                       </h2>
                       <div className="grid gap-2">
                         {[
-                          { name: "About", href: "/about" },
+              { name: "Blog", href: "/blog" },
+              { name: "About", href: "/about" },
                           { name: "Contact", href: "/contact" },
                         ].map((item) => (
                           <Link
