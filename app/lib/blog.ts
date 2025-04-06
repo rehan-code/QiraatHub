@@ -429,7 +429,7 @@ Whether you aim to read it in 30 days or memorize it over several years, the Qur
     title: "Dive Deep into Qira'at: Unveiling Two Masterpieces",
     excerpt: "Discover the timeless masterpieces of Qira'at—Al-Shatibiyyah and Al-Durra Al-Mudhiyyah. This article explores their historical significance, detailed structure, and enduring impact on Qur'anic recitation and Islamic scholarship.",
     content: `
-    # Dive Deep into Qira'at: Unveiling Two Masterpieces
+# Dive Deep into Qira'at: Unveiling Two Masterpieces
 
 The science of **Qira'at**—the diverse methods of reciting the Holy Qur'an—holds a unique position in Islamic scholarship. For students and researchers alike, mastering these recitations is both an intellectual pursuit and a spiritual journey. Two seminal texts have long served as the cornerstones of this discipline: **Al-Shatibiyyah** and **Al-Durra Al-Mudhiyyah**. This article delves into these masterpieces, examining their historical significance, content, and enduring impact on Qur'anic studies.
 
