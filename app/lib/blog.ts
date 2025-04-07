@@ -1,3 +1,8 @@
+export interface Resource {
+  title: string;
+  url: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -6,6 +11,7 @@ export interface BlogPost {
   date: string;
   author: string;
   imageUrl: string;
+  resources?: Resource[];
 }
 
 const blogPosts: BlogPost[] = [
@@ -509,7 +515,13 @@ By delving into these foundational texts, you not only gain insight into the tec
     `,
     date: "Apr 6, 2025",
     author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg"
+    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg",
+    resources: [
+      {
+        title: "Al-Shatibiyyah (English Translation)",
+        url: "https://www.sautulquran.co.za/wp-content/uploads/2024/01/Shaatbiyyah-English.pdf"
+      }
+    ]
   }
 ];
 
