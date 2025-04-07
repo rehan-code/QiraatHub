@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="container mx-auto px-4 py-12">
         <div className={`flex flex-col ${post.resources && post.resources.length > 0 ? 'lg:flex-row gap-8 justify-center' : 'items-center'}`}>
           {/* Main Content */}
-          <div className={post.resources && post.resources.length > 0 ? 'lg:w-3/5' : 'max-w-3xl w-full'}>
+          <div className={post.resources && post.resources.length > 0 ? 'lg:w-[58%]' : 'max-w-3xl w-full'}>
             <article className="bg-white rounded-lg p-4 mb-12 shadow-sm">
               <div className="prose prose-lg max-w-none">
                 <ReactMarkdown
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
           
           {/* Sidebar */}
-          <div className="lg:w-1/4">
+          <div className="lg:w-[27%]">
             {/* Resources Section - Only shown if resources exist */}
             {post.resources && post.resources.length > 0 && (
               <div className="sticky top-8 bg-yellow-50 rounded-lg p-6 border border-yellow-100 shadow-sm mb-8">
