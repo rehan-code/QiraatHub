@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getBlogPostBySlug, Resource } from '../../lib/blog';
+import { getBlogPostBySlug } from '../../lib/blog';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
