@@ -54,7 +54,7 @@ export default async function BookPage({ params }: PageProps) {
                     <div className="mt-8">
                       <h2 className="text-2xl font-semibold text-gray-900">About this Book</h2>
                       <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-                        {book.description}
+                        <div className="whitespace-pre-wrap">{book.description}</div>
                       </p>
                     </div>
                   )}

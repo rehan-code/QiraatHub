@@ -53,7 +53,7 @@ export default function DownloadsPage() {
                       )}
                       {book.description && (
                         <p className="mt-3 text-sm text-gray-500 line-clamp-2">
-                          {book.description}
+                          <div className="whitespace-pre-wrap">{book.description}</div>
                         </p>
                       )}
                     </div>
