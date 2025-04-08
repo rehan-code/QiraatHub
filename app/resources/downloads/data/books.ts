@@ -2,7 +2,7 @@ export interface Book {
   id: string;
   title: string;
   author?: string;
-  coverImage: string;
+  coverImage?: string;
   description?: string;
   downloadUrl: string;
   category: string;
@@ -21,7 +21,6 @@ export const books: Book[] = [
     id: '2',
     title: 'Al-Shatibiyyah (English)',
     author: 'Imam Al-Qasim ibn Firruh ibn Khalaf ibn Ahmad ibn Al-Ruayni Al-Shatibi',
-    coverImage: '',
     downloadUrl: '/books/Shaatbiyyah-English.pdf',
     category: 'Book',
     description: `غُنْبَةُ الطَّلَبَة ف تَيْسِيرَ السَّبْعَة By Muhammad Saleem Gaibie
@@ -32,7 +31,6 @@ This book is based on al-Fawa'id al-Muhibbiyah, authored by Qari Anis Ahmad`,
     id: '3',
     title: 'Al-Durra Al-Mudhiyyah',
     author: 'Ibn al-Jazari',
-    coverImage: '',
     downloadUrl: '/books/AlDurrah.pdf',
     category: 'Book',
     description: 'Completing the Canonical Ten',

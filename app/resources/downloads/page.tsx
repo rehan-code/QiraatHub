@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DownloadButton from '@/components/DownloadButton';
 import { books } from './data/books';
+import { BookOpen } from 'lucide-react';
 
 export default function DownloadsPage() {
   return (
@@ -26,14 +27,23 @@ export default function DownloadsPage() {
             >
               <Link href={`/resources/downloads/${book.id}`} className="flex-1">
                 <div className="relative pt-[140%] bg-emerald-50">
-                  <Image
-                    src={book.coverImage}
-                    alt={book.title}
-                    fill
-                    className="object-contain"
-                    sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                  {book.coverImage ? (
+                    <>
+                      <Image
+                        src={book.coverImage}
+                        alt={book.title}
+                        fill
+                        className="object-contain"
+                        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                    </>
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-emerald-50 to-emerald-100">
+                      <BookOpen className="w-16 h-16 text-emerald-600 mb-4 opacity-80" />
+                      <h4 className="text-center font-medium text-emerald-800 text-lg line-clamp-3">{book.title}</h4>
+                    </div>
+                  )}
                 </div>
                 <div className="absolute top-3 right-3">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100/90 text-emerald-800 backdrop-blur-sm">

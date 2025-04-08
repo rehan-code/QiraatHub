@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import DownloadButton from '@/components/DownloadButton';
 import { books } from '../data/books';
+import { BookOpen } from 'lucide-react';
 
 interface PageProps {
   params: Promise <{
@@ -27,14 +28,23 @@ export default async function BookPage({ params }: PageProps) {
             <div className="relative lg:flex">
               <div className="md:flex-shrink-0 md:w-96">
                 <div className="relative h-96 w-full md:h-[36rem]">
-                  <Image
-                    src={book.coverImage}
-                    alt={book.title}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  {book.coverImage ? (
+                    <>
+                      <Image
+                        src={book.coverImage}
+                        alt={book.title}
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    </>
+                  ) : (
+                    <div className="rounded-bl-3xl absolute inset-0 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-emerald-50 to-emerald-100">
+                      <BookOpen className="w-24 h-24 text-emerald-600 mb-6 opacity-80" />
+                      <h4 className="text-center font-medium text-emerald-800 text-xl line-clamp-3">{book.title}</h4>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="p-8 md:p-12 lg:p-16 lg:pl-32 flex flex-col justify-between">
