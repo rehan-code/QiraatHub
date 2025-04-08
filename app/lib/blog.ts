@@ -519,7 +519,11 @@ By delving into these foundational texts, you not only gain insight into the tec
     resources: [
       {
         title: "Al-Shatibiyyah (English Translation)",
-        url: "https://www.sautulquran.co.za/wp-content/uploads/2024/01/Shaatbiyyah-English.pdf"
+        url: "/resources/downloads/al-shatibiyyah-english"
+      },
+      {
+        title: "Al-Durra Al-Mudhiyyah",
+        url: "/resources/downloads/al-durra-al-mudhiyyah"
       }
     ]
   }
