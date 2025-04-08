@@ -6,14 +6,14 @@ import { books } from '../data/books';
 import { BookOpen } from 'lucide-react';
 
 interface PageProps {
-  params: Promise <{
-    id: string;
+  params: Promise<{
+    slug: string;
   }>;
 }
 
 export default async function BookPage({ params }: PageProps) {
-  const {id} = await params;
-  const book = books.find((b) => b.id === id);
+  const { slug } = await params;
+  const book = books.find((b) => b.slug === slug);
 
   if (!book) {
     notFound();

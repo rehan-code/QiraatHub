@@ -20,12 +20,12 @@ export default function DownloadsPage() {
         </div>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {books.map((book) => (
+          {books.map((book, index) => (
             <div
-              key={book.id}
+              key={index}
               className="group relative flex flex-col bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <Link href={`/resources/downloads/${book.id}`} className="flex-1">
+              <Link href={`/resources/downloads/${book.slug}`} className="flex-1">
                 <div className="relative pt-[140%] bg-emerald-50">
                   {book.coverImage ? (
                     <>
