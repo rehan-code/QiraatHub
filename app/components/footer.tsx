@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className="container mx-auto px-4 py-6 sm:px-10 lg:px-20">
+    <footer className="bg-gray-100">
+      <div className="container mx-auto px-4 py-8 sm:px-10 lg:px-20">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-4 mt-2">
           {/* Logo and Description */}
           <div className="space-y-6">
             <Link
@@ -59,31 +59,6 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-gray-900">
-              Stay Updated
-            </h3>
-            <div className="space-y-4">
-              <p className="text-sm text-gray-600">
-                Subscribe to our newsletter for updates and insights.
-              </p>
-              <form className="space-y-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-theme_primary/20 focus:border-theme_primary transition-all"
-                />
-                <button
-                  type="submit"
-                  className="w-full px-4 py-2 bg-theme_primary text-white rounded-lg hover:bg-theme_primary/90 transition-all duration-300"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
           </div>
 
           {/* Contact & Social */}
@@ -174,10 +149,36 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
+          
+          {/* Newsletter */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-gray-900">
+              Stay Updated
+            </h3>
+            <div className="space-y-4">
+              <p className="text-sm text-gray-600">
+                Subscribe to our newsletter for updates and insights.
+              </p>
+              <form className="space-y-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-theme_primary/20 focus:border-theme_primary transition-all"
+                />
+                <button
+                  type="submit"
+                  className="w-full px-4 py-2 bg-theme_primary text-white rounded-lg hover:bg-theme_primary/90 transition-all duration-300"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
 
         {/* Copyright */}
-        <div className="pt-4 border-t border-gray-200">
+        <div className="pt-6 border-t border-gray-200">
           <p className="text-center text-sm text-gray-500">
             &copy; {new Date().getFullYear()} QiraatHub. All rights reserved.
           </p>
