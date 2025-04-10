@@ -2,11 +2,12 @@ import { Resource } from '../types';
 
 interface ResourcesSectionProps {
   resources: Resource[];
+  className?: string;
 }
 
-export const ResourcesSection = ({ resources }: ResourcesSectionProps) => {
+export const ResourcesSection = ({ resources, className = '' }: ResourcesSectionProps) => {
   return (
-    <section className="bg-white rounded-2xl shadow-xl">
+    <section className={`bg-white rounded-2xl shadow-xl ${className}`}>
       <div className="p-6 pb-2">
         <h2 className="text-2xl font-bold text-gray-900">Resources</h2>
       </div>

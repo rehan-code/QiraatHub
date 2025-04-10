@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getBlogPostBySlug } from '../../lib/blog';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
+import { ResourcesSection } from '../../qiraat/components/ResourcesSection';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -95,40 +96,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="lg:w-[27%]">
             {/* Resources Section - Only shown if resources exist */}
             {post.resources && post.resources.length > 0 && (
-              <div className="sticky top-8 bg-yellow-50 rounded-lg p-6 border border-yellow-100 shadow-sm mb-8">
-                <h2 className="text-xl font-bold mb-6 text-gray-800 border-b border-yellow-200 pb-3 flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
-                  Additional Resources
-                </h2>
-                <div className="space-y-4">
-                  {post.resources.map((resource, index) => (
-                    <a 
-                      key={index}
-                      href={resource.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex flex-col p-4 bg-white rounded-md border border-yellow-200 hover:bg-yellow-100 transition-colors duration-200 group shadow-sm"
-                    >
-                      <div className="flex items-center mb-2">
-                        <div className="flex-shrink-0 h-8 w-8 rounded-full bg-yellow-100 flex items-center justify-center mr-3 group-hover:bg-yellow-200 transition-colors duration-200">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </div>
-                        <h3 className="text-md font-semibold text-gray-800 group-hover:text-yellow-800">
-                          {resource.title}
-                        </h3>
-                      </div>
-                      <div className="pl-11">
-                        <p className="text-xs text-gray-500 truncate group-hover:text-yellow-600">
-                          {resource.url.length > 40 ? `${resource.url.substring(0, 40)}...` : resource.url}
-                        </p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
+              <div className="sticky top-8 mb-8">
+                <ResourcesSection resources={post.resources} className="!shadow-[0_0_8px_rgba(0,0,0,0.05)] " />
               </div>
             )}
           </div>
