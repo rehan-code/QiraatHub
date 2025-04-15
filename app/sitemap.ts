@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { scholars } from './qiraat/data/scholars';
 import { getBlogSlugs } from './lib/blog';
+import { books } from './resources/downloads/data/books';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Base URL for your site
@@ -72,40 +73,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // Try to import blog posts if available
-  let blogRoutes: MetadataRoute.Sitemap = [];
-  try {
-    // This is a placeholder - you would need to import your blog posts data
-    // If you have a blog posts data file, replace this with the actual import
-    const slugs = await getBlogSlugs();
-    
-    blogRoutes = slugs.map((slug) => ({
-      url: `${baseUrl}/blog/${slug}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }));
-  } catch (error) {
-    console.log('Blog posts data not available for sitemap');
-  }
+  // Add blog post routes
+  const blogSlugs = await getBlogSlugs();
+  const blogRoutes: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
-  // Try to import downloads if available
-  let downloadRoutes: MetadataRoute.Sitemap = [];
-  try {
-    // This is a placeholder - you would need to import your downloads data
-    // If you have a downloads data file, replace this with the actual import
-    // import { downloads } from './resources/downloads/data/downloads';
-    
-    // downloadRoutes = downloads.map((download) => ({
-    //   url: `${baseUrl}/resources/downloads/${download.slug}`,
-    //   lastModified: currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.7,
-    // }));
-  } catch (error) {
-    console.log('Downloads data not available for sitemap');
-  }
+  // Add download routes from books.ts
+  const downloadRoutes: MetadataRoute.Sitemap = books.map((book) => ({
+    url: `${baseUrl}/resources/downloads/${book.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // Add routes for PDF files in public/books directory
+  const publicBookRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/books/AlDurrah.pdf`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/books/Shaatbiyyah-English.pdf`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    },
+  ];
   
   // Combine all routes
-  return [...staticRoutes, ...scholarRoutes, ...blogRoutes, ...downloadRoutes];
+  return [...staticRoutes, ...scholarRoutes, ...blogRoutes, ...downloadRoutes, ...publicBookRoutes];
 }
