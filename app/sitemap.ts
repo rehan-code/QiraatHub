@@ -37,13 +37,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
-    // Qiraat section
-    {
-      url: `${baseUrl}/qiraat`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    },
     // Resources section
     {
       url: `${baseUrl}/resources/audio`,
