@@ -536,3 +536,8 @@ export function getBlogPosts(): BlogPost[] {
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find(post => post.slug === slug);
 }
+
+export function getBlogSlugs(): string[] {
+  return blogPosts.map(post => post.slug);
+}
+

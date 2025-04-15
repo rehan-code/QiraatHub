@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
 import { scholars } from './qiraat/data/scholars';
+import { getBlogSlugs } from './lib/blog';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Base URL for your site
   const baseUrl = 'https://qiraathub.com';
   
@@ -76,14 +77,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   try {
     // This is a placeholder - you would need to import your blog posts data
     // If you have a blog posts data file, replace this with the actual import
-    // import { blogPosts } from './blog/data/posts';
+    const slugs = await getBlogSlugs();
     
-    // blogRoutes = blogPosts.map((post) => ({
-    //   url: `${baseUrl}/blog/${post.slug}`,
-    //   lastModified: post.date || currentDate,
-    //   changeFrequency: 'monthly' as const,
-    //   priority: 0.7,
-    // }));
+    blogRoutes = slugs.map((slug) => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }));
   } catch (error) {
     console.log('Blog posts data not available for sitemap');
   }
