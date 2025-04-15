@@ -7,9 +7,32 @@ import { TransmissionSection } from "../components/TransmissionSection";
 import { ResourcesSection } from "../components/ResourcesSection";
 import { VideosSection } from "../components/VideosSection";
 import { scholars } from "../data/scholars";
+import { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const scholar = scholars.find((s) => s.slug === slug);
+  
+  if (!scholar) {
+    return {
+      title: "Scholar Not Found | QiraatHub",
+      description: "The requested scholar could not be found."
+    };
+  }
+
+  return {
+    title: `Qira'at ${scholar.name} Quran Recitation | QiraatHub`,
+    description: `Learn about the ${scholar.name} qira'at, quran recitation style at QiraatHub. ${scholar.earlyLife}`,
+    openGraph: {
+      title: `Qira'at ${scholar.name} Quran Recitation | QiraatHub`,
+      description: `Learn about the ${scholar.name} qira'at, quran recitation style at QiraatHub. ${scholar.earlyLife}`,
+      images: [scholar.image],
+    },
+  };
 }
 
 export default async function ScholarPage({ params }: PageProps) {
