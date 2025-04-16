@@ -4,8 +4,8 @@ import { Navbar } from "@/components/navbar";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  title: "Qiraat Hub",
-  description: "learn about the 10 qiraat's",
+  title: "QiraatHub | Discover the 10 Qiraat",
+  description: "learn about the 10 distinct qiraat's (quran recitation styles)",
 };
 
 export default function RootLayout({

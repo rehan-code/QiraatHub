@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Image from 'next/image';
 import Link from 'next/link';
 import { getBlogPosts } from '../lib/blog';
+
+export const metadata: Metadata = {
+  title: "QiraatHub Blog | Insights on Quranic Recitations",
+  description: "Explore in-depth articles about Quranic recitations, the 10 Qiraat, and Islamic scholarship on QiraatHub's official blog.",
+};
+
 
 export default function BlogPage() {
   const blogPosts = getBlogPosts();
