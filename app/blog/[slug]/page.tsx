@@ -5,6 +5,30 @@ import { getBlogPostBySlug } from '../../lib/blog';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { ResourcesSection } from '../../qiraat/components/ResourcesSection';
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested blog post could not be found.',
+    };
+  }
+
+  return {
+    title: `${post.title} | QiraatHub Blog`,
+    description: post.excerpt,
+    openGraph: {
+      title: `${post.title} | QiraatHub Blog`,
+      description: post.excerpt,
+      images: [post.imageUrl],
+    },
+  };
+}
+
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
