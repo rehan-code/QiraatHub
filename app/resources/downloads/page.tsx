@@ -4,6 +4,19 @@ import Link from 'next/link';
 import DownloadButton from '@/components/DownloadButton';
 import { books } from './data/books';
 import { BookOpen } from 'lucide-react';
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Islamic Books Collection | QiraatHub",
+    description: "Explore and download a diverse collection of free Islamic books and PDFs to deepen your understanding of Islam, the Quran, and various aspects of Islamic literature.",
+    openGraph: {
+      title: "Islamic Books Collection | QiraatHub",
+      description: "Explore and download a diverse collection of free Islamic books and PDFs to deepen your understanding of Islam, the Quran, and various aspects of Islamic literature.",
+      images: ["/images/og-image.png"],
+    },
+  };
+}
 
 export default function DownloadsPage() {
   return (
