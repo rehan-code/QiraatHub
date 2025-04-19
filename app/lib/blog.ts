@@ -219,6 +219,8 @@ Also, familiarity with the rules of Tajweed, and individual goals and peace.
 
 This post describes, explains, answers, and offers realistic, feasible suggestions on reading and reflecting on the Quran.
 
+![images of Quran and tasweeh](/images/quran_and_tasweeh.jpg)
+
 ## How Long Does It Take to Read the Quran?
 
 The time it takes to read the Quran varies significantly from person to person. On average, a complete reading of the Quran typically requires 30–40 hours. Here's a breakdown of common scenarios:
@@ -265,6 +267,8 @@ This will be longer when you aim to read and understand, especially with transla
 
 In the case of a Hafiz, the duration depends on the Hafiz's fluency and speed, and his pattern of recitation. Herein is an overview:
 
+![A group of people reading the Quran](/images/a_group_of_people_are_reading_the_Quran.png)
+
 ### 1. Clear Recitation with Tajweed
 - One who has memorized the Holy Quran can recite all of it in approximately 10 to 15 hours with average speeds and the proper application of tajweed rules.
 - For one reciting one Juz each day, it's easy to complete the Quran within 30 days.
@@ -279,6 +283,8 @@ In the case of a Hafiz, the duration depends on the Hafiz's fluency and speed, a
 - An experienced Hafiz may take up to 60-90 minutes per Juz during Taraweeh prayers in Ramadan, completing the Quran in, correspondingly, over 20 or 30 nights. 
 
 **Tips for the Hafiz**: Your regular Muraja'ah means fluency and minimum hesitation of your recitation. The speed is up to the balance between speed and proper recitation quality.
+
+Read more: [Mastering the 10 Qiraat](/blog/mastering-the-10-qiraat)
 
 ## How to Finish Reading the Quran Quickly for Everyone?
 
@@ -310,7 +316,7 @@ Finishing the Quran quickly requires dedication, consistent effort, and an organ
 - This method is beneficial for intermediate readers.
 
 ### Use Shorter Recitations
-- If speed is the goal, use a Mus'haf (Quran copy) with Uthmani script or more extensive text, which makes reading easier and faster.
+- If speed is the goal, use a Mus'haf (Quran copy) with [Uthmani script](https://www.majesticquran.co.uk/difference-between-indopak-and-uthmani-scripts/) or more extensive text, which makes reading easier and faster.
 
 ### Make Dua and Stay Motivated
 - Pray for Barakah (blessing) in time: Start intending to complete for Allah's sake.
@@ -352,9 +358,13 @@ Also, it is prohibited to finish reading the Quran before 3 days.
 
 ## How Fast Can You Read the Quran?
 
+![The Quran on the table](/images/the_quran_on_the_table.png)
+
 Speed reading in the Quran recitation depends on several factors. They are given below:
 
 1. **Arabic Proficiency**: Fluency in the language naturally increases speed. It helps you to read the Quran fluently. However, it is not mandatory to be proficient in Arabic. The Quran is the only holy and easy learning book in the world. You don't need to be an Arabic literature, language, or grammar expert. People from any region, country, and culture can read it fluently. But, if you want to narrate the Quran like a Tafseer, you must learn more Arabic things.
+
+[Learn Teaching Quran for Non-Arabic Speakers](/blog/teaching-quran-for-non-arabic-speakers)
 
 2. **Tajweed Mastery**: Proper adherence to recitation rules can slow down reading but enhances spiritual quality. This is why you need to learn tajweed correctly.
 
@@ -362,7 +372,7 @@ Speed reading in the Quran recitation depends on several factors. They are given
 
 However, if you want only to read the Quran, any person can learn it at any age if he is physically healthy.
 
-*Learn and Hifdh 10 Qiraat at QiraatHub. Enroll in our online ijazah courses today and Hifdh Qiraat from our great Islamic scholars.*
+*Learn and Hifdh 10 Qiraat at QiraatHub. Enroll in our [online ijazah courses](https://academy.qiraathub.com/) today and Hifdh Qiraat from our great Islamic scholars.*
 
 ## How Can I Read the Quran in 30 Days?
 
@@ -416,7 +426,7 @@ Reading the Quran goes beyond completing chapters. Any Muslim needs to read the 
 - **Morality**: It teaches us what justice and injustice are. What is lawful, and what is illegal?   
 - **Knowledge**: It provides wisdom and insights into living a righteous life.
 
-Visit QiraatHub today and participate best online Quran learning program.
+Visit [QiraatHub](/) today and participate best online Quran learning program.
 
 ## Conclusion
 
