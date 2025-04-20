@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 
 export const metadata: Metadata = {
   title: "QiraatHub | Discover the 10 Qiraat",
-  description: "learn about the 10 distinct qiraat's (quran recitation styles)",
+  description: "learn about the 10 distinct qiraat's (Quran recitation styles)",
 };
 
 export default function RootLayout({

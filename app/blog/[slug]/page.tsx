@@ -6,6 +6,8 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { ResourcesSection } from '../../qiraat/components/ResourcesSection';
 import { Metadata } from "next";
+import Script from 'next/script';
+import { generateBlogPostSchema } from '../../lib/schema';
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -44,6 +46,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   
   return (
     <div className="min-h-screen bg-white">
+      {/* Schema.org structured data */}
+      <Script id="schema-blog-post" type="application/ld+json">
+        {JSON.stringify(generateBlogPostSchema(post))}
+      </Script>
+      
       {/* Hero Section - Improved */}
       <div className="relative h-[450px] w-full overflow-hidden">
         <Image
