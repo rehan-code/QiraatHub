@@ -29,6 +29,15 @@ export function generateOrganizationSchema() {
       'https://www.facebook.com/QiraatHub/',
       'https://www.instagram.com/qiraathub/',
       'https://x.com/QiraatHub'
+    ],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        'telephone': '+1 (519) 760-2953',
+        'contactType': 'customer service',
+        'email': 'info@qiraathub.com',
+        'availableLanguage': 'en'
+      }
     ]
   };
 }
@@ -37,11 +46,12 @@ export function generateOrganizationSchema() {
 export function generateHomePageSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'QiraatHub | Discover the 10 Qiraat',
+    '@type': 'Organization',
+    name: 'QiraatHub',
     description: 'Learn about the 10 distinct qiraat (Quran recitation styles)',
     url: 'https://qiraathub.com',
-    isPartOf: generateWebsiteSchema()
+    logo: 'https://qiraathub.com/logo.png',
+    isPartOf: generateOrganizationSchema(),
   };
 }
 
@@ -88,6 +98,7 @@ export function generateScholarSchema(scholar: {
     description: scholar.description,
     url: `https://qiraathub.com/qiraat/${scholar.slug}`,
     image: scholar.imageUrl,
+    affiliation: generateOrganizationSchema(),
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://qiraathub.com/qiraat/${scholar.slug}`
