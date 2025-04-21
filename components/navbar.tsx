@@ -60,7 +60,7 @@ export function Navbar() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="w-[300px] p-4 bg-white rounded-2xl shadow-lg border border-slate-200/80"
+                  className="w-[300px] p-4 bg-white shadow-lg border border-slate-200/80"
                 >
                   <div className="grid gap-3">
                     {[
@@ -94,7 +94,7 @@ export function Navbar() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="w-[240px] p-4 bg-white rounded-2xl shadow-lg border border-slate-200/80"
+                  className="w-[240px] p-4 bg-white shadow-lg border border-slate-200/80"
                 >
                   <div className="grid gap-3">
                     {[
