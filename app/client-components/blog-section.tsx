@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import BlogCard from "../components/blog-card";
+import BlogCard from "../../components/blog-card";
 import { getBlogPosts } from "../lib/blog";
 
 export default function BlogSection() {

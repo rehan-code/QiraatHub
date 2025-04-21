@@ -132,7 +132,7 @@ export default function Footer() {
                 </a>
                 <a
                   href="https://x.com/QiraatHub"
-                  className="text-gray-600 hover:text-[#1DA1F2] transition-colors"
+                  className="text-gray-600 hover:text-[#1DA1F2]  transform hover:scale-110 transition-all duration-300"
                   aria-label="Twitter"
                   target="_blank"
                   rel="noopener noreferrer"
