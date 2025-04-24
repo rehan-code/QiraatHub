@@ -4,12 +4,12 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Shuffle,
-  SkipBack,
+  // Shuffle,
+  // SkipBack,
   Play,
   Pause,
-  SkipForward,
-  Maximize2,
+  // SkipForward,
+  // Maximize2,
   Volume2,
   Loader2,
 } from "lucide-react";
@@ -100,12 +100,12 @@ export default function AudioPlayer({
               {reciter ? `${reciter}` : selectedSurah.slice(4)}
             </h2>
             <div className="flex justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
-              <Button size="icon" variant="ghost" className="hidden sm:flex">
+              {/* <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <Shuffle className="h-5 w-5" />
               </Button>
               <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <SkipBack className="h-5 w-5" />
-              </Button>
+              </Button> */}
               <Button
                 size="icon"
                 className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary hover:bg-primary/90"
@@ -120,17 +120,17 @@ export default function AudioPlayer({
                   <Play className="h-5 w-5 sm:h-6 sm:w-6 ml-0.5 sm:ml-1" />
                 )}
               </Button>
-              <Button size="icon" variant="ghost" className="hidden sm:flex">
+              {/* <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <SkipForward className="h-5 w-5" />
               </Button>
               <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <Maximize2 className="h-5 w-5" />
-              </Button>
+              </Button> */}
             </div>
           </div>
 
           {/* Progress Bar */}
-          <div className="space-y-1 sm:space-y-2">
+          <div className="space-y-2">
             <Slider
               value={[currentTime]}
               max={duration}
