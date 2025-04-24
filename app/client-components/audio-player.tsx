@@ -92,45 +92,45 @@ export default function AudioPlayer({
   };
 
   return (
-    <Card className="w-[800px]">
+    <Card className="w-full max-w-[800px] mx-auto">
       <CardContent>
-        <div className="space-y-6 p-6">
+        <div className="space-y-4 sm:space-y-6 p-3 sm:p-6">
           <div className="text-center">
-            <h2 className="text-3xl font-bold mb-8">
+            <h2 className="text-xl sm:text-3xl font-bold mb-4 sm:mb-8">
               {reciter ? `${reciter}` : selectedSurah.slice(4)}
             </h2>
-            <div className="flex justify-center gap-4 mb-8">
-              <Button size="icon" variant="ghost" className="">
+            <div className="flex justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
+              <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <Shuffle className="h-5 w-5" />
               </Button>
-              <Button size="icon" variant="ghost" className="">
+              <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <SkipBack className="h-5 w-5" />
               </Button>
               <Button
                 size="icon"
-                className="h-12 w-12 rounded-full bg-primary hover:bg-primary/90"
+                className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary hover:bg-primary/90"
                 onClick={togglePlayPause}
                 disabled={loading}
               >
                 {loading ? (
-                  <Loader2 className="h-6 w-6 animate-spin" />
+                  <Loader2 className="h-5 w-5 sm:h-6 sm:w-6 animate-spin" />
                 ) : isPlaying ? (
-                  <Pause className="h-6 w-6" />
+                  <Pause className="h-5 w-5 sm:h-6 sm:w-6" />
                 ) : (
-                  <Play className="h-6 w-6 ml-1" />
+                  <Play className="h-5 w-5 sm:h-6 sm:w-6 ml-0.5 sm:ml-1" />
                 )}
               </Button>
-              <Button size="icon" variant="ghost" className="">
+              <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <SkipForward className="h-5 w-5" />
               </Button>
-              <Button size="icon" variant="ghost" className="">
+              <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <Maximize2 className="h-5 w-5" />
               </Button>
             </div>
           </div>
 
           {/* Progress Bar */}
-          <div className="space-y-2">
+          <div className="space-y-1 sm:space-y-2">
             <Slider
               value={[currentTime]}
               max={duration}
@@ -143,20 +143,20 @@ export default function AudioPlayer({
                 }
               }}
             />
-            <div className="flex justify-between text-sm ">
+            <div className="flex justify-between text-xs sm:text-sm">
               <span>{formatTime(currentTime)}</span>
               <span>{formatTime(duration)}</span>
             </div>
           </div>
 
           {/* Volume Control */}
-          <div className="flex items-center gap-2">
-            <Volume2 className="h-5 w-5 " />
+          <div className="flex items-center gap-2" style={{ display: 'flex', alignItems: 'center' }}>
+            <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
             <Slider
               defaultValue={[75]}
               max={100}
               step={1}
-              className="w-[120px]"
+              className="w-[80px] sm:w-[120px]"
               onValueChange={([value]) => {
                 if (audioRef.current) {
                   audioRef.current.volume = value / 100;
