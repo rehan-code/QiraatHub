@@ -62,9 +62,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 container mx-auto px-4">
           <div className="max-w-3xl text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <div className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {post.title}
-            </h1>
+            </div>
             <div className="flex items-center justify-center space-x-4 text-sm">
               <div className="flex items-center">
                 <div className="h-8 w-8 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-800 font-bold mr-2">
