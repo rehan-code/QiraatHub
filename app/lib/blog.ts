@@ -392,7 +392,7 @@ The Quran contains 604 pages, depending on the script used. To read it in a mont
 - Divide this further into 5 pages after each prayer, making it manageable and less overwhelming.
 - For slower readers, consider stretching the goal to 40 or 60 days.
 
-# How Quickly Can You Memorise the Quran?
+## How Quickly Can You Memorise the Quran?
 
 Memorizing the Quran, or becoming a Hafiz, is a cherished accomplishment in Islam. Children have very sharp memories or brains to learn the Quran. Aged people take time to capture the Quran or often forget it. That is why parents who want their children to be Hafij, admit institutions at a very young age.
 
