@@ -25,7 +25,7 @@ const AboutPage = () => {
             About QiraatHub
           </h1>
           <p className="text-xl md:text-2xl text-center max-w-3xl mx-auto leading-relaxed">
-            Empowering Muslims worldwide to master the authentic Qira&apos;at of the Holy Quran
+            Providing authentic resources on the Quran, Islam, and the Qira&apos;at for Muslims worldwide
           </p>
         </div>
       </div>
@@ -37,14 +37,14 @@ const AboutPage = () => {
             <h2 className="text-4xl font-bold mb-8 text-gray-800">Our Mission</h2>
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
-                At QiraatHub, we are dedicated to preserving and teaching the authentic Qira&apos;at 
-                of the Holy Quran. Our platform makes it possible for students worldwide to learn 
-                from qualified instructors and master the various authentic readings of the Quran.
+                At QiraatHub, we are dedicated to preserving and sharing authentic resources on the Quran, 
+                Islam, and the various Qira&apos;at. Our platform provides comprehensive materials for Muslims 
+                worldwide to deepen their understanding of the Holy Quran and its recitations.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We believe in making quality Quranic education accessible to everyone, 
-                combining traditional teaching methods with modern technology to create 
-                an effective and engaging learning experience.
+                We believe in making authentic Islamic knowledge accessible to everyone, 
+                combining traditional scholarship with modern technology to create 
+                a valuable resource hub for seekers of knowledge.
               </p>
             </div>
           </div>
@@ -64,22 +64,22 @@ const AboutPage = () => {
       {/* Features Section */}
       <div className="bg-theme_primary/5 py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">Why Choose QiraatHub</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">What QiraatHub Offers</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Expert Teachers",
-                description: "Learn from qualified scholars who are experts in their respective Qira'at",
-                icon: "👨‍🏫"
+                title: "Authentic Resources",
+                description: "Access reliable and authentic materials on the Quran, Islam, and the Qira'at",
+                icon: "📚"
               },
               {
-                title: "Flexible Learning",
-                description: "Study at your own pace with our structured online courses",
-                icon: "⏰"
+                title: "Comprehensive Collection",
+                description: "Explore our extensive library of texts, audio, and visual resources",
+                icon: "🔍"
               },
               {
-                title: "Community Support",
-                description: "Join a global community of students dedicated to mastering Quranic recitation",
+                title: "Global Accessibility",
+                description: "Access valuable Islamic knowledge from anywhere in the world",
                 icon: "🌍"
               }
             ].map((feature, index) => (
@@ -93,23 +93,6 @@ const AboutPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-theme_primary text-white py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-          <h2 className="text-4xl font-bold mb-8">Start Your Journey Today</h2>
-          <p className="text-xl mb-12 max-w-2xl mx-auto opacity-90">
-            Join thousands of students worldwide who are discovering the beauty of 
-            the various Qira&apos;at through our comprehensive online platform.
-          </p>
-          <Link 
-            href="/courses" 
-            className="inline-block bg-white text-theme_primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
-          >
-            Explore Our Courses
-          </Link>
         </div>
       </div>
     </div>
