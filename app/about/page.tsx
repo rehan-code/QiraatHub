@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "About QiraatHub | Leading Online Quranic Education Platform",
