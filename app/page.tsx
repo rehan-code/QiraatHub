@@ -1,5 +1,6 @@
 import ExpandingGrid from "./client-components/expanding-grid";
 import BlogSection from "./client-components/blog-section";
+import AcademySection from "./client-components/academy-section";
 import { Metadata } from "next";
 import { generateHomePageSchema } from "./lib/schema";
 import Script from "next/script";
@@ -39,6 +40,7 @@ export default function Home() {
         </p>
       </div>
       <ExpandingGrid />
+      <AcademySection />
       <BlogSection />
     </div>
   );
