@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 export default function AcademySection() {
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl my-16 mx-4 md:mx-8 lg:mx-12 shadow-sm">
-      <div className="container mx-auto px-8 md:px-12">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
           <div className="w-full md:w-1/2 space-y-6">
             <motion.div 
@@ -65,7 +65,7 @@ export default function AcademySection() {
                   className="group inline-flex items-center px-6 py-3 bg-yellow-500 hover:bg-yellow-500/80 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:px-7 hover:scale-105"
                 >
                   Explore Our Academy
-                  <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-2" />
+                  <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-200 group-hover:translate-x-1"  />
                 </Link>
               </div>
             </motion.div>
@@ -90,7 +90,7 @@ export default function AcademySection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
                 <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg max-w-xs">
                   <p className="text-sm font-medium text-gray-900">
-                    "Our mission is to preserve and spread the beautiful tradition of the 10 Qiraat through authentic education."
+                    &ldquo;Our mission is to preserve and spread the beautiful tradition of the 10 Qiraat through authentic education.&rdquo;
                   </p>
                 </div>
               </div>
