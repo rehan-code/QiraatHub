@@ -157,18 +157,18 @@ export const scholars: Scholar[] = [
       description:
         "Ibn Amir ash-Shami was the leading Qari of Greater Syria (Ash-Sham). He was born in 21 AH and passed away in 118 AH. He was appointed as the Grand Judge of Damascus.",
       earlyLife:
-        "Born in Damascus, Ibn Amir grew up in a family of scholars and was known for his exceptional knowledge of Quranic sciences from a young age.",
+        "Imam Ibn ʽAmir ash-Shami was born in Mecca in 21 AH, but he grew up and spent most of his life in Damascus, Syria, which was a center of Islamic scholarship during the Umayyad Caliphate. He studied under several prominent companions of the Prophet Muhammad ﷺ, including Abu Darda and Al-Mughira ibn Abi Shihab, who influenced his knowledge of Quranic recitations. His recitation style became widely recognized across Syria, and his legacy was preserved through his two main narrators, Hisham and Ibn Dhakwan, who further transmitted his Qira’at to future generations.",
       didYouKnow: [
         "Chief Judge of Damascus",
         "His reading became the standard in the Levant region",
-        "Taught numerous prominent scholars",
+        "Imam of the famous Umayyad Mosque",
       ],
       transmission: [
         {
           name: "Hisham",
           details:
             "Hisham was one of the teachers of Imam at Tirmidhi, the great scholar of Hadith",
-            description: "Hisham ibn Ammar was one of the primary narrators of the Qira’at of Ibn ʽAmir. Born in 153 AH in Damascus, he became a prominent scholar and reciter of the Quran. His transmission of the Quranic recitation from Ibn ʽAmir helped preserve the unique style of this Syrian recitation. Hisham passed away in 245 AH"
+          description: "Hisham ibn Ammar was one of the primary narrators of the Qira’at of Ibn ʽAmir. Born in 153 AH in Damascus, he became a prominent scholar and reciter of the Quran. His transmission of the Quranic recitation from Ibn ʽAmir helped preserve the unique style of this Syrian recitation. Hisham passed away in 245 AH"
         },
         {
           name: "Ibn Dhakwan",
