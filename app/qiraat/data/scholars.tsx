@@ -9,11 +9,12 @@ export const scholars: Scholar[] = [
       description:
         "Nafi' al-Madani was one of the most prominent scholars of Qira'at in Madinah. He learned the Quran from 70 of the Tabi'in who had learned from the Companions of the Prophet ﷺ.",
       earlyLife:
-        "Born around 70 AH in Madinah, Nafi' grew up in an environment rich with Islamic knowledge. He dedicated his early years to the study of the Quran under the guidance of numerous scholars who had direct connections to the companions of the Prophet ﷺ.",
+        "Born around 70 AH in Madinah, Nafi' grew up immersed in Islamic scholarship. He studied Quranic recitation under seventy Tabi'un who had learned directly from the Prophet's companions. Highly respected by contemporary scholars, his distinctive recitation method was preserved through his two primary students, Qalun and Warsh, whose styles remain influential throughout the Muslim world today.",
       didYouKnow: [
         "He served as the Imam of Qira'at in Madinah for over 70 years",
-        "His reading was adopted as the official reading of Madinah",
-        "Imam Malik said about him: 'The recitation of the people of Madinah is the Sunnah'",
+        "Highly respected for his impeccable articulation and melodious voice",
+        "It was said that whenever he spoke, the fragrance of musk would emanate from his mouth",
+        "When asked if he used perfume before reciting, he replied that he saw the Prophet ﷺ in a dream who recited into his mouth, and since then, the fragrance remained"
       ],
       transmission: [
         {
