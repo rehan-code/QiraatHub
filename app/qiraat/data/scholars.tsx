@@ -64,10 +64,10 @@ export const scholars: Scholar[] = [
       description:
         "Ibn Kathir al-Makki was born in Makkah in 45 AH and passed away in 120 AH. He was one of the most respected readers of the Quran in Makkah and was known for his precise and authentic transmission.",
       earlyLife:
-        "Born in Makkah, Ibn Kathir grew up in a family of scholars and was known for his exceptional memory and recitation skills from a young age.",
+        "Ibn Kathir al-Makki (45-120 AH/665-738 CE) was one of the seven canonical Quran reciters, highly respected in Makkah. Born into a scholarly family, he displayed exceptional memory and recitation skills from an early age. He learned Quranic recitation directly from the Prophet's companions, establishing himself as an authoritative figure in Islamic scholarship.",
       didYouKnow: [
-        "Appointed as the leading Quran teacher in Makkah",
-        "Developed a distinct style of recitation",
+        "Highly respected for his impeccable precision in recitation and articulation",
+        "Known to combine clarity with a deep understanding of the divine message",
         "His reading became the standard in Makkah",
       ],
       transmission: [
