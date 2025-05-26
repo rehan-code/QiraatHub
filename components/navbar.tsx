@@ -67,9 +67,12 @@ export function Navbar() {
                       { name: "Nafi' al-Madani", slug: "nafi-al-madani" },
                       { name: "Ibn Kathir", slug: "ibn-kathir" },
                       { name: "Abu Amr Basri", slug: "abu-amr-basri" },
+                      { name: "Ibn Amir Shami", slug: "ibn-amir-shami" },
                       { name: "Asim Al Koofi", slug: "asim-al-koofi" },
                       { name: "Hamza Al Kufi", slug: "hamza-al-kufi" },
+                      { name: "Al-Kisa'i", slug: "al-kisai" },
                       { name: "Abu Jaafar", slug: "abu-jaafar" },
+                      { name: "Yaqub Hadrani", slug: "yaqub-hadrani" },
                       { name: "Khalaf Al Ashir", slug: "khalaf-al-ashir" },
                     ].map((scholar) => (
                       <Link
