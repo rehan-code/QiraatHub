@@ -109,10 +109,10 @@ export const scholars: Scholar[] = [
       description:
         "Abu Amr al-Basri was born in 68 AH and passed away in 154 AH. He was renowned for his extensive knowledge of Arabic language and Quranic sciences.",
       earlyLife:
-        "Born in Basra, Abu Amr grew up in a family of scholars and was known for his exceptional knowledge of Arabic language and Quranic sciences from a young age.",
+      "Abu Amr, born in Basra (68-154 AH), was a leading Quranic scholar who studied under prominent teachers including Abu Ja'far and Abu al-'Aliyah, establishing a chain back to the Prophet ﷺ through companions like Umar ibn al-Khattab. Though born in Makkah, he flourished in Basra where his recitation style became renowned for its fluidity and eloquence.",
       didYouKnow: [
-        "Established a prominent school of Qira'at in Basra",
-        "Authored several works on Arabic grammar",
+        "Was a renowned linguist who contributed significantly to Arabic grammar",
+        "His influence helped shape the Basri school of grammar for future generations",
         "His reading was widely accepted in both Basra and Baghdad",
       ],
       transmission: [
