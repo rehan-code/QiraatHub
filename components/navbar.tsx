@@ -60,9 +60,9 @@ export function Navbar() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="w-[300px] p-4 bg-white shadow-lg border border-slate-200/80"
+                  className="w-[450px] p-4 bg-white shadow-lg border border-slate-200/80"
                 >
-                  <div className="grid gap-3">
+                  <div className="grid grid-cols-2 gap-3">
                     {[
                       { name: "Nafi' al-Madani", slug: "nafi-al-madani" },
                       { name: "Ibn Kathir", slug: "ibn-kathir" },
