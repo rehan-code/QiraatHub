@@ -258,13 +258,13 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/book-quran-scripture-8224121-1-768x512.png",
       slug: "hamza-al-kufi",
       description:
-        "Hamza al-Kufi was born in 80 AH and passed away in 156 AH. He was known for his expertise in Arabic language and Quranic recitation.",
+        "Hamza ibn Habib al-Zayyat al-Kufi was born in 80 AH and passed away in 156 AH. He studied Quranic recitation under prominent scholars including Sulayman al-A'mash, Ja'far al-Sadiq, and Abu Amr ibn al-'Ala. He was known for his expertise in Quranic recitation and deep knowledge of the Quranic sciences.",
       earlyLife:
-        "Born in Kufa, Hamza grew up in a family of scholars and was known for his exceptional knowledge of Arabic language and Quranic sciences from a young age.",
+        "Hamza al-Kufi (80-156 AH) became a leading figure in Quranic recitation in Kufa after the death of Asim al-Kufi. Known for his beautiful and precise recitation style, he dedicated his life to teaching the Quran. Ash-Shāṭibī described him as 'a righteous pious man, a patient imām who recited the Qur-ān with tartīl.' His methodical approach and attention to detail made his recitation style distinctive and influential. Born in Kufa, Hamza grew up in a family of scholars and was known for his exceptional knowledge of Arabic language and Quranic sciences from a young age.",
       didYouKnow: [
-        "Renowned for his knowledge of Arabic and Quranic sciences",
-        "Developed unique recitation methods",
-        "Established a prominent school of Qira'at",
+        "Imam Abu Hanifa praised him: 'Allah has favored you with two things that we cannot compete with: the Qur'an and the laws of inheritance'",
+        "Master of Faraid (Islamic inheritance law) in addition to Quranic recitation",
+        "Continued to teach the Quran despite becoming blind in his later years",
       ],
       transmission: [
         {
