@@ -207,11 +207,11 @@ export const scholars: Scholar[] = [
       description:
         "Asim al-Kufi was one of the most influential Qurra of Kufa. He passed away around 127 AH. His reading is one of the most widely spread today through the narration of Hafs.",
       earlyLife:
-        "Born in Kufa, Asim grew up in a family of scholars and was known for his exceptional knowledge of Quranic sciences from a young age.",
+        "Imam Asim ibn Abi Annajud al-Kufi was a distinguished Quran reciter from among the Successors (Tabi’un), having met 24 of the Prophet’s Companions. Known for his exceptional knowledge of Quranic recitation, Arabic language, and grammar, Imam Asim became the leading Quran reciter of his time. For over 50 years, he served as the Imam of the Quran reciters in Kufa, succeeding his teacher, Abu Abdur-Rahman al-Sulami. Both men, who were blind, were known for their beautiful voices and mastery of the Quran. Imam Asim passed away in 127 AH.",
       didYouKnow: [
-        "Developed the most widely used Qira'at today",
         "Known for his exceptional memory and precision",
         "Established a major school of Quranic recitation in Kufa",
+        "Narrated Hadiths from companions, which are included in the six major Hadith collections",
       ],
       transmission: [
         {
