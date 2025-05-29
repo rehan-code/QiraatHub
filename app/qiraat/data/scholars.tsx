@@ -356,13 +356,13 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-light-recite-5385901-1-1-768x512.jpg",
       slug: "abu-jaafar",
       description:
-        "Abu Ja'far was one of the ten recognized Qurra. He was born in 70 AH and passed away in 130 AH. He was known for his precise and authentic transmission of the Quran.",
+        "Abu Ja'far Yazid ibn al-Qa'qa' al-Madani (70-130 AH) was one of the ten recognized Qurra and a prominent scholar in Medina. Known for his precise recitation, he learned directly from several companions of the Prophet Muhammad ﷺ.",
       earlyLife:
-        "Born in Madinah, Abu Ja'far grew up in a family of scholars and was known for his exceptional knowledge of Quranic sciences from a young age.",
+        "Abū Jaʽfar al-Madanī was born and raised in Medina, where he spent most of his life in the service of Islamic knowledge. His early connection with the Prophet’s companions, particularly Umm Salamah, left a profound impact on his spiritual life. He learned the Quran from notable companions such as ʽAbdullāh ibn ʽAbbās, ʽAbdullāh ibn ʽAyyāsh, and Abū Hurayrah, acquiring not only the Quranic recitations but also their deep understanding of the Quran’s meanings. His legacy lives on through his unique method of recitation, which was passed down through his students and remains one of the ten canonical Qirāʾāt.",
       didYouKnow: [
         "One of the earliest authorities on Quranic recitation in Madinah",
-        "Developed distinct recitation methods",
-        "Taught many prominent scholars",
+        "Prayed 4 rakʽāt of tahajjud every night & made duʽā for the ummah",
+        "When prepared for burial, a bright light resembling a page of the Quran was seen between his neck and chest"
       ],
       transmission: [
         {
