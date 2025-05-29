@@ -313,7 +313,7 @@ export const scholars: Scholar[] = [
       description:
         "Al-Kisa'i was one of the Seven Readers and a prominent scholar of Arabic grammar. He passed away in 189 AH. He was the leading grammarian of the Kufa school.",
       earlyLife:
-        "Born in Kufa, Al-Kisa'i grew up in a family of scholars and was known for his exceptional knowledge of Arabic language and Quranic sciences from a young age.",
+        "Born around 120 A.H. in Kufa, Iraq, into a non-Arab Persian family, Al-Kisāʾī was deeply committed to learning despite his background. His journey into Islamic scholarship began in Iraq, where he was given the nickname “Al-Kisāʾī” after performing Iḥrām (ritual consecration) in a “kisāʾ” (cloak or wrap). He learned Quranic recitation from numerous prominent scholars of his time, including Imam Ḥamza ibn Habīb and other famous reciters like ʿĀṣim and Shuʿbah. Al-Kisāʾī passed away in 189 A.H., leaving behind a rich intellectual heritage.",
       didYouKnow: [
         "Leading grammarian of the Kufa school",
         "Teacher of the sons of Caliph Harun ar-Rashid",
