@@ -401,9 +401,9 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/87948b6c923b69c5e451fcb5d3a5577a-1.webp",
       slug: "yaqub-hadrani",
       description:
-        "Yaqub al-Hadrami was born in 117 AH and passed away in 205 AH. He was the leading Qari of Basra in his time.",
+        "Abu Muhammad Ya'qub ibn Ishaq al-Hadrami, born in 117 AH (735 CE) and passed away in 205 AH (820 CE), was the preeminent Qari of Basra during his era. Renowned for his expertise in Quranic recitation, he played a crucial role in preserving and transmitting the unique Basran style of Qira'at.",
       earlyLife:
-        "Born in Basra, Yaqub grew up in a family of scholars and was known for his exceptional knowledge of Quranic sciences from a young age.",
+        "Born in Basra in 117 AH, Yaqub al-Hadrami grew up in a scholarly environment that nurtured his passion for Quranic studies. From a young age, he displayed exceptional aptitude in memorization and recitation. He studied under prominent scholars of his time, including Abu Al-Mundhir Sallam ibn Sulayman At-Taweel and Mahdi ibn Maymun. Yaqub's dedication and intellect led him to become the Imam of the Grand Mosque of Basra and a leading authority in Qira'at. His unique method of recitation gained widespread acceptance in Basra and beyond, contributing significantly to the preservation and transmission of Quranic knowledge.",
       didYouKnow: [
         "Imam of the Grand Mosque of Basra",
         "Developed unique recitation methods",
