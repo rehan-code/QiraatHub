@@ -445,12 +445,11 @@ export const scholars: Scholar[] = [
       image: "https://old.qiraathub.com/wp-content/uploads/2024/09/i-768x768.webp",
       slug: "khalaf-al-ashir",
       description:
-        "Khalaf was born in 150 AH and passed away in 229 AH. He was one of the transmitters of Hamza's reading before establishing his own reading.",
+        "Khalaf ibn Hisham al-Bazzar, also known as Abu Muhammad, was born in 150 AH and passed away in 229 AH. He was one of the transmitters of Hamzah ibn Habib az-Zayyat's reading as well as establishing his own reading.",
       earlyLife:
-        "Born in Kufa, Khalaf grew up in a family of scholars and was known for his exceptional knowledge of Quranic sciences from a young age.",
+        "Khalaf. born 150 AH, was a native of Kufa, Iraq, and grew up in a scholarly environment. He traveled to Baghdad, where he became well-known for his expertise in recitation. Khalaf learned under the tutelage of several scholars, including Hamzah az-Zaiyyāt, whose method of recitation he transmitted. He was also known for his strong knowledge of Arabic grammar and linguistics. His method is distinct from Hamzah’s, though he was a transmitter of Hamzah’s recitation.",
       didYouKnow: [
-        "Developed his own recognized reading",
-        "Authored works on Quranic sciences",
+        "Memorized the Quran at the age of 10",
         "Known for his expertise in both transmission and recitation",
       ],
       transmission: [
