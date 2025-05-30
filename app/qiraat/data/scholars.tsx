@@ -7,7 +7,7 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/quran_read20-1280x640-1-768x384.jpg",
       slug: "nafi-al-madani",
       description:
-        "Nafi' al-Madani was one of the most prominent scholars of Qira'at in Madinah. He learned the Quran from 70 of the Tabi'in who had learned from the Companions of the Prophet ﷺ.",
+        "Nafi' ibn Abd ar-Rahman ibn Abi Nu'aym al-Laythi (70-169 AH / 689-785 CE) was one of the most prominent scholars of Qira'at in Madinah. He learned the Quran from 70 of the Tabi'in who had learned from the Companions of the Prophet ﷺ.",
       earlyLife:
         "Born around 70 AH in Madinah, Nafi' grew up immersed in Islamic scholarship. He studied Quranic recitation under seventy Tabi'un who had learned directly from the Prophet's companions. Highly respected by contemporary scholars, his distinctive recitation method was preserved through his two primary students, Qalun and Warsh, whose styles remain influential throughout the Muslim world today.",
       didYouKnow: [
@@ -62,7 +62,7 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-islam-laptop-wallpaper-6114872-1-768x512.jpg",
       slug: "ibn-kathir",
       description:
-        "Ibn Kathir al-Makki was born in Makkah in 45 AH and passed away in 120 AH. He was one of the most respected readers of the Quran in Makkah and was known for his precise and authentic transmission.",
+        "Abdullah ibn Kathir al-Makki, known as Ibn Kathir, was born in Makkah in 45 AH and passed away in 120 AH. He was one of the most respected readers of the Quran in Makkah and was known for his precise and authentic transmission.",
       earlyLife:
         "Ibn Kathir al-Makki (45-120 AH/665-738 CE) was one of the seven canonical Quran reciters, highly respected in Makkah. Born into a scholarly family, he displayed exceptional memory and recitation skills from an early age. He learned Quranic recitation directly from the Prophet's companions, establishing himself as an authoritative figure in Islamic scholarship.",
       didYouKnow: [
@@ -107,7 +107,7 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/book-quran-open-1283468-1-768x512.jpg",
       slug: "abu-amr-basri",
       description:
-        "Abu Amr al-Basri was born in 68 AH and passed away in 154 AH. He was renowned for his extensive knowledge of Arabic language and Quranic sciences.",
+        "Abu Amr Zabban ibn al-'Ala' al-Basri was born in 68 AH and passed away in 154 AH. He was renowned for his extensive knowledge of Arabic language and Quranic sciences.",
       earlyLife:
       "Abu Amr, born in Basra (68-154 AH), was a leading Quranic scholar who studied under prominent teachers including Abu Ja'far and Abu al-'Aliyah, establishing a chain back to the Prophet ﷺ through companions like Umar ibn al-Khattab. Though born in Makkah, he flourished in Basra where his recitation style became renowned for its fluidity and eloquence.",
       didYouKnow: [
@@ -156,7 +156,7 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-islam-book-6862296-1-768x512.jpg",
       slug: "ibn-amir-shami",
       description:
-        "Ibn Amir ash-Shami was the leading Qari of Greater Syria (Ash-Sham). He was born in 21 AH and passed away in 118 AH. He was appointed as the Grand Judge of Damascus.",
+        "Abdullah ibn Amir al-Yahsubi, known as Ibn Amir ash-Shami, was the leading Qari of Greater Syria (Ash-Sham). He was born in 21 AH and passed away in 118 AH. He was appointed as the Grand Judge of Damascus.",
       earlyLife:
         "Imam Ibn ʽAmir ash-Shami was born in Mecca in 21 AH, but he grew up and spent most of his life in Damascus, Syria, which was a center of Islamic scholarship during the Umayyad Caliphate. He studied under several prominent companions of the Prophet Muhammad ﷺ, including Abu Darda and Al-Mughira ibn Abi Shihab, who influenced his knowledge of Quranic recitations. His recitation style became widely recognized across Syria, and his legacy was preserved through his two main narrators, Hisham and Ibn Dhakwan, who further transmitted his Qira’at to future generations.",
       didYouKnow: [
@@ -205,7 +205,7 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/an-quran-scripture-7741928-1-768x513.jpg",
       slug: "asim-al-koofi",
       description:
-        "Asim al-Kufi was one of the most influential Qurra of Kufa. He passed away around 127 AH. His reading is one of the most widely spread today through the narration of Hafs.",
+        "Asim ibn Abi al-Najud al-Kufi (born around 45 AH, died 127 AH) was one of the most influential Qurra of Kufa. His reading became widely spread, particularly through the narration of Hafs, and remains one of the most commonly used Quranic recitations worldwide.",
       earlyLife:
         "Imam Asim ibn Abi Annajud al-Kufi was a distinguished Quran reciter from among the Successors (Tabi’un), having met 24 of the Prophet’s Companions. Known for his exceptional knowledge of Quranic recitation, Arabic language, and grammar, Imam Asim became the leading Quran reciter of his time. For over 50 years, he served as the Imam of the Quran reciters in Kufa, succeeding his teacher, Abu Abdur-Rahman al-Sulami. Both men, who were blind, were known for their beautiful voices and mastery of the Quran. Imam Asim passed away in 127 AH.",
       didYouKnow: [
@@ -311,7 +311,7 @@ export const scholars: Scholar[] = [
         "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-light-spirituality-5385907-1-2-768x512.jpg",
       slug: "al-kisai",
       description:
-        "Al-Kisa'i was one of the Seven Readers and a prominent scholar of Arabic grammar. He passed away in 189 AH. He was the leading grammarian of the Kufa school.",
+        "Abu al-Hasan Ali ibn Hamzah al-Kisa'i (120-189 AH) was one of the Seven Readers and a prominent scholar of Arabic grammar. He was the leading grammarian of the Kufa school and made significant contributions to Quranic recitation and linguistic studies.",
       earlyLife:
         "Born around 120 A.H. in Kufa, Iraq, into a non-Arab Persian family, Al-Kisāʾī was deeply committed to learning despite his background. His journey into Islamic scholarship began in Iraq, where he was given the nickname “Al-Kisāʾī” after performing Iḥrām (ritual consecration) in a “kisāʾ” (cloak or wrap). He learned Quranic recitation from numerous prominent scholars of his time, including Imam Ḥamza ibn Habīb and other famous reciters like ʿĀṣim and Shuʿbah. Al-Kisāʾī passed away in 189 A.H., leaving behind a rich intellectual heritage.",
       didYouKnow: [
