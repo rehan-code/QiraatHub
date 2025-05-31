@@ -536,6 +536,178 @@ By delving into these foundational texts, you not only gain insight into the tec
         url: "/resources/downloads/al-durra-al-mudhiyyah"
       }
     ]
+  },
+  {
+    slug: "how-to-make-dua-in-sujood",
+    title: "How to Make Dua in Sujood: Step by Step Guide & Tips",
+    excerpt: "Learn how to make dua in sujood during salah and tahajjud. Discover what to say, step-by-step instructions, and the spiritual significance of sujood dua",
+    content: `
+# How to Make Dua in Sujood? A Complete Step-by-Step Guide
+
+![How to Make Dua in Sujood? A Complete Step-by-Step Guide](/images/how-to-make-dua.png)
+
+Sujood, or prostration, is a pivotal part of Muslim prayer, where a worshipper lowers their body to the ground as a symbol of utmost humility and submission to Allah. It is during this sacred moment that a Muslim draws nearest to the Divine, making it the most fitting time to make dua (supplication) — a heartfelt prayer seeking Allah's mercy, guidance, forgiveness, and blessings. 
+
+Many believers ask, **"How to make dua in sujood?"** or wonder about **what to say in sujood**, especially during the special night prayer, **Tahajjud**, or the five daily prayers **(salah)**. 
+
+This article provides an in-depth, step-by-step guide to help you make the most of your dua in sujood, supported by Islamic teachings and practical advice.
+
+## What Is Sujood and Why Is Dua in Sujood Important?
+
+### The Meaning and Significance of Sujood
+
+Sujood, derived from the Arabic root meaning "to bow down," is a fundamental act in the five daily prayers where a Muslim places their forehead and nose firmly on the ground, alongside their hands, knees, and toes. 
+
+This physical posture is the ultimate expression of humility, surrender, and devotion. It signifies the worshipper's acknowledgment of Allah's greatness and their dependence.
+
+### Spiritual Proximity to Allah
+
+The Prophet Muhammad (peace be upon him) taught that when a believer is in sujood, they are at their closest point to Allah. This is more than just a physical closeness; it represents a spiritual intimacy where the servant's heart is open and vulnerable before the Creator. The hadith states:
+
+> "The servant is closest to his Lord when he is prostrating, so increase your supplications therein." (Sahih Muslim)
+
+This highlights the importance of using this moment to sincerely make dua, knowing it is the time when Allah is most attentive to your pleas.
+
+### Dua as a Form of Worship
+
+Dua in sujood is not merely asking for worldly needs; it is a worship act that deepens your connection with Allah. It is a time to express gratitude, admit shortcomings, ask for forgiveness, and request guidance. Raising your hands and heart to Allah in sujood reflects the humility and sincerity that dua requires.
+
+## What to Say in Sujood?
+
+### The Traditional Tasbih
+
+During sujood, the Prophet (PBUH) instructed Muslims to say:
+
+> **"Subhana Rabbiyal A'la"**  
+> (Glory is to my Lord, the Most High)
+
+Usually recited three times, this glorification reminds the believer of Allah's supreme greatness and purity.
+
+**Read More**: [How long does it take to read the Quran?](./how-long-does-it-take-to-read-the-quran)
+
+### Personal Supplications
+
+Beyond this prescribed tasbih, sujood is the perfect opportunity to make **personal duas**. You can talk to Allah in your own words or use traditional supplications taught by the Prophet (PBUH). This could be asking for forgiveness, healing, protection, success, or any need close to your heart.
+
+### Language and Sincerity
+
+While Arabic duas are recommended, especially those taught by the Prophet (PBUH), Allah understands every language and every heartfelt expression. The sincerity of your heart matters more than the specific words. Speak to Allah honestly and humbly — this is what truly counts.
+
+## How to Make Dua in Sujood During Salah
+
+### Dua in Obligatory Prayers
+
+Many Muslims wonder if making dua in sujood during the obligatory five daily prayers is appropriate. The answer is yes. While you must recite the necessary parts of salah, such as the tasbih, you can also silently make personal supplications during your sujood.
+
+### Balancing Worship and Dua
+
+Since salah has specific recitations, it's best to make your dua after reciting "Subhana Rabbiyal A'la." This ensures you fulfill the formal requirements of prayer while also engaging in heartfelt conversation with Allah.
+
+### Using Sujood in Sunnah and Nafl Prayers
+
+In non-obligatory prayers like Sunnah or Nafl, you have more freedom to make longer, personal duas during sujood. Take advantage of these times to deepen your connection and ask for whatever you need.
+
+## How to Make Dua in Sujood Step by Step
+
+To help you get the most out of your dua in sujood, here is a detailed step-by-step guide:
+
+### Step 1: Prepare Your Heart and Mind
+
+Before performing sujood, take a moment to clear your mind and focus on your intention (niyyah). Approach this act humbly, understanding that you are standing before the Almighty.
+
+### Step 2: Perform Sujood Correctly
+
+Lower yourself so that your forehead and nose touch the ground alongside your palms, knees, and toes. This full contact with the earth symbolizes submission and reverence.
+
+### Step 3: Recite the Tasbih
+
+Say **"Subhana Rabbiyal A'la"** at least three times. This glorifies Allah and prepares your heart for supplication.
+
+### Step 4: Praise Allah and Send Salawat
+
+Before making your dua, start with praising Allah using phrases like **"Alhamdulillah"** (All praise is for Allah) or **"Ya Allah, You are the Most Merciful."** Also, send blessings on the Prophet Muhammad (PBUH) by saying phrases such as **"Allahumma salli 'ala Muhammad"** (O Allah, send peace upon Muhammad).
+
+### Step 5: Make Your Personal Dua
+
+Pour your heart out. Ask for forgiveness, mercy, guidance, health, protection, success — whatever you need. You can speak in Arabic or your language. The key is sincerity and focus.
+
+### Step 6: End with Gratitude
+
+Finish your dua by thanking Allah for His mercy and blessings. Gratitude strengthens your relationship with Allah and acknowledges His constant presence in your life.
+
+## How to Make Dua in Sujood in Tahajjud
+
+### The Unique Spiritual Atmosphere of Tahajjud
+
+Tahajjud is a voluntary night prayer performed during the last third of the night. It is considered the most blessed time for dua because the world is quiet, distractions are minimal, and Allah's mercy is abundant.
+
+### Step-by-Step Dua in Tahajjud Sujood
+
+1. Perform your tahajjud prayer with sincerity and calm.
+2. In sujood, recite the tasbih and then make lengthy, heartfelt duas.
+3. This is the ideal time to ask for deep forgiveness, guidance in life, healing, and fulfillment of heartfelt wishes.
+4. The quiet solitude enhances concentration, making your dua even more meaningful.
+
+### Hadith on Tahajjud Dua
+
+The Prophet (PBUH) said:
+
+> "Our Lord descends every night to the lowest heaven when one-third of the night remains and says: 'Who is calling upon Me that I may answer him? Who is asking me to I may give him? Who is seeking my forgiveness that I may forgive him?" ([Sahih al-Bukhari](https://sunnah.com/bukhari))
+
+This encourages believers to make the most of dua during tahajjud sujood.
+
+## Common Duas to Say in Sujood
+
+Here are some dua examples you can incorporate:
+
+- **Seeking Forgiveness**: "Rabbi ighfir li" — O my Lord, forgive me.
+- **Comprehensive Forgiveness**: "Allahumma ighfir li dhanbi, waftah li abwaba rahmatika" — O Allah, forgive my sins and open the gates of Your mercy for me.
+- **General Requests**: "Ya Allah, guide me, protect me, and bless me in this life and the next."
+- **Sayyidul Istighfar**: The master supplication for seeking forgiveness, which the Prophet (PBUH) recommended reciting daily.
+
+Remember, dua does not need to be long; it must be sincere and from the heart.
+
+## Tips for Making Effective Dua in Sujood
+
+1. **Be Sincere and Humble**: Approach Allah with a humble heart, free from arrogance or distractions.
+2. **Be Specific in Your Requests**: Ask for what you need or want. Vague or generic requests can be less powerful than specific, heartfelt prayers.
+3. **Maintain Consistency**: Make dua in sujood regularly, especially in your daily prayers and tahajjud.
+4. **Include Blessings on the Prophet (PBUH)**: Sending salawat is a means of increasing the acceptance of your dua.
+5. **Have Patience and Trust**: Sometimes answers come later or in a different form than expected. Trust in Allah's wisdom.
+6. **Use Your Own Language**: Speak to Allah in the language that feels most natural to you. Allah understands all languages.
+
+Participate in learning 10 qirats at [Qiraathub](https://qiraathub.com) today.
+
+## Frequently Asked Questions (FAQs)
+
+### Can I make dua silently or aloud in sujood?
+
+In obligatory prayers, the dua should be silent. In voluntary prayers or outside formal salah, you can make dua aloud or silently.
+
+### Is it necessary to make dua in Arabic?
+
+No. While Arabic is preferred for traditional duas, Allah understands all languages, and sincerity is most important.
+
+### How long should I make dua in sujood?
+
+There is no fixed duration. Take your time to speak to Allah sincerely, but avoid rushing.
+
+### Can I make dua for others during sujood?
+
+Yes, you can ask Allah for blessings, forgiveness, and help for yourself and others.
+
+## Conclusion
+
+Knowing how to **make dua in sujood** enriches your prayer experience by connecting you more deeply to Allah. 
+
+Whether during the five daily prayers, the special Tahajjud, or any moment of prostration, sujood is a sacred time to pour out your heart. Follow the step-by-step guide, be sincere, and remember that Allah is always listening.
+
+May your duas be accepted and your prayers bring peace to your heart.
+`,
+    date: "May 28, 2025",
+    author: "qiraathub",
+    imageUrl: "/images/how-to-make-dua.png",
+    resources: []
   }
 ];
 
