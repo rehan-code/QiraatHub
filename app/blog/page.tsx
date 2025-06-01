@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const blogPosts = getBlogPosts();
   const featuredPost = blogPosts[0]; // Use the first post as featured
-  const regularPosts = blogPosts.slice(1); // All other posts
+  const regularPosts = blogPosts.slice(1).reverse(); // All other posts
   
   return (
     <div className="min-h-screen bg-white">
