@@ -544,7 +544,7 @@ By delving into these foundational texts, you not only gain insight into the tec
     content: `
 # How to Make Dua in Sujood? A Complete Step-by-Step Guide
 
-![How to Make Dua in Sujood? A Complete Step-by-Step Guide](/images/how-to-make-dua.png)
+![How to Make Dua in Sujood? A Complete Step-by-Step Guide](/images/how-to-make-dua-in-sujood.png)
 
 Sujood, or prostration, is a pivotal part of Muslim prayer, where a worshipper lowers their body to the ground as a symbol of utmost humility and submission to Allah. It is during this sacred moment that a Muslim draws nearest to the Divine, making it the most fitting time to make dua (supplication) — a heartfelt prayer seeking Allah's mercy, guidance, forgiveness, and blessings. 
 
@@ -703,6 +703,216 @@ Knowing how to **make dua in sujood** enriches your prayer experience by connect
 Whether during the five daily prayers, the special Tahajjud, or any moment of prostration, sujood is a sacred time to pour out your heart. Follow the step-by-step guide, be sincere, and remember that Allah is always listening.
 
 May your duas be accepted and your prayers bring peace to your heart.
+`,
+    date: "May 28, 2025",
+    author: "qiraathub",
+    imageUrl: "/images/how-to-make-dua-in-sujood.png",
+    resources: []
+  },
+  {
+    slug: "how-to-make-dua",
+    title: "How to Make a Dua: Proper Steps & Tips for Effective Dua",
+    excerpt: "Learn how to make a dua properly with step-by-step guidance. Discover how to ask dua, perform dua, and whether you can make dua in English during sujood",
+    content: `
+# How to Make a Dua: Complete Guide on How to Ask and Perform Dua Properly
+
+![How to Make a Dua: Complete Guide on How to Ask and Perform Dua Properly](/images/how-to-make-dua.png)
+
+Dua, or supplication, is a beautiful and powerful act of worship in Islam. It's the direct line of communication between you and Allah, a way to pour out your heart, ask for help, seek forgiveness, or simply express gratitude. But many Muslims, whether new to Islam or lifelong practitioners, ask: **How to make a dua properly? What is the correct way to ask a dua? Can you make dua in English during sujood?**
+
+This comprehensive guide will teach you everything you need to know about **how to make a dua**, how to ask a dua effectively, how to perform a dua properly, and the etiquette surrounding this deeply personal act of worship.
+
+## What Is Dua and Why Is It Important?
+
+### Understanding the Meaning of Dua
+
+In Arabic, dua means "invocation" or "supplication." It is a form of worship where the believer reaches out to Allah to seek His help, mercy, and guidance. Unlike the five daily obligatory prayers (Salah), which have fixed words and movements, dua is informal and flexible. It can be done anywhere, anytime, and in any language.
+
+Dua expresses humility and reliance on Allah. It recognizes His supreme power and your position as His servant who is in need.
+
+### The Significance of Dua in Islam
+
+The Prophet Muhammad (peace be upon him) said,
+
+> "Dua is worship." (Tirmidhi)
+
+This hadith highlights that dua itself is a form of devotion and worship. It is not just asking; it is submitting your will to Allah and trusting in His mercy.
+
+Through dua, the believer builds a strong spiritual bond with Allah, feels comforted during hardships, and cultivates hope and optimism for the future. It is a vital part of Muslim life, serving as a source of solace and strength.
+
+### Dua as a Means of Acceptance and Blessing
+
+It is important to realize that dua is not just about making requests; it is also a means of increasing barakah (blessing) in one's life. When you pray and supplicate sincerely, Allah blesses your time, your efforts, and your outcomes.
+
+The Quran repeatedly encourages believers to call upon Allah:
+
+> "And your Lord says, 'Call upon Me; I will respond to you.'"  
+> (Surah Ghafir 40:60)
+
+This promise underscores the power of dua — it is a guaranteed conversation that Allah hears and responds to.
+
+## How to Make a Dua: The Basics
+
+### Step 1: Begin with Praise and Gratitude
+
+When you start your dua, it's recommended to begin by praising Allah. This means acknowledging His greatness, mercy, and attributes. You might say:
+
+- "Alhamdulillah" (All praise is due to Allah)
+- "SubhanAllah" (Glory be to Allah)
+- "La ilaha illa Allah" (There is no deity but Allah)
+
+Starting with praise prepares your heart and mind, reminding you of Allah's infinite mercy. It is a humble way to honor the Creator before making requests.
+
+### Step 2: Send Blessings on the Prophet Muhammad (PBUH)
+
+Following the praise, it is Sunnah (prophetic tradition) to send salutations (Salawat) upon the Prophet Muhammad (peace be upon him). This is expressed by saying:
+
+> "Allahumma salli 'ala Muhammad wa 'ala ali Muhammad"  
+> (O Allah, send blessings upon Muhammad and his family).
+
+Sending blessings is a way to express love and respect for the Prophet, who is the best of creation and the messenger of Allah. It also increases the likelihood that your dua will be accepted, as taught in many hadiths.
+
+### Step 3: Make Your Supplication (Ask Dua)
+
+Now is the time to ask for what you want. Whether it's forgiveness, guidance, health, relief from hardship, or provision, speak sincerely and from your heart.
+
+Be specific in your requests. Instead of vague phrases like "Help me," say "O Allah, grant me success in my studies" or "Please ease my difficulties."
+
+### Step 4: End with Praise and Gratitude
+
+Finish your dua by thanking Allah and praising Him again. Express your trust in His wisdom and mercy. This shows humility and gratitude, closing your supplication with hope and faith.
+
+## How to Perform Dua: Step-by-Step Guide
+
+Knowing **how to perform dua** properly can enhance your spiritual connection and make your supplications more meaningful.
+
+1. **Perform Wudu (Ablution)**: Although it is not obligatory to have wudu before dua, it is highly recommended as it shows respect and preparation. The Prophet (PBUH) made dua while in a state of purification, which also helps calm the mind and body.
+
+2. **Face the Qiblah**: Facing the Qiblah — the direction of the Kaaba in Mecca — while making dua is Sunnah but not compulsory. Facing this direction shows your focus and reverence during dua.
+
+3. **Raise Your Hands**: Raise your hands to shoulder level or higher, with palms facing up, as a gesture of asking. This physical posture symbolizes humility and submission to Allah's mercy.
+
+4. **Speak Humbly and Softly**: Make dua with a soft voice or silently in your heart. There is no need to raise your voice, as Allah hears all whispers and shouts alike. Speaking softly encourages sincerity and focus.
+
+5. **Start with Praise and Salawat**: As mentioned, begin by praising Allah and sending blessings on the Prophet (PBUH). This is the ideal way to prepare your heart before making your requests.
+
+6. **Make Your Requests**: Pour your heart out. Ask for your needs, for yourself and others. You can ask for forgiveness, health, wealth, guidance, patience, or any personal matters.
+
+7. **End with Thanks**: Close your dua with gratitude, thanking Allah for His blessings and mercy.
+
+## Can You Make Dua in English in Sujood?
+
+One common question many Muslims have is: **Can you make dua in English or any other language during sujood?**
+
+### The Language of Dua Is Not Restricted
+
+While Arabic is the language of the Quran and many traditional duas, there is no requirement that dua must be made in Arabic. Allah understands all languages and knows the intentions and feelings of every believer.
+
+During sujood (prostration) in prayer, Muslims usually say **"Subhana Rabbiyal A'la"** (Glory be to my Lord, the Most High) three times, then they may make personal dua silently or quietly.
+
+### Making Dua in English in Sujood
+
+You can make dua in English during sujood. Praise Allah in your own words, ask for forgiveness, and make personal supplications. What matters most is sincerity and concentration, not the language used.
+
+For example, in sujood, you might say in English:
+
+> "O Allah, forgive my mistakes, guide me to the right path, and bless my family."
+
+### The Power of Sincerity Over Language
+
+The key to a powerful dua is the sincerity of your heart. Whether in Arabic, English, or any other language, Allah hears and answers your prayers.
+
+## How to Properly Make Dua: Etiquettes and Tips
+
+Knowing **how to properly make dua** ensures you observe the etiquettes that increase the acceptance and spiritual benefit of your supplications.
+
+1. **Be Consistent and Persistent**: Make dua regularly. The Prophet (PBUH) taught us to keep asking and not to become discouraged if the answer seems delayed.
+
+2. **Have Patience and Trust**: Trust Allah's timing and wisdom. The answer is "yes," sometimes "no," and sometimes "wait." Believe that Allah's plan is best.
+
+3. **Approach with Humility**: Speak to Allah humbly and respectfully. Avoid arrogance or entitlement.
+
+4. **Invoke Allah by His Beautiful Names**: Allah has 99 Names (Asma'ul Husna), each reflecting His attributes. Calling upon Allah by these names relevant to your need enhances your dua.
+
+   For example:
+   - For mercy: Ar-Rahman (The Most Merciful)
+   - For forgiveness: Al-Ghaffar (The Forgiving)
+   - For provision: Ar-Razzaq (The Provider)
+
+5. **Avoid Hastiness and Distraction**: Take your time. Focus your mind and heart on the dua. Avoid making dua when you are distracted or rushed.
+
+6. **Ask for What Is Halal and Good**: Your dua should be for things allowed in Islam and beneficial for you in this life or the hereafter.
+
+## Examples of What to Say in Dua
+
+Here are some examples of duas you can recite or use as inspiration:
+
+**Seeking Forgiveness**:
+> "Astaghfirullah Rabbi min kulli dhambin wa atubu ilayh."  
+> (I seek forgiveness from Allah for all my sins and repent to Him.)
+
+**Asking for Guidance**:
+> "Allahumma ihdini siratal mustaqim."  
+> (O Allah, guide me to the straight path.)
+
+**For Protection**:
+> "A'udhu billahi min ash-shaytan ir-rajim."  
+> (I seek refuge in Allah from the accursed Satan.)
+
+**General Dua**:
+> "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina 'adhaban-nar."  
+> (Our Lord, grant us good in this world and good in the Hereafter and save us from the punishment of the Fire.)
+
+## When and Where to Make Dua?
+
+While dua can be made anytime and anywhere, certain moments are especially blessed:
+
+### **During Sujood in Salah**
+
+The Prophet (PBUH) said, "The closest a servant comes to his Lord is when he is prostrating, so make plenty of supplication." (Sahih Muslim)
+
+### **Between Adhan and Iqamah**
+
+Supplications made between the call to prayer and the start of prayer are highly recommended and accepted.
+
+### **During the Last Third of the Night (Tahajjud)**
+
+This quiet time is when Allah descends to the lowest heaven and invites supplications.
+
+### **On Fridays**
+
+There is an hour on Friday when dua is accepted.
+
+### **While Traveling**
+
+Travelers' duas are accepted due to the hardship and reliance on Allah.
+
+### **At the Time of Breaking Fast**
+
+The moment a fasting person breaks their fast is a time when dua is answered.
+
+## Common Questions About Dua
+
+### **Do I Need to Make Dua in Arabic Only?**
+
+No, dua can be made in any language. The heart's sincerity matters more than the language.
+
+### **How Long Should Dua Be?**
+There is no fixed length. It can be brief or long, as long as it is sincere.
+
+### **Can Dua Be Made for Others?**
+Yes, making dua for others is encouraged.
+
+### **What If My Dua Isn't Answered?**
+Allah responds in one of three ways: granting your request, delaying it for the better, or protecting you from harm by not granting it.
+
+## Conclusion
+
+Knowing **how to make a dua** properly enriches your spiritual life and strengthens your connection with Allah. Whether you are learning how to ask dua, perform dua, or wondering about making dua in English during sujood, the most important aspect is sincerity, humility, and patience.
+
+Dua is your conversation with Allah — a sacred moment when you open your heart and trust in His mercy. Follow the steps and tips in this guide to make your duas meaningful and impactful.
+
+May Allah accept your supplications and bless you with what is best in this life and the Hereafter.
 `,
     date: "May 28, 2025",
     author: "qiraathub",
