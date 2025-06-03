@@ -20,7 +20,7 @@ const StatsCard = ({ icon, count, label, bgColor = 'bg-blue-100' }: StatsCardPro
 );
 
 export const StatsSection = ({ scholar }: { scholar: Scholar }) => (
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12">
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:-mt-12 -mt-8">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       <StatsCard
         icon={
