@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "QiraatHub | Discover the 10 Qiraat",
   description: "Learn about the 10 distinct Qiraat (Quran recitation styles) with comprehensive resources, and educational materials",
   keywords: ["Qiraat", "Quran recitation", "Islamic studies", "Quran scholars", "10 Qiraat", "Quranic sciences"],
-  authors: [{ name: "QiraatHub Team" }],
+  authors: [{ name: "QiraatHub" }],
   creator: "QiraatHub",
   publisher: "QiraatHub",
   metadataBase: new URL("https://qiraathub.com"),
