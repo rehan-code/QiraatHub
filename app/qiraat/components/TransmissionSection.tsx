@@ -9,9 +9,21 @@ interface TransmissionSectionProps {
 
 export const TransmissionSection = ({ transmission }: TransmissionSectionProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isMobileView, setIsMobileView] = useState(false);
   const [textHeights, setTextHeights] = useState<{[key: number]: {details: number, description: number}}>({}); 
   const detailsRefs = useRef<{[key: number]: HTMLParagraphElement | null}>({});
   const descriptionRefs = useRef<{[key: number]: HTMLParagraphElement | null}>({});
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 640); // Tailwind's sm breakpoint
+    };
+    if (typeof window !== 'undefined') {
+      handleResize(); // Set initial value on client-side
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
   
   useEffect(() => {
     // Calculate heights of all text elements after initial render
@@ -29,11 +41,13 @@ export const TransmissionSection = ({ transmission }: TransmissionSectionProps) 
   }, [transmission]);
   return (
     <section className="bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/50">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between items-start mb-4">
         <h2 className="text-3xl font-bold text-gray-900">Transmission</h2>
-        <div className="flex items-center space-x-2 text-sm text-gray-500">
+        <div className="flex items-center space-x-2 text-xs sm:text-sm text-gray-500 mt-2 sm:mt-0">
           <Info className="h-5 w-5 text-blue-500" />
-          <span>Hover over cards for more details</span>
+          <span>
+            {isMobileView ? "Tap cards for more details" : "Hover over cards for more details"}
+          </span>
         </div>
       </div>
 
