@@ -15,6 +15,98 @@ interface CustomWebpackConfig extends WebpackConfig {
 
 const nextConfig: NextConfig = {
   /* config options here */
+  redirects: async () => [
+    // Hamza Al Kufi redirects
+    {
+      source: '/hamzah-al-koofi',
+      destination: '/qiraat/hamza-al-kufi',
+      permanent: true,
+    },
+    {
+      source: '/hamza-al-kufi',
+      destination: '/qiraat/hamza-al-kufi',
+      permanent: true,
+    },
+    // Nafi al-Madani redirects
+    {
+      source: '/nafiʽ-al-madani',
+      destination: '/qiraat/nafi-al-madani',
+      permanent: true,
+    },
+    {
+      source: '/nafi-al-madani',
+      destination: '/qiraat/nafi-al-madani',
+      permanent: true,
+    },
+    // Ibn Kathir redirects
+    {
+      source: '/ibn-kathir',
+      destination: '/qiraat/ibn-kathir',
+      permanent: true,
+    },
+    // Abu Amr Basri redirects
+    {
+      source: '/abu-amr-al-basri',
+      destination: '/qiraat/abu-amr-basri',
+      permanent: true,
+    },
+    {
+      source: '/abu-amr-basri',
+      destination: '/qiraat/abu-amr-basri',
+      permanent: true,
+    },
+    // Ibn Amir Shami redirects
+    {
+      source: '/ibn-amir-dimashqi',
+      destination: '/qiraat/ibn-amir-shami',
+      permanent: true,
+    },
+    {
+      source: '/ibn-amir-shami',
+      destination: '/qiraat/ibn-amir-shami',
+      permanent: true,
+    },
+    // Asim Al Koofi redirects
+    {
+      source: '/asim-al-koofi',
+      destination: '/qiraat/asim-al-koofi',
+      permanent: true,
+    },
+    // Al-Kisa'i redirects
+    {
+      source: '/al-kisai',
+      destination: '/qiraat/al-kisai',
+      permanent: true,
+    },
+    // Abu Jaafar redirects
+    {
+      source: '/abu-jaafar',
+      destination: '/qiraat/abu-jaafar',
+      permanent: true,
+    },
+    // Yaqub Hadrani redirects
+    {
+      source: '/yaqoub-al-hadrami',
+      destination: '/qiraat/yaqub-hadrani',
+      permanent: true,
+    },
+    {
+      source: '/yaqub-hadrani',
+      destination: '/qiraat/yaqub-hadrani',
+      permanent: true,
+    },
+    // Khalaf Al Ashir redirects
+    {
+      source: '/khalaf-ibn-hisham',
+      destination: '/qiraat/khalaf-al-ashir',
+      permanent: true,
+    },
+    {
+      source: '/khalaf-al-ashir',
+      destination: '/qiraat/khalaf-al-ashir',
+      permanent: true,
+    },
+  ],
   experimental: {
     turbo: {
       rules: {
