@@ -29,7 +29,12 @@ const nextConfig: NextConfig = {
     },
     // Nafi al-Madani redirects
     {
-      source: '/nafiʽ-al-madani',
+      source: "/nafi'-al-madani",
+      destination: '/qiraat/nafi-al-madani',
+      permanent: true,
+    },
+    {
+      source: "/nafiʽ-al-madani",
       destination: '/qiraat/nafi-al-madani',
       permanent: true,
     },
