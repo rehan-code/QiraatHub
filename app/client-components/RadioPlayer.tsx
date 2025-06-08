@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import styles from './RadioPlayer.module.css';
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+import { Slider } from '@/components/ui/slider'; // Import shadcn/ui Slider
 
 interface RadioPlayerProps {
   streamUrl: string;
@@ -20,60 +20,84 @@ const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Liv
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.src = streamUrl; // Ensure src is set before play
-        audioRef.current.load(); // Load the stream
+        audioRef.current.src = streamUrl;
+        audioRef.current.load();
         audioRef.current.play().catch(error => console.error("Error playing audio:", error));
       }
       setIsPlaying(!isPlaying);
     }
   };
 
-  const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newVolume = parseFloat(event.target.value);
+  const handleVolumeChange = (value: number[]) => {
+    const newVolume = value[0];
     setVolume(newVolume);
     if (audioRef.current) {
       audioRef.current.volume = newVolume;
     }
-    setIsMuted(false); // Unmute if volume is changed manually
+    setIsMuted(newVolume === 0);
   };
 
   const toggleMute = () => {
     if (audioRef.current) {
-      audioRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      const currentMuted = !audioRef.current.muted;
+      audioRef.current.muted = currentMuted;
+      setIsMuted(currentMuted);
+      // If unmuting and volume was 0, set to a default volume (e.g., 0.5)
+      // Otherwise, if muting, the visual volume can remain, or be set to 0
+      if (!currentMuted && audioRef.current.volume === 0) {
+        setVolume(0.5); // Or previous non-zero volume
+        audioRef.current.volume = 0.5;
+      }
     }
   };
 
   return (
-    <div className={styles.radioPlayerContainer}>
-      <audio ref={audioRef} preload="none" />
-      <div className={styles.controls}>
-        <button onClick={togglePlayPause} className={styles.controlButton} aria-label={isPlaying ? 'Pause' : 'Play'}>
+    <div
+      className="fixed bottom-5 right-5 w-[350px] bg-slate-800 text-slate-100 rounded-xl p-4 shadow-xl z-[1000] font-sans transition-transform duration-300 ease-in-out hover:-translate-y-1"
+    >
+      <audio ref={audioRef} preload="none" onVolumeChange={() => {
+        if(audioRef.current) {
+          setVolume(audioRef.current.volume);
+          setIsMuted(audioRef.current.muted);
+        }
+      }} />
+      <div className="flex items-center justify-between">
+        <button
+          onClick={togglePlayPause}
+          className="bg-transparent border-none text-slate-100 cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
+          aria-label={isPlaying ? 'Pause' : 'Play'}
+        >
           {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
         </button>
-        <div className={styles.stationInfo}>
-          <p className={styles.stationName}>{stationName}</p>
-          {isPlaying && <p className={styles.status}>Now Playing</p>}
-          {!isPlaying && <p className={styles.status}>Paused</p>}
+        <div className="text-center flex-grow mx-3 overflow-hidden">
+          <p className="text-sm font-semibold truncate">
+            {stationName}
+          </p>
+          {isPlaying && <p className="text-xs text-slate-400 m-0">Now Playing</p>}
+          {!isPlaying && <p className="text-xs text-slate-400 m-0">Paused</p>}
         </div>
-        <div className={styles.volumeControlContainer}>
-          <button onClick={toggleMute} className={styles.controlButton} aria-label={isMuted ? 'Unmute' : 'Mute'}>
+        <div className="flex items-center w-28">
+          <button
+            onClick={toggleMute}
+            className="bg-transparent border-none text-slate-100 cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500 mr-2"
+            aria-label={isMuted ? 'Unmute' : 'Mute'}
+          >
             {isMuted || volume === 0 ? <FaVolumeMute size={20} /> : <FaVolumeUp size={20} />}
           </button>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={isMuted ? 0 : volume}
-            onChange={handleVolumeChange}
-            className={styles.volumeSlider}
+          <Slider
+            value={[isMuted ? 0 : volume]}
+            max={1}
+            step={0.01}
+            onValueChange={handleVolumeChange}
+            className="w-full cursor-pointer"
             aria-label="Volume"
           />
         </div>
       </div>
+      {/* <style jsx> block removed as shadcn/ui Slider handles its own styling */}
     </div>
   );
 };
 
 export default RadioPlayer;
+
