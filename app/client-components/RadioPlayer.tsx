@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { Slider } from '@/components/ui/slider'; // Import shadcn/ui Slider
 
 interface RadioPlayerProps {
@@ -79,7 +79,10 @@ const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Liv
           className="bg-transparent border-none text-slate-100 cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
           aria-label={isPlaying ? 'Pause' : 'Play'}
         >
-          {isPlaying ? <FaPause size={20} /> : <FaPlay size={20} />}
+          {isPlaying ? 
+            <Pause size={20} strokeWidth={2} fill="currentColor" /> : 
+            <Play size={20} strokeWidth={2} fill="currentColor" />
+          }
         </button>
         <div className="text-center flex-grow mx-3 overflow-hidden">
           <p className="text-sm font-semibold truncate">
@@ -94,7 +97,10 @@ const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Liv
             className="bg-transparent border-none text-slate-100 cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500 mr-2"
             aria-label={isMuted ? 'Unmute' : 'Mute'}
           >
-            {isMuted || volume === 0 ? <FaVolumeMute size={20} /> : <FaVolumeUp size={20} />}
+            {isMuted || volume === 0 ? 
+              <VolumeX size={20} strokeWidth={2} fill="currentColor" /> : 
+              <Volume2 size={20} strokeWidth={2} fill="currentColor" />
+            }
           </button>
           <Slider
             value={[isMuted ? 0 : volume]}
