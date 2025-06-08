@@ -30,11 +30,23 @@ const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Liv
 
   const handleVolumeChange = (value: number[]) => {
     const newVolume = value[0];
-    setVolume(newVolume);
+    setVolume(newVolume); // Update UI state for slider position
+
     if (audioRef.current) {
-      audioRef.current.volume = newVolume;
+      audioRef.current.volume = newVolume; // Set actual audio volume
+
+      if (newVolume > 0) {
+        if (audioRef.current.muted) { // If it was muted and volume is now > 0
+          audioRef.current.muted = false; // Unmute the audio element
+        }
+        setIsMuted(false); // Update the muted state for UI
+      } else { // newVolume is 0
+        if (!audioRef.current.muted) { // If it was not muted and volume is now 0
+          audioRef.current.muted = true; // Mute the audio element
+        }
+        setIsMuted(true); // Update the muted state for UI
+      }
     }
-    setIsMuted(newVolume === 0);
   };
 
   const toggleMute = () => {
