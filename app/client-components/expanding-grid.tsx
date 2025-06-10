@@ -29,61 +29,61 @@ export default function ExpandingGrid() {
     {
       name: "Nafi' al-Madani",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran_read20-1280x640-1-768x384.jpg",
+        "/images/home-grid/quran-read.png",
       slug: "nafi-al-madani",
     },
     {
       name: "Ibn Kathir",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-islam-laptop-wallpaper-6114872-1-768x512.jpg",
+        "/images/home-grid/quran-islam-wallpaper.png",
       slug: "ibn-kathir",
     },
     {
       name: "Abu Amr Basri",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/book-quran-open-1283468-1-768x512.jpg",
+        "/images/home-grid/abu-amr.png",
       slug: "abu-amr-basri",
     },
     {
       name: "Ibn Amir Shami",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-islam-book-6862296-1-768x512.jpg",
+        "/images/home-grid/ibn-amir.png",
       slug: "ibn-amir-shami",
     },
     {
       name: "Asim Al Koofi",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/an-quran-scripture-7741928-1-768x513.jpg",
+        "/images/home-grid/asim.png",
       slug: "asim-al-koofi",
     },
     {
       name: "Hamza Al Kufi",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/book-quran-scripture-8224121-1-768x512.png",
+        "/images/home-grid/hamza.png",
       slug: "hamza-al-kufi",
     },
     {
       name: "Al-Kisa'i",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-light-spirituality-5385907-1-2-768x512.jpg",
+        "/images/home-grid/al-kisai.png",
       slug: "al-kisai",
     },
     {
       name: "Abu Jaafar",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-light-recite-5385901-1-1-768x512.jpg",
+        "/images/home-grid/abu-jaafar.png",
       slug: "abu-jaafar",
     },
     {
       name: "Yaqub Hadrani",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/87948b6c923b69c5e451fcb5d3a5577a-1.webp",
+        "/images/home-grid/yaqub.png",
       slug: "yaqub-hadrani",
     },
     {
       name: "Khalaf Al Ashir",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/i-768x768.webp",
+        "/images/home-grid/khalaf.png",
       slug: "khalaf-al-ashir",
     },
   ];

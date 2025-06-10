@@ -47,7 +47,7 @@ To explore more about the Qiraat and begin your journey, visit QiraatHub and dis
     `,
     date: "Oct 15, 2024",
     author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-2-768x644.png"
+    imageUrl: "/images/blog/mastering-quran-recitation_1.png"
   },
   {
     slug: "mastering-the-10-qiraat",
@@ -132,7 +132,7 @@ Join us at QiraatHub to begin your journey toward mastering the 10 Qiraat and ac
     `,
     date: "Oct 15, 2024",
     author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-3-768x644.png"
+    imageUrl: "/images/blog/mastering-quran-recitation_2.png"
   },
   {
     slug: "understanding-the-ijazah-tradition",
@@ -169,7 +169,7 @@ For those interested in earning an Ijazah and continuing this noble tradition, v
     `,
     date: "Oct 15, 2024",
     author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-1-300x251.png"
+    imageUrl: "/images/blog/mastering-quran-recitation_3.png"
   },
   {
     slug: "teaching-quran-for-non-arabic-speakers",
@@ -198,7 +198,7 @@ By leveraging both traditional teaching methods and modern technological tools, 
     `,
     date: "Oct 15, 2024",
     author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/10/PInk-Feminine-Blog-Digital-Marketing-Facebook-Post-300x251.png"
+    imageUrl: "/images/blog/mastering-quran-recitation_4.png"
   },
   {
     slug: "how-long-does-it-take-to-read-the-quran",
@@ -438,7 +438,7 @@ Whether you aim to read it in 30 days or memorize it over several years, the Qur
     `,
     date: "Nov 23, 2024",
     author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg"
+    imageUrl: "/images/blog/students-learning-quran.png"
   },
   {
     slug: "dive-deep-into-qiraat-unveiling-two-masterpieces",
@@ -525,7 +525,7 @@ By delving into these foundational texts, you not only gain insight into the tec
     `,
     date: "Apr 6, 2025",
     author: "qiraathub",
-    imageUrl: "https://old.qiraathub.com/wp-content/uploads/2024/11/masjid-maba-zaP_cttTQdE-unsplash-scaled-1.jpg",
+    imageUrl: "/images/blog/students-learning-quran.png",
     resources: [
       {
         title: "Al-Shatibiyyah (English Translation)",
