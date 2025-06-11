@@ -65,7 +65,7 @@ const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Liv
 
   return (
     <div
-      className="fixed bottom-5 right-5 w-[350px] bg-slate-800 text-slate-100 rounded-xl p-4 shadow-xl z-[1000] font-sans transition-transform duration-300 ease-in-out hover:-translate-y-1"
+      className="fixed bottom-5 right-5 w-[350px] bg-yellow-700 text-white rounded-xl p-4 shadow-xl z-[1000] font-sans transition-transform duration-300 ease-in-out hover:-translate-y-1"
     >
       <audio ref={audioRef} preload="none" onVolumeChange={() => {
         if(audioRef.current) {
@@ -76,7 +76,7 @@ const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Liv
       <div className="flex items-center justify-between">
         <button
           onClick={togglePlayPause}
-          className="bg-transparent border-none text-slate-100 cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
+          className="bg-transparent border-none text-white cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
           aria-label={isPlaying ? 'Pause' : 'Play'}
         >
           {isPlaying ? 
@@ -88,13 +88,13 @@ const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Liv
           <p className="text-sm font-semibold truncate">
             {stationName}
           </p>
-          {isPlaying && <p className="text-xs text-slate-400 m-0">Now Playing</p>}
-          {!isPlaying && <p className="text-xs text-slate-400 m-0">Paused</p>}
+          {isPlaying && <p className="text-xs text-yellow-300 m-0">Now Playing</p>}
+          {!isPlaying && <p className="text-xs text-yellow-300 m-0">Paused</p>}
         </div>
         <div className="flex items-center w-28">
           <button
             onClick={toggleMute}
-            className="bg-transparent border-none text-slate-100 cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500 mr-2"
+            className="bg-transparent border-none text-white cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 mr-2"
             aria-label={isMuted ? 'Unmute' : 'Mute'}
           >
             {isMuted || volume === 0 ? 
