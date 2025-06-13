@@ -40,7 +40,7 @@ function extractMetadataFromFilename(filenameWithKey: string): { title: string; 
   const filename = filenameWithKey.split('/').pop() || filenameWithKey;
   
   // Remove .mp3 extension
-  let name = filename.replace(/\.mp3$/i, '');
+  const name = filename.replace(/\.mp3$/i, '');
   
   const parts = name.split(' - ');
   if (parts.length >= 2) { // Allows for "Artist - Album - Title" if you want to parse further
@@ -82,15 +82,27 @@ export async function GET() {
       });
 
     return NextResponse.json(tracks);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error fetching tracks from R2:', error);
-    // Avoid leaking sensitive error details to the client
+    
     let errorMessage = 'Failed to fetch tracks from R2.';
-    if (error.name === 'CredentialsProviderError') {
-        errorMessage = 'R2 authentication failed. Check server credentials.';
-    } else if (error.name === 'NoSuchBucket') {
-        errorMessage = 'R2 bucket not found. Check bucket name configuration.';
+    let errorDetails = 'An unexpected error occurred.';
+
+    if (error instanceof Error) {
+      errorDetails = error.message; // Standard Error object property
+      // Check for specific error names if the error object is an instance of Error
+      if (error.name === 'CredentialsProviderError') {
+          errorMessage = 'R2 authentication failed. Check server credentials.';
+      } else if (error.name === 'NoSuchBucket') {
+          errorMessage = 'R2 bucket not found. Check bucket name configuration.';
+      }
+      // You could add more specific S3 error checks here by looking at error.name or error.code
+      // For example, for S3 errors, you might check (error as AWSError).code
+    } else if (typeof error === 'string') {
+      errorDetails = error;
     }
-    return NextResponse.json({ error: errorMessage, details: error.message }, { status: 500 });
+    // Add more checks if you expect other types of errors
+
+    return NextResponse.json({ error: errorMessage, details: errorDetails }, { status: 500 });
   }
 }
