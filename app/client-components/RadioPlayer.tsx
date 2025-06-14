@@ -1,118 +1,158 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
-import { Slider } from '@/components/ui/slider'; // Import shadcn/ui Slider
+import React, { useState, useRef, useEffect } from 'react';
+import { Play, Pause, Volume2, VolumeX, SkipBack, SkipForward } from 'lucide-react';
+import { Slider } from '@/components/ui/slider';
 
-interface RadioPlayerProps {
-  streamUrl: string;
-  stationName?: string;
+// This interface should match the one in your API route
+interface Track {
+  id: string;
+  title: string;
+  artist?: string;
+  url: string;
 }
 
-const RadioPlayer: React.FC<RadioPlayerProps> = ({ streamUrl, stationName = 'Live Radio' }) => {
+const RadioPlayer = () => {
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.75);
   const [isMuted, setIsMuted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const togglePlayPause = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.src = streamUrl;
-        audioRef.current.load();
-        audioRef.current.play().catch(error => console.error("Error playing audio:", error));
+  // Fetch tracks from the API on component mount
+  useEffect(() => {
+    const fetchTracks = async () => {
+      try {
+        const response = await fetch('/api/radio/tracks');
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to fetch tracks');
+        }
+        const data: Track[] = await response.json();
+        if (data && data.length > 0) {
+          setTracks(data);
+        } else {
+          setError('No tracks available.');
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      } finally {
+        setIsLoading(false);
       }
-      setIsPlaying(!isPlaying);
+    };
+    fetchTracks();
+  }, []);
+
+  // Effect to handle playing audio when track or isPlaying state changes
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying && tracks.length > 0) {
+        const trackUrl = tracks[currentTrackIndex].url;
+        if (audioRef.current.src !== trackUrl) {
+          audioRef.current.src = trackUrl;
+        }
+        audioRef.current.play().catch(e => console.error("Error playing audio:", e));
+      } else {
+        audioRef.current.pause();
+      }
     }
+  }, [currentTrackIndex, isPlaying, tracks]);
+
+  const handlePlayPause = () => {
+    if (tracks.length === 0) return;
+    setIsPlaying(!isPlaying);
+  };
+
+  const playNextTrack = () => {
+    if (tracks.length === 0) return;
+    setCurrentTrackIndex(prevIndex => (prevIndex + 1) % tracks.length);
+  };
+
+  const playPreviousTrack = () => {
+    if (tracks.length === 0) return;
+    setCurrentTrackIndex(prevIndex => (prevIndex - 1 + tracks.length) % tracks.length);
   };
 
   const handleVolumeChange = (value: number[]) => {
     const newVolume = value[0];
-    setVolume(newVolume); // Update UI state for slider position
-
+    setVolume(newVolume);
     if (audioRef.current) {
-      audioRef.current.volume = newVolume; // Set actual audio volume
-
-      if (newVolume > 0) {
-        if (audioRef.current.muted) { // If it was muted and volume is now > 0
-          audioRef.current.muted = false; // Unmute the audio element
-        }
-        setIsMuted(false); // Update the muted state for UI
-      } else { // newVolume is 0
-        if (!audioRef.current.muted) { // If it was not muted and volume is now 0
-          audioRef.current.muted = true; // Mute the audio element
-        }
-        setIsMuted(true); // Update the muted state for UI
-      }
+      audioRef.current.volume = newVolume;
+      audioRef.current.muted = newVolume === 0;
+      setIsMuted(newVolume === 0);
     }
   };
 
   const toggleMute = () => {
     if (audioRef.current) {
-      const currentMuted = !audioRef.current.muted;
-      audioRef.current.muted = currentMuted;
-      setIsMuted(currentMuted);
-      // If unmuting and volume was 0, set to a default volume (e.g., 0.5)
-      // Otherwise, if muting, the visual volume can remain, or be set to 0
-      if (!currentMuted && audioRef.current.volume === 0) {
-        setVolume(0.5); // Or previous non-zero volume
+      const currentlyMuted = !audioRef.current.muted;
+      audioRef.current.muted = currentlyMuted;
+      setIsMuted(currentlyMuted);
+      if (!currentlyMuted && volume === 0) {
+        setVolume(0.5);
         audioRef.current.volume = 0.5;
       }
     }
   };
 
-  return (
-    <div
-      className="fixed bottom-5 right-5 w-[350px] bg-yellow-700 text-white rounded-xl p-4 shadow-xl z-[1000] font-sans transition-transform duration-300 ease-in-out hover:-translate-y-1"
-    >
-      <audio ref={audioRef} preload="none" onVolumeChange={() => {
-        if(audioRef.current) {
-          setVolume(audioRef.current.volume);
-          setIsMuted(audioRef.current.muted);
-        }
-      }} />
+  const currentTrack = tracks[currentTrackIndex];
+
+  const mainContent = () => {
+    if (isLoading) {
+      return <p className="text-sm text-yellow-300">Loading Radio...</p>;
+    }
+    if (error) {
+      return <p className="text-sm text-red-400">Error: {error}</p>;
+    }
+    if (!currentTrack) {
+      return <p className="text-sm text-yellow-300">No tracks loaded.</p>;
+    }
+
+    return (
       <div className="flex items-center justify-between">
-        <button
-          onClick={togglePlayPause}
-          className="bg-transparent border-none text-white cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-          aria-label={isPlaying ? 'Pause' : 'Play'}
-        >
-          {isPlaying ? 
-            <Pause size={20} strokeWidth={2} fill="currentColor" /> : 
-            <Play size={20} strokeWidth={2} fill="currentColor" />
-          }
-        </button>
-        <div className="text-center flex-grow mx-3 overflow-hidden">
-          <p className="text-sm font-semibold truncate">
-            {stationName}
-          </p>
-          {isPlaying && <p className="text-xs text-yellow-300 m-0">Now Playing</p>}
-          {!isPlaying && <p className="text-xs text-yellow-300 m-0">Paused</p>}
-        </div>
-        <div className="flex items-center w-28">
-          <button
-            onClick={toggleMute}
-            className="bg-transparent border-none text-white cursor-pointer p-2 rounded-full transition-colors duration-200 ease-linear hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 mr-2"
-            aria-label={isMuted ? 'Unmute' : 'Mute'}
-          >
-            {isMuted || volume === 0 ? 
-              <VolumeX size={20} strokeWidth={2} fill="currentColor" /> : 
-              <Volume2 size={20} strokeWidth={2} fill="currentColor" />
-            }
+        {/* Playback Controls */}
+        <div className="flex items-center">
+          <button onClick={playPreviousTrack} disabled={tracks.length <= 1} className="p-2 rounded-full hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous Track"><SkipBack size={20} fill="currentColor" /></button>
+          <button onClick={handlePlayPause} className="p-2 mx-2 rounded-full hover:bg-yellow-600" aria-label={isPlaying ? 'Pause' : 'Play'}>
+            {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
           </button>
-          <Slider
-            value={[isMuted ? 0 : volume]}
-            max={1}
-            step={0.01}
-            onValueChange={handleVolumeChange}
-            className="w-full cursor-pointer"
-            aria-label="Volume"
-          />
+          <button onClick={playNextTrack} disabled={tracks.length <= 1} className="p-2 rounded-full hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next Track"><SkipForward size={20} fill="currentColor" /></button>
+        </div>
+
+        {/* Track Info */}
+        <div className="text-center flex-grow mx-3 overflow-hidden">
+          <p className="text-sm font-semibold truncate" title={currentTrack.title}>{currentTrack.title}</p>
+          <p className="text-xs text-yellow-300 m-0 truncate" title={currentTrack.artist}>{currentTrack.artist || 'Unknown Artist'}</p>
+        </div>
+
+        {/* Volume Controls */}
+        <div className="flex items-center w-28">
+          <button onClick={toggleMute} className="p-2 rounded-full hover:bg-yellow-600 mr-2" aria-label={isMuted ? 'Unmute' : 'Mute'}>
+            {isMuted || volume === 0 ? <VolumeX size={20} fill="currentColor" /> : <Volume2 size={20} fill="currentColor" />}
+          </button>
+          <Slider value={[isMuted ? 0 : volume]} max={1} step={0.01} onValueChange={handleVolumeChange} className="w-full" />
         </div>
       </div>
-      {/* <style jsx> block removed as shadcn/ui Slider handles its own styling */}
+    );
+  };
+
+  return (
+    <div className="fixed bottom-5 right-5 w-[400px] bg-yellow-700 text-white rounded-xl p-4 shadow-xl z-[1000] font-sans">
+      <audio
+        ref={audioRef}
+        onEnded={playNextTrack}
+        onVolumeChange={() => {
+          if (audioRef.current) {
+            setVolume(audioRef.current.volume);
+            setIsMuted(audioRef.current.muted);
+          }
+        }}
+        preload="auto"
+      />
+      {mainContent()}
     </div>
   );
 };
