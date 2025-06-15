@@ -1,30 +1,16 @@
 [
   {
-    "id": "track-\"b06244f3c830695fdc0effa2956ce33a\"",
-    "title": "001 Al-Fatiha QiraatHub",
-    "artist": "Abdul Rasheed Sufi",
-    "duration": 42.99755102040816,
-    "url": "https://pub-50960a8e8685458ab90ed614c08e9a66.r2.dev/001 Al-Fatiha/Abul Harith/Abdul Rasheed Sufi/001.mp3"
+    "id": "track-\"de4dd5a708898cb106bec08fef37b953-316\"",
+    "title": "khatmah1",
+    "artist": "multiple reciters",
+    "duration": 103464.90775510205,
+    "url": "https://pub-50960a8e8685458ab90ed614c08e9a66.r2.dev/khatmah1.mp3"
   },
   {
-    "id": "track-\"412147327e32e45d4108551995b235bf\"",
-    "title": "001 Al-Fatiha QiraatHub",
-    "artist": "Abdul Rasheed Sufi",
-    "duration": 46.393469387755104,
-    "url": "https://pub-50960a8e8685458ab90ed614c08e9a66.r2.dev/001 Al-Fatiha/Doori Basri/Abdul Rasheed Sufi/001.mp3"
-  },
-  {
-    "id": "track-\"0f454a49daf93fc80c11d822875ddc89\"",
-    "title": "001 Al-Fatiha QiraatHub",
-    "artist": "Mahmoud Khalil Al Husary",
-    "duration": 50.70367346938775,
-    "url": "https://pub-50960a8e8685458ab90ed614c08e9a66.r2.dev/001 Al-Fatiha/Doori Basri/Mahmoud Khalil Al Husary/001.mp3"
-  },
-  {
-    "id": "track-\"276496ccb47c0659e40d084535d5bacd\"",
-    "title": "002 Al-Baqara QiraatHub",
-    "artist": "Abdul Rasheed Sufi",
-    "duration": 6774.831020408164,
-    "url": "https://pub-50960a8e8685458ab90ed614c08e9a66.r2.dev/002 Al-Baqara/Abul Harith/Abdul Rasheed Sufi/002.mp3"
+    "id": "track-\"de2\"",
+    "title": "khatmah2",  
+    "artist": "multiple reciters",
+    "duration": 100172.5387755102,
+    "url": "https://pub-50960a8e8685458ab90ed614c08e9a66.r2.dev/khatmah2.mp3"
   }
 ]
