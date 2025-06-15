@@ -22,7 +22,7 @@ export function generateMetadata(): Metadata {
 
 import RadioPlayer from './client-components/RadioPlayer';
 
-const RADIO_STREAM_URL = 'http://stream.radiojar.com/0tpy1h0kxtzuv'; // Example Stream URL, replace with your actual one
+// const RADIO_STREAM_URL = 'http://stream.radiojar.com/0tpy1h0kxtzuv'; // Example Stream URL, replace with your actual one
 
 export default function Home() {
   return (
@@ -46,7 +46,7 @@ export default function Home() {
       <ExpandingGrid />
       <AcademySection />
       <BlogSection />
-      <RadioPlayer streamUrl={RADIO_STREAM_URL} />
+      <RadioPlayer />
     </div>
   );
 }
