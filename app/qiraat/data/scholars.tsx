@@ -4,7 +4,7 @@ export const scholars: Scholar[] = [
     {
       name: "Nafi' al-Madani",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran_read20-1280x640-1-768x384.jpg",
+        "/images/home-grid/quran-read.png",
       slug: "nafi-al-madani",
       description:
         "Nafi' ibn Abd ar-Rahman ibn Abi Nu'aym al-Laythi (70-169 AH / 689-785 CE) was one of the most prominent scholars of Qira'at in Madinah. He learned the Quran from 70 of the Tabi'in who had learned from the Companions of the Prophet ﷺ.",
@@ -59,7 +59,7 @@ export const scholars: Scholar[] = [
     {
       name: "Ibn Kathir",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-islam-laptop-wallpaper-6114872-1-768x512.jpg",
+        "/images/home-grid/quran-islam-wallpaper.png",
       slug: "ibn-kathir",
       description:
         "Abdullah ibn Kathir al-Makki, known as Ibn Kathir, was born in Makkah in 45 AH and passed away in 120 AH. He was one of the most respected readers of the Quran in Makkah and was known for his precise and authentic transmission.",
@@ -104,7 +104,7 @@ export const scholars: Scholar[] = [
     {
       name: "Abu Amr Basri",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/book-quran-open-1283468-1-768x512.jpg",
+        "/images/home-grid/abu-amr.png",
       slug: "abu-amr-basri",
       description:
         "Abu Amr Zabban ibn al-'Ala' al-Basri was born in 68 AH and passed away in 154 AH. He was renowned for his extensive knowledge of Arabic language and Quranic sciences.",
@@ -153,7 +153,7 @@ export const scholars: Scholar[] = [
     {
       name: "Ibn Amir Shami",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-islam-book-6862296-1-768x512.jpg",
+        "/images/home-grid/ibn-amir.png",
       slug: "ibn-amir-shami",
       description:
         "Abdullah ibn Amir al-Yahsubi, known as Ibn Amir ash-Shami, was the leading Qari of Greater Syria (Ash-Sham). He was born in 21 AH and passed away in 118 AH. He was appointed as the Grand Judge of Damascus.",
@@ -202,7 +202,7 @@ export const scholars: Scholar[] = [
     {
       name: "Asim Al Koofi",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/an-quran-scripture-7741928-1-768x513.jpg",
+        "/images/home-grid/asim.png",
       slug: "asim-al-koofi",
       description:
         "Asim ibn Abi al-Najud al-Kufi (died 127 AH) was one of the most influential Qurra of Kufa. His reading became widely spread, particularly through the narration of Hafs, and remains one of the most commonly used Quranic recitations worldwide.",
@@ -255,7 +255,7 @@ export const scholars: Scholar[] = [
     {
       name: "Hamza Al Kufi",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/book-quran-scripture-8224121-1-768x512.png",
+        "/images/home-grid/hamza.png",
       slug: "hamza-al-kufi",
       description:
         "Hamza ibn Habib al-Zayyat al-Kufi was born in 80 AH and passed away in 156 AH. He studied Quranic recitation under prominent scholars including Sulayman al-A'mash, Ja'far al-Sadiq, and Abu Amr ibn al-'Ala. He was known for his expertise in Quranic recitation and deep knowledge of the Quranic sciences.",
@@ -308,7 +308,7 @@ export const scholars: Scholar[] = [
     {
       name: "Al-Kisa'i",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-light-spirituality-5385907-1-2-768x512.jpg",
+        "/images/home-grid/al-kisai.png",
       slug: "al-kisai",
       description:
         "Abu al-Hasan Ali ibn Hamzah al-Kisa'i (119-189 AH) was one of the Seven Readers and a prominent scholar of Arabic grammar. He was the leading grammarian of the Kufa school and made significant contributions to Quranic recitation and linguistic studies.",
@@ -353,7 +353,7 @@ export const scholars: Scholar[] = [
     {
       name: "Abu Jaafar",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/quran-light-recite-5385901-1-1-768x512.jpg",
+        "/images/home-grid/abu-jaafar.png",
       slug: "abu-jaafar",
       description:
         "Abu Ja'far Yazid ibn al-Qa'qa' al-Madani (35-130 AH) was one of the ten recognized Qurra and a prominent scholar in Medina. Known for his precise recitation, he learned directly from several companions of the Prophet Muhammad ﷺ.",
@@ -398,7 +398,7 @@ export const scholars: Scholar[] = [
     {
       name: "Yaqub Hadrani",
       image:
-        "https://old.qiraathub.com/wp-content/uploads/2024/09/87948b6c923b69c5e451fcb5d3a5577a-1.webp",
+        "/images/home-grid/yaqub.png",
       slug: "yaqub-hadrani",
       description:
         "Abu Muhammad Ya'qub ibn Ishaq al-Hadrami, born in 117 AH (735 CE) and passed away in 205 AH (820 CE), was the preeminent Qari of Basra during his era. Renowned for his expertise in Quranic recitation, he played a crucial role in preserving and transmitting the unique Basran style of Qira'at.",
@@ -442,7 +442,7 @@ export const scholars: Scholar[] = [
     },
     {
       name: "Khalaf Al Ashir",
-      image: "https://old.qiraathub.com/wp-content/uploads/2024/09/i-768x768.webp",
+      image: "/images/home-grid/khalaf.png",
       slug: "khalaf-al-ashir",
       description:
         "Khalaf ibn Hisham al-Bazzar, also known as Abu Muhammad, was born in 150 AH and passed away in 229 AH. He was one of the transmitters of Hamzah ibn Habib az-Zayyat's reading as well as establishing his own reading.",
