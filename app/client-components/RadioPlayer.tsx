@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, Volume2, VolumeX, SkipBack, SkipForward } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 
 // This interface should match the one in your API route
@@ -32,8 +32,8 @@ const RadioPlayer = () => {
   const [error, setError] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Fetch current playing track from the API on component mount and when audio ends
-  const fetchNowPlaying = async (shouldAutoPlay: boolean = false) => {
+  // Memoize fetchNowPlaying to stabilize its identity for useEffect dependencies
+  const fetchNowPlaying = React.useCallback(async (shouldAutoPlay: boolean = false) => {
     setIsLoading(true);
     try {
       const response = await fetch('/api/radio/now-playing');
@@ -60,11 +60,9 @@ const RadioPlayer = () => {
         audioRef.current.currentTime = Math.max(0, Math.min(adjustedCurrentTime, trackDuration - 0.1)); // -0.1 to avoid premature end
 
         if (shouldAutoPlay) {
-          setIsPlaying(true); // This will trigger the play effect
-        } else if (isPlaying && audioRef.current.paused) {
-          // If it was supposed to be playing but is paused (e.g. after src change), play
-          audioRef.current.play().catch(e => console.error("Error auto-playing synced track:", e));
+          setIsPlaying(true); // This will trigger the play effect for the other useEffect
         }
+        // The main play/pause logic is handled by the useEffect dependent on [isPlaying, nowPlaying]
       } else if (!data.currentTrack) {
         setError('No track currently scheduled.');
         setIsPlaying(false);
@@ -75,14 +73,16 @@ const RadioPlayer = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [setIsLoading, setNowPlaying, setError, setIsPlaying /* audioRef is stable. isPlaying was removed from deps */]);
+
+
 
   useEffect(() => {
     fetchNowPlaying(true); // Fetch and autoplay on initial load
     // Optional: Set up a timer to re-sync periodically
     // const intervalId = setInterval(() => fetchNowPlaying(false), 20000); // e.g., every 30 seconds
     // return () => clearInterval(intervalId);
-  }, []);
+  }, [fetchNowPlaying]);
 
   // Effect to handle playing/pausing audio based on isPlaying state
   useEffect(() => {
