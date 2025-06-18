@@ -4,14 +4,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX, } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 
-// This interface should match the one in your API route
 // This interface should match the one in your API and now-playing route
 interface Track {
   id: string;
   title: string;
   artist?: string;
   url: string;
-  duration?: number; // Added duration
+  duration?: number;
 }
 
 interface NowPlayingData {
@@ -22,7 +21,7 @@ interface NowPlayingData {
 }
 
 const RadioPlayer = () => {
-    // const [tracks, setTracks] = useState<Track[]>([]); // Full playlist, might be fetched separately if needed for UI
+  // const [tracks, setTracks] = useState<Track[]>([]); // Full playlist, might be fetched separately if needed for UI
   // const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [nowPlaying, setNowPlaying] = useState<NowPlayingData | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -75,12 +74,11 @@ const RadioPlayer = () => {
     }
   }, [setIsLoading, setNowPlaying, setError, setIsPlaying /* audioRef is stable. isPlaying was removed from deps */]);
 
-
-
   useEffect(() => {
-    fetchNowPlaying(true); // Fetch and autoplay on initial load
-    // Optional: Set up a timer to re-sync periodically
-    // const intervalId = setInterval(() => fetchNowPlaying(false), 20000); // e.g., every 30 seconds
+    // Fetch initial track info to display, but don't autoplay
+    fetchNowPlaying(false);
+    // Optional: Set up a timer to re-sync periodically for UI updates if desired, even if paused
+    // const intervalId = setInterval(() => fetchNowPlaying(false), 60000); // 60 seconds
     // return () => clearInterval(intervalId);
   }, [fetchNowPlaying]);
 
@@ -114,7 +112,14 @@ const RadioPlayer = () => {
 
   const handlePlayPause = () => {
     if (!nowPlaying?.currentTrack) return;
-    setIsPlaying(!isPlaying);
+
+    if (!isPlaying) {
+      // If currently paused, re-sync and then play
+      fetchNowPlaying(true);
+    } else {
+      // If currently playing, just pause
+      setIsPlaying(false);
+    }
   };
 
   // Called when audio track ends
