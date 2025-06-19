@@ -1,20 +1,29 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, Volume2, VolumeX, SkipBack, SkipForward } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 
-// This interface should match the one in your API route
+// This interface should match the one in your API and now-playing route
 interface Track {
   id: string;
   title: string;
   artist?: string;
   url: string;
+  duration?: number;
+}
+
+interface NowPlayingData {
+  currentTrack: Track | null;
+  currentTime: number;
+  serverTime: number;
+  playlistTotalDuration: number;
 }
 
 const RadioPlayer = () => {
-  const [tracks, setTracks] = useState<Track[]>([]);
-  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  // const [tracks, setTracks] = useState<Track[]>([]); // Full playlist, might be fetched separately if needed for UI
+  // const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [nowPlaying, setNowPlaying] = useState<NowPlayingData | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.75);
   const [isMuted, setIsMuted] = useState(false);
@@ -22,59 +31,104 @@ const RadioPlayer = () => {
   const [error, setError] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Fetch tracks from the API on component mount
+  // Memoize fetchNowPlaying to stabilize its identity for useEffect dependencies
+  const fetchNowPlaying = React.useCallback(async (shouldAutoPlay: boolean = false) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/radio/now-playing');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch now playing info');
+      }
+      const data: NowPlayingData = await response.json();
+      setNowPlaying(data);
+      setError(null);
+
+      if (data.currentTrack && audioRef.current) {
+        if (audioRef.current.src !== data.currentTrack.url) {
+          audioRef.current.src = data.currentTrack.url;
+        }
+        // Adjust for potential latency between server calculation and client fetch
+        // This is a simple adjustment; more sophisticated sync would be needed for precision
+        const clientTimeAtFetch = Date.now();
+        const serverTimeDeltaMs = clientTimeAtFetch - data.serverTime;
+        const adjustedCurrentTime = data.currentTime + (serverTimeDeltaMs / 1000);
+        
+        // Ensure currentTime is not beyond track duration
+        const trackDuration = data.currentTrack.duration || Infinity;
+        audioRef.current.currentTime = Math.max(0, Math.min(adjustedCurrentTime, trackDuration - 0.1)); // -0.1 to avoid premature end
+
+        if (shouldAutoPlay) {
+          setIsPlaying(true); // This will trigger the play effect for the other useEffect
+        }
+        // The main play/pause logic is handled by the useEffect dependent on [isPlaying, nowPlaying]
+      } else if (!data.currentTrack) {
+        setError('No track currently scheduled.');
+        setIsPlaying(false);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      setNowPlaying(null); // Clear now playing on error
+    } finally {
+      setIsLoading(false);
+    }
+  }, [setIsLoading, setNowPlaying, setError, setIsPlaying /* audioRef is stable. isPlaying was removed from deps */]);
+
   useEffect(() => {
-    const fetchTracks = async () => {
-      try {
-        const response = await fetch('/api/radio/tracks');
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to fetch tracks');
+    // Fetch initial track info to display, but don't autoplay
+    fetchNowPlaying(false);
+    // Optional: Set up a timer to re-sync periodically for UI updates if desired, even if paused
+    // const intervalId = setInterval(() => fetchNowPlaying(false), 60000); // 60 seconds
+    // return () => clearInterval(intervalId);
+  }, [fetchNowPlaying]);
+
+  // Effect to handle playing/pausing audio based on isPlaying state
+  useEffect(() => {
+    const playAudio = async () => {
+      if (audioRef.current) {
+        try {
+          await audioRef.current.play();
+        } catch (error) {
+          console.error("Autoplay was prevented:", error);
+          // If autoplay fails, update the UI to show the play button
+          setIsPlaying(false);
         }
-        const data: Track[] = await response.json();
-        if (data && data.length > 0) {
-          setTracks(data);
-        } else {
-          setError('No tracks available.');
-        }
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'An unknown error occurred');
-      } finally {
-        setIsLoading(false);
       }
     };
-    fetchTracks();
-  }, []);
 
-  // Effect to handle playing audio when track or isPlaying state changes
-  useEffect(() => {
     if (audioRef.current) {
-      if (isPlaying && tracks.length > 0) {
-        const trackUrl = tracks[currentTrackIndex].url;
-        if (audioRef.current.src !== trackUrl) {
-          audioRef.current.src = trackUrl;
+      if (isPlaying && nowPlaying?.currentTrack) {
+        // Ensure src is set if nowPlaying was updated while paused
+        if (audioRef.current.src !== nowPlaying.currentTrack.url) {
+           audioRef.current.src = nowPlaying.currentTrack.url;
+           // currentTime should have been set by fetchNowPlaying
         }
-        audioRef.current.play().catch(e => console.error("Error playing audio:", e));
+        playAudio();
       } else {
         audioRef.current.pause();
       }
     }
-  }, [currentTrackIndex, isPlaying, tracks]);
+  }, [isPlaying, nowPlaying]);
 
   const handlePlayPause = () => {
-    if (tracks.length === 0) return;
-    setIsPlaying(!isPlaying);
+    if (!nowPlaying?.currentTrack) return;
+
+    if (!isPlaying) {
+      // If currently paused, re-sync and then play
+      fetchNowPlaying(true);
+    } else {
+      // If currently playing, just pause
+      setIsPlaying(false);
+    }
   };
 
-  const playNextTrack = () => {
-    if (tracks.length === 0) return;
-    setCurrentTrackIndex(prevIndex => (prevIndex + 1) % tracks.length);
+  // Called when audio track ends
+  const handleTrackEnd = () => {
+    console.log('Track ended, fetching next synchronized track...');
+    fetchNowPlaying(true); // Fetch the current scheduled track and autoplay
   };
 
-  const playPreviousTrack = () => {
-    if (tracks.length === 0) return;
-    setCurrentTrackIndex(prevIndex => (prevIndex - 1 + tracks.length) % tracks.length);
-  };
+
 
   const handleVolumeChange = (value: number[]) => {
     const newVolume = value[0];
@@ -98,7 +152,7 @@ const RadioPlayer = () => {
     }
   };
 
-  const currentTrack = tracks[currentTrackIndex];
+  const currentTrack = nowPlaying?.currentTrack;
 
   const mainContent = () => {
     if (isLoading) {
@@ -115,11 +169,11 @@ const RadioPlayer = () => {
       <div className="flex items-center justify-between">
         {/* Playback Controls */}
         <div className="flex items-center">
-          <button onClick={playPreviousTrack} disabled={tracks.length <= 1} className="p-2 rounded-full hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous Track"><SkipBack size={20} fill="currentColor" /></button>
+
           <button onClick={handlePlayPause} className="p-2 mx-2 rounded-full hover:bg-yellow-600" aria-label={isPlaying ? 'Pause' : 'Play'}>
             {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
           </button>
-          <button onClick={playNextTrack} disabled={tracks.length <= 1} className="p-2 rounded-full hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next Track"><SkipForward size={20} fill="currentColor" /></button>
+
         </div>
 
         {/* Track Info */}
@@ -143,7 +197,7 @@ const RadioPlayer = () => {
     <div className="fixed bottom-5 right-5 w-[400px] bg-yellow-700 text-white rounded-xl p-4 shadow-xl z-[1000] font-sans">
       <audio
         ref={audioRef}
-        onEnded={playNextTrack}
+        onEnded={handleTrackEnd}
         onVolumeChange={() => {
           if (audioRef.current) {
             setVolume(audioRef.current.volume);
