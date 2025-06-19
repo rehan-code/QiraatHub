@@ -2,47 +2,43 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo, useCallback, memo } from "react";
 import { useSurah } from "@/contexts/surah-context";
 import SearchBar from "./search-bar";
 import { Menu, BookOpen, ChevronRight, Search } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion, AnimatePresence } from "framer-motion";
-import { allSurahs } from "../lib/surah-definitions";
+import { allSurahs, SurahInfo } from "../lib/surah-definitions";
 
-export default function SurahList() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const { selectedSurah, setSelectedSurah } = useSurah();
-  const [open, setOpen] = useState(false);
+interface SurahDisplayContentProps {
+  searchQuery: string;
+  onSearch: (query: string) => void;
+  filteredSurahs: SurahInfo[];
+  selectedSurah: string;
+  onSurahSelect: (surahFullName: string) => void;
+}
 
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-  };
-
-  const filteredSurahs = useMemo(() => {
-    if (!searchQuery.trim()) return allSurahs;
-    
-    const query = searchQuery.toLowerCase().trim();
-    return allSurahs.filter(surah => 
-      surah.name.toLowerCase().includes(query) || 
-      parseInt(surah.number).toString().includes(query)
-    );
-  }, [searchQuery]);
-
-  const SurahContent = () => (
+const SurahDisplayContent = memo(({ 
+  searchQuery, 
+  onSearch, 
+  filteredSurahs, 
+  selectedSurah, 
+  onSurahSelect 
+}: SurahDisplayContentProps) => {
+  return (
     <>
       <CardHeader className="sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-10 pb-4 border-b">
         <div className="flex items-center gap-2 mb-4">
           <BookOpen className="h-6 w-6 text-yellow-500" />
           <CardTitle className="text-xl md:text-2xl">Surahs</CardTitle>
         </div>
-        <SearchBar onSearch={handleSearch} initialValue={searchQuery} />
+        <SearchBar onSearch={onSearch} />
       </CardHeader>
       <ScrollArea className="flex-1 relative">
         <CardContent className="p-4 md:p-6">
           <AnimatePresence mode="wait">
-            {filteredSurahs.length === 0 ? (
+            {filteredSurahs.length === 0 && searchQuery ? (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -63,10 +59,10 @@ export default function SurahList() {
               >
                 {filteredSurahs.map((surah, index) => (
                   <motion.div
-                    key={surah.number}
+                    key={surah.number} // Assuming surah.number is unique
                     initial={{ opacity: 0, y: 10 }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       y: 0,
                       transition: { delay: index * 0.05 }
                     }}
@@ -78,10 +74,7 @@ export default function SurahList() {
                           ? "bg-yellow-50 text-yellow-900 hover:bg-yellow-100 border-yellow-200"
                           : "hover:bg-gray-50"
                       }`}
-                      onClick={() => {
-                        setSelectedSurah(surah.fullName);
-                        setOpen(false);
-                      }}
+                      onClick={() => onSurahSelect(surah.fullName)}
                     >
                       <div className="flex items-center gap-3">
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium transition-colors ${
@@ -110,6 +103,34 @@ export default function SurahList() {
       </ScrollArea>
     </>
   );
+});
+SurahDisplayContent.displayName = 'SurahDisplayContent'; // For better debugging
+
+export default function SurahList() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const { selectedSurah, setSelectedSurah } = useSurah();
+  const [open, setOpen] = useState(false);
+
+  const handleSurahSelect = useCallback((surahFullName: string) => {
+    setSelectedSurah(surahFullName);
+    setOpen(false); // Close sheet on mobile after selection
+  }, [setSelectedSurah, setOpen]);
+
+  const handleSearch = useCallback((query: string) => {
+    setSearchQuery(query);
+  }, [setSearchQuery]);
+
+  const filteredSurahs = useMemo(() => {
+    if (!searchQuery.trim()) return allSurahs;
+    
+    const query = searchQuery.toLowerCase().trim();
+    return allSurahs.filter(surah => 
+      surah.name.toLowerCase().includes(query) || 
+      parseInt(surah.number).toString().includes(query)
+    );
+  }, [searchQuery]);
+
+
 
   return (
     <>
@@ -127,7 +148,13 @@ export default function SurahList() {
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] p-0">
             <div className="h-full flex flex-col">
-              <SurahContent />
+              <SurahDisplayContent 
+              searchQuery={searchQuery} 
+              onSearch={handleSearch} 
+              filteredSurahs={filteredSurahs} 
+              selectedSurah={selectedSurah} 
+              onSurahSelect={handleSurahSelect} 
+            />
             </div>
           </SheetContent>
         </Sheet>
@@ -135,7 +162,13 @@ export default function SurahList() {
       {/* desktop view */}
       <div className="hidden md:block h-full">
         <Card className="h-[calc(100vh-14rem)] flex flex-col border-gray-200">
-          <SurahContent />
+          <SurahDisplayContent 
+              searchQuery={searchQuery} 
+              onSearch={handleSearch} 
+              filteredSurahs={filteredSurahs} 
+              selectedSurah={selectedSurah} 
+              onSurahSelect={handleSurahSelect} 
+            />
         </Card>
       </div>
     </>

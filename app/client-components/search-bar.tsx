@@ -8,11 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
-  initialValue?: string;
 }
 
-export default function SearchBar({ onSearch, initialValue = "" }: SearchBarProps) {
-  const [searchTerm, setSearchTerm] = useState(initialValue);
+export default function SearchBar({ onSearch }: SearchBarProps) {
+  const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
   // Debounce search to avoid too many updates
