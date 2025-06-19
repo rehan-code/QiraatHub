@@ -9,56 +9,26 @@ import { Menu, BookOpen, ChevronRight, Search } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion, AnimatePresence } from "framer-motion";
-
-interface SurahInfo {
-  name: string;
-  number: string;
-  fullName: string;
-}
+import { allSurahs } from "../lib/surah-definitions";
 
 export default function SurahList() {
-  const [surahs, setSurahs] = useState<SurahInfo[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { selectedSurah, setSelectedSurah } = useSurah();
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const fetchSurahs = async () => {
-      try {
-        const response = await fetch("/api/surahs");
-        const data = await response.json();
-        const surahInfoArray = data.map((fullName: string) => {
-          const match = fullName.match(/^(\d{3})\s+(.+)$/);
-          if (!match) return null;
-          const [, number, name] = match;
-          return {
-            fullName,
-            number,
-            name
-          };
-        }).filter(Boolean);
-        setSurahs(surahInfoArray);
-      } catch (error) {
-        console.error('Error fetching surahs:', error);
-      }
-    };
-
-    fetchSurahs();
-  }, []);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
   };
 
   const filteredSurahs = useMemo(() => {
-    if (!searchQuery.trim()) return surahs;
+    if (!searchQuery.trim()) return allSurahs;
     
     const query = searchQuery.toLowerCase().trim();
-    return surahs.filter(surah => 
+    return allSurahs.filter(surah => 
       surah.name.toLowerCase().includes(query) || 
       parseInt(surah.number).toString().includes(query)
     );
-  }, [surahs, searchQuery]);
+  }, [searchQuery]);
 
   const SurahContent = () => (
     <>
