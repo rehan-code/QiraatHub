@@ -10,9 +10,27 @@ export default function QiraatButtons() {
 
   useEffect(() => {
     const fetchQiraat = async () => {
-      const response = await fetch(`/api/qiraat?surah=${selectedSurah}`);
-      const data = await response.json();
-      setQiraat(data);
+      if (!selectedSurah) {
+        setQiraat([]);
+        return;
+      }
+      try {
+        const response = await fetch(`/api/list-qiraat?surah=${selectedSurah}`);
+        if (!response.ok) {
+          console.error(
+            "Failed to fetch Qira'at list from /api/list-qiraat:",
+            response.status,
+            response.statusText
+          );
+          setQiraat([]);
+          return;
+        }
+        const data = await response.json();
+        setQiraat(data);
+      } catch (error) {
+        console.error("Error fetching Qira'at list:", error);
+        setQiraat([]);
+      }
     };
 
     fetchQiraat();
