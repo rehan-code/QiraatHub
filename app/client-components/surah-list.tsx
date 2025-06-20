@@ -161,7 +161,7 @@ export default function SurahList() {
       </div>
       {/* desktop view */}
       <div className="hidden md:block h-full">
-        <Card className="h-[calc(100vh-14rem)] flex flex-col border-gray-200">
+        <Card className="h-[calc(100vh-12rem)] flex flex-col border-gray-200">
           <SurahDisplayContent 
               searchQuery={searchQuery} 
               onSearch={handleSearch} 

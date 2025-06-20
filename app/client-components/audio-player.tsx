@@ -92,7 +92,7 @@ export default function AudioPlayer({
   };
 
   return (
-    <Card className="w-full max-w-[800px] mx-auto">
+    <Card className="w-full mx-auto">
       <CardContent>
         <div className="space-y-4 sm:space-y-6 p-3 sm:p-6">
           <div className="text-center">
