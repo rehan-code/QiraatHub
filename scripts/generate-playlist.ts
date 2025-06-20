@@ -25,7 +25,7 @@ const R2_ENDPOINT = process.env.R2_ENDPOINT;
 const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID;
 const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY;
 const R2_BUCKET_NAME = process.env.R2_BUCKET_NAME;
-const R2_PUBLIC_URL_BASE = process.env.R2_PUBLIC_URL_BASE;
+const R2_PUBLIC_URL_BASE = process.env.NEXT_PUBLIC_R2_PUBLIC_URL_BASE;
 
 const PLAYLIST_JSON_FILENAME = 'playlist.json';
 

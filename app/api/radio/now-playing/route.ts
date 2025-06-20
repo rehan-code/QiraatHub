@@ -16,7 +16,7 @@ export interface NowPlayingResponse {
   playlistTotalDuration: number;
 }
 
-const R2_PUBLIC_URL_BASE = process.env.R2_PUBLIC_URL_BASE;
+const R2_PUBLIC_URL_BASE = process.env.NEXT_PUBLIC_R2_PUBLIC_URL_BASE;
 const PLAYLIST_FILENAME = 'playlist.json';
 
 // This endpoint should not be heavily cached by downstream caches if we want near real-time sync.

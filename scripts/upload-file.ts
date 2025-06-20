@@ -87,7 +87,7 @@ async function uploadFile(localFilePath: string, r2ObjectKey: string) {
     await parallelUploads3.done();
     process.stdout.write('\n'); // New line after progress
     console.log(`Successfully uploaded ${r2ObjectKey} to R2.`);
-    console.log(`Public URL (if applicable and bucket is public): ${process.env.R2_PUBLIC_URL_BASE}/${r2ObjectKey}`);
+    console.log(`Public URL (if applicable and bucket is public): ${process.env.NEXT_PUBLIC_R2_PUBLIC_URL_BASE}/${r2ObjectKey}`);
 
   } catch (error) {
     process.stdout.write('\n'); // New line if error occurs during progress

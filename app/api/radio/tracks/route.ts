@@ -10,7 +10,7 @@ export interface Track {
   duration?: number;
 }
 
-const R2_PUBLIC_URL_BASE = process.env.R2_PUBLIC_URL_BASE;
+const R2_PUBLIC_URL_BASE = process.env.NEXT_PUBLIC_R2_PUBLIC_URL_BASE;
 const PLAYLIST_FILENAME = 'playlist.json';
 
 // This tells Next.js to cache the result for 300 seconds (5 minutes) and re-fetch it in the background.
@@ -18,7 +18,7 @@ export const revalidate = 300;
 
 export async function GET() {
   if (!R2_PUBLIC_URL_BASE) {
-    console.error('CRITICAL: Missing R2_PUBLIC_URL_BASE environment variable.');
+    console.error('CRITICAL: Missing NEXT_PUBLIC_R2_PUBLIC_URL_BASE environment variable.');
     return NextResponse.json({ error: 'Server configuration error.' }, { status: 500 });
   }
 
