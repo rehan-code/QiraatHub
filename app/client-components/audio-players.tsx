@@ -32,7 +32,8 @@ export default function AudioPlayers() {
           setLoading(false);
           return;
         }
-        const reciterNames: string[] = await response.json();
+        // API now returns Array<{ reciter: string, audioFilename: string }>
+        const recitersInfo: Array<{ reciter: string; audioFilename: string }> = await response.json();
 
         const r2BaseUrl = process.env.NEXT_PUBLIC_R2_PUBLIC_URL_BASE;
         if (!r2BaseUrl) {
@@ -44,16 +45,18 @@ export default function AudioPlayers() {
           return;
         }
 
-        // Extract the surah number (e.g., "001" from "001 Al-Fatiha")
-        const surahNumber = selectedSurah.split(' ')[0];
-        const audioFile = `${surahNumber}.mp3`;
-
-        const newPathList = reciterNames.map((reciterName) => {
-          return {
-            reciter: reciterName,
-            audioUrl: `${r2BaseUrl}/${selectedSurah}/${selectedQiraat}/${encodeURIComponent(reciterName)}/${audioFile}`,
-          };
-        });
+        const newPathList = recitersInfo
+          .map((info) => {
+            if (!info.reciter || !info.audioFilename) {
+              console.warn("Received incomplete reciter info:", info);
+              return null; // Skip this entry if data is incomplete
+            }
+            return {
+              reciter: info.reciter,
+              audioUrl: `${r2BaseUrl}/${selectedSurah}/${selectedQiraat}/${encodeURIComponent(info.reciter)}/${info.audioFilename}`,
+            };
+          })
+          .filter(Boolean) as Array<{ reciter: string; audioUrl: string }>; // Explicitly cast to remove nulls for TypeScript
 
         setPathList(newPathList);
       } catch (error) {
