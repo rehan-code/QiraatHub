@@ -124,8 +124,8 @@
   text-align: justify; /* Helps align Arabic text cleanly */
   line-height: 1.85; /* Adjust font size for readability */
   border-radius: 12px;
-  margin-left: auto;
-  margin-right: 0;
+  /* margin-left: auto;
+  margin-right: 0; */
 }
   
 #mushaf-display .ayah{
