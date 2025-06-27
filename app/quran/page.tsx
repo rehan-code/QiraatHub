@@ -4,8 +4,16 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import { FaSpinner } from "react-icons/fa";
 
+interface PageContent {
+  html_content: string;
+}
+
+interface QuranData {
+  [pageNumber: string]: PageContent;
+}
+
 export default function QuranReader() {
-  const [quranData, setQuranData] = useState<any[]>([]);
+  const [quranData, setQuranData] = useState<QuranData>({});
   const [loading, setLoading] = useState(true);
   const [qiraat, setQiraat] = useState("hafs");
   const [font, setFont] = useState("");
@@ -25,10 +33,10 @@ export default function QuranReader() {
         }
         const data = await response.json();
         console.log(data);
-        setQuranData(data.pages || []);
+        setQuranData(data.pages || {});
       } catch (error) {
         console.error("Fetch error:", error);
-        setQuranData([]);
+        setQuranData({});
       } finally {
         setLoading(false);
       }
@@ -88,7 +96,7 @@ export default function QuranReader() {
               htmlFor="qiraat-select"
               className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
             >
-              Qira'at
+              Qira&apos;at
             </label>
             <select
               id="qiraat-select"
@@ -181,7 +189,7 @@ export default function QuranReader() {
                   <div className="my-4 min-h-[70vh] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md">
                     <p className="text-gray-400 text-xl text-center">
                       Could not load page content. Please check the selected
-                      Qira'at and Font.
+                      Qira&apos;at and Font.
                     </p>
                   </div>
                 )
