@@ -1,13 +1,40 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './page.module.css';
+import { FaSpinner } from 'react-icons/fa';
 
 export default function QuranReader() {
+  const [quranData, setQuranData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const [qiraat, setQiraat] = useState('hafs');
   const [font, setFont] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
   const totalPages = 604; // Standard total pages in a Mushaf
+
+  useEffect(() => {
+    async function fetchQuranData() {
+      setLoading(true);
+      try {
+        const response = await fetch(`/api/quran?qiraat=${qiraat}&font=${font}`);
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to fetch Quran data');
+        }
+        const data = await response.json();
+        console.log(data);
+        setQuranData(data.pages || []);
+      } catch (error) {
+        console.error("Fetch error:", error);
+        setQuranData([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchQuranData();
+  }, [qiraat, font]);
+
+  const pageContent = quranData.length > 0 ? quranData[pageNumber - 1] : null;
 
   const handleNextPage = () => {
     setPageNumber((prev) => Math.min(prev + 1, totalPages));
@@ -38,13 +65,6 @@ export default function QuranReader() {
 
   const handleQiraatChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setQiraat(e.target.value);
-  };
-
-  // A simple map for font-family values
-  const fontMap: { [key: string]: string } = {
-    uthmani: '"Uthmanic Script", serif',
-    me_quran: '"Me Quran", sans-serif',
-    noto_naskh_arabic: '"Noto Naskh Arabic", serif',
   };
 
   return (
@@ -120,14 +140,36 @@ export default function QuranReader() {
           <div className={`max-w-4xl mx-auto shadow-lg rounded-lg ${styles.quranPageContainer}`}>
             <div 
               className="text-center text-2xl leading-loose" 
-              style={{ fontFamily: fontMap[font] }}
               dir="rtl"
             >
               <p className="text-gray-500 dark:text-gray-400 text-lg">
                 Quran Page {pageNumber}
               </p>
-              <div className="my-4 min-h-[70vh] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md">
-                  <p className="text-gray-400 text-xl">Page content will be loaded here</p>
+              <div>
+                {loading && (
+                  <div className="flex justify-center items-center py-4">
+                    <FaSpinner className="animate-spin text-blue-600 text-2xl" />
+                  </div>
+                )}
+                {!loading && pageContent && pageContent.verses && Array.isArray(pageContent.verses) ? (
+                    <p>test</p>
+                //   pageContent.verses.map((verse: any, vIndex: number) => (
+                //     <div key={vIndex} className={styles.ayah}>
+                //       {verse.words && Array.isArray(verse.words) && verse.words.map((word: any, wIndex: number) => (
+                //         <span key={wIndex} className={styles.word}>
+                //           <span className={styles.text}>{word.text}</span>
+                //         </span>
+                //       ))}
+                //       <span className={styles['arabic-num-marker']}>{verse.verse_number}</span>
+                //     </div>
+                //   ))
+                ) : !loading && (
+                  <div className="my-4 min-h-[70vh] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md">
+                    <p className="text-gray-400 text-xl text-center">
+                      Could not load page content. Please check the selected Qira'at and Font.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
