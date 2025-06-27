@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import styles from './page.module.css';
 
 export default function QuranReader() {
   const [qiraat, setQiraat] = useState('hafs');
@@ -116,7 +117,7 @@ export default function QuranReader() {
 
         {/* Scrollable Main Content */}
         <main className="flex-grow p-6 overflow-y-auto">
-          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8">
+          <div className={`max-w-4xl mx-auto shadow-lg rounded-lg ${styles.quranPageContainer}`}>
             <div 
               className="text-center text-2xl leading-loose" 
               style={{ fontFamily: fontMap[font] }}
@@ -126,7 +127,7 @@ export default function QuranReader() {
                 Quran Page {pageNumber}
               </p>
               <div className="my-4 min-h-[70vh] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md">
-                  <p className="text-gray-400 dark:text-gray-500 text-base">Page content will be loaded here</p>
+                  <p className="text-gray-400 text-xl">Page content will be loaded here</p>
               </div>
             </div>
           </div>

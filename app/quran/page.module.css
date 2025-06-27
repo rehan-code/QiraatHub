@@ -1,0 +1,156 @@
+.quranPageContainer {
+  /* Base styles */
+  background-color: #fdfdfa;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+/* Dark mode styles */
+.dark .quranPageContainer {
+  background-color: #1a202c; /* A slightly different dark background */
+  border-color: #2d3748;
+}
+
+
+@font-face {
+  font-family: 'surah-name-v4-icon';
+  src: url('https://static-cdn.tarteel.ai/qul/fonts/surah-names/v4/surah-name-v4.ttf');
+  font-display: swap;
+}
+  
+@font-face {
+  font-family: 'surah-name-v4';
+  src: url(https://static-cdn.tarteel.ai/qul/fonts/surah-names/v4/surah-name-v4.woff2?v=3.3);
+  src: url(https://static-cdn.tarteel.ai/qul/fonts/surah-names/v4/surah-name-v4.eot?v=3.3) format("embedded-opentype"),url(https://static-cdn.tarteel.ai/qul/fonts/surah-names/v4/surah-name-v4.ttf?v=3.3) format("truetype"),url(https://static-cdn.tarteel.ai/qul/fonts/surah-names/v4/surah-name-v4.woff?v=3.3) format("woff")
+}
+  
+@font-face {
+  font-family: 'bismillah';
+  src: url(https://static-cdn.tarteel.ai/qul/fonts/bismillah/bismillah.woff2?v=3.3);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+}
+  
+@font-face {
+  font-family: 'quran-icon';
+  src: url(https://static-cdn.tarteel.ai/qul/fonts/common/quran-common.woff2?v=3.3),url(https://static-cdn.tarteel.ai/qul/fonts/common/quran-common.woff?v=3.3) format("woff"),url(https://static-cdn.tarteel.ai/qul/fonts/common/quran-common.ttf?v=3.3) format("truetype")
+}
+  
+@font-face {
+  font-family: 'me_quran';
+  src: url('https://icikiwir.github.io/test/me_quran.eot?#iefix') format('embedded-opentype'),
+  url('https://icikiwir.github.io/test/me_quran.woff') format('woff'),
+  url('https://icikiwir.github.io/test/me_quran.ttf') format('truetype'),
+  url('https://icikiwir.github.io/test/me_quran.svg#me_quran') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: 'indopak-nastaleeq';
+  src: url(https://static-cdn.tarteel.ai/qul/fonts/nastaleeq/indopak-nastaleeq-waqf-lazim.woff2?v=3.3);
+  font-weight: 400;
+  font-style: normal
+}
+  
+@font-face {
+  font-family: 'qpc-nastaleeq';
+  src: url(https://static-cdn.tarteel.ai/qul/fonts/nastaleeq/KFGQPCNastaleeq-Regular.woff2?v=3.3)
+}
+  
+@font-face {
+  font-family: 'digitalkhatt';
+  src: url(https://static-cdn.tarteel.ai/qul/fonts/DigitalKhattQuranic.otf?v=3.3) format("opentype");
+  font-style: normal;
+  font-display: block
+}
+  
+.surah-name-v4-icon {
+  font-family: 'surah-name-v4-icon';
+}
+  
+.surah-name-v4 {
+  font-family: 'surah-name-v4';
+}
+  
+.bismillah {
+  font-family: 'bismillah';
+  text-align: center;
+  font-size: clamp(20px, 3vw, 40px);
+}
+  
+.surah-name {
+  position: relative;
+}
+  
+.quran-icon {
+  font-family: 'quran-icon';
+  font-size: clamp(32px, 6vw, 80px);
+}
+  
+.surah-icon {
+  direction: ltr;
+  position: absolute;
+  top: calc(50% - min(46px, 7vw));
+  left: calc(50% - 56px);
+  font-size: clamp(26px, 5vw, 48px);
+  width: 112px;
+}
+  
+.quran-page {
+  width: min-content;
+  height: min-content;
+  margin: auto;
+  padding: 64px;
+  border: 44px solid transparent;
+  border-image-slice: 77 82 75 84;
+  border-image-width: 44px;
+  border-image-outset: 0;
+  border-image-repeat: round;
+  text-align: justify;
+  direction: rtl;
+  line-height: 2.5;
+  font-size: 24px;
+  box-sizing: border-box;
+}
+  
+   
+#mushaf-display {
+  width: min-content;
+  margin: auto;
+  direction: rtl; /* Essential for Arabic text */
+  text-align: justify; /* Helps align Arabic text cleanly */
+  line-height: 1.85; /* Adjust font size for readability */
+  border-radius: 12px;
+  margin-left: auto;
+  margin-right: 0;
+}
+  
+#mushaf-display .ayah{
+  width: fit-content;
+  margin: 0 auto;
+  padding-bottom: 4px;
+}
+  
+#mushaf-display .word{
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 8px;
+  /* width:100%; */
+}
+#mushaf-display .word .text:hover, #mushaf-display .arabic-num-marker:hover{
+  color: #46ac71;
+  border-bottom: 1px solid black;
+}
+  
+.arabic-num-marker {
+  color: #0000FF;
+  padding: 0 3px;
+  cursor: pointer;
+}
+  
+.red-text{
+  color:red;
+}
