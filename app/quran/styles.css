@@ -119,7 +119,7 @@
    
 #mushaf-display {
   width: min-content;
-  margin: auto;
+  /* margin: auto; */
   direction: rtl; /* Essential for Arabic text */
   text-align: justify; /* Helps align Arabic text cleanly */
   line-height: 1.85; /* Adjust font size for readability */

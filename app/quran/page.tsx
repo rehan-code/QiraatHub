@@ -6,6 +6,7 @@ import { FaSpinner } from "react-icons/fa";
 
 interface PageContent {
   html_content: string;
+  notes_content: string;
 }
 
 interface QuranData {
@@ -79,6 +80,9 @@ export default function QuranReader() {
 
   const dynamicStyles = `
     #mushaf-display .quran-line {
+      font-family: ${font === "-digital-khatt" ? "digitalkhatt" : "me_quran"} !important;
+    }
+    .notes span {
       font-family: ${font === "-digital-khatt" ? "digitalkhatt" : "me_quran"} !important;
     }
   `;
@@ -179,11 +183,23 @@ export default function QuranReader() {
                   </div>
               )}
               {!loading && pageContent ? (
-                <div id="mushaf-display" className="p-8">
-                  <div
-                    dangerouslySetInnerHTML={{ __html: pageContent.html_content }}
-                  />
-                </div>
+                <>
+                {pageContent.html_content && (
+                  <div className="flex flex-row items-center justify-center">
+                    <div id="mushaf-display" className="p-8">
+                      <div
+                        dangerouslySetInnerHTML={{ __html: pageContent.html_content }}
+                      />
+                    </div>
+                    {pageContent.notes_content && (
+                        <ul
+                          className=" p-8"
+                          dangerouslySetInnerHTML={{ __html: pageContent.notes_content }}
+                        />
+                    )}
+                  </div>
+                )}
+                </>
               ) : (
                 !loading && (
                   <div className="my-4 min-h-[70vh] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md">
