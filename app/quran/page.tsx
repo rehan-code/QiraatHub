@@ -122,7 +122,7 @@ export default function QuranReader() {
               onChange={handleFontChange}
               className="w-full p-2 rounded border bg-gray-100 dark:bg-gray-700 text-sm"
             >
-              <option value="">Hafs</option>
+              <option value="">Me Quran</option>
               <option value="-digital-khatt">Digital Khatt</option>
             </select>
           </div>
