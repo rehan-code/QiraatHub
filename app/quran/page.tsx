@@ -3,6 +3,10 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 import { FaSpinner } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface PageContent {
   html_content: string;
@@ -17,7 +21,7 @@ export default function QuranReader() {
   const [quranData, setQuranData] = useState<QuranData>({});
   const [loading, setLoading] = useState(true);
   const [qiraat, setQiraat] = useState("hafs");
-  const [font, setFont] = useState("");
+  const [font, setFont] = useState("-me-quran");
   const [pageNumber, setPageNumber] = useState(1);
   const totalPages = 604; // Standard total pages in a Mushaf
 
@@ -26,14 +30,13 @@ export default function QuranReader() {
       setLoading(true);
       try {
         const response = await fetch(
-          `/api/quran?qiraat=${qiraat}&font=${font}`
+          `/api/quran?qiraat=${qiraat}&font=${font == "-me-quran" ? "" : font}`
         );
         if (!response.ok) {
           const errorData = await response.json();
           throw new Error(errorData.error || "Failed to fetch Quran data");
         }
         const data = await response.json();
-        console.log(data);
         setQuranData(data.pages || {});
       } catch (error) {
         console.error("Fetch error:", error);
@@ -70,12 +73,12 @@ export default function QuranReader() {
     }
   };
 
-  const handleFontChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFont(e.target.value);
+  const handleQiraatChange = (value: string) => {
+    setQiraat(value);
   };
 
-  const handleQiraatChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setQiraat(e.target.value);
+  const handleFontChange = (value: string) => {
+    setFont(value);
   };
 
   const dynamicStyles = `
@@ -90,68 +93,54 @@ export default function QuranReader() {
   return (
     <div className="flex h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white dark:bg-gray-800 shadow-lg p-4 flex flex-col">
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-          Quran Reader
-        </h1>
-        <div className="space-y-4">
+      <Card className="w-64 flex flex-col shadow-lg border-0">
+        <CardHeader>
+          <CardTitle>Quran Reader</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
           <div>
-            <label
-              htmlFor="qiraat-select"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-            >
-              Qira&apos;at
-            </label>
-            <select
-              id="qiraat-select"
-              value={qiraat}
-              onChange={handleQiraatChange}
-              className="w-full p-2 rounded border bg-gray-100 dark:bg-gray-700 text-sm"
-            >
-              <option value="hafs">Hafs</option>
-              <option value="hisham">Hisham</option>
-              <option value="ibn-dhakwan">Ibn Dhakwan</option>
-            </select>
+            <label htmlFor="qiraat-select" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Qira&apos;at</label>
+            <Select value={qiraat} onValueChange={handleQiraatChange}>
+              <SelectTrigger id="qiraat-select" className="w-full">
+                <SelectValue placeholder="Select Qira'at" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="hafs">Hafs</SelectItem>
+                <SelectItem value="hisham">Hisham</SelectItem>
+                <SelectItem value="ibn-dhakwan">Ibn Dhakwan</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
           <div>
-            <label
-              htmlFor="font-select"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-            >
-              Font
-            </label>
-            <select
-              id="font-select"
-              value={font}
-              onChange={handleFontChange}
-              className="w-full p-2 rounded border bg-gray-100 dark:bg-gray-700 text-sm"
-            >
-              <option value="">Me Quran</option>
-              <option value="-digital-khatt">Digital Khatt</option>
-            </select>
+            <label htmlFor="font-select" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Font</label>
+            <Select value={font} onValueChange={handleFontChange}>
+              <SelectTrigger id="font-select" className="w-full">
+                <SelectValue placeholder="Select Font" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="-me-quran">Me Quran</SelectItem>
+                <SelectItem value="-digital-khatt">Digital Khatt</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
-        </div>
-      </aside>
+        </CardContent>
+      </Card>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Main Content Header with Navigation */}
-        <header className="flex-shrink-0 bg-white dark:bg-gray-800 shadow-md z-10">
+        <header className="flex-shrink-0 bg-white dark:bg-gray-800 border-b z-10 shadow-md">
           <div className="max-w-4xl mx-auto p-3 flex justify-center items-center space-x-4">
-            <button
-              onClick={handlePreviousPage}
-              disabled={pageNumber === 1}
-              className="px-5 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 ease-in-out"
-            >
+            <Button onClick={handlePreviousPage} disabled={pageNumber === 1} variant="outline">
               &larr; Previous
-            </button>
+            </Button>
             <div className="flex items-center">
-              <input
+              <Input
                 type="number"
                 value={pageNumber}
                 onChange={handlePageInputChange}
                 onBlur={handlePageInputBlur}
-                className="w-20 text-center p-2 rounded-md border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                className="w-20 text-center"
                 min="1"
                 max={totalPages}
               />
@@ -159,24 +148,17 @@ export default function QuranReader() {
                 / {totalPages}
               </span>
             </div>
-            <button
-              onClick={handleNextPage}
-              disabled={pageNumber === totalPages}
-              className="px-5 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 ease-in-out"
-            >
+            <Button onClick={handleNextPage} disabled={pageNumber === totalPages} variant="outline">
               Next &rarr;
-            </button>
+            </Button>
           </div>
         </header>
 
         {/* Scrollable Main Content */}
         <main className="flex-grow p-6 overflow-y-auto">
           <style>{dynamicStyles}</style>
-          <div className="max-w-4xl mx-auto shadow-lg rounded-lg quranPageContainer">
-            <div
-              className="text-center text-2xl leading-loose"
-              id="mushaf-display-container"
-            >
+          <Card className="max-w-4xl mx-auto quranPageContainer shadow-lg">
+            <CardContent className="text-center text-2xl leading-loose p-4 md:p-6" id="mushaf-display-container">
               {loading && (
                   <div className="flex justify-center items-center py-4">
                     <FaSpinner className="animate-spin text-blue-600 text-2xl" />
@@ -210,8 +192,8 @@ export default function QuranReader() {
                   </div>
                 )
               )}
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </main>
       </div>
     </div>
