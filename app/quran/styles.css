@@ -3,7 +3,7 @@
   background-color: #fdfdfa;
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 /* Dark mode styles */
@@ -123,6 +123,7 @@
   direction: rtl; /* Essential for Arabic text */
   text-align: justify; /* Helps align Arabic text cleanly */
   line-height: 1.85; /* Adjust font size for readability */
+  font-size: 22px;
   border-radius: 12px;
   /* margin-left: auto;
   margin-right: 0; */

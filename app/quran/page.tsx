@@ -154,11 +154,11 @@ export default function QuranReader() {
           </div>
         </header>
 
-        {/* Scrollable Main Content */}
+        {/* Main Content */}
         <main className="flex-grow p-6">
           <style>{dynamicStyles}</style>
           <Card className="max-w-5xl mx-auto quranPageContainer shadow-lg">
-            <CardContent className="text-center text-2xl leading-loose p-4 md:p-6" id="mushaf-display-container">
+            <CardContent className="text-center text-xl leading-loose p-2">
               {loading && (
                   <div className="flex justify-center items-center py-4">
                     <FaSpinner className="animate-spin text-blue-600 text-2xl" />
