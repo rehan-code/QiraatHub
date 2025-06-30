@@ -91,7 +91,7 @@ export default function QuranReader() {
   `;
 
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="flex h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Sidebar */}
       <Card className="w-64 flex flex-col shadow-lg border-0">
         <CardHeader>
@@ -155,9 +155,9 @@ export default function QuranReader() {
         </header>
 
         {/* Scrollable Main Content */}
-        <main className="flex-grow p-6 overflow-y-auto">
+        <main className="flex-grow p-6">
           <style>{dynamicStyles}</style>
-          <Card className="max-w-4xl mx-auto quranPageContainer shadow-lg">
+          <Card className="max-w-5xl mx-auto quranPageContainer shadow-lg">
             <CardContent className="text-center text-2xl leading-loose p-4 md:p-6" id="mushaf-display-container">
               {loading && (
                   <div className="flex justify-center items-center py-4">
