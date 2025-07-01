@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import "./styles.css";
-import { FaSpinner } from "react-icons/fa";
+import { FaSpinner, FaSun, FaMoon } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
@@ -23,6 +23,7 @@ export default function QuranReader() {
   const [qiraat, setQiraat] = useState("hafs");
   const [font, setFont] = useState("-me-quran");
   const [pageNumber, setPageNumber] = useState(1);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const totalPages = 604; // Standard total pages in a Mushaf
 
   useEffect(() => {
@@ -110,8 +111,13 @@ export default function QuranReader() {
     }
   `;
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(prev => !prev);
+  };
+
   return (
-    <div className="flex h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className={isDarkMode ? "dark" : ""}>
+      <div className="flex h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Sidebar */}
       <Card className="w-64 flex flex-col shadow-lg border-0">
         <CardHeader>
@@ -171,6 +177,9 @@ export default function QuranReader() {
             <Button onClick={handlePreviousPage} disabled={pageNumber === 1} variant="outline">
               Previous &rarr;
             </Button>
+            <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="ml-4">
+              {isDarkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
+            </Button>
           </div>
         </header>
 
@@ -216,6 +225,7 @@ export default function QuranReader() {
           </Card>
         </main>
       </div>
+    </div>
     </div>
   );
 }
