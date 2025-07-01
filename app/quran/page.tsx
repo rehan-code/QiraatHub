@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./styles.css";
 import { FaSpinner } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
@@ -50,13 +50,33 @@ export default function QuranReader() {
 
   const pageContent = quranData[pageNumber] ? quranData[pageNumber] : null;
 
-  const handleNextPage = () => {
+  const handleNextPage = useCallback(() => {
     setPageNumber((prev) => Math.min(prev + 1, totalPages));
-  };
+  }, []);
 
-  const handlePreviousPage = () => {
+  const handlePreviousPage = useCallback(() => {
     setPageNumber((prev) => Math.max(prev - 1, 1));
-  };
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Do not trigger on input fields
+      if (e.target instanceof HTMLInputElement) {
+        return;
+      }
+      if (e.key === "ArrowRight") {
+        handlePreviousPage();
+      } else if (e.key === "ArrowLeft") {
+        handleNextPage();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleNextPage, handlePreviousPage]);
 
   const handlePageInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
@@ -131,8 +151,8 @@ export default function QuranReader() {
         {/* Main Content Header with Navigation */}
         <header className="flex-shrink-0 bg-white dark:bg-gray-800 border-b z-10 shadow-md">
           <div className="max-w-4xl mx-auto p-3 flex justify-center items-center space-x-4">
-            <Button onClick={handlePreviousPage} disabled={pageNumber === 1} variant="outline">
-              &larr; Previous
+            <Button onClick={handleNextPage} disabled={pageNumber === totalPages} variant="outline">
+              &larr; Next
             </Button>
             <div className="flex items-center">
               <Input
@@ -148,8 +168,8 @@ export default function QuranReader() {
                 / {totalPages}
               </span>
             </div>
-            <Button onClick={handleNextPage} disabled={pageNumber === totalPages} variant="outline">
-              Next &rarr;
+            <Button onClick={handlePreviousPage} disabled={pageNumber === 1} variant="outline">
+              Previous &rarr;
             </Button>
           </div>
         </header>
