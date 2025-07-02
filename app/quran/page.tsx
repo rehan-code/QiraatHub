@@ -197,14 +197,14 @@ export default function QuranReader() {
                 <>
                 {pageContent.html_content && (
                   <div className="flex flex-row items-center justify-center">
-                    <div id="mushaf-display" className="p-8">
+                    <div id="mushaf-display" className="p-8 quran-page">
                       <div
                         dangerouslySetInnerHTML={{ __html: pageContent.html_content }}
                       />
                     </div>
                     {pageContent.notes_content && (
                         <ul
-                          className=" p-8"
+                          className="p-8"
                           dangerouslySetInnerHTML={{ __html: pageContent.notes_content }}
                         />
                     )}
