@@ -2,11 +2,12 @@
 
 import { useEffect, useState, useCallback } from "react";
 import "./styles.css";
-import { FaSpinner, FaSun, FaMoon } from "react-icons/fa";
+import { FaSpinner, FaSun, FaMoon, FaCog } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 interface PageContent {
   html_content: string;
@@ -24,7 +25,21 @@ export default function QuranReader() {
   const [font, setFont] = useState("-me-quran");
   const [pageNumber, setPageNumber] = useState(1);
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const colorThemes = {
+    cream: { light: '#fdfdfa', dark: '#1a1a1a' },
+    parchment: { light: '#f8f0da', dark: '#2a2118' },
+    white: { light: '#ffffff', dark: '#1e1e2c' },
+    grey: { light: '#f0f4f8', dark: '#192231' },
+  };
+
+  type ColorThemeName = keyof typeof colorThemes;
+
+  const [colorTheme, setColorTheme] = useState<ColorThemeName>("cream");
+  const [border, setBorder] = useState("green");
   const totalPages = 604; // Standard total pages in a Mushaf
+
+  const backgroundColor = colorThemes[colorTheme][isDarkMode ? 'dark' : 'light'];
 
   useEffect(() => {
     async function fetchQuranData() {
@@ -180,13 +195,52 @@ export default function QuranReader() {
             <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="ml-4">
               {isDarkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
             </Button>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="ghost" size="icon" className="ml-2">
+                  <FaCog className="h-5 w-5" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-64">
+                <div className="grid gap-4">
+                  <div className="space-y-2">
+                    <h4 className="font-medium leading-none">Settings</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Customize the appearance.
+                    </p>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium">Background Color</label>
+                    <div className="flex space-x-2 mt-2">
+                      <Button onClick={() => setColorTheme('cream')} className="h-8 w-8 rounded-full" style={{ backgroundColor: colorThemes.cream[isDarkMode ? 'dark' : 'light'], border: '1px solid #ccc' }} />
+                      <Button onClick={() => setColorTheme('parchment')} className="h-8 w-8 rounded-full" style={{ backgroundColor: colorThemes.parchment[isDarkMode ? 'dark' : 'light'], border: '1px solid #ccc' }} />
+                      <Button onClick={() => setColorTheme('white')} className="h-8 w-8 rounded-full" style={{ backgroundColor: colorThemes.white[isDarkMode ? 'dark' : 'light'], border: '1px solid #ccc' }} />
+                      <Button onClick={() => setColorTheme('grey')} className="h-8 w-8 rounded-full" style={{ backgroundColor: colorThemes.grey[isDarkMode ? 'dark' : 'light'], border: '1px solid #ccc' }} />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="border-select" className="text-sm font-medium">Border Style</label>
+                    <Select value={border} onValueChange={setBorder}>
+                      <SelectTrigger id="border-select" className="w-full mt-2">
+                        <SelectValue placeholder="Select Border" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="green">Green</SelectItem>
+                        <SelectItem value="red">Red</SelectItem>
+                        <SelectItem value="none">None</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
         </header>
 
         {/* Main Content */}
         <main className="flex-grow p-6">
           <style>{dynamicStyles}</style>
-          <Card className="max-w-5xl mx-auto quranPageContainer shadow-lg">
+          <Card className="max-w-5xl mx-auto quranPageContainer shadow-lg" style={{ backgroundColor }}>
             <CardContent className="text-center text-xl leading-loose p-2">
               {loading && (
                   <div className="flex justify-center items-center py-4">
@@ -197,7 +251,7 @@ export default function QuranReader() {
                 <>
                 {pageContent.html_content && (
                   <div className="flex flex-row items-center justify-center">
-                    <div id="mushaf-display" className="p-8 quran-page">
+                    <div id="mushaf-display" className={`quran-page border-${border}`}>
                       <div
                         dangerouslySetInnerHTML={{ __html: pageContent.html_content }}
                       />
