@@ -134,7 +134,7 @@ export default function QuranReader() {
     <div className={isDarkMode ? "dark" : ""}>
       <div className="flex h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Sidebar */}
-      <Card className="w-64 flex flex-col shadow-lg border-0">
+      <Card className="min-h-[800px] w-64 flex flex-col shadow-lg border-0">
         <CardHeader>
           <CardTitle>Quran Reader</CardTitle>
         </CardHeader>
@@ -160,7 +160,9 @@ export default function QuranReader() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="-me-quran">Me Quran</SelectItem>
-                <SelectItem value="-digital-khatt">Digital Khatt</SelectItem>
+                {qiraat === "hafs" && (
+                  <SelectItem value="-digital-khatt">Digital Khatt</SelectItem>
+                )}
               </SelectContent>
             </Select>
           </div>
