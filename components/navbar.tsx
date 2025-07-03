@@ -29,7 +29,7 @@ export function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       className="relative z-50 bg-white border-b border-slate-200/80 text-primary"
     >
-      <div className="flex h-24 items-center px-4 md:px-8 lg:px-32 container mx-auto">
+      <div className="flex h-20 items-center px-4 md:px-8 lg:px-32 container mx-auto">
         <div className="flex items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
@@ -42,7 +42,7 @@ export function Navbar() {
                 alt="Logo"
                 width={60}
                 height={80}
-                className="w-[45px] md:w-[60px] h-auto transition-all duration-300 group-hover:brightness-110"
+                className="w-[45px] md:w-[52px] h-auto transition-all duration-300 group-hover:brightness-110"
               />
             </motion.div>
           </Link>
@@ -53,14 +53,14 @@ export function Navbar() {
           <NavigationMenuList className="flex gap-1">
             {/* Qiraat Section */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary data-[state=open]:bg-slate-100/80 rounded-full">
+              <NavigationMenuTrigger className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary data-[state=open]:hover:text-theme_primary data-[state=open]:bg-slate-100/80 rounded-full">
                 Qiraat
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="w-[450px] p-4 bg-white shadow-lg border border-slate-200/80"
+                  className="w-[430px] p-2 bg-white"
                 >
                   <div className="grid grid-cols-2 gap-3">
                     {[
@@ -88,16 +88,25 @@ export function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
+            <NavigationMenuItem>
+              <Link
+                href="/quran"
+                className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary inline-flex items-center justify-center rounded-full hover:bg-slate-100/80"
+              >
+                Quran
+              </Link>
+            </NavigationMenuItem>
+
             {/* Resources Section */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary data-[state=open]:bg-slate-100/80 rounded-full">
+              <NavigationMenuTrigger className="h-12 px-5 text-base font-medium transition-all duration-200 hover:text-theme_primary data-[state=open]:hover:text-theme_primary data-[state=open]:bg-slate-100/80 rounded-full">
                 Resources
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="w-[240px] p-4 bg-white shadow-lg border border-slate-200/80"
+                  className="w-[220px] p-2 bg-white"
                 >
                   <div className="grid gap-3">
                     {[
