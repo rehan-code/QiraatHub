@@ -194,7 +194,7 @@ const RadioPlayer = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 w-[400px] bg-yellow-700 text-white rounded-xl p-4 shadow-xl z-[1000] font-sans">
+    <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-[92%] md:w-[400px] md:left-auto md:right-5 md:transform-none bg-yellow-700 text-white rounded-xl p-4 shadow-xl z-10 font-sans">
       <audio
         ref={audioRef}
         onEnded={handleTrackEnd}

@@ -146,7 +146,7 @@ export function Navbar() {
         </NavigationMenu>
 
         {/* Mobile Menu */}
-        <div className="md:hidden ml-auto">
+        <div className="md:hidden ml-auto z-50">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="relative scale-125">
