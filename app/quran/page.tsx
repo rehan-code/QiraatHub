@@ -132,9 +132,9 @@ export default function QuranReader() {
 
   return (
     <div className={isDarkMode ? "dark" : ""}>
-      <div className="flex h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <div className="flex flex-col md:flex-row h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Sidebar */}
-      <Card className="min-h-[800px] w-64 flex flex-col shadow-lg border-0">
+      <Card className="w-full md:w-64 md:min-h-[800px] flex flex-col shadow-lg border-0">
         <CardHeader>
           <CardTitle>Quran Reader</CardTitle>
         </CardHeader>
@@ -173,7 +173,7 @@ export default function QuranReader() {
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Main Content Header with Navigation */}
         <header className="flex-shrink-0 bg-white dark:bg-gray-800 border-b z-10 shadow-md">
-          <div className="max-w-4xl mx-auto p-3 flex justify-center items-center space-x-4">
+          <div className="max-w-4xl mx-auto p-3 flex flex-wrap justify-center items-center gap-4">
             <Button onClick={handleNextPage} disabled={pageNumber === totalPages} variant="outline">
               &larr; Next
             </Button>
@@ -240,7 +240,7 @@ export default function QuranReader() {
         </header>
 
         {/* Main Content */}
-        <main className="flex-grow p-6">
+        <main className="flex-grow p-2 sm:p-6">
           <style>{dynamicStyles}</style>
           <Card className="max-w-5xl mx-auto quranPageContainer shadow-lg" style={{ backgroundColor }}>
             <CardContent className="text-center text-xl leading-loose p-2">
@@ -252,7 +252,7 @@ export default function QuranReader() {
               {!loading && pageContent ? (
                 <>
                 {pageContent.html_content && (
-                  <div className="flex flex-row items-center justify-center">
+                  <div className="flex flex-col md:flex-row items-center justify-center">
                     <div id="mushaf-display" className={`quran-page border-${border}`}>
                       <div
                         dangerouslySetInnerHTML={{ __html: pageContent.html_content }}
@@ -260,7 +260,7 @@ export default function QuranReader() {
                     </div>
                     {pageContent.notes_content && (
                         <ul
-                          className="p-8"
+                          className="p-4 md:p-8"
                           dangerouslySetInnerHTML={{ __html: pageContent.notes_content }}
                         />
                     )}
