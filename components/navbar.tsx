@@ -42,7 +42,7 @@ export function Navbar() {
                 alt="Logo"
                 width={60}
                 height={80}
-                className="w-[45px] md:w-[52px] h-auto transition-all duration-300 group-hover:brightness-110"
+                className="w-[40px] h-auto transition-all duration-300 group-hover:brightness-110"
               />
             </motion.div>
           </Link>
