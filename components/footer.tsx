@@ -8,21 +8,20 @@ export default function Footer() {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-4 mt-2">
           {/* Logo and Description */}
-          <div className="space-y-6 mr-5">
+          <div className="space-y-6">
             <Link
               href="/"
               className="inline-block transform transition hover:scale-105"
             >
               <Image
-                src="/logo.png"
+                src="/Horizontal Logo.png"
                 alt="QiraatHub Logo"
-                width={50}
+                width={260}
                 height={50}
-                className="rounded-lg shadow-sm"
               />
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed text-justify">
-              Your gateway to mastering the ten Qiraat—explore authentic
+              Your gateway to mastering the ten Qiraat. Explore authentic
               resources and connect with a supportive learning community.
             </p>
           </div>
