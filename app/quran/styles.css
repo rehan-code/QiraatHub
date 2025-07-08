@@ -69,35 +69,69 @@
 }
   
 .surah-name-v4-icon {
-  font-family: 'surah-name-v4-icon';
+  font-family: 'surah-name-v4-icon' !important;
 }
   
 .surah-name-v4 {
-  font-family: 'surah-name-v4';
+  font-family: 'surah-name-v4-icon' !important;
+}
+
+.me-2 {
+  margin-right: 0.5rem !important;
 }
   
 .bismillah {
   font-family: 'bismillah';
-  text-align: center;
-  font-size: clamp(20px, 3vw, 40px);
+  text-align: center !important;
+  font-size: 30px;
+  /* font-size: clamp(20px, 3vw, 40px); */
 }
   
 .surah-name {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 0;
 }
   
 .quran-icon {
   font-family: 'quran-icon';
-  font-size: clamp(32px, 6vw, 80px);
+  /* font-size: clamp(32px, 6vw, 80px); */
+}
+
+.surah-header {
+  font-size: 70px;
+  margin-top: -30px;
+  margin-bottom: -30px;
 }
   
 .surah-icon {
+  font-size: 50px;
+  text-align: right;
   direction: ltr;
+  font-display: block;
+  speak: never;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   position: absolute;
+  /* direction: ltr;
   top: calc(50% - min(46px, 7vw));
   left: calc(50% - 56px);
   font-size: clamp(26px, 5vw, 48px);
-  width: 112px;
+  width: 112px; */
 }
   
 .quran-page {
@@ -130,7 +164,9 @@
   
    
 #mushaf-display {
-  width: min-content;
+  /* width: min-content; */
+  /* width: 100%; */
+  width: 68%;
   direction: rtl; /* Essential for Arabic text */
   text-align: justify; /* Helps align Arabic text cleanly */
   line-height: 1.85; /* Adjust font size for readability */
