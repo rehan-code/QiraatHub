@@ -240,10 +240,10 @@ export default function QuranReader() {
         </header>
 
         {/* Main Content */}
-        <main className="flex-grow p-2 sm:p-6">
+        <main className="flex-grow sm:p-6">
           <style>{dynamicStyles}</style>
-          <Card className="max-w-5xl mx-auto quranPageContainer shadow-lg" style={{ backgroundColor }}>
-            <CardContent className="text-center text-xl leading-loose p-2">
+          <Card className="max-w-5xl mx-auto quranPageContainer md:shadow-lg shadow-none" style={{ backgroundColor }}>
+            <CardContent className="text-center text-xl leading-loose border-0 p-0 md:p-2">
               {loading && (
                   <div className="flex justify-center items-center py-4">
                     <FaSpinner className="animate-spin text-blue-600 text-2xl" />
