@@ -110,9 +110,9 @@ export function Navbar() {
                 >
                   <div className="grid gap-3">
                     {[
-                      { name: "Downloads", href: "/resources/downloads" },
-                      { name: "Video Library", href: "/resources/video" },
                       { name: "Audio Resources", href: "/resources/audio" },
+                      { name: "Books", href: "/resources/books" },
+                      { name: "Video Library", href: "/resources/video" },
                     ].map((resource) => (
                       <Link
                         key={resource.href}

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { scholars } from './qiraat/data/scholars';
 import { getBlogSlugs } from './lib/blog';
-import { books } from './resources/downloads/data/books';
+import { books } from './resources/books/data/books';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Base URL for your site
@@ -57,7 +57,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/resources/downloads`,
+      url: `${baseUrl}/resources/books`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
@@ -83,7 +83,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Add download routes from books.ts
   const downloadRoutes: MetadataRoute.Sitemap = books.map((book) => ({
-    url: `${baseUrl}/resources/downloads/${book.slug}`,
+    url: `${baseUrl}/resources/books/${book.slug}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
