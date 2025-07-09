@@ -38,11 +38,11 @@ export const scholars: Scholar[] = [
         },
         {
           title: "Mushaf Warsh An Nafi Azraq",
-          url: "http://www.alwa7y.com/downloads/TayseerKaloon.pdf",
+          url: "/books/Mushaf Warsh an Nafi Azraq.pdf",
         },
         {
-          title: "Mushaf Qaloon An Nafi Shatibiyyah",
-          url: "http://www.alwa7y.com/downloads/TayseerWarsh.pdf",
+          title: "Mushaf Qaloon An Nafi",
+          url: "/books/Mushaf Qaloon an Nafi.pdf",
         },
       ],
       youtubeVideos: [
@@ -181,11 +181,11 @@ export const scholars: Scholar[] = [
       resources: [
         {
           title: "Mushaf Ibn Dhakwan An Ibn Amir",
-          url: "http://www.alwa7y.com/downloads/TayseerThakwan.pdf",
+          url: "/books/Mushaf Ibn Dhakwan an Ibn Amir.pdf",
         },
         {
           title: "Mushaf Hisham An Ibn Amir",
-          url: "http://www.alwa7y.com/downloads/TayseerHesham.pdf",
+          url: "/books/Mushaf Hisham An Ibn Amir.pdf",
         },
       ],
       youtubeVideos: [
