@@ -38,7 +38,7 @@ export const books: Book[] = [
     slug: 'mushaf-warsh-an-nafi-azraq',
     title: 'Mushaf Warsh An Nafi Azraq',
     author: 'Nafi Azraq',
-    coverImage: '/books/Mushaf Warsh An Nafi Azraq Cover.png',
+    coverImage: '/books/Mushaf Warsh an Nafi Azraq Cover.png',
     downloadUrl: 'https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Warsh%20an%20Nafi%20Azraq.pdf',
     description: 'Following the sub-riwayah or "Tariq" Al Azraq, one of Warsh\'s two main transmission paths alongside Al-Asbahani',
     category: 'Quran',
