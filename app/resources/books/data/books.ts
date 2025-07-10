@@ -10,11 +10,19 @@ export interface Book {
 
 export const books: Book[] = [
   {
+    slug: 'mushaf-hisham-an-ibn-amir',
+    title: 'Mushaf Hisham An Ibn Amir',
+    author: 'Hisham an Ibn Amir',
+    coverImage: '/books/Mushaf Hisham an Ibn Amir Cover.png',
+    downloadUrl: 'https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Hisham%20an%20Ibn%20Amir.pdf',
+    category: 'Quran',
+  },
+  {
     slug: 'mushaf-ibn-dhakwan-an-ibn-amir',
     title: 'Mushaf Ibn Dhakwan an Ibn Amir',
     author: 'Ibn Dhakwan an Ibn Amir',
     coverImage: '/books/Mushaf Ibn Dhakwan an Ibn Amir Cover.png',
-    downloadUrl: '/books/Mushaf Ibn Dhakwan an Ibn Amir.pdf',
+    downloadUrl: 'https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Ibn%20Dhakwan%20an%20Ibn%20Amir.pdf',
     category: 'Quran',
   },
   {
@@ -22,7 +30,7 @@ export const books: Book[] = [
     title: 'Mushaf Mushaf Qaloon an Nafi',
     author: 'Mushaf Qaloon an Nafi',
     coverImage: '/books/Mushaf Qaloon an Nafi Cover.png',
-    downloadUrl: '/books/Mushaf Qaloon an Nafi.pdf',
+    downloadUrl: 'https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Qaloon%20an%20Nafi.pdf',
     description: 'Following Qalun\'s default method of Qasr (shortening) munfasil and sukoon (iskaan) meem al jam',
     category: 'Quran',
   },
@@ -31,7 +39,7 @@ export const books: Book[] = [
     title: 'Mushaf Warsh An Nafi Azraq',
     author: 'Nafi Azraq',
     coverImage: '/books/Mushaf Warsh An Nafi Azraq Cover.png',
-    downloadUrl: '/books/Mushaf Warsh An Nafi Azraq.pdf',
+    downloadUrl: 'https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Warsh%20an%20Nafi%20Azraq.pdf',
     description: 'Following the sub-riwayah or "Tariq" Al Azraq, one of Warsh\'s two main transmission paths alongside Al-Asbahani',
     category: 'Quran',
   },

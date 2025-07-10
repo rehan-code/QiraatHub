@@ -38,11 +38,11 @@ export const scholars: Scholar[] = [
         },
         {
           title: "Mushaf Warsh An Nafi Azraq",
-          url: "/books/Mushaf Warsh an Nafi Azraq.pdf",
+          url: "https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Warsh%20an%20Nafi%20Azraq.pdf",
         },
         {
           title: "Mushaf Qaloon An Nafi",
-          url: "/books/Mushaf Qaloon an Nafi.pdf",
+          url: "https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Qaloon%20an%20Nafi.pdf",
         },
       ],
       youtubeVideos: [
@@ -181,11 +181,11 @@ export const scholars: Scholar[] = [
       resources: [
         {
           title: "Mushaf Ibn Dhakwan An Ibn Amir",
-          url: "/books/Mushaf Ibn Dhakwan an Ibn Amir.pdf",
+          url: "https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Ibn%20Dhakwan%20an%20Ibn%20Amir.pdf",
         },
         {
           title: "Mushaf Hisham An Ibn Amir",
-          url: "/books/Mushaf Hisham An Ibn Amir.pdf",
+          url: "https://pub-1d49f8f3e93f443db1361604407c9670.r2.dev/Mushaf%20Hisham%20an%20Ibn%20Amir.pdf",
         },
       ],
       youtubeVideos: [
