@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function DownloadsPage() {
+export default function BooksPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -38,7 +38,7 @@ export default function DownloadsPage() {
               key={index}
               className="group relative flex flex-col bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <Link href={`/resources/downloads/${book.slug}`} className="flex-1">
+              <Link href={`/resources/books/${book.slug}`} className="flex-1">
                 <div className="relative pt-[140%] bg-emerald-50">
                   {book.coverImage ? (
                     <>
