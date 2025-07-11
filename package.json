@@ -12,6 +12,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.828.0",
     "@aws-sdk/lib-storage": "^3.828.0",
+    "@next/third-parties": "^15.3.5",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-navigation-menu": "^1.2.1",
     "@radix-ui/react-popover": "^1.1.14",
