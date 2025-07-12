@@ -89,6 +89,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Add download routes from books.ts for qiraathub.com R2 books
+  const qiraathubBookRoutes: MetadataRoute.Sitemap = books
+  .filter((book) => book.downloadUrl.startsWith('https://resources.qiraathub.com'))
+  .map((book) => ({
+    url: `${book.downloadUrl}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
   // Add routes for PDF files in public/books directory
   const publicBookRoutes: MetadataRoute.Sitemap = [
     {
@@ -106,5 +116,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
   
   // Combine all routes
-  return [...staticRoutes, ...scholarRoutes, ...blogRoutes, ...downloadRoutes, ...publicBookRoutes];
+  return [...staticRoutes, ...scholarRoutes, ...blogRoutes, ...downloadRoutes, ...qiraathubBookRoutes, ...publicBookRoutes];
 }
