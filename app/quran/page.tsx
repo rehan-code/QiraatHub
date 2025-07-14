@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { BookOpen } from "lucide-react";
 
 interface PageContent {
   html_content: string;
@@ -136,9 +137,12 @@ export default function QuranReader() {
       {/* Sidebar */}
       <Card className="w-full md:w-64 md:min-h-[800px] flex flex-col shadow-lg border-0">
         <CardHeader>
-          <CardTitle>Quran Reader</CardTitle>
+          <CardTitle className="flex items-center gap-2">
+            <BookOpen className="h-6 w-6 text-yellow-500" />
+            <h1 className="text-2xl font-bold">Quran Reader</h1>
+          </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-4 pt-0 md:pt-6">
           <div>
             <label htmlFor="qiraat-select" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Qira&apos;at</label>
             <Select value={qiraat} onValueChange={handleQiraatChange}>
