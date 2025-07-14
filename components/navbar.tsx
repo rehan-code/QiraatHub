@@ -210,7 +210,7 @@ export function Navbar() {
                       </h2>
                       <div className="grid gap-2">
                         {[
-                          { name: "Downloads", href: "/resources/downloads" },
+                          { name: "Books", href: "/resources/books" },
                           { name: "Video Library", href: "/resources/video" },
                           { name: "Audio Resources", href: "/resources/audio" },
                         ].map((resource) => (
