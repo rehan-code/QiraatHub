@@ -158,7 +158,7 @@ export function Navbar() {
               className="w-full sm:w-[400px] p-0 bg-gradient-to-b from-white to-slate-50 border-l border-slate-200/80"
             >
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-6 border-b border-slate-200/80 bg-white">
+                <div className="flex items-center justify-between p-5 border-b border-slate-200/80 bg-white">
                   <span className="text-xl font-semibold text-slate-900">Menu</span>
                   <SheetClose asChild>
                     <Button
@@ -178,14 +178,17 @@ export function Navbar() {
                       <h2 className="text-base font-semibold text-slate-400 uppercase tracking-wider">
                         Qiraat
                       </h2>
-                      <div className="grid gap-2">
+                      <div className="grid grid-cols-2 gap-2">
                         {[
                           { name: "Nafi' al-Madani", slug: "nafi-al-madani" },
                           { name: "Ibn Kathir", slug: "ibn-kathir" },
                           { name: "Abu Amr Basri", slug: "abu-amr-basri" },
+                          { name: "Ibn Amir Shami", slug: "ibn-amir-shami" },
                           { name: "Asim Al Koofi", slug: "asim-al-koofi" },
                           { name: "Hamza Al Kufi", slug: "hamza-al-kufi" },
+                          { name: "Al-Kisa'i", slug: "al-kisai" },
                           { name: "Abu Jaafar", slug: "abu-jaafar" },
+                          { name: "Yaqub Hadrani", slug: "yaqub-hadrani" },
                           { name: "Khalaf Al Ashir", slug: "khalaf-al-ashir" },
                         ].map((scholar) => (
                           <Link
@@ -230,8 +233,9 @@ export function Navbar() {
                       </h2>
                       <div className="grid gap-2">
                         {[
-              { name: "Blog", href: "/blog" },
-              { name: "About", href: "/about" },
+                          { name: "Quran", href: "/quran" },
+                          { name: "Blog", href: "/blog" },
+                          { name: "About", href: "/about" },
                           { name: "Contact", href: "/contact" },
                         ].map((item) => (
                           <Link
