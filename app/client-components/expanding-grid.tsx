@@ -114,6 +114,7 @@ export default function ExpandingGrid() {
                 src={scholar.image}
                 alt={scholar.name}
                 fill
+                sizes="(max-width: 767px) 50vw, 100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -155,6 +156,7 @@ export default function ExpandingGrid() {
                       src={scholar.image}
                       alt={scholar.name}
                       fill
+                      sizes="(min-width: 768px) 20vw, 100vw"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-black/10" />

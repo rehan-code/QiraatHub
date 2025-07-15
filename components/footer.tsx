@@ -4,21 +4,21 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-gray-100">
-      <div className="container mx-auto px-4 py-8 sm:px-10 lg:px-20">
+      <div className="container mx-auto px-4 py-6 sm:px-10 lg:px-20">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-4 mt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8 mt-2">
           {/* Logo and Description */}
           <div className="space-y-6">
-            <Link
-              href="/"
-              className="inline-block transform transition hover:scale-105"
-            >
-              <Image
-                src="/Horizontal Logo.png"
-                alt="QiraatHub Logo"
-                width={260}
-                height={50}
-              />
+            <Link href="/" className="block w-[260px]">
+              <div className="relative aspect-[260/60] w-full transition-transform duration-300 ease-in-out hover:scale-105">
+                <Image
+                  src="/Horizontal Logo.png"
+                  alt="QiraatHub Logo"
+                  fill
+                  sizes="260px"
+                  className="object-contain"
+                />
+              </div>
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed text-justify">
               Your gateway to mastering the ten Qiraat. Explore authentic
