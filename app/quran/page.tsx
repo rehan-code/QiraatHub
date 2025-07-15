@@ -121,10 +121,7 @@ export default function QuranReader() {
   const dynamicStyles = `
     #mushaf-display .quran-line {
       font-family: ${font === "-digital-khatt" ? "digitalkhatt" : "me_quran"} !important;
-    }
-    .notes span {
-      font-family: ${font === "-digital-khatt" ? "digitalkhatt" : "me_quran"} !important;
-    }
+    }    
   `;
 
   const toggleDarkMode = () => {

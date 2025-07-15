@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Scheherazade+New:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
 .quranPageContainer {
   /* Base styles */
   background-color: #fdfdfa;
@@ -66,6 +69,12 @@
   src: url(https://static-cdn.tarteel.ai/qul/fonts/DigitalKhattQuranic.otf?v=3.3) format("opentype");
   font-style: normal;
   font-display: block
+}
+
+.notes {
+  font-family: "Scheherazade New", serif;
+  font-weight: 600;
+  font-style: normal;
 }
   
 .surah-name-v4-icon {
