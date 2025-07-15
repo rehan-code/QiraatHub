@@ -29,7 +29,14 @@ const RadioPlayer = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    // Basic check for mobile devices (touch-enabled)
+    const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsMobile(mobileCheck);
+  }, []);
 
   // Memoize fetchNowPlaying to stabilize its identity for useEffect dependencies
   const fetchNowPlaying = React.useCallback(async (shouldAutoPlay: boolean = false) => {
@@ -182,19 +189,26 @@ const RadioPlayer = () => {
           <p className="text-xs text-yellow-300 m-0 truncate" title={currentTrack.artist}>{currentTrack.artist || 'Unknown Artist'}</p>
         </div>
 
-        {/* Volume Controls */}
-        <div className="flex items-center w-28">
-          <button onClick={toggleMute} className="p-2 rounded-full hover:bg-yellow-600 mr-2" aria-label={isMuted ? 'Unmute' : 'Mute'}>
-            {isMuted || volume === 0 ? <VolumeX size={20} fill="currentColor" /> : <Volume2 size={20} fill="currentColor" />}
-          </button>
-          <Slider value={[isMuted ? 0 : volume]} max={1} step={0.01} onValueChange={handleVolumeChange} className="w-full" />
-        </div>
+        {/* Right side content: Spacer on mobile, Volume on desktop */}
+        {isMobile ? (
+          // Placeholder to balance the play button and center the text.
+          // The width should roughly match the play button's container width (p-2 + mx-2 + icon size).
+          <div className="w-14" />
+        ) : (
+          // Volume Controls for desktop
+          <div className="flex items-center w-28">
+            <button onClick={toggleMute} className="p-2 rounded-full hover:bg-yellow-600 mr-2" aria-label={isMuted ? 'Unmute' : 'Mute'}>
+              {isMuted || volume === 0 ? <VolumeX size={20} fill="currentColor" /> : <Volume2 size={20} fill="currentColor" />}
+            </button>
+            <Slider value={[isMuted ? 0 : volume]} max={1} step={0.01} onValueChange={handleVolumeChange} className="w-full" />
+          </div>
+        )}
       </div>
     );
   };
 
   return (
-    <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-[92%] md:w-[400px] md:left-auto md:right-5 md:transform-none bg-yellow-700 text-white rounded-xl p-4 shadow-xl z-10 font-sans">
+    <div className="fixed right-2 bottom-2 w-[calc(100%-1rem)] md:w-[400px] md:bottom-5 md:right-5 md:transform-none bg-yellow-700 text-white rounded-xl md:p-4 p-3 shadow-xl z-10 font-sans">
       <audio
         ref={audioRef}
         onEnded={handleTrackEnd}
@@ -212,4 +226,3 @@ const RadioPlayer = () => {
 };
 
 export default RadioPlayer;
-
