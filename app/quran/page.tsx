@@ -181,6 +181,8 @@ export default function QuranReader() {
             <div className="flex items-center">
               <Input
                 type="number"
+                id="pageNumber"
+                name="pageNumber"
                 value={pageNumber}
                 onChange={handlePageInputChange}
                 onBlur={handlePageInputBlur}
@@ -213,7 +215,7 @@ export default function QuranReader() {
                     </p>
                   </div>
                   <div>
-                    <label className="text-sm font-medium">Background Color</label>
+                    <label htmlFor="background-color" className="text-sm font-medium">Background Color</label>
                     <div className="flex space-x-2 mt-2">
                       <Button onClick={() => setColorTheme('cream')} className="h-8 w-8 rounded-full" style={{ backgroundColor: colorThemes.cream[isDarkMode ? 'dark' : 'light'], border: '1px solid #ccc' }} />
                       <Button onClick={() => setColorTheme('parchment')} className="h-8 w-8 rounded-full" style={{ backgroundColor: colorThemes.parchment[isDarkMode ? 'dark' : 'light'], border: '1px solid #ccc' }} />

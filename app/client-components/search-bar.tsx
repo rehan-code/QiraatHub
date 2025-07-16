@@ -43,6 +43,8 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
           }`} />
         </div>
         <Input
+          id="surah-search"
+          name="surah-search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => setIsFocused(true)}

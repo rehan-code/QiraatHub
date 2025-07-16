@@ -75,9 +75,9 @@ export default function BooksPage() {
                         </p>
                       )}
                       {book.description && (
-                        <p className="mt-3 text-sm text-gray-500 line-clamp-2">
-                          <div className="whitespace-pre-wrap">{book.description}</div>
-                        </p>
+                        <div className="mt-3 text-sm text-gray-500 line-clamp-2 whitespace-pre-wrap">
+                          {book.description}
+                        </div>
                       )}
                     </div>
                   </div>

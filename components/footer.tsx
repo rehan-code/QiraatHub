@@ -162,7 +162,10 @@ export default function Footer() {
               <form className="space-y-3">
                 <input
                   type="email"
+                  id="newsletter-email"
+                  name="email"
                   placeholder="Enter your email"
+                  autoComplete="email"
                   className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-theme_primary/20 focus:border-theme_primary transition-all"
                 />
                 <button
