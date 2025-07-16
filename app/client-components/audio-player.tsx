@@ -26,6 +26,7 @@ export default function AudioPlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const [path] = useState(filePath == undefined ? "" : filePath);
   const { selectedSurah } = useSurah();
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -48,6 +49,10 @@ export default function AudioPlayer({
   // }, [selectedSurah, selectedQiraat, path]);
 
   useEffect(() => {
+    // Check if it's a mobile device
+    const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsMobile(mobileCheck);
+
     setLoading(true);
     console.log(path);
     if (path != "") {
@@ -149,21 +154,23 @@ export default function AudioPlayer({
             </div>
           </div>
 
-          {/* Volume Control */}
-          <div className="flex items-center gap-2" style={{ display: 'flex', alignItems: 'center' }}>
-            <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
-            <Slider
-              defaultValue={[75]}
-              max={100}
-              step={1}
-              className="w-[80px] sm:w-[120px]"
-              onValueChange={([value]) => {
-                if (audioRef.current) {
-                  audioRef.current.volume = value / 100;
-                }
-              }}
-            />
-          </div>
+          {/* Volume Control (hidden on mobile) */}
+          {!isMobile && (
+            <div className="flex items-center gap-2">
+              <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
+              <Slider
+                defaultValue={[75]}
+                max={100}
+                step={1}
+                className="w-[80px] sm:w-[120px]"
+                onValueChange={([value]) => {
+                  if (audioRef.current) {
+                    audioRef.current.volume = value / 100;
+                  }
+                }}
+              />
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>
