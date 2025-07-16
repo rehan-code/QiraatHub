@@ -69,30 +69,35 @@ const SurahDisplayContent = memo(({
                   >
                     <Button
                       variant="ghost"
-                      className={`w-full justify-between group text-sm md:text-base h-auto py-3 ${
+                      className={`w-full justify-between group text-base h-auto py-3 ${
                         selectedSurah === surah.fullName
-                          ? "bg-yellow-50 text-yellow-900 hover:bg-yellow-100 border-yellow-200"
+                          ? "bg-yellow-50 md:bg-yellow-50 font-bold text-yellow-900 hover:bg-yellow-100 border border-yellow-200"
                           : "hover:bg-gray-50"
                       }`}
                       onClick={() => onSurahSelect(surah.fullName)}
                     >
                       <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium transition-colors ${
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-medium transition-colors ${
                           selectedSurah === surah.fullName
                             ? "bg-yellow-200 text-yellow-900"
                             : "bg-gray-100 group-hover:bg-gray-200"
                         }`}>
                           {parseInt(surah.number)}
                         </div>
-                        <div className="text-left font-medium">
+                        <div className="text-left font-medium hidden md:block">
                           {surah.name}
                         </div>
                       </div>
-                      <ChevronRight className={`h-4 w-4 transition-all ${
-                        selectedSurah === surah.fullName
-                          ? "text-yellow-500 opacity-100 translate-x-0"
-                          : "text-gray-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
-                      }`} />
+                      <div className="md:text-left md:font-medium md:text-primary text-right font-arabic md:hidden">
+                        {surah.name}
+                      </div>
+                      <div className="hidden md:block">
+                        <ChevronRight className={`h-4 w-4 transition-all ${
+                          selectedSurah === surah.fullName
+                            ? "text-yellow-500 opacity-100 translate-x-0"
+                            : "text-gray-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
+                        }`} />
+                      </div>
                     </Button>
                   </motion.div>
                 ))}
