@@ -101,9 +101,12 @@ export default function AudioPlayer({
       <CardContent>
         <div className="space-y-4 sm:space-y-6 p-3 sm:p-6">
           <div className="text-center">
-            <h2 className="text-xl sm:text-3xl font-bold mb-4 sm:mb-8">
-              {reciter ? `${reciter}` : selectedSurah.slice(4)}
+            <h2 className="text-xl sm:text-2xl font-bold">
+              {reciter ? reciter : "Reciter"}
             </h2>
+            <p className="text-base text-muted-foreground mb-4 sm:mb-8">
+              {selectedSurah ? selectedSurah.slice(4).replace(/-/g, ' ') : "Surah"}
+            </p>
             <div className="flex justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
               {/* <Button size="icon" variant="ghost" className="hidden sm:flex">
                 <Shuffle className="h-5 w-5" />

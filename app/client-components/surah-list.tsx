@@ -143,7 +143,17 @@ export default function SurahList() {
               className="top-[5.5rem] left-4 z-40 flex items-center gap-2 border w-full justify-start hover:bg-gray-50"
             >
               <Menu className="h-6 w-6" />
-              <span>Surah List</span>
+              <div className="flex items-center gap-2">
+                <span className="text-sm">Surah List</span>
+                {selectedSurah && (
+                  <>
+                    <span className="text-gray-300 pl-1 pr-2">|</span>
+                    <span className="truncate font-semibold text-sm text-primary">
+                      {selectedSurah.slice(4).replace(/-/g, " ")}
+                    </span>
+                  </> 
+                )}
+              </div>
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] p-0">
