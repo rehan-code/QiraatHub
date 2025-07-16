@@ -131,7 +131,6 @@ const RadioPlayer = () => {
 
   // Called when audio track ends
   const handleTrackEnd = () => {
-    console.log('Track ended, fetching next synchronized track...');
     fetchNowPlaying(true); // Fetch the current scheduled track and autoplay
   };
 

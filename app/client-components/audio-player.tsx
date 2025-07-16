@@ -54,7 +54,6 @@ export default function AudioPlayer({
     setIsMobile(mobileCheck);
 
     setLoading(true);
-    console.log(path);
     if (path != "") {
       audioRef.current = new Audio(path);
 
