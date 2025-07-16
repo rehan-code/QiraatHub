@@ -23,7 +23,12 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: 'QiraatHub',
     url: 'https://qiraathub.com',
-    logo: 'https://qiraathub.com/logo.png',
+    logo: {
+      '@type': 'ImageObject',
+      'url': 'https://qiraathub.com/icon0.svg',
+      'width': 512,
+      'height': 512
+    },
     sameAs: [
       'https://www.youtube.com/@qiraat',
       'https://www.facebook.com/QiraatHub/',
@@ -50,7 +55,12 @@ export function generateHomePageSchema() {
     name: 'QiraatHub',
     description: 'Learn about the 10 distinct qiraat (Quran recitation styles)',
     url: 'https://qiraathub.com',
-    logo: 'https://qiraathub.com/logo.png',
+    logo: {
+      '@type': 'ImageObject',
+      'url': 'https://qiraathub.com/icon0.svg',
+      'width': 512,
+      'height': 512
+    },
     isPartOf: generateOrganizationSchema(),
   };
 }

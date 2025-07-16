@@ -38,7 +38,7 @@ export function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="/logo.png"
+                src="/images/logo.png"
                 alt="Logo"
                 width={60}
                 height={80}
