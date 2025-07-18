@@ -12,6 +12,7 @@ import {
   // Maximize2,
   Volume2,
   Loader2,
+  Download,
 } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { useSurah } from "@/contexts/surah-context";
@@ -95,10 +96,53 @@ export default function AudioPlayer({
     return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
+  const downloadAudio = async () => {
+    if (!path) return;
+    
+    // Create a meaningful filename
+    const surahName = selectedSurah ? selectedSurah.slice(4).replace(/-/g, '_') : 'Surah';
+    const reciterName = reciter ? reciter.replace(/[^a-zA-Z0-9]/g, '_') : 'Reciter';
+    const filename = `${surahName}_${reciterName}.mp3`;
+    
+    try {
+      // Use our server-side download API to bypass CORS
+      const downloadUrl = `/api/download-audio?url=${encodeURIComponent(path)}&filename=${encodeURIComponent(filename)}`;
+      
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = filename;
+      
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.log('Download failed, opening in new tab:', error);
+      // Simple fallback: open in new tab
+      window.open(path, '_blank');
+    }
+  };
+
   return (
     <Card className="w-full mx-auto">
       <CardContent>
-        <div className="space-y-4 sm:space-y-6 p-3 sm:p-6">
+        <div className="space-y-4 sm:space-y-6 p-3 sm:p-6 pt-0 relative">
+          {/* Mobile Download Button - Top Right Corner */}
+          {isMobile && (
+            <div className="absolute top-0 right-0 z-10">
+              <Button
+                size="icon"
+                variant="ghost"
+                className="h-7 w-7 rounded-full hover:bg-muted/60 opacity-70 hover:opacity-100 transition-opacity"
+                onClick={downloadAudio}
+                disabled={loading || !path}
+                title="Download audio"
+              >
+                <Download className="h-3.5 w-3.5" />
+              </Button>
+            </div>
+          )}
+          
+          {/* Main Content */}
           <div className="text-center">
             <h2 className="text-xl sm:text-2xl font-bold">
               {reciter ? reciter : "Reciter"}
@@ -106,33 +150,23 @@ export default function AudioPlayer({
             <p className="text-base text-muted-foreground mb-4 sm:mb-8">
               {selectedSurah ? selectedSurah.slice(4).replace(/-/g, ' ') : "Surah"}
             </p>
-            <div className="flex justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
-              {/* <Button size="icon" variant="ghost" className="hidden sm:flex">
-                <Shuffle className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost" className="hidden sm:flex">
-                <SkipBack className="h-5 w-5" />
-              </Button> */}
+            
+            {/* Play Button - Centered */}
+            <div className="flex justify-center mb-4 sm:mb-8">
               <Button
                 size="icon"
-                className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary hover:bg-primary/90"
+                className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-primary hover:bg-primary/90 shadow-lg"
                 onClick={togglePlayPause}
                 disabled={loading}
               >
                 {loading ? (
-                  <Loader2 className="h-5 w-5 sm:h-6 sm:w-6 animate-spin" />
+                  <Loader2 className="h-6 w-6 sm:h-8 sm:w-8 animate-spin" />
                 ) : isPlaying ? (
-                  <Pause className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <Pause className="h-6 w-6 sm:h-8 sm:w-8" />
                 ) : (
-                  <Play className="h-5 w-5 sm:h-6 sm:w-6 ml-0.5 sm:ml-1" />
+                  <Play className="h-6 w-6 sm:h-8 sm:w-8 ml-0.5 sm:ml-1" />
                 )}
               </Button>
-              {/* <Button size="icon" variant="ghost" className="hidden sm:flex">
-                <SkipForward className="h-5 w-5" />
-              </Button>
-              <Button size="icon" variant="ghost" className="hidden sm:flex">
-                <Maximize2 className="h-5 w-5" />
-              </Button> */}
             </div>
           </div>
 
@@ -156,21 +190,37 @@ export default function AudioPlayer({
             </div>
           </div>
 
-          {/* Volume Control (hidden on mobile) */}
+          {/* Desktop Bottom Controls - Volume & Download */}
           {!isMobile && (
-            <div className="flex items-center gap-2">
-              <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
-              <Slider
-                defaultValue={[75]}
-                max={100}
-                step={1}
-                className="w-[80px] sm:w-[120px]"
-                onValueChange={([value]) => {
-                  if (audioRef.current) {
-                    audioRef.current.volume = value / 100;
-                  }
-                }}
-              />
+            <div className="flex items-center justify-between">
+              {/* Volume Control - Left */}
+              <div className="flex items-center gap-2">
+                <Volume2 className="h-4 w-4 sm:h-5 sm:w-5" />
+                <Slider
+                  defaultValue={[75]}
+                  max={100}
+                  step={1}
+                  className="w-[80px] sm:w-[120px]"
+                  onValueChange={([value]) => {
+                    if (audioRef.current) {
+                      audioRef.current.volume = value / 100;
+                    }
+                  }}
+                />
+              </div>
+              
+              {/* Download Button - Right */}
+              <Button
+                size="sm"
+                variant="outline"
+                className="gap-2 rounded-full"
+                onClick={downloadAudio}
+                disabled={loading || !path}
+                title="Download audio"
+              >
+                <Download className="h-4 w-4" />
+                Download
+              </Button>
             </div>
           )}
         </div>
