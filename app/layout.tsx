@@ -70,7 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="G-RTYVR0XKQ0" />
+      <GoogleTagManager gtmId="G-XQZ9RR2NC3" />
       <body className="">
         <Navbar />
         {children}
