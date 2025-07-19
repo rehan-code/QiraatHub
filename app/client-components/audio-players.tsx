@@ -9,6 +9,7 @@ export default function AudioPlayers() {
   const { selectedSurah, selectedQiraat } = useSurah();
   const [pathList, setPathList] = useState<Array<{ reciter: string; audioUrl: string }>>([]);
   const [loading, setLoading] = useState(true);
+  const [sharedReciter, setSharedReciter] = useState<string | null>(null);
 
   useEffect(() => {
     if (!selectedSurah || !selectedQiraat) {
@@ -69,17 +70,61 @@ export default function AudioPlayers() {
     fetchRecitersAndSetPaths();
   }, [selectedSurah, selectedQiraat]);
 
+  // Check for shared reciter from sessionStorage when pathList loads
+  useEffect(() => {
+    if (pathList.length > 0) {
+      const sharedReciter = sessionStorage.getItem('sharedReciter');
+      if (sharedReciter) {
+        // Check if the shared reciter exists in the current pathList
+        const reciterExists = pathList.some(item => item.reciter === sharedReciter);
+        if (reciterExists) {
+          setSharedReciter(sharedReciter);
+          sessionStorage.removeItem('sharedReciter'); // Clean up after use
+        }
+        // If not found, keep sessionStorage value for when correct Qiraat loads
+      }
+    }
+  }, [pathList, selectedSurah, selectedQiraat]);
+
+  // Auto-scroll to shared reciter when it's set
+  useEffect(() => {
+    if (sharedReciter && pathList.length > 0) {
+      const reciterIndex = pathList.findIndex(item => item.reciter === sharedReciter);
+      if (reciterIndex !== -1) {
+        // Scroll to the reciter after a delay to ensure rendering is complete
+        setTimeout(() => {
+          const reciterElement = document.querySelector(`[data-reciter="${sharedReciter}"]`);
+          if (reciterElement) {
+            reciterElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Add a subtle highlight effect
+            reciterElement.classList.add('ring-2', 'ring-blue-500', 'ring-opacity-50');
+            setTimeout(() => {
+              reciterElement.classList.remove('ring-2', 'ring-blue-500', 'ring-opacity-50');
+            }, 2000);
+          }
+        }, 800); // Optimized delay - faster but still reliable
+        
+        // Clear the shared reciter after scrolling
+        setTimeout(() => setSharedReciter(null), 2500);
+      } else {
+        // Reciter not found, clear the shared state
+        setSharedReciter(null);
+      }
+    }
+  }, [sharedReciter, pathList]);
+
   return (
     <div className="flex flex-col gap-3">
       {loading ? (
         <Loader2 className="h-10 w-10 self-center animate-spin" />
       ) : (
         pathList.map(({ reciter, audioUrl }, index) => (
-          <AudioPlayer
-            key={`${selectedSurah} ${selectedQiraat} ${reciter} ${index}`}
-            filePath={audioUrl}
-            reciter={reciter}
-          />
+          <div key={`${selectedSurah} ${selectedQiraat} ${reciter} ${index}`} data-reciter={reciter}>
+            <AudioPlayer
+              filePath={audioUrl}
+              reciter={reciter}
+            />
+          </div>
         ))
       )}
     </div>

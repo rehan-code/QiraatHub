@@ -27,6 +27,19 @@ export default function QiraatButtons() {
         }
         const data = await response.json();
         setQiraat(data);
+        
+        // Check if we have a shared qiraat to auto-select
+        const sharedQiraat = sessionStorage.getItem('sharedQiraat');
+        if (sharedQiraat) {
+          if (data.includes(sharedQiraat)) {
+            setSelectedQiraat(sharedQiraat);
+            sessionStorage.removeItem('sharedQiraat'); // Clean up after use
+          } else {
+            console.warn(`Shared qiraat '${sharedQiraat}' not available for this Surah. Available options:`, data);
+            sessionStorage.removeItem('sharedQiraat'); // Clean up invalid data
+            // Could show a toast notification here
+          }
+        }
       } catch (error) {
         console.error("Error fetching Qira'at list:", error);
         setQiraat([]);

@@ -13,9 +13,11 @@ import {
   Volume2,
   Loader2,
   Download,
+  Share2,
 } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
 import { useSurah } from "@/contexts/surah-context";
+import { toast } from '@/components/ui/use-toast';
 
 export default function AudioPlayer({
   filePath,
@@ -29,7 +31,7 @@ export default function AudioPlayer({
   const [duration, setDuration] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [path] = useState(filePath == undefined ? "" : filePath);
-  const { selectedSurah } = useSurah();
+  const { selectedSurah, selectedQiraat } = useSurah();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -96,29 +98,72 @@ export default function AudioPlayer({
     return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  const downloadAudio = async () => {
-    if (!path) return;
-    
-    // Create a meaningful filename
-    const surahName = selectedSurah ? selectedSurah.slice(4).replace(/-/g, '_') : 'Surah';
-    const reciterName = reciter ? reciter.replace(/[^a-zA-Z0-9]/g, '_') : 'Reciter';
-    const filename = `${surahName}_${reciterName}.mp3`;
-    
+  const handleDownload = async () => {
     try {
-      // Use our server-side download API to bypass CORS
+      // Create a meaningful filename
+      const filename = `${selectedSurah?.replace(/\s+/g, '_')}_${reciter?.replace(/\s+/g, '_') || 'Unknown_Reciter'}.mp3`;
+      
+      // Use our API route to download the file
       const downloadUrl = `/api/download-audio?url=${encodeURIComponent(path)}&filename=${encodeURIComponent(filename)}`;
       
+      // Create a temporary anchor element and trigger download
       const link = document.createElement('a');
       link.href = downloadUrl;
       link.download = filename;
-      
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.log('Download failed, opening in new tab:', error);
-      // Simple fallback: open in new tab
+      // Fallback: open in new tab
       window.open(path, '_blank');
+    }
+  };
+
+  const handleShare = async () => {
+    try {
+      // Get current URL and add query parameters for the specific audio
+      const currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('surah', selectedSurah || '');
+      currentUrl.searchParams.set('qiraat', selectedQiraat || '');
+      currentUrl.searchParams.set('reciter', reciter || '');
+      
+      const shareUrl = currentUrl.toString();
+      const shareData = {
+        title: `${selectedSurah} - ${reciter}`,
+        text: `Listen to ${selectedSurah} recited by ${reciter} on QiraatHub`,
+        url: shareUrl,
+      };
+
+      // Check if Web Share API is available (mainly on mobile)
+      if (navigator.share && /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copy to clipboard
+        await navigator.clipboard.writeText(shareUrl);
+        toast({
+          title: "Link copied!",
+          description: "Share link copied to clipboard",
+        });
+      }
+    } catch (error) {
+      // Fallback: try to copy to clipboard
+      try {
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('surah', selectedSurah || '');
+        currentUrl.searchParams.set('qiraat', selectedQiraat || '');
+        currentUrl.searchParams.set('reciter', reciter || '');
+        await navigator.clipboard.writeText(currentUrl.toString());
+        toast({
+          title: "Link copied!",
+          description: "Share link copied to clipboard",
+        });
+      } catch (clipboardError) {
+        toast({
+          title: "Share failed",
+          description: "Unable to share or copy link",
+          variant: "destructive",
+        });
+      }
     }
   };
 
@@ -126,18 +171,28 @@ export default function AudioPlayer({
     <Card className="w-full mx-auto">
       <CardContent>
         <div className="space-y-4 sm:space-y-6 p-3 sm:p-6 pt-0 relative">
-          {/* Mobile Download Button - Top Right Corner */}
+          {/* Mobile Action Buttons - Top Right Corner */}
           {isMobile && (
-            <div className="absolute top-0 right-0 z-10">
+            <div className="absolute -top-6 -right-2 z-10 flex gap-1">
               <Button
                 size="icon"
                 variant="ghost"
-                className="h-7 w-7 rounded-full hover:bg-muted/60 opacity-70 hover:opacity-100 transition-opacity"
-                onClick={downloadAudio}
+                className="h-6 w-6 rounded-full hover:bg-muted/60 opacity-70 hover:opacity-100 transition-opacity"
+                onClick={handleShare}
+                disabled={loading}
+                title="Share audio"
+              >
+                <Share2 className="h-3 w-3" />
+              </Button>
+              <Button
+                size="icon"
+                variant="ghost"
+                className="h-6 w-6 rounded-full hover:bg-muted/60 opacity-70 hover:opacity-100 transition-opacity"
+                onClick={handleDownload}
                 disabled={loading || !path}
                 title="Download audio"
               >
-                <Download className="h-3.5 w-3.5" />
+                <Download className="h-3 w-3" />
               </Button>
             </div>
           )}
@@ -190,7 +245,7 @@ export default function AudioPlayer({
             </div>
           </div>
 
-          {/* Desktop Bottom Controls - Volume & Download */}
+          {/* Desktop Bottom Controls - Volume & Action Buttons */}
           {!isMobile && (
             <div className="flex items-center justify-between">
               {/* Volume Control - Left */}
@@ -209,18 +264,31 @@ export default function AudioPlayer({
                 />
               </div>
               
-              {/* Download Button - Right */}
-              <Button
-                size="sm"
-                variant="outline"
-                className="gap-2 rounded-full"
-                onClick={downloadAudio}
-                disabled={loading || !path}
-                title="Download audio"
-              >
-                <Download className="h-4 w-4" />
-                Download
-              </Button>
+              {/* Action Buttons - Right */}
+              <div className="flex items-center gap-2">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="gap-2 rounded-full"
+                  onClick={handleShare}
+                  disabled={loading}
+                  title="Share audio"
+                >
+                  <Share2 className="h-4 w-4" />
+                  Share
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="gap-2 rounded-full"
+                  onClick={handleDownload}
+                  disabled={loading || !path}
+                  title="Download audio"
+                >
+                  <Download className="h-4 w-4" />
+                  Download
+                </Button>
+              </div>
             </div>
           )}
         </div>

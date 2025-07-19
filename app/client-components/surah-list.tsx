@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState, useMemo, useCallback, memo } from "react";
+import { useState, useMemo, useCallback, memo, useEffect } from "react";
 import { useSurah } from "@/contexts/surah-context";
 import SearchBar from "./search-bar";
 import { Menu, BookOpen, ChevronRight, Search } from "lucide-react";
@@ -75,6 +75,7 @@ const SurahDisplayContent = memo(({
                           : "hover:bg-gray-50"
                       }`}
                       onClick={() => onSurahSelect(surah.fullName)}
+                      data-surah={surah.fullName}
                     >
                       <div className="flex items-center gap-3">
                         <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-medium transition-colors ${
@@ -115,6 +116,19 @@ export default function SurahList() {
   const [searchQuery, setSearchQuery] = useState("");
   const { selectedSurah, setSelectedSurah } = useSurah();
   const [open, setOpen] = useState(false);
+
+  // Auto-scroll to selected Surah when it changes (for shared links)
+  useEffect(() => {
+    if (selectedSurah) {
+      // Small delay to ensure the component is rendered
+      setTimeout(() => {
+        const surahElement = document.querySelector(`[data-surah="${selectedSurah}"]`);
+        if (surahElement) {
+          surahElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 300);
+    }
+  }, [selectedSurah]);
 
   const handleSurahSelect = useCallback((surahFullName: string) => {
     setSelectedSurah(surahFullName);
