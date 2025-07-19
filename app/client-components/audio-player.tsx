@@ -113,7 +113,7 @@ export default function AudioPlayer({
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    } catch (error) {
+    } catch {
       // Fallback: open in new tab
       window.open(path, '_blank');
     }
@@ -145,7 +145,7 @@ export default function AudioPlayer({
           description: "Share link copied to clipboard",
         });
       }
-    } catch (error) {
+    } catch {
       // Fallback: try to copy to clipboard
       try {
         const currentUrl = new URL(window.location.href);
@@ -158,6 +158,7 @@ export default function AudioPlayer({
           description: "Share link copied to clipboard",
         });
       } catch (clipboardError) {
+        console.error("Error copying to clipboard:", clipboardError);
         toast({
           title: "Share failed",
           description: "Unable to share or copy link",
