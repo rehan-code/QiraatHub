@@ -74,14 +74,22 @@ export default function AudioPlayers() {
   useEffect(() => {
     if (pathList.length > 0) {
       const sharedReciter = sessionStorage.getItem('sharedReciter');
+      const sharedQiraat = sessionStorage.getItem('sharedQiraat');
+      
       if (sharedReciter) {
-        // Check if the shared reciter exists in the current pathList
-        const reciterExists = pathList.some(item => item.reciter === sharedReciter);
-        if (reciterExists) {
-          setSharedReciter(sharedReciter);
-          sessionStorage.removeItem('sharedReciter'); // Clean up after use
+        // Only proceed if we have the correct Qiraat selected (not default)
+        // This ensures we're looking at the right pathList for the shared Qiraat
+        const isCorrectQiraat = !sharedQiraat || selectedQiraat === sharedQiraat;
+        
+        if (isCorrectQiraat) {
+          // Check if the shared reciter exists in the current pathList
+          const reciterExists = pathList.some(item => item.reciter === sharedReciter);
+          if (reciterExists) {
+            setSharedReciter(sharedReciter);
+            sessionStorage.removeItem('sharedReciter'); // Clean up after use
+          }
         }
-        // If not found, keep sessionStorage value for when correct Qiraat loads
+        // If wrong Qiraat or reciter not found, keep sessionStorage value
       }
     }
   }, [pathList, selectedSurah, selectedQiraat]);
@@ -91,8 +99,8 @@ export default function AudioPlayers() {
     if (sharedReciter && pathList.length > 0) {
       const reciterIndex = pathList.findIndex(item => item.reciter === sharedReciter);
       if (reciterIndex !== -1) {
-        // Scroll to the reciter after a delay to ensure rendering is complete
-        setTimeout(() => {
+        // Use requestAnimationFrame to ensure DOM is ready, then scroll immediately
+        requestAnimationFrame(() => {
           const reciterElement = document.querySelector(`[data-reciter="${sharedReciter}"]`);
           if (reciterElement) {
             reciterElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -102,7 +110,7 @@ export default function AudioPlayers() {
               reciterElement.classList.remove('ring-2', 'ring-blue-500', 'ring-opacity-50');
             }, 2000);
           }
-        }, 800); // Optimized delay - faster but still reliable
+        });
         
         // Clear the shared reciter after scrolling
         setTimeout(() => setSharedReciter(null), 2500);
