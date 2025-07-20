@@ -1,7 +1,7 @@
 import AudioPlayers from "@/app/client-components/audio-players";
 import QiraatButtons from "@/app/client-components/qiraat-buttons";
 import SurahList from "@/app/client-components/surah-list";
-import SharedAudioHandler from "@/app/client-components/shared-audio-handler";
+import SharedAudioHandler from "@/app/resources/audio/shared-audio-handler";
 import { Toaster } from "@/components/ui/toaster";
 
 interface AudioResourcesProps {
