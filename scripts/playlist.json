@@ -1,1598 +1,1598 @@
 [
   {
-    "id": "track-001-Abdul_Rasheed_Sufi",
+    "id": "track-001-Mishary_Alafasy",
     "title": "001 Al-Fatiha",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 46401.5,
-    "url": "https://audio.qiraathub.com/001 Al-Fatiha/Doori Basri/Abdul Rasheed Sufi/001.mp3"
-  },
-  {
-    "id": "track-002-Ali_AbdulRahman_Al_Huthaify",
-    "title": "002 Al-Baqara",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 7339397.375,
-    "url": "https://audio.qiraathub.com/002 Al-Baqara/Qaalun/Ali AbdulRahman Al Huthaify/002.mp3"
-  },
-  {
-    "id": "track-003-Mahmoud_Khalil_Al_Husary",
-    "title": "003 Aal-E-Imran",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 7375688.0,
-    "url": "https://audio.qiraathub.com/003 Aal-E-Imran/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-003.mp3"
-  },
-  {
-    "id": "track-004-Ali_AbdulRahman_Al_Huthaify",
-    "title": "004 An-Nisa",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 4237722.3125,
-    "url": "https://audio.qiraathub.com/004 An-Nisa/Qaalun/Ali AbdulRahman Al Huthaify/004.mp3"
-  },
-  {
-    "id": "track-005-Mishary_Alafasy",
-    "title": "005 Al-Ma-idah",
     "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 4120711.836734694,
-    "url": "https://audio.qiraathub.com/005 Al-Ma-idah/Ibn Dhakwan/Mishary Alafasy/Al-Ma-idah.mp3"
-  },
-  {
-    "id": "track-006-Abdul_Rasheed_Sufi",
-    "title": "006 Al-Anaam",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 3702845.14739229,
-    "url": "https://audio.qiraathub.com/006 Al-Anaam/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-006-khalaf.mp3"
-  },
-  {
-    "id": "track-007-Abdul_Rasheed_Sufi",
-    "title": "007 Al-Araf",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 3733036.5625,
-    "url": "https://audio.qiraathub.com/007 Al-Araf/Shubah/Abdul Rasheed Sufi/007.mp3"
-  },
-  {
-    "id": "track-008-Abdul_Rasheed_Sufi",
-    "title": "008 Al-Anfal",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 1264645.0833333333,
-    "url": "https://audio.qiraathub.com/008 Al-Anfal/Soosi/Abdul Rasheed Sufi/008.mp3"
-  },
-  {
-    "id": "track-009-Abdul_Rasheed_Sufi",
-    "title": "009 At-Tawba",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 2884454.9433106575,
-    "url": "https://audio.qiraathub.com/009 At-Tawba/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-009-khalaf.mp3"
-  },
-  {
-    "id": "track-010-Abdul_Rasheed_Sufi",
-    "title": "010 Yunus",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 1842198.0416666667,
-    "url": "https://audio.qiraathub.com/010 Yunus/Soosi/Abdul Rasheed Sufi/010.mp3"
-  },
-  {
-    "id": "track-011-Abdul_Rasheed_Sufi",
-    "title": "011 Hud",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 2302120.2494331063,
-    "url": "https://audio.qiraathub.com/011 Hud/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-011-khalaf.mp3"
-  },
-  {
-    "id": "track-012-Abdul_Rasheed_Sufi",
-    "title": "012 Yusuf",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 1805919.1666666665,
-    "url": "https://audio.qiraathub.com/012 Yusuf/Soosi/Abdul Rasheed Sufi/012.mp3"
-  },
-  {
-    "id": "track-013-Abdul_Rasheed_Sufi",
-    "title": "013 Ar-Rad",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 963247.1875,
-    "url": "https://audio.qiraathub.com/013 Ar-Rad/Abul Harith/Abdul Rasheed Sufi/013.mp3"
-  },
-  {
-    "id": "track-014-Abdul_Rasheed_Sufi",
-    "title": "014 Ibrahim",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 999452.875,
-    "url": "https://audio.qiraathub.com/014 Ibrahim/Doori Basri/Abdul Rasheed Sufi/014.mp3"
-  },
-  {
-    "id": "track-015-Abdul_Rasheed_Sufi",
-    "title": "015 Al-Hijr",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 758891.25,
-    "url": "https://audio.qiraathub.com/015 Al-Hijr/Abul Harith/Abdul Rasheed Sufi/015.mp3"
-  },
-  {
-    "id": "track-016-Ali_AbdulRahman_Al_Huthaify",
-    "title": "016 An-Nahl",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 2353457.8125,
-    "url": "https://audio.qiraathub.com/016 An-Nahl/Qaalun/Ali AbdulRahman Al Huthaify/016.mp3"
-  },
-  {
-    "id": "track-017-Mahmoud_Khalil_Al_Husary",
-    "title": "017 Al-Isra",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 3057020.0,
-    "url": "https://audio.qiraathub.com/017 Al-Isra/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-017.mp3"
-  },
-  {
-    "id": "track-018-Mishary_Alafasy",
-    "title": "018 Al-Kahf",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 2254703.990929705,
-    "url": "https://audio.qiraathub.com/018 Al-Kahf/Ibn Dhakwan/Mishary Alafasy/Al-Kahf.mp3"
-  },
-  {
-    "id": "track-019-Abdul_Rasheed_Sufi",
-    "title": "019 Maryam",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1023407.1875,
-    "url": "https://audio.qiraathub.com/019 Maryam/Shubah/Abdul Rasheed Sufi/019.mp3"
-  },
-  {
-    "id": "track-020-Abdul_Rasheed_Sufi",
-    "title": "020 Ta-Ha",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1436481.5,
-    "url": "https://audio.qiraathub.com/020 Ta-Ha/Shubah/Abdul Rasheed Sufi/020.mp3"
-  },
-  {
-    "id": "track-021-Mahmoud_Khalil_Al_Husary",
-    "title": "021 Al-Anbiya",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 2473928.0,
-    "url": "https://audio.qiraathub.com/021 Al-Anbiya/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-021.mp3"
-  },
-  {
-    "id": "track-022-Abdul_Rasheed_Sufi",
-    "title": "022 Al-Hajj",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1345314.125,
-    "url": "https://audio.qiraathub.com/022 Al-Hajj/Shubah/Abdul Rasheed Sufi/022.mp3"
-  },
-  {
-    "id": "track-023-Mishary_Alafasy",
-    "title": "023 Al-Muminoon",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1619280.0,
-    "url": "https://audio.qiraathub.com/023 Al-Muminoon/Ibn Dhakwan/Mishary Alafasy/Al-Muminoon.mp3"
-  },
-  {
-    "id": "track-024-Abdul_Rasheed_Sufi",
-    "title": "024 An-Noor",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 1702022.2902494331,
-    "url": "https://audio.qiraathub.com/024 An-Noor/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-024-khalaf.mp3"
-  },
-  {
-    "id": "track-025-Abdul_Rasheed_Sufi",
-    "title": "025 Al-Furqan",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1010607.1875,
-    "url": "https://audio.qiraathub.com/025 Al-Furqan/Shubah/Abdul Rasheed Sufi/025.mp3"
-  },
-  {
-    "id": "track-026-Abdul_Rasheed_Sufi",
-    "title": "026 Ash-Shuara",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1399439.8125,
-    "url": "https://audio.qiraathub.com/026 Ash-Shuara/Shubah/Abdul Rasheed Sufi/026.mp3"
-  },
-  {
-    "id": "track-027-Mishary_Alafasy",
-    "title": "027 An-Naml",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1704829.387755102,
-    "url": "https://audio.qiraathub.com/027 An-Naml/Ibn Dhakwan/Mishary Alafasy/An-Naml.mp3"
-  },
-  {
-    "id": "track-028-Abdul_Rasheed_Sufi",
-    "title": "028 Al-Qasas",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 1732951.2698412698,
-    "url": "https://audio.qiraathub.com/028 Al-Qasas/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-028-khalaf.mp3"
-  },
-  {
-    "id": "track-029-Abdul_Rasheed_Sufi",
-    "title": "029 Al-Ankaboot",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1062878.1875,
-    "url": "https://audio.qiraathub.com/029 Al-Ankaboot/Shubah/Abdul Rasheed Sufi/029.mp3"
-  },
-  {
-    "id": "track-030-Abdul_Rasheed_Sufi",
-    "title": "030 Ar-Room",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 966068.4375,
-    "url": "https://audio.qiraathub.com/030 Ar-Room/Abul Harith/Abdul Rasheed Sufi/030.mp3"
-  },
-  {
-    "id": "track-031-Abdul_Rasheed_Sufi",
-    "title": "031 Luqman",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 618692.0625,
-    "url": "https://audio.qiraathub.com/031 Luqman/Abul Harith/Abdul Rasheed Sufi/031.mp3"
-  },
-  {
-    "id": "track-032-Mahmoud_Khalil_Al_Husary",
-    "title": "032 As-Sajda",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 779444.0,
-    "url": "https://audio.qiraathub.com/032 As-Sajda/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-032.mp3"
-  },
-  {
-    "id": "track-033-Abdul_Rasheed_Sufi",
-    "title": "033 Al-Ahzab",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 1591028.0045351475,
-    "url": "https://audio.qiraathub.com/033 Al-Ahzab/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-033-khalaf.mp3"
-  },
-  {
-    "id": "track-034-Ali_AbdulRahman_Al_Huthaify",
-    "title": "034 Saba",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 1069617.8125,
-    "url": "https://audio.qiraathub.com/034 Saba/Qaalun/Ali AbdulRahman Al Huthaify/034.mp3"
-  },
-  {
-    "id": "track-035-Abdul_Rasheed_Sufi",
-    "title": "035 Fatir",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 855544.3125,
-    "url": "https://audio.qiraathub.com/035 Fatir/Shubah/Abdul Rasheed Sufi/035.mp3"
-  },
-  {
-    "id": "track-036-Abdul_Rasheed_Sufi",
-    "title": "036 Ya-Seen",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 810613.6875,
-    "url": "https://audio.qiraathub.com/036 Ya-Seen/Abul Harith/Abdul Rasheed Sufi/036.mp3"
-  },
-  {
-    "id": "track-037-Mahmoud_Khalil_Al_Husary",
-    "title": "037 As-Saaffat",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 1602881.5,
-    "url": "https://audio.qiraathub.com/037 As-Saaffat/Doori Basri/Mahmoud Khalil Al Husary/037.mp3"
-  },
-  {
-    "id": "track-038-Mishary_Alafasy",
-    "title": "038 Sad",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1197165.6916099773,
-    "url": "https://audio.qiraathub.com/038 Sad/Ibn Dhakwan/Mishary Alafasy/Sad.mp3"
-  },
-  {
-    "id": "track-039-Mishary_Alafasy",
-    "title": "039 Az-Zumar",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1577665.306122449,
-    "url": "https://audio.qiraathub.com/039 Az-Zumar/Ibn Dhakwan/Mishary Alafasy/Az-Zumar.mp3"
-  },
-  {
-    "id": "track-040-Mishary_Alafasy",
-    "title": "040 Ghafir",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1709923.2653061224,
-    "url": "https://audio.qiraathub.com/040 Ghafir/Ibn Dhakwan/Mishary Alafasy/Ghafir.mp3"
-  },
-  {
-    "id": "track-041-Mishary_Alafasy",
-    "title": "041 Fussilat",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1226553.469387755,
-    "url": "https://audio.qiraathub.com/041 Fussilat/Ibn Dhakwan/Mishary Alafasy/Fussilat.mp3"
-  },
-  {
-    "id": "track-042-Abdul_Rasheed_Sufi",
-    "title": "042 Ash-Shura",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 930369.75,
-    "url": "https://audio.qiraathub.com/042 Ash-Shura/Soosi/Abdul Rasheed Sufi/042.mp3"
-  },
-  {
-    "id": "track-043-Abdul_Rasheed_Sufi",
-    "title": "043 Az-Zukhruf",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 988214.0,
-    "url": "https://audio.qiraathub.com/043 Az-Zukhruf/Soosi/Abdul Rasheed Sufi/043.mp3"
-  },
-  {
-    "id": "track-044-Mahmoud_Khalil_Al_Husary",
-    "title": "044 Ad-Dukhan",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 704888.0,
-    "url": "https://audio.qiraathub.com/044 Ad-Dukhan/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-044.mp3"
-  },
-  {
-    "id": "track-045-Ali_AbdulRahman_Al_Huthaify",
-    "title": "045 Al-Jathiya",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 635776.1875,
-    "url": "https://audio.qiraathub.com/045 Al-Jathiya/Qaalun/Ali AbdulRahman Al Huthaify/045.mp3"
-  },
-  {
-    "id": "track-046-Ali_AbdulRahman_Al_Huthaify",
-    "title": "046 Al-Ahqaf",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 781539.4375,
-    "url": "https://audio.qiraathub.com/046 Al-Ahqaf/Qaalun/Ali AbdulRahman Al Huthaify/046.mp3"
-  },
-  {
-    "id": "track-047-Abdul_Rasheed_Sufi",
-    "title": "047 Muhammad",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 653382.6875,
-    "url": "https://audio.qiraathub.com/047 Muhammad/Abul Harith/Abdul Rasheed Sufi/047.mp3"
-  },
-  {
-    "id": "track-048-Abdul_Rasheed_Sufi",
-    "title": "048 Al-Fath",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 615400.625,
-    "url": "https://audio.qiraathub.com/048 Al-Fath/Doori Basri/Abdul Rasheed Sufi/048.mp3"
-  },
-  {
-    "id": "track-049-Mahmoud_Khalil_Al_Husary",
-    "title": "049 Al-Hujraat",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 731168.0,
-    "url": "https://audio.qiraathub.com/049 Al-Hujraat/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-049.mp3"
-  },
-  {
-    "id": "track-050-Abdul_Rasheed_Sufi",
-    "title": "050 Qaf",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 400151.6875,
-    "url": "https://audio.qiraathub.com/050 Qaf/Shubah/Abdul Rasheed Sufi/050.mp3"
-  },
-  {
-    "id": "track-051-Abdul_Rasheed_Sufi",
-    "title": "051 Adh-Dhariyat",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 433596.7916666667,
-    "url": "https://audio.qiraathub.com/051 Adh-Dhariyat/Soosi/Abdul Rasheed Sufi/051.mp3"
-  },
-  {
-    "id": "track-052-Mishary_Alafasy",
-    "title": "052 At-Tur",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 524956.7346938776,
-    "url": "https://audio.qiraathub.com/052 At-Tur/Ibn Dhakwan/Mishary Alafasy/At-Tur.mp3"
-  },
-  {
-    "id": "track-053-Abdul_Rasheed_Sufi",
-    "title": "053 An-Najm",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 384034.125,
-    "url": "https://audio.qiraathub.com/053 An-Najm/Abul Harith/Abdul Rasheed Sufi/053.mp3"
-  },
-  {
-    "id": "track-054-Mishary_Alafasy",
-    "title": "054 Al-Qamar",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 543869.387755102,
-    "url": "https://audio.qiraathub.com/054 Al-Qamar/Ibn Dhakwan/Mishary Alafasy/Al-Qamar.mp3"
-  },
-  {
-    "id": "track-055-Abdul_Rasheed_Sufi",
-    "title": "055 Ar-Rahman",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 573711.625,
-    "url": "https://audio.qiraathub.com/055 Ar-Rahman/Soosi/Abdul Rasheed Sufi/055.mp3"
-  },
-  {
-    "id": "track-056-Mahmoud_Khalil_Al_Husary",
-    "title": "056 Al-Waqia",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 973448.0,
-    "url": "https://audio.qiraathub.com/056 Al-Waqia/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-056.mp3"
-  },
-  {
-    "id": "track-057-Mahmoud_Khalil_Al_Husary",
-    "title": "057 Al-Hadid",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 1057209.625,
-    "url": "https://audio.qiraathub.com/057 Al-Hadid/Doori Basri/Mahmoud Khalil Al Husary/057.mp3"
-  },
-  {
-    "id": "track-058-Abdul_Rasheed_Sufi",
-    "title": "058 Al-Mujadila",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 563421.7916666666,
-    "url": "https://audio.qiraathub.com/058 Al-Mujadila/Soosi/Abdul Rasheed Sufi/058.mp3"
-  },
-  {
-    "id": "track-059-Mahmoud_Khalil_Al_Husary",
-    "title": "059 Al-Hashr",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 871139.4375,
-    "url": "https://audio.qiraathub.com/059 Al-Hashr/Doori Basri/Mahmoud Khalil Al Husary/059.mp3"
-  },
-  {
-    "id": "track-060-Abdul_Rasheed_Sufi",
-    "title": "060 Al-Mumtahina",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 466581.0625,
-    "url": "https://audio.qiraathub.com/060 Al-Mumtahina/Shubah/Abdul Rasheed Sufi/060.mp3"
-  },
-  {
-    "id": "track-061-Mahmoud_Khalil_Al_Husary",
-    "title": "061 As-Saff",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 457424.0,
-    "url": "https://audio.qiraathub.com/061 As-Saff/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-061.mp3"
-  },
-  {
-    "id": "track-062-Mishary_Alafasy",
-    "title": "062 Al-Jumua",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 271080.0,
-    "url": "https://audio.qiraathub.com/062 Al-Jumua/Ibn Dhakwan/Mishary Alafasy/Al-Jumua.mp3"
-  },
-  {
-    "id": "track-063-Abdul_Rasheed_Sufi",
-    "title": "063 Al-Munafiqoon",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 220515.5,
-    "url": "https://audio.qiraathub.com/063 Al-Munafiqoon/Soosi/Abdul Rasheed Sufi/063.mp3"
-  },
-  {
-    "id": "track-064-Abdul_Rasheed_Sufi",
-    "title": "064 At-Taghabun",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 269127.75,
-    "url": "https://audio.qiraathub.com/064 At-Taghabun/Soosi/Abdul Rasheed Sufi/064.mp3"
-  },
-  {
-    "id": "track-065-Abdul_Rasheed_Sufi",
-    "title": "065 At-Talaq",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 335080.625,
-    "url": "https://audio.qiraathub.com/065 At-Talaq/Shubah/Abdul Rasheed Sufi/065.mp3"
-  },
-  {
-    "id": "track-066-Ali_AbdulRahman_Al_Huthaify",
-    "title": "066 At-Tahrim",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 317082.3125,
-    "url": "https://audio.qiraathub.com/066 At-Tahrim/Qaalun/Ali AbdulRahman Al Huthaify/066.mp3"
-  },
-  {
-    "id": "track-067-Abdul_Rasheed_Sufi",
-    "title": "067 Al-Mulk",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 373396.4583333333,
-    "url": "https://audio.qiraathub.com/067 Al-Mulk/Soosi/Abdul Rasheed Sufi/067.mp3"
-  },
-  {
-    "id": "track-068-Abdul_Rasheed_Sufi",
-    "title": "068 Al-Qalam",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 381552.5,
-    "url": "https://audio.qiraathub.com/068 Al-Qalam/Shubah/Abdul Rasheed Sufi/068.mp3"
-  },
-  {
-    "id": "track-069-Abdul_Rasheed_Sufi",
-    "title": "069 Al-Haaqqa",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 325154.125,
-    "url": "https://audio.qiraathub.com/069 Al-Haaqqa/Doori Basri/Abdul Rasheed Sufi/069.mp3"
-  },
-  {
-    "id": "track-070-Abdul_Rasheed_Sufi",
-    "title": "070 Al-Maarij",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 274946.75,
-    "url": "https://audio.qiraathub.com/070 Al-Maarij/Doori Basri/Abdul Rasheed Sufi/070.mp3"
-  },
-  {
-    "id": "track-071-Mishary_Alafasy",
-    "title": "071 Nooh",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 335542.85714285716,
-    "url": "https://audio.qiraathub.com/071 Nooh/Ibn Dhakwan/Mishary Alafasy/Nooh.mp3"
-  },
-  {
-    "id": "track-072-Mishary_Alafasy",
-    "title": "072 Al-Jinn",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 405002.44897959183,
-    "url": "https://audio.qiraathub.com/072 Al-Jinn/Ibn Dhakwan/Mishary Alafasy/Al-Jinn.mp3"
-  },
-  {
-    "id": "track-073-Abdul_Rasheed_Sufi",
-    "title": "073 Al-Muzzammil",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 244514.125,
-    "url": "https://audio.qiraathub.com/073 Al-Muzzammil/Shubah/Abdul Rasheed Sufi/073.mp3"
-  },
-  {
-    "id": "track-074-Mishary_Alafasy",
-    "title": "074 Al-Muddaththir",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 396434.2857142857,
-    "url": "https://audio.qiraathub.com/074 Al-Muddaththir/Ibn Dhakwan/Mishary Alafasy/Al-Muddaththir.mp3"
-  },
-  {
-    "id": "track-075-Abdul_Rasheed_Sufi",
-    "title": "075 Al-Qiyama",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 211756.5625,
-    "url": "https://audio.qiraathub.com/075 Al-Qiyama/Shubah/Abdul Rasheed Sufi/075.mp3"
-  },
-  {
-    "id": "track-076-Mahmoud_Khalil_Al_Husary",
-    "title": "076 Al-Insan",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 517904.0,
-    "url": "https://audio.qiraathub.com/076 Al-Insan/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-076.mp3"
-  },
-  {
-    "id": "track-077-Mahmoud_Khalil_Al_Husary",
-    "title": "077 Al-Mursalat",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 410391.6875,
-    "url": "https://audio.qiraathub.com/077 Al-Mursalat/Doori Basri/Mahmoud Khalil Al Husary/077.mp3"
-  },
-  {
-    "id": "track-078-Abdul_Rasheed_Sufi",
-    "title": "078 An-Naba",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 230120.625,
-    "url": "https://audio.qiraathub.com/078 An-Naba/Shubah/Abdul Rasheed Sufi/078.mp3"
-  },
-  {
-    "id": "track-079-Abdul_Rasheed_Sufi",
-    "title": "079 An-Naziat",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 223067.5625,
-    "url": "https://audio.qiraathub.com/079 An-Naziat/Shubah/Abdul Rasheed Sufi/079.mp3"
-  },
-  {
-    "id": "track-080-Abdul_Rasheed_Sufi",
-    "title": "080 Abasa",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 200158.1875,
-    "url": "https://audio.qiraathub.com/080 Abasa/Abul Harith/Abdul Rasheed Sufi/080.mp3"
-  },
-  {
-    "id": "track-081-Abdul_Rasheed_Sufi",
-    "title": "081 At-Takwir",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 131849.8333333333,
-    "url": "https://audio.qiraathub.com/081 At-Takwir/Soosi/Abdul Rasheed Sufi/081.mp3"
-  },
-  {
-    "id": "track-082-Mahmoud_Khalil_Al_Husary",
-    "title": "082 Al-Infitar",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 184615.375,
-    "url": "https://audio.qiraathub.com/082 Al-Infitar/Doori Basri/Mahmoud Khalil Al Husary/082.mp3"
-  },
-  {
-    "id": "track-083-Abdul_Rasheed_Sufi",
-    "title": "083 Al-Mutaffifin",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 218808.54166666666,
-    "url": "https://audio.qiraathub.com/083 Al-Mutaffifin/Soosi/Abdul Rasheed Sufi/083.mp3"
-  },
-  {
-    "id": "track-084-Abdul_Rasheed_Sufi",
-    "title": "084 Al-Inshiqaq",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 158603.51473922902,
-    "url": "https://audio.qiraathub.com/084 Al-Inshiqaq/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-084-khalaf.mp3"
-  },
-  {
-    "id": "track-085-Abdul_Rasheed_Sufi",
-    "title": "085 Al-Burooj",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 127015.375,
-    "url": "https://audio.qiraathub.com/085 Al-Burooj/Shubah/Abdul Rasheed Sufi/085.mp3"
-  },
-  {
-    "id": "track-086-Abdul_Rasheed_Sufi",
-    "title": "086 At-Tariq",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 80125.5625,
-    "url": "https://audio.qiraathub.com/086 At-Tariq/Abul Harith/Abdul Rasheed Sufi/086.mp3"
-  },
-  {
-    "id": "track-087-Mishary_Alafasy",
-    "title": "087 Al-Ala",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 117888.0,
-    "url": "https://audio.qiraathub.com/087 Al-Ala/Ibn Dhakwan/Mishary Alafasy/Al-Ala.mp3"
-  },
-  {
-    "id": "track-088-Mahmoud_Khalil_Al_Husary",
-    "title": "088 Al-Ghashiya",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 190304.0,
-    "url": "https://audio.qiraathub.com/088 Al-Ghashiya/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-088.mp3"
-  },
-  {
-    "id": "track-089-Abdul_Rasheed_Sufi",
-    "title": "089 Al-Fajr",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 156899.4375,
-    "url": "https://audio.qiraathub.com/089 Al-Fajr/Doori Basri/Abdul Rasheed Sufi/089.mp3"
-  },
-  {
-    "id": "track-090-Abdul_Rasheed_Sufi",
-    "title": "090 Al-Balad",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 98332.875,
-    "url": "https://audio.qiraathub.com/090 Al-Balad/Abul Harith/Abdul Rasheed Sufi/090.mp3"
-  },
-  {
-    "id": "track-091-Abdul_Rasheed_Sufi",
-    "title": "091 Ash-Shams",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 69624.3125,
-    "url": "https://audio.qiraathub.com/091 Ash-Shams/Shubah/Abdul Rasheed Sufi/091.mp3"
-  },
-  {
-    "id": "track-092-Abdul_Rasheed_Sufi",
-    "title": "092 Al-Lail",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 91628.125,
-    "url": "https://audio.qiraathub.com/092 Al-Lail/Soosi/Abdul Rasheed Sufi/092.mp3"
-  },
-  {
-    "id": "track-093-Mishary_Alafasy",
-    "title": "093 Ad-Dhuha",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 76920.0,
-    "url": "https://audio.qiraathub.com/093 Ad-Dhuha/Ibn Dhakwan/Mishary Alafasy/Ad-Dhuha.mp3"
-  },
-  {
-    "id": "track-094-Mahmoud_Khalil_Al_Husary",
-    "title": "094 Al-Inshirah",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 54332.0,
-    "url": "https://audio.qiraathub.com/094 Al-Inshirah/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-094.mp3"
-  },
-  {
-    "id": "track-095-Mahmoud_Khalil_Al_Husary",
-    "title": "095 At-Tin",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 96086.375,
-    "url": "https://audio.qiraathub.com/095 At-Tin/Doori Basri/Mahmoud Khalil Al Husary/095.mp3"
-  },
-  {
-    "id": "track-096-Mahmoud_Khalil_Al_Husary",
-    "title": "096 Al-Alaq",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 190283.9375,
-    "url": "https://audio.qiraathub.com/096 Al-Alaq/Doori Basri/Mahmoud Khalil Al Husary/096.mp3"
-  },
-  {
-    "id": "track-097-Abdul_Rasheed_Sufi",
-    "title": "097 Al-Qadr",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 56569.22902494331,
-    "url": "https://audio.qiraathub.com/097 Al-Qadr/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-097-khalaf.mp3"
-  },
-  {
-    "id": "track-098-Abdul_Rasheed_Sufi",
-    "title": "098 Al-Bayyina",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 128432.08616780046,
-    "url": "https://audio.qiraathub.com/098 Al-Bayyina/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-098-khalaf.mp3"
-  },
-  {
-    "id": "track-099-Mahmoud_Khalil_Al_Husary",
-    "title": "099 Az-Zalzala",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 100004.75,
-    "url": "https://audio.qiraathub.com/099 Az-Zalzala/Doori Basri/Mahmoud Khalil Al Husary/099.mp3"
-  },
-  {
-    "id": "track-100-Abdul_Rasheed_Sufi",
-    "title": "100 Al-Adiyat",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 48935.375,
-    "url": "https://audio.qiraathub.com/100 Al-Adiyat/Shubah/Abdul Rasheed Sufi/100.mp3"
-  },
-  {
-    "id": "track-101-Abdul_Rasheed_Sufi",
-    "title": "101 Al-Qaria",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 45900.875,
-    "url": "https://audio.qiraathub.com/101 Al-Qaria/Soosi/Abdul Rasheed Sufi/101.mp3"
-  },
-  {
-    "id": "track-102-Abdul_Rasheed_Sufi",
-    "title": "102 At-Takathur",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 38094.5,
-    "url": "https://audio.qiraathub.com/102 At-Takathur/Shubah/Abdul Rasheed Sufi/102.mp3"
-  },
-  {
-    "id": "track-103-Abdul_Rasheed_Sufi",
-    "title": "103 Al-Asr",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 21663.5,
-    "url": "https://audio.qiraathub.com/103 Al-Asr/Shubah/Abdul Rasheed Sufi/103.mp3"
-  },
-  {
-    "id": "track-104-Abdul_Rasheed_Sufi",
-    "title": "104 Al-Humaza",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 63152.08616780046,
-    "url": "https://audio.qiraathub.com/104 Al-Humaza/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-104-khalaf.mp3"
-  },
-  {
-    "id": "track-105-Abdul_Rasheed_Sufi",
-    "title": "105 Al-Fil",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 32530.437499999996,
-    "url": "https://audio.qiraathub.com/105 Al-Fil/Abul Harith/Abdul Rasheed Sufi/105.mp3"
-  },
-  {
-    "id": "track-106-Ali_AbdulRahman_Al_Huthaify",
-    "title": "106 Quraish",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 35691.25,
-    "url": "https://audio.qiraathub.com/106 Quraish/Qaalun/Ali AbdulRahman Al Huthaify/106.mp3"
-  },
-  {
-    "id": "track-107-Abdul_Rasheed_Sufi",
-    "title": "107 Al-Maun",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 33627.5625,
-    "url": "https://audio.qiraathub.com/107 Al-Maun/Doori Basri/Abdul Rasheed Sufi/107.mp3"
-  },
-  {
-    "id": "track-108-Mahmoud_Khalil_Al_Husary",
-    "title": "108 Al-Kauther",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 34698.625,
-    "url": "https://audio.qiraathub.com/108 Al-Kauther/Doori Basri/Mahmoud Khalil Al Husary/108.mp3"
-  },
-  {
-    "id": "track-109-Abdul_Rasheed_Sufi",
-    "title": "109 Al-Kafiroon",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 38329.625,
-    "url": "https://audio.qiraathub.com/109 Al-Kafiroon/Doori Basri/Abdul Rasheed Sufi/109.mp3"
-  },
-  {
-    "id": "track-110-Mahmoud_Khalil_Al_Husary",
-    "title": "110 An-Nasr",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 45368.0,
-    "url": "https://audio.qiraathub.com/110 An-Nasr/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-110.mp3"
-  },
-  {
-    "id": "track-111-Abdul_Rasheed_Sufi",
-    "title": "111 Al-Masadd",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 29186.75,
-    "url": "https://audio.qiraathub.com/111 Al-Masadd/Shubah/Abdul Rasheed Sufi/111.mp3"
-  },
-  {
-    "id": "track-112-Ali_AbdulRahman_Al_Huthaify",
-    "title": "112 Al-Ikhlas",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 18659.4375,
-    "url": "https://audio.qiraathub.com/112 Al-Ikhlas/Qaalun/Ali AbdulRahman Al Huthaify/112.mp3"
-  },
-  {
-    "id": "track-113-Ali_AbdulRahman_Al_Huthaify",
-    "title": "113 Al-Falaq",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 28925.5625,
-    "url": "https://audio.qiraathub.com/113 Al-Falaq/Qaalun/Ali AbdulRahman Al Huthaify/113.mp3"
-  },
-  {
-    "id": "track-114-Abdul_Rasheed_Sufi",
-    "title": "114 An-Nas",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 40530.04535147392,
-    "url": "https://audio.qiraathub.com/114 An-Nas/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-114-khalaf.mp3"
-  },
-  {
-    "id": "track-001-Abdul_Rasheed_Sufi",
-    "title": "001 Al-Fatiha",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 43005.5625,
-    "url": "https://audio.qiraathub.com/001 Al-Fatiha/Abul Harith/Abdul Rasheed Sufi/001.mp3"
+    "duration": 73613.0612244898,
+    "url": "https://audio.qiraathub.com/001%20Al-Fatiha/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Fatiha.mp3"
   },
   {
     "id": "track-002-Abdul_Rasheed_Sufi",
     "title": "002 Al-Baqara",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 7790172.494331066,
-    "url": "https://audio.qiraathub.com/002 Al-Baqara/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-002-khalaf.mp3"
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 7271609.625,
+    "url": "https://audio.qiraathub.com/002%20Al-Baqara/Doori%20Basri/Abdul%20Rasheed%20Sufi/002.mp3"
   },
   {
     "id": "track-003-Abdul_Rasheed_Sufi",
     "title": "003 Aal-E-Imran",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 4148252.875,
-    "url": "https://audio.qiraathub.com/003 Aal-E-Imran/Doori Basri/Abdul Rasheed Sufi/003.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 3707278.4166666665,
+    "url": "https://audio.qiraathub.com/003%20Aal-E-Imran/Soosi/Abdul%20Rasheed%20Sufi/003.mp3"
   },
   {
     "id": "track-004-Abdul_Rasheed_Sufi",
     "title": "004 An-Nisa",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 4497137.3922902495,
-    "url": "https://audio.qiraathub.com/004 An-Nisa/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-004-khalaf.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 4403599.8125,
+    "url": "https://audio.qiraathub.com/004%20An-Nisa/Shubah/Abdul%20Rasheed%20Sufi/004.mp3"
   },
   {
     "id": "track-005-Abdul_Rasheed_Sufi",
     "title": "005 Al-Ma-idah",
     "artist": "Abdul Rasheed Sufi (Shubah)",
     "duration": 3291227.5625,
-    "url": "https://audio.qiraathub.com/005 Al-Ma-idah/Shubah/Abdul Rasheed Sufi/005.mp3"
+    "url": "https://audio.qiraathub.com/005%20Al-Ma-idah/Shubah/Abdul%20Rasheed%20Sufi/005.mp3"
   },
   {
-    "id": "track-006-Mahmoud_Khalil_Al_Husary",
+    "id": "track-006-Abdul_Rasheed_Sufi",
     "title": "006 Al-Anaam",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 4748363.9375,
-    "url": "https://audio.qiraathub.com/006 Al-Anaam/Doori Basri/Mahmoud Khalil Al Husary/006.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 3394176.1875,
+    "url": "https://audio.qiraathub.com/006%20Al-Anaam/Abul%20Harith/Abdul%20Rasheed%20Sufi/006.mp3"
   },
   {
-    "id": "track-007-Abdul_Rasheed_Sufi",
+    "id": "track-007-Mishary_Alafasy",
     "title": "007 Al-Araf",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 3733036.5625,
-    "url": "https://audio.qiraathub.com/007 Al-Araf/Shubah/Abdul Rasheed Sufi/007.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 5025802.448979592,
+    "url": "https://audio.qiraathub.com/007%20Al-Araf/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Araf.mp3"
   },
   {
-    "id": "track-008-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-008-Mahmoud_Khalil_Al_Husary",
     "title": "008 Al-Anfal",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 1547763.125,
-    "url": "https://audio.qiraathub.com/008 Al-Anfal/Qaalun/Ali AbdulRahman Al Huthaify/008.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 1885056.1875,
+    "url": "https://audio.qiraathub.com/008%20Al-Anfal/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/008.mp3"
   },
   {
     "id": "track-009-Abdul_Rasheed_Sufi",
     "title": "009 At-Tawba",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 2585951.0416666665,
-    "url": "https://audio.qiraathub.com/009 At-Tawba/Soosi/Abdul Rasheed Sufi/009.mp3"
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 2741846.375,
+    "url": "https://audio.qiraathub.com/009%20At-Tawba/Doori%20Basri/Abdul%20Rasheed%20Sufi/009.mp3"
   },
   {
     "id": "track-010-Abdul_Rasheed_Sufi",
     "title": "010 Yunus",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 1842198.0416666667,
-    "url": "https://audio.qiraathub.com/010 Yunus/Soosi/Abdul Rasheed Sufi/010.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 2175224.3125,
+    "url": "https://audio.qiraathub.com/010%20Yunus/Abul%20Harith/Abdul%20Rasheed%20Sufi/010.mp3"
   },
   {
     "id": "track-011-Abdul_Rasheed_Sufi",
     "title": "011 Hud",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 2039753.3125,
-    "url": "https://audio.qiraathub.com/011 Hud/Shubah/Abdul Rasheed Sufi/011.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 2302120.2494331063,
+    "url": "https://audio.qiraathub.com/011%20Hud/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-011-khalaf.mp3"
   },
   {
-    "id": "track-012-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-012-Mishary_Alafasy",
     "title": "012 Yusuf",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 2096360.6249999998,
-    "url": "https://audio.qiraathub.com/012 Yusuf/Qaalun/Ali AbdulRahman Al Huthaify/012.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 2730768.0045351475,
+    "url": "https://audio.qiraathub.com/012%20Yusuf/Ibn%20Dhakwan/Mishary%20Alafasy/Yusuf.mp3"
   },
   {
     "id": "track-013-Abdul_Rasheed_Sufi",
     "title": "013 Ar-Rad",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 963247.1875,
-    "url": "https://audio.qiraathub.com/013 Ar-Rad/Abul Harith/Abdul Rasheed Sufi/013.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 888824.3125,
+    "url": "https://audio.qiraathub.com/013%20Ar-Rad/Shubah/Abdul%20Rasheed%20Sufi/013.mp3"
   },
   {
-    "id": "track-014-Abdul_Rasheed_Sufi",
+    "id": "track-014-Mishary_Alafasy",
     "title": "014 Ibrahim",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 981356.1678004535,
-    "url": "https://audio.qiraathub.com/014 Ibrahim/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-014-khalaf.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 1320911.9954648528,
+    "url": "https://audio.qiraathub.com/014%20Ibrahim/Ibn%20Dhakwan/Mishary%20Alafasy/Ibrahim.mp3"
   },
   {
     "id": "track-015-Mishary_Alafasy",
     "title": "015 Al-Hijr",
     "artist": "Mishary Alafasy (Ibn Dhakwan)",
     "duration": 922703.9909297052,
-    "url": "https://audio.qiraathub.com/015 Al-Hijr/Ibn Dhakwan/Mishary Alafasy/Al-Hijr.mp3"
+    "url": "https://audio.qiraathub.com/015%20Al-Hijr/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Hijr.mp3"
   },
   {
-    "id": "track-016-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-016-Abdul_Rasheed_Sufi",
     "title": "016 An-Nahl",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 2353457.8125,
-    "url": "https://audio.qiraathub.com/016 An-Nahl/Qaalun/Ali AbdulRahman Al Huthaify/016.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 2041503.5,
+    "url": "https://audio.qiraathub.com/016%20An-Nahl/Abul%20Harith/Abdul%20Rasheed%20Sufi/016.mp3"
   },
   {
     "id": "track-017-Abdul_Rasheed_Sufi",
     "title": "017 Al-Isra",
     "artist": "Abdul Rasheed Sufi (Abul Harith)",
     "duration": 1681666.75,
-    "url": "https://audio.qiraathub.com/017 Al-Isra/Abul Harith/Abdul Rasheed Sufi/017.mp3"
+    "url": "https://audio.qiraathub.com/017%20Al-Isra/Abul%20Harith/Abdul%20Rasheed%20Sufi/017.mp3"
   },
   {
-    "id": "track-018-Abdul_Rasheed_Sufi",
+    "id": "track-018-Mahmoud_Khalil_Al_Husary",
     "title": "018 Al-Kahf",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1680569.625,
-    "url": "https://audio.qiraathub.com/018 Al-Kahf/Shubah/Abdul Rasheed Sufi/018.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 2969360.0,
+    "url": "https://audio.qiraathub.com/018%20Al-Kahf/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-018.mp3"
   },
   {
-    "id": "track-019-Mishary_Alafasy",
+    "id": "track-019-Abdul_Rasheed_Sufi",
     "title": "019 Maryam",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1404447.3469387756,
-    "url": "https://audio.qiraathub.com/019 Maryam/Ibn Dhakwan/Mishary Alafasy/Maryam.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 1023407.1875,
+    "url": "https://audio.qiraathub.com/019%20Maryam/Shubah/Abdul%20Rasheed%20Sufi/019.mp3"
   },
   {
-    "id": "track-020-Abdul_Rasheed_Sufi",
+    "id": "track-020-Mishary_Alafasy",
     "title": "020 Ta-Ha",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 1640569.2290249432,
-    "url": "https://audio.qiraathub.com/020 Ta-Ha/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-020-khalaf.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 1918103.990929705,
+    "url": "https://audio.qiraathub.com/020%20Ta-Ha/Ibn%20Dhakwan/Mishary%20Alafasy/Ta-Ha.mp3"
   },
   {
     "id": "track-021-Abdul_Rasheed_Sufi",
     "title": "021 Al-Anbiya",
     "artist": "Abdul Rasheed Sufi (Khalaf)",
     "duration": 1453872.0861678005,
-    "url": "https://audio.qiraathub.com/021 Al-Anbiya/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-021-khalaf.mp3"
+    "url": "https://audio.qiraathub.com/021%20Al-Anbiya/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-021-khalaf.mp3"
   },
   {
     "id": "track-022-Abdul_Rasheed_Sufi",
     "title": "022 Al-Hajj",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1345314.125,
-    "url": "https://audio.qiraathub.com/022 Al-Hajj/Shubah/Abdul Rasheed Sufi/022.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 1461872.5,
+    "url": "https://audio.qiraathub.com/022%20Al-Hajj/Abul%20Harith/Abdul%20Rasheed%20Sufi/022.mp3"
   },
   {
-    "id": "track-023-Abdul_Rasheed_Sufi",
+    "id": "track-023-Mahmoud_Khalil_Al_Husary",
     "title": "023 Al-Muminoon",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1239021.875,
-    "url": "https://audio.qiraathub.com/023 Al-Muminoon/Shubah/Abdul Rasheed Sufi/023.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 2177216.0,
+    "url": "https://audio.qiraathub.com/023%20Al-Muminoon/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-023.mp3"
   },
   {
     "id": "track-024-Abdul_Rasheed_Sufi",
     "title": "024 An-Noor",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 1576523.9375,
-    "url": "https://audio.qiraathub.com/024 An-Noor/Abul Harith/Abdul Rasheed Sufi/024.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 1447975.375,
+    "url": "https://audio.qiraathub.com/024%20An-Noor/Shubah/Abdul%20Rasheed%20Sufi/024.mp3"
   },
   {
     "id": "track-025-Abdul_Rasheed_Sufi",
     "title": "025 Al-Furqan",
     "artist": "Abdul Rasheed Sufi (Doori Basri)",
     "duration": 930959.8125,
-    "url": "https://audio.qiraathub.com/025 Al-Furqan/Doori Basri/Abdul Rasheed Sufi/025.mp3"
+    "url": "https://audio.qiraathub.com/025%20Al-Furqan/Doori%20Basri/Abdul%20Rasheed%20Sufi/025.mp3"
   },
   {
     "id": "track-026-Abdul_Rasheed_Sufi",
     "title": "026 Ash-Shuara",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 1581722.3125,
-    "url": "https://audio.qiraathub.com/026 Ash-Shuara/Abul Harith/Abdul Rasheed Sufi/026.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 1527576.5759637188,
+    "url": "https://audio.qiraathub.com/026%20Ash-Shuara/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-026-khalaf.mp3"
   },
   {
     "id": "track-027-Abdul_Rasheed_Sufi",
     "title": "027 An-Naml",
     "artist": "Abdul Rasheed Sufi (Doori Basri)",
     "duration": 1335492.0625,
-    "url": "https://audio.qiraathub.com/027 An-Naml/Doori Basri/Abdul Rasheed Sufi/027.mp3"
+    "url": "https://audio.qiraathub.com/027%20An-Naml/Doori%20Basri/Abdul%20Rasheed%20Sufi/027.mp3"
   },
   {
     "id": "track-028-Abdul_Rasheed_Sufi",
     "title": "028 Al-Qasas",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 1534989.25,
-    "url": "https://audio.qiraathub.com/028 Al-Qasas/Shubah/Abdul Rasheed Sufi/028.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 1677017.0,
+    "url": "https://audio.qiraathub.com/028%20Al-Qasas/Abul%20Harith/Abdul%20Rasheed%20Sufi/028.mp3"
   },
   {
     "id": "track-029-Abdul_Rasheed_Sufi",
     "title": "029 Al-Ankaboot",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 1089810.4375,
-    "url": "https://audio.qiraathub.com/029 Al-Ankaboot/Abul Harith/Abdul Rasheed Sufi/029.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 1197885.1473922902,
+    "url": "https://audio.qiraathub.com/029%20Al-Ankaboot/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-029-khalaf.mp3"
   },
   {
     "id": "track-030-Mishary_Alafasy",
     "title": "030 Ar-Room",
     "artist": "Mishary Alafasy (Ibn Dhakwan)",
     "duration": 1263856.3265306123,
-    "url": "https://audio.qiraathub.com/030 Ar-Room/Ibn Dhakwan/Mishary Alafasy/Ar-Room.mp3"
+    "url": "https://audio.qiraathub.com/030%20Ar-Room/Ibn%20Dhakwan/Mishary%20Alafasy/Ar-Room.mp3"
   },
   {
-    "id": "track-031-Abdul_Rasheed_Sufi",
+    "id": "track-031-Mahmoud_Khalil_Al_Husary",
     "title": "031 Luqman",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 566955.9166666666,
-    "url": "https://audio.qiraathub.com/031 Luqman/Soosi/Abdul Rasheed Sufi/031.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 1046816.0,
+    "url": "https://audio.qiraathub.com/031%20Luqman/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-031.mp3"
   },
   {
     "id": "track-032-Abdul_Rasheed_Sufi",
     "title": "032 As-Sajda",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 414571.25,
-    "url": "https://audio.qiraathub.com/032 As-Sajda/Shubah/Abdul Rasheed Sufi/032.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 362217.0833333333,
+    "url": "https://audio.qiraathub.com/032%20As-Sajda/Soosi/Abdul%20Rasheed%20Sufi/032.mp3"
   },
   {
-    "id": "track-033-Mahmoud_Khalil_Al_Husary",
+    "id": "track-033-Abdul_Rasheed_Sufi",
     "title": "033 Al-Ahzab",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 2397108.4375,
-    "url": "https://audio.qiraathub.com/033 Al-Ahzab/Doori Basri/Mahmoud Khalil Al Husary/033.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 1496563.125,
+    "url": "https://audio.qiraathub.com/033%20Al-Ahzab/Shubah/Abdul%20Rasheed%20Sufi/033.mp3"
   },
   {
-    "id": "track-034-Mahmoud_Khalil_Al_Husary",
+    "id": "track-034-Abdul_Rasheed_Sufi",
     "title": "034 Saba",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 1673684.0,
-    "url": "https://audio.qiraathub.com/034 Saba/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-034.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 870289.625,
+    "url": "https://audio.qiraathub.com/034%20Saba/Soosi/Abdul%20Rasheed%20Sufi/034.mp3"
   },
   {
-    "id": "track-035-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-035-Abdul_Rasheed_Sufi",
     "title": "035 Fatir",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 980540.25,
-    "url": "https://audio.qiraathub.com/035 Fatir/Qaalun/Ali AbdulRahman Al Huthaify/035.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 841030.9166666667,
+    "url": "https://audio.qiraathub.com/035%20Fatir/Soosi/Abdul%20Rasheed%20Sufi/035.mp3"
   },
   {
-    "id": "track-036-Mishary_Alafasy",
+    "id": "track-036-Abdul_Rasheed_Sufi",
     "title": "036 Ya-Seen",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 1166367.3469387754,
-    "url": "https://audio.qiraathub.com/036 Ya-Seen/Ibn Dhakwan/Mishary Alafasy/Ya-Seen.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 890476.1678004535,
+    "url": "https://audio.qiraathub.com/036%20Ya-Seen/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-036-khalaf.mp3"
   },
   {
-    "id": "track-037-Mahmoud_Khalil_Al_Husary",
+    "id": "track-037-Mishary_Alafasy",
     "title": "037 As-Saaffat",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 1602881.5,
-    "url": "https://audio.qiraathub.com/037 As-Saaffat/Doori Basri/Mahmoud Khalil Al Husary/037.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 1529887.3469387754,
+    "url": "https://audio.qiraathub.com/037%20As-Saaffat/Ibn%20Dhakwan/Mishary%20Alafasy/As-Saaffat.mp3"
   },
   {
     "id": "track-038-Mahmoud_Khalil_Al_Husary",
     "title": "038 Sad",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 1397167.1875,
-    "url": "https://audio.qiraathub.com/038 Sad/Doori Basri/Mahmoud Khalil Al Husary/038.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 1381904.0,
+    "url": "https://audio.qiraathub.com/038%20Sad/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-038.mp3"
   },
   {
     "id": "track-039-Abdul_Rasheed_Sufi",
     "title": "039 Az-Zumar",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 1240145.125,
-    "url": "https://audio.qiraathub.com/039 Az-Zumar/Doori Basri/Abdul Rasheed Sufi/039.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 1261852.875,
+    "url": "https://audio.qiraathub.com/039%20Az-Zumar/Shubah/Abdul%20Rasheed%20Sufi/039.mp3"
   },
   {
-    "id": "track-040-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-040-Abdul_Rasheed_Sufi",
     "title": "040 Ghafir",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 1504399.8125,
-    "url": "https://audio.qiraathub.com/040 Ghafir/Qaalun/Ali AbdulRahman Al Huthaify/040.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 1320654.5,
+    "url": "https://audio.qiraathub.com/040%20Ghafir/Abul%20Harith/Abdul%20Rasheed%20Sufi/040.mp3"
   },
   {
-    "id": "track-041-Abdul_Rasheed_Sufi",
+    "id": "track-041-Mahmoud_Khalil_Al_Husary",
     "title": "041 Fussilat",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 923998.7083333333,
-    "url": "https://audio.qiraathub.com/041 Fussilat/Soosi/Abdul Rasheed Sufi/041.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 1556648.0,
+    "url": "https://audio.qiraathub.com/041%20Fussilat/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-041.mp3"
   },
   {
-    "id": "track-042-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-042-Abdul_Rasheed_Sufi",
     "title": "042 Ash-Shura",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 1072360.625,
-    "url": "https://audio.qiraathub.com/042 Ash-Shura/Qaalun/Ali AbdulRahman Al Huthaify/042.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 928138.625,
+    "url": "https://audio.qiraathub.com/042%20Ash-Shura/Shubah/Abdul%20Rasheed%20Sufi/042.mp3"
   },
   {
-    "id": "track-043-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-043-Abdul_Rasheed_Sufi",
     "title": "043 Az-Zukhruf",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 1177764.75,
-    "url": "https://audio.qiraathub.com/043 Az-Zukhruf/Qaalun/Ali AbdulRahman Al Huthaify/043.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 998146.75,
+    "url": "https://audio.qiraathub.com/043%20Az-Zukhruf/Shubah/Abdul%20Rasheed%20Sufi/043.mp3"
   },
   {
     "id": "track-044-Abdul_Rasheed_Sufi",
     "title": "044 Ad-Dukhan",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 441744.73922902497,
-    "url": "https://audio.qiraathub.com/044 Ad-Dukhan/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-044-khalaf.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 419917.0833333333,
+    "url": "https://audio.qiraathub.com/044%20Ad-Dukhan/Soosi/Abdul%20Rasheed%20Sufi/044.mp3"
   },
   {
-    "id": "track-045-Mahmoud_Khalil_Al_Husary",
+    "id": "track-045-Abdul_Rasheed_Sufi",
     "title": "045 Al-Jathiya",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 948392.0,
-    "url": "https://audio.qiraathub.com/045 Al-Jathiya/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-045.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 573030.0625,
+    "url": "https://audio.qiraathub.com/045%20Al-Jathiya/Abul%20Harith/Abdul%20Rasheed%20Sufi/045.mp3"
   },
   {
-    "id": "track-046-Abdul_Rasheed_Sufi",
+    "id": "track-046-Ali_AbdulRahman_Al_Huthaify",
     "title": "046 Al-Ahqaf",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 729346.75,
-    "url": "https://audio.qiraathub.com/046 Al-Ahqaf/Abul Harith/Abdul Rasheed Sufi/046.mp3"
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 781539.4375,
+    "url": "https://audio.qiraathub.com/046%20Al-Ahqaf/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/046.mp3"
   },
   {
     "id": "track-047-Abdul_Rasheed_Sufi",
     "title": "047 Muhammad",
     "artist": "Abdul Rasheed Sufi (Khalaf)",
     "duration": 667299.0249433107,
-    "url": "https://audio.qiraathub.com/047 Muhammad/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-047-khalaf.mp3"
+    "url": "https://audio.qiraathub.com/047%20Muhammad/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-047-khalaf.mp3"
   },
   {
     "id": "track-048-Abdul_Rasheed_Sufi",
     "title": "048 Al-Fath",
     "artist": "Abdul Rasheed Sufi (Shubah)",
     "duration": 567831.6875,
-    "url": "https://audio.qiraathub.com/048 Al-Fath/Shubah/Abdul Rasheed Sufi/048.mp3"
+    "url": "https://audio.qiraathub.com/048%20Al-Fath/Shubah/Abdul%20Rasheed%20Sufi/048.mp3"
   },
   {
     "id": "track-049-Mahmoud_Khalil_Al_Husary",
     "title": "049 Al-Hujraat",
     "artist": "Mahmoud Khalil Al Husary (Warsh)",
     "duration": 731168.0,
-    "url": "https://audio.qiraathub.com/049 Al-Hujraat/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-049.mp3"
+    "url": "https://audio.qiraathub.com/049%20Al-Hujraat/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-049.mp3"
   },
   {
-    "id": "track-050-Mahmoud_Khalil_Al_Husary",
+    "id": "track-050-Mishary_Alafasy",
     "title": "050 Qaf",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 679596.75,
-    "url": "https://audio.qiraathub.com/050 Qaf/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-050.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 602723.2653061225,
+    "url": "https://audio.qiraathub.com/050%20Qaf/Ibn%20Dhakwan/Mishary%20Alafasy/Qaf.mp3"
   },
   {
     "id": "track-051-Abdul_Rasheed_Sufi",
     "title": "051 Adh-Dhariyat",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 433596.7916666667,
-    "url": "https://audio.qiraathub.com/051 Adh-Dhariyat/Soosi/Abdul Rasheed Sufi/051.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 415668.4375,
+    "url": "https://audio.qiraathub.com/051%20Adh-Dhariyat/Shubah/Abdul%20Rasheed%20Sufi/051.mp3"
   },
   {
     "id": "track-052-Abdul_Rasheed_Sufi",
     "title": "052 At-Tur",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 360870.75,
-    "url": "https://audio.qiraathub.com/052 At-Tur/Soosi/Abdul Rasheed Sufi/052.mp3"
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 385523.125,
+    "url": "https://audio.qiraathub.com/052%20At-Tur/Doori%20Basri/Abdul%20Rasheed%20Sufi/052.mp3"
   },
   {
     "id": "track-053-Abdul_Rasheed_Sufi",
     "title": "053 An-Najm",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 384034.125,
-    "url": "https://audio.qiraathub.com/053 An-Najm/Abul Harith/Abdul Rasheed Sufi/053.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 399986.5416666666,
+    "url": "https://audio.qiraathub.com/053%20An-Najm/Soosi/Abdul%20Rasheed%20Sufi/053.mp3"
   },
   {
     "id": "track-054-Abdul_Rasheed_Sufi",
     "title": "054 Al-Qamar",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 412584.375,
-    "url": "https://audio.qiraathub.com/054 Al-Qamar/Soosi/Abdul Rasheed Sufi/054.mp3"
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 407439.8125,
+    "url": "https://audio.qiraathub.com/054%20Al-Qamar/Doori%20Basri/Abdul%20Rasheed%20Sufi/054.mp3"
   },
   {
     "id": "track-055-Abdul_Rasheed_Sufi",
     "title": "055 Ar-Rahman",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 479590.0625,
-    "url": "https://audio.qiraathub.com/055 Ar-Rahman/Doori Basri/Abdul Rasheed Sufi/055.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 616294.9433106575,
+    "url": "https://audio.qiraathub.com/055%20Ar-Rahman/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-055-khalaf.mp3"
   },
   {
     "id": "track-056-Mahmoud_Khalil_Al_Husary",
     "title": "056 Al-Waqia",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 973448.0,
-    "url": "https://audio.qiraathub.com/056 Al-Waqia/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-056.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 871374.5,
+    "url": "https://audio.qiraathub.com/056%20Al-Waqia/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/056.mp3"
   },
   {
-    "id": "track-057-Mishary_Alafasy",
+    "id": "track-057-Mahmoud_Khalil_Al_Husary",
     "title": "057 Al-Hadid",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 822674.2857142857,
-    "url": "https://audio.qiraathub.com/057 Al-Hadid/Ibn Dhakwan/Mishary Alafasy/Al-Hadid.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 1057209.625,
+    "url": "https://audio.qiraathub.com/057%20Al-Hadid/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/057.mp3"
   },
   {
-    "id": "track-058-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-058-Mahmoud_Khalil_Al_Husary",
     "title": "058 Al-Mujadila",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 588442.3125,
-    "url": "https://audio.qiraathub.com/058 Al-Mujadila/Qaalun/Ali AbdulRahman Al Huthaify/058.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 936105.9375,
+    "url": "https://audio.qiraathub.com/058%20Al-Mujadila/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/058.mp3"
   },
   {
-    "id": "track-059-Mishary_Alafasy",
+    "id": "track-059-Abdul_Rasheed_Sufi",
     "title": "059 Al-Hashr",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 725655.4875283447,
-    "url": "https://audio.qiraathub.com/059 Al-Hashr/Ibn Dhakwan/Mishary Alafasy/Al-Hashr.mp3"
-  },
-  {
-    "id": "track-060-Mahmoud_Khalil_Al_Husary",
-    "title": "060 Al-Mumtahina",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 789092.0,
-    "url": "https://audio.qiraathub.com/060 Al-Mumtahina/Warsh/Mahmoud Khalil Al Husary/Al-Mumtahina.mp3"
-  },
-  {
-    "id": "track-061-Mishary_Alafasy",
-    "title": "061 As-Saff",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 364488.0,
-    "url": "https://audio.qiraathub.com/061 As-Saff/Ibn Dhakwan/Mishary Alafasy/As-Saff.mp3"
-  },
-  {
-    "id": "track-062-Abdul_Rasheed_Sufi",
-    "title": "062 Al-Jumua",
     "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 203277.625,
-    "url": "https://audio.qiraathub.com/062 Al-Jumua/Soosi/Abdul Rasheed Sufi/062.mp3"
+    "duration": 567412.7083333333,
+    "url": "https://audio.qiraathub.com/059%20Al-Hashr/Soosi/Abdul%20Rasheed%20Sufi/059.mp3"
   },
   {
-    "id": "track-063-Abdul_Rasheed_Sufi",
+    "id": "track-060-Abdul_Rasheed_Sufi",
+    "title": "060 Al-Mumtahina",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 466581.0625,
+    "url": "https://audio.qiraathub.com/060%20Al-Mumtahina/Shubah/Abdul%20Rasheed%20Sufi/060.mp3"
+  },
+  {
+    "id": "track-061-Mahmoud_Khalil_Al_Husary",
+    "title": "061 As-Saff",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 457424.0,
+    "url": "https://audio.qiraathub.com/061%20As-Saff/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-061.mp3"
+  },
+  {
+    "id": "track-062-Mishary_Alafasy",
+    "title": "062 Al-Jumua",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 271080.0,
+    "url": "https://audio.qiraathub.com/062%20Al-Jumua/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Jumua.mp3"
+  },
+  {
+    "id": "track-063-Mahmoud_Khalil_Al_Husary",
     "title": "063 Al-Munafiqoon",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 219939.02494331068,
-    "url": "https://audio.qiraathub.com/063 Al-Munafiqoon/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-063-khalaf.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 305640.625,
+    "url": "https://audio.qiraathub.com/063%20Al-Munafiqoon/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/063.mp3"
   },
   {
     "id": "track-064-Abdul_Rasheed_Sufi",
     "title": "064 At-Taghabun",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 288771.67800453515,
-    "url": "https://audio.qiraathub.com/064 At-Taghabun/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-064-khalaf.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 289157.375,
+    "url": "https://audio.qiraathub.com/064%20At-Taghabun/Shubah/Abdul%20Rasheed%20Sufi/064.mp3"
   },
   {
-    "id": "track-065-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-065-Mahmoud_Khalil_Al_Husary",
     "title": "065 At-Talaq",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 355691.25,
-    "url": "https://audio.qiraathub.com/065 At-Talaq/Qaalun/Ali AbdulRahman Al Huthaify/065.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 526256.0,
+    "url": "https://audio.qiraathub.com/065%20At-Talaq/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-065.mp3"
   },
   {
     "id": "track-066-Abdul_Rasheed_Sufi",
     "title": "066 At-Tahrim",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 313242.3125,
-    "url": "https://audio.qiraathub.com/066 At-Tahrim/Shubah/Abdul Rasheed Sufi/066.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 327014.9433106576,
+    "url": "https://audio.qiraathub.com/066%20At-Tahrim/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-066-khalaf.mp3"
   },
   {
-    "id": "track-067-Mahmoud_Khalil_Al_Husary",
+    "id": "track-067-Abdul_Rasheed_Sufi",
     "title": "067 Al-Mulk",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 622376.0,
-    "url": "https://audio.qiraathub.com/067 Al-Mulk/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-067.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 357363.125,
+    "url": "https://audio.qiraathub.com/067%20Al-Mulk/Shubah/Abdul%20Rasheed%20Sufi/067.mp3"
   },
   {
-    "id": "track-068-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-068-Abdul_Rasheed_Sufi",
     "title": "068 Al-Qalam",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 420422.6875,
-    "url": "https://audio.qiraathub.com/068 Al-Qalam/Qaalun/Ali AbdulRahman Al Huthaify/068.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 389473.71882086166,
+    "url": "https://audio.qiraathub.com/068%20Al-Qalam/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-068-khalaf.mp3"
   },
   {
     "id": "track-069-Abdul_Rasheed_Sufi",
     "title": "069 Al-Haaqqa",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 362953.3125,
-    "url": "https://audio.qiraathub.com/069 Al-Haaqqa/Shubah/Abdul Rasheed Sufi/069.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 380004.33106575964,
+    "url": "https://audio.qiraathub.com/069%20Al-Haaqqa/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-069-khalaf.mp3"
   },
   {
     "id": "track-070-Mahmoud_Khalil_Al_Husary",
     "title": "070 Al-Maarij",
     "artist": "Mahmoud Khalil Al Husary (Warsh)",
     "duration": 459368.0,
-    "url": "https://audio.qiraathub.com/070 Al-Maarij/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-070.mp3"
+    "url": "https://audio.qiraathub.com/070%20Al-Maarij/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-070.mp3"
   },
   {
-    "id": "track-071-Mishary_Alafasy",
+    "id": "track-071-Abdul_Rasheed_Sufi",
     "title": "071 Nooh",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 335542.85714285716,
-    "url": "https://audio.qiraathub.com/071 Nooh/Ibn Dhakwan/Mishary Alafasy/Nooh.mp3"
-  },
-  {
-    "id": "track-072-Abdul_Rasheed_Sufi",
-    "title": "072 Al-Jinn",
     "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 336517.375,
-    "url": "https://audio.qiraathub.com/072 Al-Jinn/Shubah/Abdul Rasheed Sufi/072.mp3"
+    "duration": 264732.875,
+    "url": "https://audio.qiraathub.com/071%20Nooh/Shubah/Abdul%20Rasheed%20Sufi/071.mp3"
   },
   {
-    "id": "track-073-Mishary_Alafasy",
+    "id": "track-072-Mahmoud_Khalil_Al_Husary",
+    "title": "072 Al-Jinn",
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 479511.6875,
+    "url": "https://audio.qiraathub.com/072%20Al-Jinn/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/072.mp3"
+  },
+  {
+    "id": "track-073-Mahmoud_Khalil_Al_Husary",
     "title": "073 Al-Muzzammil",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 306120.0,
-    "url": "https://audio.qiraathub.com/073 Al-Muzzammil/Ibn Dhakwan/Mishary Alafasy/Al-Muzzammil.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 391557.375,
+    "url": "https://audio.qiraathub.com/073%20Al-Muzzammil/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/073.mp3"
   },
   {
-    "id": "track-074-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-074-Mishary_Alafasy",
     "title": "074 Al-Muddaththir",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 336648.0,
-    "url": "https://audio.qiraathub.com/074 Al-Muddaththir/Qaalun/Ali AbdulRahman Al Huthaify/074.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 396434.2857142857,
+    "url": "https://audio.qiraathub.com/074%20Al-Muddaththir/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Muddaththir.mp3"
   },
   {
-    "id": "track-075-Mahmoud_Khalil_Al_Husary",
+    "id": "track-075-Abdul_Rasheed_Sufi",
     "title": "075 Al-Qiyama",
-    "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 319508.0,
-    "url": "https://audio.qiraathub.com/075 Al-Qiyama/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-075.mp3"
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 184719.8125,
+    "url": "https://audio.qiraathub.com/075%20Al-Qiyama/Doori%20Basri/Abdul%20Rasheed%20Sufi/075.mp3"
   },
   {
-    "id": "track-076-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-076-Mishary_Alafasy",
     "title": "076 Al-Insan",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 302688.8125,
-    "url": "https://audio.qiraathub.com/076 Al-Insan/Qaalun/Ali AbdulRahman Al Huthaify/076.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 399072.6530612245,
+    "url": "https://audio.qiraathub.com/076%20Al-Insan/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Insan.mp3"
   },
   {
-    "id": "track-077-Abdul_Rasheed_Sufi",
+    "id": "track-077-Mahmoud_Khalil_Al_Husary",
     "title": "077 Al-Mursalat",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 270930.875,
-    "url": "https://audio.qiraathub.com/077 Al-Mursalat/Soosi/Abdul Rasheed Sufi/077.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 421748.0,
+    "url": "https://audio.qiraathub.com/077%20Al-Mursalat/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-077.mp3"
   },
   {
-    "id": "track-078-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-078-Abdul_Rasheed_Sufi",
     "title": "078 An-Naba",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 239603.125,
-    "url": "https://audio.qiraathub.com/078 An-Naba/Qaalun/Ali AbdulRahman Al Huthaify/078.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 250086.75,
+    "url": "https://audio.qiraathub.com/078%20An-Naba/Soosi/Abdul%20Rasheed%20Sufi/078.mp3"
   },
   {
     "id": "track-079-Abdul_Rasheed_Sufi",
     "title": "079 An-Naziat",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 265574.9433106576,
-    "url": "https://audio.qiraathub.com/079 An-Naziat/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-079-khalaf.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 238218.625,
+    "url": "https://audio.qiraathub.com/079%20An-Naziat/Abul%20Harith/Abdul%20Rasheed%20Sufi/079.mp3"
   },
   {
     "id": "track-080-Abdul_Rasheed_Sufi",
     "title": "080 Abasa",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 184066.75,
-    "url": "https://audio.qiraathub.com/080 Abasa/Shubah/Abdul Rasheed Sufi/080.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 191040.41666666666,
+    "url": "https://audio.qiraathub.com/080%20Abasa/Soosi/Abdul%20Rasheed%20Sufi/080.mp3"
   },
   {
-    "id": "track-081-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-081-Abdul_Rasheed_Sufi",
     "title": "081 At-Takwir",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 152275.75,
-    "url": "https://audio.qiraathub.com/081 At-Takwir/Qaalun/Ali AbdulRahman Al Huthaify/081.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 137751.6875,
+    "url": "https://audio.qiraathub.com/081%20At-Takwir/Abul%20Harith/Abdul%20Rasheed%20Sufi/081.mp3"
   },
   {
     "id": "track-082-Abdul_Rasheed_Sufi",
     "title": "082 Al-Infitar",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 106822.6875,
-    "url": "https://audio.qiraathub.com/082 Al-Infitar/Shubah/Abdul Rasheed Sufi/082.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 111629.25,
+    "url": "https://audio.qiraathub.com/082%20Al-Infitar/Abul%20Harith/Abdul%20Rasheed%20Sufi/082.mp3"
   },
   {
     "id": "track-083-Mishary_Alafasy",
     "title": "083 Al-Mutaffifin",
     "artist": "Mishary Alafasy (Ibn Dhakwan)",
     "duration": 305711.02040816325,
-    "url": "https://audio.qiraathub.com/083 Al-Mutaffifin/Ibn Dhakwan/Mishary Alafasy/Al-Mutaffifin.mp3"
+    "url": "https://audio.qiraathub.com/083%20Al-Mutaffifin/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Mutaffifin.mp3"
   },
   {
-    "id": "track-084-Mishary_Alafasy",
+    "id": "track-084-Mahmoud_Khalil_Al_Husary",
     "title": "084 Al-Inshiqaq",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 173531.42857142855,
-    "url": "https://audio.qiraathub.com/084 Al-Inshiqaq/Ibn Dhakwan/Mishary Alafasy/Al-Inshiqaq.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 232892.0,
+    "url": "https://audio.qiraathub.com/084%20Al-Inshiqaq/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-084.mp3"
   },
   {
-    "id": "track-085-Abdul_Rasheed_Sufi",
+    "id": "track-085-Mishary_Alafasy",
     "title": "085 Al-Burooj",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 127015.375,
-    "url": "https://audio.qiraathub.com/085 Al-Burooj/Shubah/Abdul Rasheed Sufi/085.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 191640.0,
+    "url": "https://audio.qiraathub.com/085%20Al-Burooj/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Burooj.mp3"
   },
   {
     "id": "track-086-Abdul_Rasheed_Sufi",
     "title": "086 At-Tariq",
-    "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 79707.5625,
-    "url": "https://audio.qiraathub.com/086 At-Tariq/Shubah/Abdul Rasheed Sufi/086.mp3"
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 79318.79166666667,
+    "url": "https://audio.qiraathub.com/086%20At-Tariq/Soosi/Abdul%20Rasheed%20Sufi/086.mp3"
   },
   {
-    "id": "track-087-Mishary_Alafasy",
+    "id": "track-087-Abdul_Rasheed_Sufi",
     "title": "087 Al-Ala",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 117888.0,
-    "url": "https://audio.qiraathub.com/087 Al-Ala/Ibn Dhakwan/Mishary Alafasy/Al-Ala.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 87544.3125,
+    "url": "https://audio.qiraathub.com/087%20Al-Ala/Abul%20Harith/Abdul%20Rasheed%20Sufi/087.mp3"
   },
   {
     "id": "track-088-Abdul_Rasheed_Sufi",
     "title": "088 Al-Ghashiya",
     "artist": "Abdul Rasheed Sufi (Shubah)",
     "duration": 61787.5625,
-    "url": "https://audio.qiraathub.com/088 Al-Ghashiya/Shubah/Abdul Rasheed Sufi/088.mp3"
+    "url": "https://audio.qiraathub.com/088%20Al-Ghashiya/Shubah/Abdul%20Rasheed%20Sufi/088.mp3"
   },
   {
-    "id": "track-089-Abdul_Rasheed_Sufi",
+    "id": "track-089-Ali_AbdulRahman_Al_Huthaify",
     "title": "089 Al-Fajr",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 156899.4375,
-    "url": "https://audio.qiraathub.com/089 Al-Fajr/Doori Basri/Abdul Rasheed Sufi/089.mp3"
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 178163.125,
+    "url": "https://audio.qiraathub.com/089%20Al-Fajr/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/089.mp3"
   },
   {
-    "id": "track-090-Mishary_Alafasy",
+    "id": "track-090-Mahmoud_Khalil_Al_Husary",
     "title": "090 Al-Balad",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 126720.0,
-    "url": "https://audio.qiraathub.com/090 Al-Balad/Ibn Dhakwan/Mishary Alafasy/Al-Balad.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 182107.5625,
+    "url": "https://audio.qiraathub.com/090%20Al-Balad/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/090.mp3"
   },
   {
     "id": "track-091-Abdul_Rasheed_Sufi",
     "title": "091 Ash-Shams",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 76049.125,
-    "url": "https://audio.qiraathub.com/091 Ash-Shams/Soosi/Abdul Rasheed Sufi/091.mp3"
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 83135.75963718821,
+    "url": "https://audio.qiraathub.com/091%20Ash-Shams/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-091-khalaf.mp3"
   },
   {
     "id": "track-092-Ali_AbdulRahman_Al_Huthaify",
     "title": "092 Al-Lail",
     "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
     "duration": 101650.4375,
-    "url": "https://audio.qiraathub.com/092 Al-Lail/Qaalun/Ali AbdulRahman Al Huthaify/092.mp3"
+    "url": "https://audio.qiraathub.com/092%20Al-Lail/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/092.mp3"
   },
   {
-    "id": "track-093-Abdul_Rasheed_Sufi",
+    "id": "track-093-Mahmoud_Khalil_Al_Husary",
     "title": "093 Ad-Dhuha",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 54315.45833333333,
-    "url": "https://audio.qiraathub.com/093 Ad-Dhuha/Soosi/Abdul Rasheed Sufi/093.mp3"
-  },
-  {
-    "id": "track-094-Ali_AbdulRahman_Al_Huthaify",
-    "title": "094 Al-Inshirah",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 36396.5625,
-    "url": "https://audio.qiraathub.com/094 Al-Inshirah/Qaalun/Ali AbdulRahman Al Huthaify/094.mp3"
-  },
-  {
-    "id": "track-095-Mahmoud_Khalil_Al_Husary",
-    "title": "095 At-Tin",
     "artist": "Mahmoud Khalil Al Husary (Warsh)",
-    "duration": 84500.0,
-    "url": "https://audio.qiraathub.com/095 At-Tin/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-095.mp3"
+    "duration": 91304.0,
+    "url": "https://audio.qiraathub.com/093%20Ad-Dhuha/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-093.mp3"
   },
   {
-    "id": "track-096-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-094-Abdul_Rasheed_Sufi",
+    "title": "094 Al-Inshirah",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 33601.5,
+    "url": "https://audio.qiraathub.com/094%20Al-Inshirah/Abul%20Harith/Abdul%20Rasheed%20Sufi/094.mp3"
+  },
+  {
+    "id": "track-095-Abdul_Rasheed_Sufi",
+    "title": "095 At-Tin",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 42692.0625,
+    "url": "https://audio.qiraathub.com/095%20At-Tin/Doori%20Basri/Abdul%20Rasheed%20Sufi/095.mp3"
+  },
+  {
+    "id": "track-096-Abdul_Rasheed_Sufi",
     "title": "096 Al-Alaq",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 89581.875,
-    "url": "https://audio.qiraathub.com/096 Al-Alaq/Qaalun/Ali AbdulRahman Al Huthaify/096.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 79368.0,
+    "url": "https://audio.qiraathub.com/096%20Al-Alaq/Shubah/Abdul%20Rasheed%20Sufi/096.mp3"
   },
   {
-    "id": "track-097-Abdul_Rasheed_Sufi",
+    "id": "track-097-Mahmoud_Khalil_Al_Husary",
     "title": "097 Al-Qadr",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 56569.22902494331,
-    "url": "https://audio.qiraathub.com/097 Al-Qadr/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-097-khalaf.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 58688.0,
+    "url": "https://audio.qiraathub.com/097%20Al-Qadr/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-097.mp3"
   },
   {
-    "id": "track-098-Abdul_Rasheed_Sufi",
+    "id": "track-098-Mishary_Alafasy",
     "title": "098 Al-Bayyina",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 102639.20833333333,
-    "url": "https://audio.qiraathub.com/098 Al-Bayyina/Soosi/Abdul Rasheed Sufi/098.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 152764.08163265308,
+    "url": "https://audio.qiraathub.com/098%20Al-Bayyina/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Bayyina.mp3"
   },
   {
     "id": "track-099-Abdul_Rasheed_Sufi",
     "title": "099 Az-Zalzala",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 58632.902494331065,
-    "url": "https://audio.qiraathub.com/099 Az-Zalzala/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-099-khalaf.mp3"
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 47394.125,
+    "url": "https://audio.qiraathub.com/099%20Az-Zalzala/Abul%20Harith/Abdul%20Rasheed%20Sufi/099.mp3"
   },
   {
-    "id": "track-100-Ali_AbdulRahman_Al_Huthaify",
+    "id": "track-100-Abdul_Rasheed_Sufi",
     "title": "100 Al-Adiyat",
-    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
-    "duration": 59567.1875,
-    "url": "https://audio.qiraathub.com/100 Al-Adiyat/Qaalun/Ali AbdulRahman Al Huthaify/100.mp3"
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 50110.875,
+    "url": "https://audio.qiraathub.com/100%20Al-Adiyat/Doori%20Basri/Abdul%20Rasheed%20Sufi/100.mp3"
   },
   {
     "id": "track-101-Abdul_Rasheed_Sufi",
     "title": "101 Al-Qaria",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 45900.875,
-    "url": "https://audio.qiraathub.com/101 Al-Qaria/Soosi/Abdul Rasheed Sufi/101.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 46166.375,
+    "url": "https://audio.qiraathub.com/101%20Al-Qaria/Shubah/Abdul%20Rasheed%20Sufi/101.mp3"
   },
   {
     "id": "track-102-Mahmoud_Khalil_Al_Husary",
     "title": "102 At-Takathur",
     "artist": "Mahmoud Khalil Al Husary (Warsh)",
     "duration": 74420.0,
-    "url": "https://audio.qiraathub.com/102 At-Takathur/Warsh/Mahmoud Khalil Al Husary/qurancentral.com-102.mp3"
+    "url": "https://audio.qiraathub.com/102%20At-Takathur/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-102.mp3"
   },
   {
     "id": "track-103-Abdul_Rasheed_Sufi",
     "title": "103 Al-Asr",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 29898.208616780044,
-    "url": "https://audio.qiraathub.com/103 Al-Asr/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-103-khalaf.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 21663.5,
+    "url": "https://audio.qiraathub.com/103%20Al-Asr/Shubah/Abdul%20Rasheed%20Sufi/103.mp3"
   },
   {
-    "id": "track-104-Abdul_Rasheed_Sufi",
+    "id": "track-104-Mahmoud_Khalil_Al_Husary",
     "title": "104 Al-Humaza",
-    "artist": "Abdul Rasheed Sufi (Doori Basri)",
-    "duration": 42457.0,
-    "url": "https://audio.qiraathub.com/104 Al-Humaza/Doori Basri/Abdul Rasheed Sufi/104.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 91279.8125,
+    "url": "https://audio.qiraathub.com/104%20Al-Humaza/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/104.mp3"
   },
   {
     "id": "track-105-Mahmoud_Khalil_Al_Husary",
     "title": "105 Al-Fil",
     "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
     "duration": 63119.8125,
-    "url": "https://audio.qiraathub.com/105 Al-Fil/Doori Basri/Mahmoud Khalil Al Husary/105.mp3"
+    "url": "https://audio.qiraathub.com/105%20Al-Fil/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/105.mp3"
   },
   {
-    "id": "track-106-Mishary_Alafasy",
+    "id": "track-106-Mahmoud_Khalil_Al_Husary",
     "title": "106 Quraish",
-    "artist": "Mishary Alafasy (Ibn Dhakwan)",
-    "duration": 51722.44897959184,
-    "url": "https://audio.qiraathub.com/106 Quraish/Ibn Dhakwan/Mishary Alafasy/Quraish.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 52604.0,
+    "url": "https://audio.qiraathub.com/106%20Quraish/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-106.mp3"
   },
   {
-    "id": "track-107-Mahmoud_Khalil_Al_Husary",
+    "id": "track-107-Mishary_Alafasy",
     "title": "107 Al-Maun",
-    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
-    "duration": 74561.5,
-    "url": "https://audio.qiraathub.com/107 Al-Maun/Doori Basri/Mahmoud Khalil Al Husary/107.mp3"
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 66648.0,
+    "url": "https://audio.qiraathub.com/107%20Al-Maun/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Maun.mp3"
   },
   {
     "id": "track-108-Abdul_Rasheed_Sufi",
     "title": "108 Al-Kauther",
-    "artist": "Abdul Rasheed Sufi (Khalaf)",
-    "duration": 25431.26984126984,
-    "url": "https://audio.qiraathub.com/108 Al-Kauther/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-108-khalaf.mp3"
-  },
-  {
-    "id": "track-109-Abdul_Rasheed_Sufi",
-    "title": "109 Al-Kafiroon",
     "artist": "Abdul Rasheed Sufi (Shubah)",
-    "duration": 34646.375,
-    "url": "https://audio.qiraathub.com/109 Al-Kafiroon/Shubah/Abdul Rasheed Sufi/109.mp3"
+    "duration": 15629.25,
+    "url": "https://audio.qiraathub.com/108%20Al-Kauther/Shubah/Abdul%20Rasheed%20Sufi/108.mp3"
   },
   {
-    "id": "track-110-Abdul_Rasheed_Sufi",
+    "id": "track-109-Mahmoud_Khalil_Al_Husary",
+    "title": "109 Al-Kafiroon",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 65060.0,
+    "url": "https://audio.qiraathub.com/109%20Al-Kafiroon/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-109.mp3"
+  },
+  {
+    "id": "track-110-Mahmoud_Khalil_Al_Husary",
     "title": "110 An-Nasr",
-    "artist": "Abdul Rasheed Sufi (Soosi)",
-    "duration": 24720.166666666668,
-    "url": "https://audio.qiraathub.com/110 An-Nasr/Soosi/Abdul Rasheed Sufi/110.mp3"
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 45368.0,
+    "url": "https://audio.qiraathub.com/110%20An-Nasr/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-110.mp3"
   },
   {
     "id": "track-111-Abdul_Rasheed_Sufi",
     "title": "111 Al-Masadd",
     "artist": "Abdul Rasheed Sufi (Khalaf)",
     "duration": 39981.47392290249,
-    "url": "https://audio.qiraathub.com/111 Al-Masadd/Khalaf/Abdul Rasheed Sufi/abdur-rasheed-sufi-111-khalaf (1).mp3"
+    "url": "https://audio.qiraathub.com/111%20Al-Masadd/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-111-khalaf%20%281%29.mp3"
   },
   {
     "id": "track-112-Abdul_Rasheed_Sufi",
     "title": "112 Al-Ikhlas",
     "artist": "Abdul Rasheed Sufi (Doori Basri)",
     "duration": 15002.3125,
-    "url": "https://audio.qiraathub.com/112 Al-Ikhlas/Doori Basri/Abdul Rasheed Sufi/112.mp3"
+    "url": "https://audio.qiraathub.com/112%20Al-Ikhlas/Doori%20Basri/Abdul%20Rasheed%20Sufi/112.mp3"
+  },
+  {
+    "id": "track-113-Abdul_Rasheed_Sufi",
+    "title": "113 Al-Falaq",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 23883.9375,
+    "url": "https://audio.qiraathub.com/113%20Al-Falaq/Doori%20Basri/Abdul%20Rasheed%20Sufi/113.mp3"
+  },
+  {
+    "id": "track-114-Mahmoud_Khalil_Al_Husary",
+    "title": "114 An-Nas",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 51704.0,
+    "url": "https://audio.qiraathub.com/114%20An-Nas/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-114.mp3"
+  },
+  {
+    "id": "track-001-Abdul_Rasheed_Sufi",
+    "title": "001 Al-Fatiha",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 46401.5,
+    "url": "https://audio.qiraathub.com/001%20Al-Fatiha/Doori%20Basri/Abdul%20Rasheed%20Sufi/001.mp3"
+  },
+  {
+    "id": "track-002-Abdul_Rasheed_Sufi",
+    "title": "002 Al-Baqara",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 7271609.625,
+    "url": "https://audio.qiraathub.com/002%20Al-Baqara/Doori%20Basri/Abdul%20Rasheed%20Sufi/002.mp3"
+  },
+  {
+    "id": "track-003-Abdul_Rasheed_Sufi",
+    "title": "003 Aal-E-Imran",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 3707278.4166666665,
+    "url": "https://audio.qiraathub.com/003%20Aal-E-Imran/Soosi/Abdul%20Rasheed%20Sufi/003.mp3"
+  },
+  {
+    "id": "track-004-Ali_AbdulRahman_Al_Huthaify",
+    "title": "004 An-Nisa",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 4237722.3125,
+    "url": "https://audio.qiraathub.com/004%20An-Nisa/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/004.mp3"
+  },
+  {
+    "id": "track-005-Abdul_Rasheed_Sufi",
+    "title": "005 Al-Ma-idah",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 3291227.5625,
+    "url": "https://audio.qiraathub.com/005%20Al-Ma-idah/Shubah/Abdul%20Rasheed%20Sufi/005.mp3"
+  },
+  {
+    "id": "track-006-Abdul_Rasheed_Sufi",
+    "title": "006 Al-Anaam",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 3702845.14739229,
+    "url": "https://audio.qiraathub.com/006%20Al-Anaam/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-006-khalaf.mp3"
+  },
+  {
+    "id": "track-007-Mishary_Alafasy",
+    "title": "007 Al-Araf",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 5025802.448979592,
+    "url": "https://audio.qiraathub.com/007%20Al-Araf/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Araf.mp3"
+  },
+  {
+    "id": "track-008-Abdul_Rasheed_Sufi",
+    "title": "008 Al-Anfal",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 1264645.0833333333,
+    "url": "https://audio.qiraathub.com/008%20Al-Anfal/Soosi/Abdul%20Rasheed%20Sufi/008.mp3"
+  },
+  {
+    "id": "track-009-Mahmoud_Khalil_Al_Husary",
+    "title": "009 At-Tawba",
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 3675959.0,
+    "url": "https://audio.qiraathub.com/009%20At-Tawba/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/009.mp3"
+  },
+  {
+    "id": "track-010-Ali_AbdulRahman_Al_Huthaify",
+    "title": "010 Yunus",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 2223237.375,
+    "url": "https://audio.qiraathub.com/010%20Yunus/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/010.mp3"
+  },
+  {
+    "id": "track-011-Mishary_Alafasy",
+    "title": "011 Hud",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 2855975.9863945576,
+    "url": "https://audio.qiraathub.com/011%20Hud/Ibn%20Dhakwan/Mishary%20Alafasy/Hud.mp3"
+  },
+  {
+    "id": "track-012-Abdul_Rasheed_Sufi",
+    "title": "012 Yusuf",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 1896863.5,
+    "url": "https://audio.qiraathub.com/012%20Yusuf/Doori%20Basri/Abdul%20Rasheed%20Sufi/012.mp3"
+  },
+  {
+    "id": "track-013-Abdul_Rasheed_Sufi",
+    "title": "013 Ar-Rad",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 888824.3125,
+    "url": "https://audio.qiraathub.com/013%20Ar-Rad/Shubah/Abdul%20Rasheed%20Sufi/013.mp3"
+  },
+  {
+    "id": "track-014-Abdul_Rasheed_Sufi",
+    "title": "014 Ibrahim",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 981356.1678004535,
+    "url": "https://audio.qiraathub.com/014%20Ibrahim/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-014-khalaf.mp3"
+  },
+  {
+    "id": "track-015-Abdul_Rasheed_Sufi",
+    "title": "015 Al-Hijr",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 774956.5625,
+    "url": "https://audio.qiraathub.com/015%20Al-Hijr/Shubah/Abdul%20Rasheed%20Sufi/015.mp3"
+  },
+  {
+    "id": "track-016-Abdul_Rasheed_Sufi",
+    "title": "016 An-Nahl",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 2041503.5,
+    "url": "https://audio.qiraathub.com/016%20An-Nahl/Abul%20Harith/Abdul%20Rasheed%20Sufi/016.mp3"
+  },
+  {
+    "id": "track-017-Abdul_Rasheed_Sufi",
+    "title": "017 Al-Isra",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 1681666.75,
+    "url": "https://audio.qiraathub.com/017%20Al-Isra/Abul%20Harith/Abdul%20Rasheed%20Sufi/017.mp3"
+  },
+  {
+    "id": "track-018-Mahmoud_Khalil_Al_Husary",
+    "title": "018 Al-Kahf",
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 2547991.6875,
+    "url": "https://audio.qiraathub.com/018%20Al-Kahf/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/018.mp3"
+  },
+  {
+    "id": "track-019-Mishary_Alafasy",
+    "title": "019 Maryam",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 1404447.3469387756,
+    "url": "https://audio.qiraathub.com/019%20Maryam/Ibn%20Dhakwan/Mishary%20Alafasy/Maryam.mp3"
+  },
+  {
+    "id": "track-020-Abdul_Rasheed_Sufi",
+    "title": "020 Ta-Ha",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 1536373.6875,
+    "url": "https://audio.qiraathub.com/020%20Ta-Ha/Abul%20Harith/Abdul%20Rasheed%20Sufi/020.mp3"
+  },
+  {
+    "id": "track-021-Abdul_Rasheed_Sufi",
+    "title": "021 Al-Anbiya",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 1453872.0861678005,
+    "url": "https://audio.qiraathub.com/021%20Al-Anbiya/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-021-khalaf.mp3"
+  },
+  {
+    "id": "track-022-Abdul_Rasheed_Sufi",
+    "title": "022 Al-Hajj",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 1345314.125,
+    "url": "https://audio.qiraathub.com/022%20Al-Hajj/Shubah/Abdul%20Rasheed%20Sufi/022.mp3"
+  },
+  {
+    "id": "track-023-Abdul_Rasheed_Sufi",
+    "title": "023 Al-Muminoon",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 1173167.1875,
+    "url": "https://audio.qiraathub.com/023%20Al-Muminoon/Abul%20Harith/Abdul%20Rasheed%20Sufi/023.mp3"
+  },
+  {
+    "id": "track-024-Mishary_Alafasy",
+    "title": "024 An-Noor",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 1895303.990929705,
+    "url": "https://audio.qiraathub.com/024%20An-Noor/Ibn%20Dhakwan/Mishary%20Alafasy/An-Noor.mp3"
+  },
+  {
+    "id": "track-025-Abdul_Rasheed_Sufi",
+    "title": "025 Al-Furqan",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 988716.5625,
+    "url": "https://audio.qiraathub.com/025%20Al-Furqan/Abul%20Harith/Abdul%20Rasheed%20Sufi/025.mp3"
+  },
+  {
+    "id": "track-026-Abdul_Rasheed_Sufi",
+    "title": "026 Ash-Shuara",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 1581722.3125,
+    "url": "https://audio.qiraathub.com/026%20Ash-Shuara/Abul%20Harith/Abdul%20Rasheed%20Sufi/026.mp3"
+  },
+  {
+    "id": "track-027-Mahmoud_Khalil_Al_Husary",
+    "title": "027 An-Naml",
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 1933957.375,
+    "url": "https://audio.qiraathub.com/027%20An-Naml/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/027.mp3"
+  },
+  {
+    "id": "track-028-Mahmoud_Khalil_Al_Husary",
+    "title": "028 Al-Qasas",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 2952476.0,
+    "url": "https://audio.qiraathub.com/028%20Al-Qasas/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-028.mp3"
+  },
+  {
+    "id": "track-029-Mahmoud_Khalil_Al_Husary",
+    "title": "029 Al-Ankaboot",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 1986344.0,
+    "url": "https://audio.qiraathub.com/029%20Al-Ankaboot/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-029.mp3"
+  },
+  {
+    "id": "track-030-Mishary_Alafasy",
+    "title": "030 Ar-Room",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 1263856.3265306123,
+    "url": "https://audio.qiraathub.com/030%20Ar-Room/Ibn%20Dhakwan/Mishary%20Alafasy/Ar-Room.mp3"
+  },
+  {
+    "id": "track-031-Abdul_Rasheed_Sufi",
+    "title": "031 Luqman",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 616817.3922902495,
+    "url": "https://audio.qiraathub.com/031%20Luqman/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-031-khalaf.mp3"
+  },
+  {
+    "id": "track-032-Mishary_Alafasy",
+    "title": "032 As-Sajda",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 617377.9591836735,
+    "url": "https://audio.qiraathub.com/032%20As-Sajda/Ibn%20Dhakwan/Mishary%20Alafasy/As-Sajda.mp3"
+  },
+  {
+    "id": "track-033-Ali_AbdulRahman_Al_Huthaify",
+    "title": "033 Al-Ahzab",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 1618137.0,
+    "url": "https://audio.qiraathub.com/033%20Al-Ahzab/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/033.mp3"
+  },
+  {
+    "id": "track-034-Ali_AbdulRahman_Al_Huthaify",
+    "title": "034 Saba",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 1069617.8125,
+    "url": "https://audio.qiraathub.com/034%20Saba/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/034.mp3"
+  },
+  {
+    "id": "track-035-Abdul_Rasheed_Sufi",
+    "title": "035 Fatir",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 925924.3310657596,
+    "url": "https://audio.qiraathub.com/035%20Fatir/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-035-khalaf.mp3"
+  },
+  {
+    "id": "track-036-Mahmoud_Khalil_Al_Husary",
+    "title": "036 Ya-Seen",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 1408148.0,
+    "url": "https://audio.qiraathub.com/036%20Ya-Seen/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-036.mp3"
+  },
+  {
+    "id": "track-037-Mishary_Alafasy",
+    "title": "037 As-Saaffat",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 1529887.3469387754,
+    "url": "https://audio.qiraathub.com/037%20As-Saaffat/Ibn%20Dhakwan/Mishary%20Alafasy/As-Saaffat.mp3"
+  },
+  {
+    "id": "track-038-Ali_AbdulRahman_Al_Huthaify",
+    "title": "038 Sad",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 954914.125,
+    "url": "https://audio.qiraathub.com/038%20Sad/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/038.mp3"
+  },
+  {
+    "id": "track-039-Abdul_Rasheed_Sufi",
+    "title": "039 Az-Zumar",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 1412036.9841269841,
+    "url": "https://audio.qiraathub.com/039%20Az-Zumar/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-039-khalaf.mp3"
+  },
+  {
+    "id": "track-040-Mahmoud_Khalil_Al_Husary",
+    "title": "040 Ghafir",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 2422592.0,
+    "url": "https://audio.qiraathub.com/040%20Ghafir/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-040.mp3"
+  },
+  {
+    "id": "track-041-Abdul_Rasheed_Sufi",
+    "title": "041 Fussilat",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 923998.7083333333,
+    "url": "https://audio.qiraathub.com/041%20Fussilat/Soosi/Abdul%20Rasheed%20Sufi/041.mp3"
+  },
+  {
+    "id": "track-042-Abdul_Rasheed_Sufi",
+    "title": "042 Ash-Shura",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 930369.75,
+    "url": "https://audio.qiraathub.com/042%20Ash-Shura/Soosi/Abdul%20Rasheed%20Sufi/042.mp3"
+  },
+  {
+    "id": "track-043-Abdul_Rasheed_Sufi",
+    "title": "043 Az-Zukhruf",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 1058574.1269841269,
+    "url": "https://audio.qiraathub.com/043%20Az-Zukhruf/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-043-khalaf.mp3"
+  },
+  {
+    "id": "track-044-Mahmoud_Khalil_Al_Husary",
+    "title": "044 Ad-Dukhan",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 704888.0,
+    "url": "https://audio.qiraathub.com/044%20Ad-Dukhan/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-044.mp3"
+  },
+  {
+    "id": "track-045-Abdul_Rasheed_Sufi",
+    "title": "045 Al-Jathiya",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 573030.0625,
+    "url": "https://audio.qiraathub.com/045%20Al-Jathiya/Abul%20Harith/Abdul%20Rasheed%20Sufi/045.mp3"
+  },
+  {
+    "id": "track-046-Abdul_Rasheed_Sufi",
+    "title": "046 Al-Ahqaf",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 675795.75,
+    "url": "https://audio.qiraathub.com/046%20Al-Ahqaf/Shubah/Abdul%20Rasheed%20Sufi/046.mp3"
+  },
+  {
+    "id": "track-047-Abdul_Rasheed_Sufi",
+    "title": "047 Muhammad",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 667299.0249433107,
+    "url": "https://audio.qiraathub.com/047%20Muhammad/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-047-khalaf.mp3"
+  },
+  {
+    "id": "track-048-Ali_AbdulRahman_Al_Huthaify",
+    "title": "048 Al-Fath",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 671172.0625,
+    "url": "https://audio.qiraathub.com/048%20Al-Fath/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/048.mp3"
+  },
+  {
+    "id": "track-049-Abdul_Rasheed_Sufi",
+    "title": "049 Al-Hujraat",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 390610.2916666667,
+    "url": "https://audio.qiraathub.com/049%20Al-Hujraat/Soosi/Abdul%20Rasheed%20Sufi/049.mp3"
+  },
+  {
+    "id": "track-050-Abdul_Rasheed_Sufi",
+    "title": "050 Qaf",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 461414.9433106576,
+    "url": "https://audio.qiraathub.com/050%20Qaf/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-050-khalaf.mp3"
+  },
+  {
+    "id": "track-051-Mahmoud_Khalil_Al_Husary",
+    "title": "051 Adh-Dhariyat",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 709568.0,
+    "url": "https://audio.qiraathub.com/051%20Adh-Dhariyat/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-051.mp3"
+  },
+  {
+    "id": "track-052-Abdul_Rasheed_Sufi",
+    "title": "052 At-Tur",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 360870.75,
+    "url": "https://audio.qiraathub.com/052%20At-Tur/Soosi/Abdul%20Rasheed%20Sufi/052.mp3"
+  },
+  {
+    "id": "track-053-Abdul_Rasheed_Sufi",
+    "title": "053 An-Najm",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 399986.5416666666,
+    "url": "https://audio.qiraathub.com/053%20An-Najm/Soosi/Abdul%20Rasheed%20Sufi/053.mp3"
+  },
+  {
+    "id": "track-054-Abdul_Rasheed_Sufi",
+    "title": "054 Al-Qamar",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 407439.8125,
+    "url": "https://audio.qiraathub.com/054%20Al-Qamar/Doori%20Basri/Abdul%20Rasheed%20Sufi/054.mp3"
+  },
+  {
+    "id": "track-055-Mahmoud_Khalil_Al_Husary",
+    "title": "055 Ar-Rahman",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 952568.0,
+    "url": "https://audio.qiraathub.com/055%20Ar-Rahman/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-055.mp3"
+  },
+  {
+    "id": "track-056-Mahmoud_Khalil_Al_Husary",
+    "title": "056 Al-Waqia",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 973448.0,
+    "url": "https://audio.qiraathub.com/056%20Al-Waqia/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-056.mp3"
+  },
+  {
+    "id": "track-057-Abdul_Rasheed_Sufi",
+    "title": "057 Al-Hadid",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 741852.4943310657,
+    "url": "https://audio.qiraathub.com/057%20Al-Hadid/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-057-khalaf.mp3"
+  },
+  {
+    "id": "track-058-Abdul_Rasheed_Sufi",
+    "title": "058 Al-Mujadila",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 521725.5625,
+    "url": "https://audio.qiraathub.com/058%20Al-Mujadila/Doori%20Basri/Abdul%20Rasheed%20Sufi/058.mp3"
+  },
+  {
+    "id": "track-059-Ali_AbdulRahman_Al_Huthaify",
+    "title": "059 Al-Hashr",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 566394.9375,
+    "url": "https://audio.qiraathub.com/059%20Al-Hashr/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/059.mp3"
+  },
+  {
+    "id": "track-060-Mahmoud_Khalil_Al_Husary",
+    "title": "060 Al-Mumtahina",
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 801052.875,
+    "url": "https://audio.qiraathub.com/060%20Al-Mumtahina/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/060.mp3"
+  },
+  {
+    "id": "track-061-Abdul_Rasheed_Sufi",
+    "title": "061 As-Saff",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 247538.3333333333,
+    "url": "https://audio.qiraathub.com/061%20As-Saff/Soosi/Abdul%20Rasheed%20Sufi/061.mp3"
+  },
+  {
+    "id": "track-062-Mishary_Alafasy",
+    "title": "062 Al-Jumua",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 271080.0,
+    "url": "https://audio.qiraathub.com/062%20Al-Jumua/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Jumua.mp3"
+  },
+  {
+    "id": "track-063-Abdul_Rasheed_Sufi",
+    "title": "063 Al-Munafiqoon",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 234483.125,
+    "url": "https://audio.qiraathub.com/063%20Al-Munafiqoon/Abul%20Harith/Abdul%20Rasheed%20Sufi/063.mp3"
+  },
+  {
+    "id": "track-064-Abdul_Rasheed_Sufi",
+    "title": "064 At-Taghabun",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 269127.75,
+    "url": "https://audio.qiraathub.com/064%20At-Taghabun/Soosi/Abdul%20Rasheed%20Sufi/064.mp3"
+  },
+  {
+    "id": "track-065-Mishary_Alafasy",
+    "title": "065 At-Talaq",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 468636.7346938775,
+    "url": "https://audio.qiraathub.com/065%20At-Talaq/Ibn%20Dhakwan/Mishary%20Alafasy/At-Talaq.mp3"
+  },
+  {
+    "id": "track-066-Abdul_Rasheed_Sufi",
+    "title": "066 At-Tahrim",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 313242.3125,
+    "url": "https://audio.qiraathub.com/066%20At-Tahrim/Shubah/Abdul%20Rasheed%20Sufi/066.mp3"
+  },
+  {
+    "id": "track-067-Abdul_Rasheed_Sufi",
+    "title": "067 Al-Mulk",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 357363.125,
+    "url": "https://audio.qiraathub.com/067%20Al-Mulk/Shubah/Abdul%20Rasheed%20Sufi/067.mp3"
+  },
+  {
+    "id": "track-068-Mahmoud_Khalil_Al_Husary",
+    "title": "068 Al-Qalam",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 639152.0,
+    "url": "https://audio.qiraathub.com/068%20Al-Qalam/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-068.mp3"
+  },
+  {
+    "id": "track-069-Mahmoud_Khalil_Al_Husary",
+    "title": "069 Al-Haaqqa",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 551312.0,
+    "url": "https://audio.qiraathub.com/069%20Al-Haaqqa/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-069.mp3"
+  },
+  {
+    "id": "track-070-Mishary_Alafasy",
+    "title": "070 Al-Maarij",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 360672.6530612245,
+    "url": "https://audio.qiraathub.com/070%20Al-Maarij/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Maarij.mp3"
+  },
+  {
+    "id": "track-071-Abdul_Rasheed_Sufi",
+    "title": "071 Nooh",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 263792.5,
+    "url": "https://audio.qiraathub.com/071%20Nooh/Abul%20Harith/Abdul%20Rasheed%20Sufi/071.mp3"
+  },
+  {
+    "id": "track-072-Abdul_Rasheed_Sufi",
+    "title": "072 Al-Jinn",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 317475.5416666667,
+    "url": "https://audio.qiraathub.com/072%20Al-Jinn/Soosi/Abdul%20Rasheed%20Sufi/072.mp3"
+  },
+  {
+    "id": "track-073-Abdul_Rasheed_Sufi",
+    "title": "073 Al-Muzzammil",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 266410.86167800456,
+    "url": "https://audio.qiraathub.com/073%20Al-Muzzammil/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-073-khalaf.mp3"
+  },
+  {
+    "id": "track-074-Abdul_Rasheed_Sufi",
+    "title": "074 Al-Muddaththir",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 354123.9375,
+    "url": "https://audio.qiraathub.com/074%20Al-Muddaththir/Abul%20Harith/Abdul%20Rasheed%20Sufi/074.mp3"
+  },
+  {
+    "id": "track-075-Ali_AbdulRahman_Al_Huthaify",
+    "title": "075 Al-Qiyama",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 205983.5,
+    "url": "https://audio.qiraathub.com/075%20Al-Qiyama/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/075.mp3"
+  },
+  {
+    "id": "track-076-Abdul_Rasheed_Sufi",
+    "title": "076 Al-Insan",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 324976.5416666667,
+    "url": "https://audio.qiraathub.com/076%20Al-Insan/Soosi/Abdul%20Rasheed%20Sufi/076.mp3"
+  },
+  {
+    "id": "track-077-Abdul_Rasheed_Sufi",
+    "title": "077 Al-Mursalat",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 281979.84126984124,
+    "url": "https://audio.qiraathub.com/077%20Al-Mursalat/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-077-khalaf.mp3"
+  },
+  {
+    "id": "track-078-Ali_AbdulRahman_Al_Huthaify",
+    "title": "078 An-Naba",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 239603.125,
+    "url": "https://audio.qiraathub.com/078%20An-Naba/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/078.mp3"
+  },
+  {
+    "id": "track-079-Abdul_Rasheed_Sufi",
+    "title": "079 An-Naziat",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 205879.0,
+    "url": "https://audio.qiraathub.com/079%20An-Naziat/Doori%20Basri/Abdul%20Rasheed%20Sufi/079.mp3"
+  },
+  {
+    "id": "track-080-Mahmoud_Khalil_Al_Husary",
+    "title": "080 Abasa",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 292076.0,
+    "url": "https://audio.qiraathub.com/080%20Abasa/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-080.mp3"
+  },
+  {
+    "id": "track-081-Abdul_Rasheed_Sufi",
+    "title": "081 At-Takwir",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 131849.8333333333,
+    "url": "https://audio.qiraathub.com/081%20At-Takwir/Soosi/Abdul%20Rasheed%20Sufi/081.mp3"
+  },
+  {
+    "id": "track-082-Abdul_Rasheed_Sufi",
+    "title": "082 Al-Infitar",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 98724.75,
+    "url": "https://audio.qiraathub.com/082%20Al-Infitar/Doori%20Basri/Abdul%20Rasheed%20Sufi/082.mp3"
+  },
+  {
+    "id": "track-083-Mahmoud_Khalil_Al_Husary",
+    "title": "083 Al-Mutaffifin",
+    "artist": "Mahmoud Khalil Al Husary (Doori Basri)",
+    "duration": 361647.1875,
+    "url": "https://audio.qiraathub.com/083%20Al-Mutaffifin/Doori%20Basri/Mahmoud%20Khalil%20Al%20Husary/083.mp3"
+  },
+  {
+    "id": "track-084-Abdul_Rasheed_Sufi",
+    "title": "084 Al-Inshiqaq",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 158603.51473922902,
+    "url": "https://audio.qiraathub.com/084%20Al-Inshiqaq/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-084-khalaf.mp3"
+  },
+  {
+    "id": "track-085-Mahmoud_Khalil_Al_Husary",
+    "title": "085 Al-Burooj",
+    "artist": "Mahmoud Khalil Al Husary (Warsh)",
+    "duration": 230048.0,
+    "url": "https://audio.qiraathub.com/085%20Al-Burooj/Warsh/Mahmoud%20Khalil%20Al%20Husary/qurancentral.com-085.mp3"
+  },
+  {
+    "id": "track-086-Mishary_Alafasy",
+    "title": "086 At-Tariq",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 112535.51020408163,
+    "url": "https://audio.qiraathub.com/086%20At-Tariq/Ibn%20Dhakwan/Mishary%20Alafasy/At-Tariq.mp3"
+  },
+  {
+    "id": "track-087-Abdul_Rasheed_Sufi",
+    "title": "087 Al-Ala",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 87544.3125,
+    "url": "https://audio.qiraathub.com/087%20Al-Ala/Abul%20Harith/Abdul%20Rasheed%20Sufi/087.mp3"
+  },
+  {
+    "id": "track-088-Ali_AbdulRahman_Al_Huthaify",
+    "title": "088 Al-Ghashiya",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 121947.5625,
+    "url": "https://audio.qiraathub.com/088%20Al-Ghashiya/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/088.mp3"
+  },
+  {
+    "id": "track-089-Mishary_Alafasy",
+    "title": "089 Al-Fajr",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 226680.0,
+    "url": "https://audio.qiraathub.com/089%20Al-Fajr/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Fajr.mp3"
+  },
+  {
+    "id": "track-090-Abdul_Rasheed_Sufi",
+    "title": "090 Al-Balad",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 94344.83333333333,
+    "url": "https://audio.qiraathub.com/090%20Al-Balad/Soosi/Abdul%20Rasheed%20Sufi/090.mp3"
+  },
+  {
+    "id": "track-091-Abdul_Rasheed_Sufi",
+    "title": "091 Ash-Shams",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 83135.75963718821,
+    "url": "https://audio.qiraathub.com/091%20Ash-Shams/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-091-khalaf.mp3"
+  },
+  {
+    "id": "track-092-Abdul_Rasheed_Sufi",
+    "title": "092 Al-Lail",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 91628.125,
+    "url": "https://audio.qiraathub.com/092%20Al-Lail/Soosi/Abdul%20Rasheed%20Sufi/092.mp3"
+  },
+  {
+    "id": "track-093-Abdul_Rasheed_Sufi",
+    "title": "093 Ad-Dhuha",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 54315.45833333333,
+    "url": "https://audio.qiraathub.com/093%20Ad-Dhuha/Soosi/Abdul%20Rasheed%20Sufi/093.mp3"
+  },
+  {
+    "id": "track-094-Abdul_Rasheed_Sufi",
+    "title": "094 Al-Inshirah",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 44592.08616780045,
+    "url": "https://audio.qiraathub.com/094%20Al-Inshirah/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-094-khalaf.mp3"
+  },
+  {
+    "id": "track-095-Abdul_Rasheed_Sufi",
+    "title": "095 At-Tin",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 52650.86167800454,
+    "url": "https://audio.qiraathub.com/095%20At-Tin/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-095-khalaf.mp3"
+  },
+  {
+    "id": "track-096-Mishary_Alafasy",
+    "title": "096 Al-Alaq",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 117888.0,
+    "url": "https://audio.qiraathub.com/096%20Al-Alaq/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Ala.mp3"
+  },
+  {
+    "id": "track-097-Abdul_Rasheed_Sufi",
+    "title": "097 Al-Qadr",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 36057.0,
+    "url": "https://audio.qiraathub.com/097%20Al-Qadr/Doori%20Basri/Abdul%20Rasheed%20Sufi/097.mp3"
+  },
+  {
+    "id": "track-098-Ali_AbdulRahman_Al_Huthaify",
+    "title": "098 Al-Bayyina",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 117271.6875,
+    "url": "https://audio.qiraathub.com/098%20Al-Bayyina/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/098.mp3"
+  },
+  {
+    "id": "track-099-Abdul_Rasheed_Sufi",
+    "title": "099 Az-Zalzala",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 46584.3125,
+    "url": "https://audio.qiraathub.com/099%20Az-Zalzala/Doori%20Basri/Abdul%20Rasheed%20Sufi/099.mp3"
+  },
+  {
+    "id": "track-100-Mishary_Alafasy",
+    "title": "100 Al-Adiyat",
+    "artist": "Mishary Alafasy (Ibn Dhakwan)",
+    "duration": 90671.02040816325,
+    "url": "https://audio.qiraathub.com/100%20Al-Adiyat/Ibn%20Dhakwan/Mishary%20Alafasy/Al-Adiyat.mp3"
+  },
+  {
+    "id": "track-101-Abdul_Rasheed_Sufi",
+    "title": "101 Al-Qaria",
+    "artist": "Abdul Rasheed Sufi (Doori Basri)",
+    "duration": 46401.5,
+    "url": "https://audio.qiraathub.com/101%20Al-Qaria/Doori%20Basri/Abdul%20Rasheed%20Sufi/101.mp3"
+  },
+  {
+    "id": "track-102-Abdul_Rasheed_Sufi",
+    "title": "102 At-Takathur",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 38094.5,
+    "url": "https://audio.qiraathub.com/102%20At-Takathur/Shubah/Abdul%20Rasheed%20Sufi/102.mp3"
+  },
+  {
+    "id": "track-103-Abdul_Rasheed_Sufi",
+    "title": "103 Al-Asr",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 21663.5,
+    "url": "https://audio.qiraathub.com/103%20Al-Asr/Shubah/Abdul%20Rasheed%20Sufi/103.mp3"
+  },
+  {
+    "id": "track-104-Abdul_Rasheed_Sufi",
+    "title": "104 Al-Humaza",
+    "artist": "Abdul Rasheed Sufi (Abul Harith)",
+    "duration": 46636.5625,
+    "url": "https://audio.qiraathub.com/104%20Al-Humaza/Abul%20Harith/Abdul%20Rasheed%20Sufi/104.mp3"
+  },
+  {
+    "id": "track-105-Abdul_Rasheed_Sufi",
+    "title": "105 Al-Fil",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 31427.791666666668,
+    "url": "https://audio.qiraathub.com/105%20Al-Fil/Soosi/Abdul%20Rasheed%20Sufi/105.mp3"
+  },
+  {
+    "id": "track-106-Abdul_Rasheed_Sufi",
+    "title": "106 Quraish",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 36872.902494331065,
+    "url": "https://audio.qiraathub.com/106%20Quraish/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-106-khalaf.mp3"
+  },
+  {
+    "id": "track-107-Abdul_Rasheed_Sufi",
+    "title": "107 Al-Maun",
+    "artist": "Abdul Rasheed Sufi (Soosi)",
+    "duration": 34673.41666666667,
+    "url": "https://audio.qiraathub.com/107%20Al-Maun/Soosi/Abdul%20Rasheed%20Sufi/107.mp3"
+  },
+  {
+    "id": "track-108-Abdul_Rasheed_Sufi",
+    "title": "108 Al-Kauther",
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 15629.25,
+    "url": "https://audio.qiraathub.com/108%20Al-Kauther/Shubah/Abdul%20Rasheed%20Sufi/108.mp3"
+  },
+  {
+    "id": "track-109-Ali_AbdulRahman_Al_Huthaify",
+    "title": "109 Al-Kafiroon",
+    "artist": "Ali AbdulRahman Al Huthaify (Qaalun)",
+    "duration": 37023.5,
+    "url": "https://audio.qiraathub.com/109%20Al-Kafiroon/Qaalun/Ali%20AbdulRahman%20Al%20Huthaify/109.mp3"
+  },
+  {
+    "id": "track-110-Abdul_Rasheed_Sufi",
+    "title": "110 An-Nasr",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 37473.71882086168,
+    "url": "https://audio.qiraathub.com/110%20An-Nasr/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-110-khalaf.mp3"
+  },
+  {
+    "id": "track-111-Abdul_Rasheed_Sufi",
+    "title": "111 Al-Masadd",
+    "artist": "Abdul Rasheed Sufi (Khalaf)",
+    "duration": 39981.47392290249,
+    "url": "https://audio.qiraathub.com/111%20Al-Masadd/Khalaf/Abdul%20Rasheed%20Sufi/abdur-rasheed-sufi-111-khalaf%20%281%29.mp3"
+  },
+  {
+    "id": "track-112-yunus-aswailis-warsh",
+    "title": "112 Al-Ikhlas",
+    "artist": "yunus-aswailis-warsh (Warsh)",
+    "duration": 38624.625,
+    "url": "https://audio.qiraathub.com/112%20Al-Ikhlas/Warsh/yunus-aswailis-warsh/yunus-aswailis-warsh-qurancentral.com-112-al-ikhlas-2021-03-25-06-55-29.mp3"
   },
   {
     "id": "track-113-Abdul_Rasheed_Sufi",
     "title": "113 Al-Falaq",
     "artist": "Abdul Rasheed Sufi (Abul Harith)",
     "duration": 26208.8125,
-    "url": "https://audio.qiraathub.com/113 Al-Falaq/Abul Harith/Abdul Rasheed Sufi/113.mp3"
+    "url": "https://audio.qiraathub.com/113%20Al-Falaq/Abul%20Harith/Abdul%20Rasheed%20Sufi/113.mp3"
   },
   {
     "id": "track-114-Abdul_Rasheed_Sufi",
     "title": "114 An-Nas",
-    "artist": "Abdul Rasheed Sufi (Abul Harith)",
-    "duration": 33392.5,
-    "url": "https://audio.qiraathub.com/114 An-Nas/Abul Harith/Abdul Rasheed Sufi/114.mp3"
+    "artist": "Abdul Rasheed Sufi (Shubah)",
+    "duration": 30858.625,
+    "url": "https://audio.qiraathub.com/114%20An-Nas/Shubah/Abdul%20Rasheed%20Sufi/114.mp3"
   }
 ]

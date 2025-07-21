@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Dict, List
 import mutagen
 from mutagen.mp3 import MP3
+import urllib.parse
 
 # Configuration
 SOURCE_DIR = r"E:\Rehan Drive\Radio\all-surahs"
@@ -93,8 +94,12 @@ def generate_playlist(repetitions: int = 1) -> List[Dict]:
             # Generate a unique ID for the track
             track_id = f"track-{surah_number}-{recitation['reciter'].replace(' ', '_')}"
             
-            # Format the URL to point to the R2 bucket - using full folder name
-            r2_url = f"{R2_BASE_URL}/{surah_dir}/{recitation['qiraat']}/{recitation['reciter']}/{recitation['file']}"
+            # Format the URL to point to the R2 bucket - using full folder name with proper URL encoding
+            encoded_surah_dir = urllib.parse.quote(surah_dir)
+            encoded_qiraat = urllib.parse.quote(recitation['qiraat'])
+            encoded_reciter = urllib.parse.quote(recitation['reciter'])
+            encoded_file = urllib.parse.quote(recitation['file'])
+            r2_url = f"{R2_BASE_URL}/{encoded_surah_dir}/{encoded_qiraat}/{encoded_reciter}/{encoded_file}"
             
             # Create the playlist entry
             playlist_entry = {
