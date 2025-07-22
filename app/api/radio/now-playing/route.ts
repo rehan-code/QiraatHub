@@ -55,6 +55,7 @@ export async function GET() {
       });
     }
 
+    // Sum up durations from playlist (all in milliseconds)
     const playlistTotalDuration = tracks.reduce((total, track) => total + (track.duration || 0), 0);
 
     if (playlistTotalDuration === 0) {
@@ -67,8 +68,16 @@ export async function GET() {
       });
     }
 
-    // Calculate current position in the entire playlist loop (in seconds)
-    const currentGlobalTimeSeconds = (serverTime / 1000) % playlistTotalDuration;
+    // Use a fixed anchor date for playlist start time to ensure continuous playback
+    // This date should remain constant to avoid interruptions
+    // Using January 1, 2025 00:00:00 UTC as the anchor point
+    const playlistStartTime = new Date('2025-01-01T00:00:00.000Z').getTime();
+    
+    // Calculate how much time has elapsed since the playlist started
+    const elapsedTime = serverTime - playlistStartTime;
+    
+    // Calculate current position in the playlist loop (in milliseconds)
+    const currentGlobalTimeMs = elapsedTime % playlistTotalDuration;
 
     let cumulativeDuration = 0;
     let currentTrack: Track | null = null;
@@ -76,9 +85,9 @@ export async function GET() {
 
     for (const track of tracks) {
       const trackDuration = track.duration || 0;
-      if (currentGlobalTimeSeconds >= cumulativeDuration && currentGlobalTimeSeconds < cumulativeDuration + trackDuration) {
+      if (currentGlobalTimeMs >= cumulativeDuration && currentGlobalTimeMs < cumulativeDuration + trackDuration) {
         currentTrack = track;
-        currentTimeInTrack = currentGlobalTimeSeconds - cumulativeDuration;
+        currentTimeInTrack = currentGlobalTimeMs - cumulativeDuration;
         break;
       }
       cumulativeDuration += trackDuration;

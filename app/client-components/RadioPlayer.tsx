@@ -39,7 +39,6 @@ const RadioPlayer = () => {
     try {
       await audioRef.current.play();
     } catch (error) {
-      console.error("Playback was prevented:", error);
       setIsPlaying(false);
     }
   };
@@ -80,23 +79,23 @@ const RadioPlayer = () => {
       setError(null);
 
       if (data.currentTrack && audioRef.current) {
-        // Only change the source if it's different
-        if (audioRef.current.src !== data.currentTrack.url) {
-          console.log('Changing track to:', data.currentTrack.title);
-          audioRef.current.src = data.currentTrack.url;
-        }
+        // Convert from API milliseconds to seconds for audio element
+        const syncPositionMs = data.currentTime; // In milliseconds from the API
+        const syncPositionSec = syncPositionMs / 1000; // Convert to seconds for the audio element
         
-        // Only update time if we're not playing or if we need to sync a new track
-        // For playing tracks, avoid touching currentTime to prevent interruptions
-        if (!isPlaying && audioRef.current.paused) {
-          // Adjust for potential latency between server calculation and client fetch
-          const clientTimeAtFetch = Date.now();
-          const serverTimeDeltaMs = clientTimeAtFetch - data.serverTime;
-          const adjustedCurrentTime = data.currentTime + (serverTimeDeltaMs / 1000);
+        // If the source URL has changed, we need to set a new track
+        if (audioRef.current.src !== data.currentTrack.url) {
+          audioRef.current.src = data.currentTrack.url;
           
-          // Ensure currentTime is not beyond track duration
-          const trackDuration = data.currentTrack.duration || Infinity;
-          audioRef.current.currentTime = Math.max(0, Math.min(adjustedCurrentTime, trackDuration - 0.1));
+          // Always update currentTime for a new track for proper sync
+          audioRef.current.currentTime = syncPositionSec;
+        } else {
+          // For same track, only sync if we're significantly out of sync (>3 seconds difference)
+          // or if we're not actively playing (to avoid interruptions)
+          const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
+          if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
+            audioRef.current.currentTime = syncPositionSec;
+          }
         }
 
         if (shouldAutoPlay) {
@@ -219,7 +218,7 @@ const RadioPlayer = () => {
 
         {/* Track Info */}
         <div className="text-center flex-grow mx-3 overflow-hidden">
-          <p className="text-sm font-semibold truncate" title={currentTrack.title}>{currentTrack.title}</p>
+          <p className="text-md md:text-sm font-semibold truncate" title={currentTrack.title}>{currentTrack.title}</p>
           <p className="text-xs text-yellow-300 m-0 truncate" title={currentTrack.artist}>{currentTrack.artist || 'Unknown Artist'}</p>
         </div>
 
@@ -247,7 +246,6 @@ const RadioPlayer = () => {
         ref={audioRef}
         onEnded={handleTrackEnd}
         onError={(e) => {
-          console.error('Audio playback error:', e);
           // Don't immediately try to fetch on error - this can cause request loops
           // Instead, set an error state that the user can see
           setError('Error playing audio. Please try again.');
