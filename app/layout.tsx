@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "2TugvN9yHU7h6NcNpxjwUN34MzhCZruNCXkYLLfvM3I",
+  },
   openGraph: {
     title: "QiraatHub | Discover the 10 Qiraat",
     description: "Learn about the 10 distinct Qiraat (Quran recitation styles) with comprehensive resources, and educational materials",
