@@ -87,8 +87,31 @@ const RadioPlayer = () => {
         if (audioRef.current.src !== data.currentTrack.url) {
           audioRef.current.src = data.currentTrack.url;
           
-          // Always update currentTime for a new track for proper sync
-          audioRef.current.currentTime = syncPositionSec;
+          // Mobile browsers require waiting for loadedmetadata before setting currentTime
+          const setSyncPosition = () => {
+            if (audioRef.current) {
+              audioRef.current.currentTime = syncPositionSec;
+            }
+          };
+          
+          if (isMobile) {
+            // On mobile, wait for metadata to load before setting currentTime
+            const handleLoadedMetadata = () => {
+              setSyncPosition();
+              audioRef.current?.removeEventListener('loadedmetadata', handleLoadedMetadata);
+            };
+            
+            if (audioRef.current.readyState >= 1) {
+              // Metadata already loaded
+              setSyncPosition();
+            } else {
+              // Wait for metadata to load
+              audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
+            }
+          } else {
+            // Desktop can set currentTime immediately
+            setSyncPosition();
+          }
         } else {
           // For same track, only sync if we're significantly out of sync (>3 seconds difference)
           // or if we're not actively playing (to avoid interruptions)
