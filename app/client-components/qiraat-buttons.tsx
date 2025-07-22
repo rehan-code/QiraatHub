@@ -47,7 +47,7 @@ export default function QiraatButtons() {
     };
 
     fetchQiraat();
-  }, [selectedSurah]);
+  }, [selectedSurah, setSelectedQiraat]);
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">

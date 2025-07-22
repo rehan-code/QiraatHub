@@ -38,7 +38,7 @@ const RadioPlayer = () => {
     
     try {
       await audioRef.current.play();
-    } catch (error) {
+    } catch {
       setIsPlaying(false);
     }
   };
@@ -112,7 +112,7 @@ const RadioPlayer = () => {
       setIsLoading(false);
       isFetchingRef.current = false;
     }
-  }, [setIsLoading, setNowPlaying, setError, setIsPlaying /* audioRef is stable. isPlaying was removed from deps */]);
+  }, [setIsLoading, setNowPlaying, setError, setIsPlaying, isPlaying /* audioRef is stable */]);
 
   useEffect(() => {
     // Fetch initial track info to display, but don't autoplay
@@ -245,7 +245,7 @@ const RadioPlayer = () => {
       <audio
         ref={audioRef}
         onEnded={handleTrackEnd}
-        onError={(e) => {
+        onError={() => {
           // Don't immediately try to fetch on error - this can cause request loops
           // Instead, set an error state that the user can see
           setError('Error playing audio. Please try again.');
