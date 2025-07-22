@@ -30,11 +30,19 @@ const RadioPlayer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   
   // Helper function to play audio (defined outside hooks)
   const playAudio = async () => {
     if (!audioRef.current) return;
+    
+    // On mobile, apply pending sync time after first user interaction
+    if (isMobile && hasUserInteracted && audioRef.current.dataset.pendingSyncTime) {
+      const pendingSyncTime = parseFloat(audioRef.current.dataset.pendingSyncTime);
+      audioRef.current.currentTime = pendingSyncTime;
+      delete audioRef.current.dataset.pendingSyncTime;
+    }
     
     try {
       await audioRef.current.play();
@@ -94,8 +102,12 @@ const RadioPlayer = () => {
             }
           };
           
-          if (isMobile) {
-            // On mobile, wait for metadata to load before setting currentTime
+          if (isMobile && !hasUserInteracted) {
+            // On mobile before first user interaction, we can't set currentTime reliably
+            // Store the sync position to apply after first play
+            audioRef.current.dataset.pendingSyncTime = syncPositionSec.toString();
+          } else if (isMobile) {
+            // On mobile after user interaction, wait for metadata to load
             const handleLoadedMetadata = () => {
               setSyncPosition();
               audioRef.current?.removeEventListener('loadedmetadata', handleLoadedMetadata);
@@ -113,11 +125,19 @@ const RadioPlayer = () => {
             setSyncPosition();
           }
         } else {
-          // For same track, only sync if we're significantly out of sync (>3 seconds difference)
-          // or if we're not actively playing (to avoid interruptions)
+          // For same track, sync based on platform and play state
           const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
-          if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
-            audioRef.current.currentTime = syncPositionSec;
+          
+          if (isMobile) {
+            // On mobile, always sync when user presses play (to ensure correct radio position)
+            if (shouldAutoPlay || !isPlaying || audioRef.current.paused || timeDrift > 3) {
+              audioRef.current.currentTime = syncPositionSec;
+            }
+          } else {
+            // On desktop, only sync if significantly out of sync or not playing
+            if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
+              audioRef.current.currentTime = syncPositionSec;
+            }
           }
         }
 
@@ -177,6 +197,11 @@ const RadioPlayer = () => {
     if (!nowPlaying?.currentTrack) return;
 
     if (!isPlaying) {
+      // Mark that user has interacted with audio
+      if (isMobile && !hasUserInteracted) {
+        setHasUserInteracted(true);
+      }
+      
       // If currently paused, re-sync and then play
       fetchNowPlaying(true);
     } else {
