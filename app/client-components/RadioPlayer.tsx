@@ -55,6 +55,17 @@ const RadioPlayer = () => {
     // Basic check for mobile devices (touch-enabled)
     const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsMobile(mobileCheck);
+    
+    // Check if user has previously interacted with audio (persists across refreshes)
+    if (mobileCheck) {
+      try {
+        const hasInteracted = localStorage.getItem('qiraathub-audio-interaction') === 'true';
+        setHasUserInteracted(hasInteracted);
+      } catch {
+        // localStorage might not be available, fallback to false
+        setHasUserInteracted(false);
+      }
+    }
   }, []);
 
   // Track if we're currently fetching to prevent multiple concurrent requests
@@ -200,6 +211,11 @@ const RadioPlayer = () => {
       // Mark that user has interacted with audio
       if (isMobile && !hasUserInteracted) {
         setHasUserInteracted(true);
+        try {
+          localStorage.setItem('qiraathub-audio-interaction', 'true');
+        } catch {
+          // localStorage might not be available, continue anyway
+        }
       }
       
       // If currently paused, re-sync and then play
