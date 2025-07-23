@@ -30,6 +30,8 @@ const RadioPlayer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
+  const [isIPhone, setIsIPhone] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   
@@ -40,11 +42,26 @@ const RadioPlayer = () => {
     // On mobile, apply pending sync time after first user interaction
     if (isMobile && hasUserInteracted && audioRef.current.dataset.pendingSyncTime) {
       const pendingSyncTime = parseFloat(audioRef.current.dataset.pendingSyncTime);
-      audioRef.current.currentTime = pendingSyncTime;
+      
+      if (isIPhone) {
+        // iPhone requires extra delay and different approach
+        await new Promise(resolve => setTimeout(resolve, 100));
+        if (audioRef.current) {
+          audioRef.current.currentTime = pendingSyncTime;
+        }
+      } else {
+        audioRef.current.currentTime = pendingSyncTime;
+      }
       delete audioRef.current.dataset.pendingSyncTime;
     }
     
     try {
+      // iPhone Chrome requires load() call before play
+      if (isIPhone && navigator.userAgent.includes('CriOS')) {
+        audioRef.current.load();
+        await new Promise(resolve => setTimeout(resolve, 200));
+      }
+      
       await audioRef.current.play();
     } catch {
       setIsPlaying(false);
@@ -55,6 +72,15 @@ const RadioPlayer = () => {
     // Basic check for mobile devices (touch-enabled)
     const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsMobile(mobileCheck);
+    
+    // Detect iOS Safari specifically
+    const isIOSCheck = /iPhone|iPod/.test(navigator.userAgent) || 
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    setIsIOS(isIOSCheck);
+    
+    // Detect iPhone specifically (more restrictive than iPad)
+    const isIPhoneCheck = /iPhone|iPod/.test(navigator.userAgent);
+    setIsIPhone(isIPhoneCheck);
     
     // Check if user has previously interacted with audio (persists across refreshes)
     if (mobileCheck) {
@@ -113,12 +139,41 @@ const RadioPlayer = () => {
             }
           };
           
-          if (isMobile && !hasUserInteracted) {
-            // On mobile before first user interaction, we can't set currentTime reliably
+          if ((isMobile && !hasUserInteracted) || (isIOS && !hasUserInteracted)) {
+            // On mobile/iOS before first user interaction, we can't set currentTime reliably
             // Store the sync position to apply after first play
             audioRef.current.dataset.pendingSyncTime = syncPositionSec.toString();
+          } else if (isIPhone) {
+            // iPhone requires the most aggressive handling
+            const handleLoadStart = () => {
+              // Wait for loadstart, then set currentTime
+              setTimeout(() => {
+                if (audioRef.current) {
+                  audioRef.current.currentTime = syncPositionSec;
+                }
+              }, 150);
+              audioRef.current?.removeEventListener('loadstart', handleLoadStart);
+            };
+            
+            audioRef.current.addEventListener('loadstart', handleLoadStart);
+            // Trigger load to ensure loadstart fires
+            audioRef.current.load();
+          } else if (isIOS) {
+            // iOS Safari requires special handling even after user interaction
+            const handleCanPlay = () => {
+              setSyncPosition();
+              audioRef.current?.removeEventListener('canplay', handleCanPlay);
+            };
+            
+            if (audioRef.current.readyState >= 3) {
+              // Can play through - safe to set currentTime on iOS
+              setSyncPosition();
+            } else {
+              // Wait for canplay event on iOS
+              audioRef.current.addEventListener('canplay', handleCanPlay);
+            }
           } else if (isMobile) {
-            // On mobile after user interaction, wait for metadata to load
+            // On non-iOS mobile after user interaction, wait for metadata to load
             const handleLoadedMetadata = () => {
               setSyncPosition();
               audioRef.current?.removeEventListener('loadedmetadata', handleLoadedMetadata);
@@ -139,8 +194,27 @@ const RadioPlayer = () => {
           // For same track, sync based on platform and play state
           const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
           
-          if (isMobile) {
-            // On mobile, always sync when user presses play (to ensure correct radio position)
+          if (isIPhone) {
+            // iPhone requires the most aggressive syncing
+            if (shouldAutoPlay || !isPlaying || audioRef.current.paused || timeDrift > 0.5) {
+              // Use longer delay and very low drift threshold for iPhone
+              setTimeout(() => {
+                if (audioRef.current && audioRef.current.readyState >= 2) {
+                  audioRef.current.currentTime = syncPositionSec;
+                }
+              }, 200);
+            }
+          } else if (isIOS) {
+            // On other iOS devices (iPad), be moderately aggressive
+            if (shouldAutoPlay || !isPlaying || audioRef.current.paused || timeDrift > 1) {
+              setTimeout(() => {
+                if (audioRef.current) {
+                  audioRef.current.currentTime = syncPositionSec;
+                }
+              }, 50);
+            }
+          } else if (isMobile) {
+            // On non-iOS mobile, always sync when user presses play
             if (shouldAutoPlay || !isPlaying || audioRef.current.paused || timeDrift > 3) {
               audioRef.current.currentTime = syncPositionSec;
             }
