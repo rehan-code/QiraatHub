@@ -31,8 +31,8 @@ const RadioPlayer = () => {
   const [isPlayLoading, setIsPlayLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [isIOS, setIsIOS] = useState(false);
-  const [pendingSyncPosition, setPendingSyncPosition] = useState<number | null>(null);
+  // const [isIOS, setIsIOS] = useState(false);
+  // const [pendingSyncPosition, setPendingSyncPosition] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   
   // Helper function to play audio (defined outside hooks)
@@ -41,32 +41,32 @@ const RadioPlayer = () => {
     
     try {
       // On iOS, apply pending sync position before playing (user gesture context)
-      if (isIOS && pendingSyncPosition !== null) {
-        // Multiple attempts to set currentTime on iOS
-        const maxAttempts = 3;
-        let attempts = 0;
+      // if (isIOS && pendingSyncPosition !== null) {
+      //   // Multiple attempts to set currentTime on iOS
+      //   const maxAttempts = 3;
+      //   let attempts = 0;
         
-        while (attempts < maxAttempts && pendingSyncPosition !== null) {
-          try {
-            // Wait a bit for audio to be ready
-            if (audioRef.current.readyState < 2) {
-              await new Promise(resolve => setTimeout(resolve, 100));
-            }
+      //   while (attempts < maxAttempts && pendingSyncPosition !== null) {
+      //     try {
+      //       // Wait a bit for audio to be ready
+      //       if (audioRef.current.readyState < 2) {
+      //         await new Promise(resolve => setTimeout(resolve, 100));
+      //       }
             
-            audioRef.current.currentTime = pendingSyncPosition;
-            setPendingSyncPosition(null);
-            break;
-          } catch (error) {
-            attempts++;
-            if (attempts >= maxAttempts) {
-              console.warn('Failed to set currentTime on iOS after', maxAttempts, 'attempts:', error);
-              setPendingSyncPosition(null); // Clear to prevent infinite retries
-            } else {
-              await new Promise(resolve => setTimeout(resolve, 50));
-            }
-          }
-        }
-      }
+      //       audioRef.current.currentTime = pendingSyncPosition;
+      //       setPendingSyncPosition(null);
+      //       break;
+      //     } catch (error) {
+      //       attempts++;
+      //       if (attempts >= maxAttempts) {
+      //         console.warn('Failed to set currentTime on iOS after', maxAttempts, 'attempts:', error);
+      //         setPendingSyncPosition(null); // Clear to prevent infinite retries
+      //       } else {
+      //         await new Promise(resolve => setTimeout(resolve, 50));
+      //       }
+      //     }
+      //   }
+      // }
       
       await audioRef.current.play();
       // Clear play loading only after successful play
@@ -85,8 +85,8 @@ const RadioPlayer = () => {
     setIsMobile(mobileCheck);
     
     // Detect iOS devices (iPhone, iPad, iPod)
-    const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    setIsIOS(isIOSDevice);
+    // const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    // setIsIOS(isIOSDevice);
     
     // Fetch initial track info on component mount
     fetchCurrentTrack();
@@ -162,32 +162,32 @@ const RadioPlayer = () => {
         if (data.currentTime !== undefined) {
           // If the source URL has changed, we need to set a new track
           if (audioRef.current.src !== data.currentTrack.url) {
-            if (isIOS) {
-              // On iOS, try a more aggressive approach: reload the audio element entirely
-              // Store the sync position and reload the audio
-              setPendingSyncPosition(syncPositionSec);
-              audioRef.current.load(); // Force reload
-              audioRef.current.src = data.currentTrack.url;
-            } else {
-              // Non-iOS: Standard approach
+            // if (isIOS) {
+            //   // On iOS, try a more aggressive approach: reload the audio element entirely
+            //   // Store the sync position and reload the audio
+            //   setPendingSyncPosition(syncPositionSec);
+            //   audioRef.current.load(); // Force reload
+            //   audioRef.current.src = data.currentTrack.url;
+            // } else {
+              // Standard approach
               audioRef.current.src = data.currentTrack.url;
               audioRef.current.currentTime = syncPositionSec;
-            }
+            // }
           } else {
             // For same track, only sync if we're significantly out of sync (>3 seconds difference)
             // or if we're not actively playing (to avoid interruptions)
             const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
             if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
-              if (isIOS) {
-                // On iOS, for same track sync, try immediate setting first, then store as pending
-                try {
-                  audioRef.current.currentTime = syncPositionSec;
-                } catch {
-                  setPendingSyncPosition(syncPositionSec);
-                }
-              } else {
+              // if (isIOS) {
+              //   // On iOS, for same track sync, try immediate setting first, then store as pending
+              //   try {
+              //     audioRef.current.currentTime = syncPositionSec;
+              //   } catch {
+              //     setPendingSyncPosition(syncPositionSec);
+              //   }
+              // } else {
                 audioRef.current.currentTime = syncPositionSec;
-              }
+              // }
             }
           }
         }
@@ -389,29 +389,29 @@ const RadioPlayer = () => {
             setIsMuted(audioRef.current.muted);
           }
         }}
-        onLoadedData={() => {
-          // On iOS, try to apply pending sync position when audio data is loaded
-          if (isIOS && pendingSyncPosition !== null && audioRef.current) {
-            try {
-              audioRef.current.currentTime = pendingSyncPosition;
-              setPendingSyncPosition(null);
-            } catch (error) {
-              // If it fails here, it will be applied in playAudio during user gesture
-              console.warn('Failed to set currentTime on loadedData (iOS):', error);
-            }
-          }
-        }}
-        onCanPlay={() => {
-          // Additional opportunity for iOS to set currentTime when audio is ready
-          if (isIOS && pendingSyncPosition !== null && audioRef.current && audioRef.current.readyState >= 3) {
-            try {
-              audioRef.current.currentTime = pendingSyncPosition;
-              setPendingSyncPosition(null);
-            } catch (error) {
-              console.warn('Failed to set currentTime on canPlay (iOS):', error);
-            }
-          }
-        }}
+        // onLoadedData={() => {
+        //   // On iOS, try to apply pending sync position when audio data is loaded
+        //   if (isIOS && pendingSyncPosition !== null && audioRef.current) {
+        //     try {
+        //       audioRef.current.currentTime = pendingSyncPosition;
+        //       setPendingSyncPosition(null);
+        //     } catch (error) {
+        //       // If it fails here, it will be applied in playAudio during user gesture
+        //       console.warn('Failed to set currentTime on loadedData (iOS):', error);
+        //     }
+        //   }
+        // }}
+        // onCanPlay={() => {
+        //   // Additional opportunity for iOS to set currentTime when audio is ready
+        //   if (isIOS && pendingSyncPosition !== null && audioRef.current && audioRef.current.readyState >= 3) {
+        //     try {
+        //       audioRef.current.currentTime = pendingSyncPosition;
+        //       setPendingSyncPosition(null);
+        //     } catch (error) {
+        //       console.warn('Failed to set currentTime on canPlay (iOS):', error);
+        //     }
+        //   }
+        // }}
         preload="auto"
       />
       {mainContent()}
