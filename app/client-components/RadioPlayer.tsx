@@ -31,8 +31,6 @@ const RadioPlayer = () => {
   const [isPlayLoading, setIsPlayLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  // const [isIOS, setIsIOS] = useState(false);
-  // const [pendingSyncPosition, setPendingSyncPosition] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   
   // Helper function to play audio (defined outside hooks)
@@ -40,57 +38,14 @@ const RadioPlayer = () => {
     if (!audioRef.current) return;
     
     try {
-      // On iOS, apply pending sync position before playing (user gesture context)
-      // if (isIOS && pendingSyncPosition !== null) {
-      //   // Multiple attempts to set currentTime on iOS
-      //   const maxAttempts = 3;
-      //   let attempts = 0;
-        
-      //   while (attempts < maxAttempts && pendingSyncPosition !== null) {
-      //     try {
-      //       // Wait a bit for audio to be ready
-      //       if (audioRef.current.readyState < 2) {
-      //         await new Promise(resolve => setTimeout(resolve, 100));
-      //       }
-            
-      //       audioRef.current.currentTime = pendingSyncPosition;
-      //       setPendingSyncPosition(null);
-      //       break;
-      //     } catch (error) {
-      //       attempts++;
-      //       if (attempts >= maxAttempts) {
-      //         console.warn('Failed to set currentTime on iOS after', maxAttempts, 'attempts:', error);
-      //         setPendingSyncPosition(null); // Clear to prevent infinite retries
-      //       } else {
-      //         await new Promise(resolve => setTimeout(resolve, 50));
-      //       }
-      //     }
-      //   }
-      // }
-      
       await audioRef.current.play();
       // Clear play loading only after successful play
       setIsPlayLoading(false);
-      console.log('Audio started playing, clearing isPlayLoading');
-    } catch (error) {
-      console.warn('Failed to play audio:', error);
+    } catch {
       setIsPlaying(false);
       setIsPlayLoading(false);
     }
   };
-
-  useEffect(() => {
-    // Basic check for mobile devices (touch-enabled)
-    const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    setIsMobile(mobileCheck);
-    
-    // Detect iOS devices (iPhone, iPad, iPod)
-    // const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    // setIsIOS(isIOSDevice);
-    
-    // Fetch initial track info on component mount
-    fetchCurrentTrack();
-  }, []);
 
   // Track if we're currently fetching to prevent multiple concurrent requests
   const isFetchingRef = useRef<boolean>(false);
@@ -124,9 +79,17 @@ const RadioPlayer = () => {
     }
   }, []);
 
+  useEffect(() => {
+    // Basic check for mobile devices (touch-enabled)
+    const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsMobile(mobileCheck);
+    
+    // Fetch initial track info on component mount
+    fetchCurrentTrack();
+  }, [fetchCurrentTrack]);
+
   // Fetch now playing data with timing info and start playing
   const fetchNowPlayingAndPlay = React.useCallback(async () => {
-    console.log('fetchNowPlayingAndPlay');
     // Prevent concurrent fetches and rate limit
     const now = Date.now();
     if (isFetchingRef.current || (now - lastFetchTimeRef.current < MIN_FETCH_INTERVAL)) {
@@ -162,32 +125,14 @@ const RadioPlayer = () => {
         if (data.currentTime !== undefined) {
           // If the source URL has changed, we need to set a new track
           if (audioRef.current.src !== data.currentTrack.url) {
-            // if (isIOS) {
-            //   // On iOS, try a more aggressive approach: reload the audio element entirely
-            //   // Store the sync position and reload the audio
-            //   setPendingSyncPosition(syncPositionSec);
-            //   audioRef.current.load(); // Force reload
-            //   audioRef.current.src = data.currentTrack.url;
-            // } else {
-              // Standard approach
-              audioRef.current.src = data.currentTrack.url;
-              audioRef.current.currentTime = syncPositionSec;
-            // }
+            audioRef.current.src = data.currentTrack.url;
+            audioRef.current.currentTime = syncPositionSec;
           } else {
             // For same track, only sync if we're significantly out of sync (>3 seconds difference)
             // or if we're not actively playing (to avoid interruptions)
             const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
             if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
-              // if (isIOS) {
-              //   // On iOS, for same track sync, try immediate setting first, then store as pending
-              //   try {
-              //     audioRef.current.currentTime = syncPositionSec;
-              //   } catch {
-              //     setPendingSyncPosition(syncPositionSec);
-              //   }
-              // } else {
-                audioRef.current.currentTime = syncPositionSec;
-              // }
+              audioRef.current.currentTime = syncPositionSec;
             }
           }
         }
@@ -256,7 +201,6 @@ const RadioPlayer = () => {
   }, [isPlaying, nowPlaying, isPlayLoading, isLoading]);
 
   const handlePlayPause = async () => {
-    console.log('handlePlayPause');
     // Prevent multiple clicks while loading
     if (isPlayLoading || isLoading) return;
     
@@ -267,12 +211,10 @@ const RadioPlayer = () => {
 
     if (!isPlaying) {
       setIsPlayLoading(true);
-      console.log('Setting isPlayLoading to true');
       try {
         // Fetch timing data and start playing
         await fetchNowPlayingAndPlay();
-      } catch (error) {
-        console.warn('Failed to fetch now playing:', error);
+      } catch {
         setIsPlayLoading(false);
       }
     } else {
@@ -289,8 +231,6 @@ const RadioPlayer = () => {
       fetchNowPlayingAndPlay();
     }, 500); 
   };
-
-
 
   const handleVolumeChange = (value: number[]) => {
     const newVolume = value[0];
@@ -331,7 +271,6 @@ const RadioPlayer = () => {
       <div className="flex items-center justify-between">
         {/* Playback Controls */}
         <div className="flex items-center">
-
           <button 
             onClick={handlePlayPause} 
             className="p-2 mx-2 rounded-full hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed" 
@@ -346,7 +285,6 @@ const RadioPlayer = () => {
               <Play size={20} fill="currentColor" />
             )}
           </button>
-
         </div>
 
         {/* Track Info */}
@@ -389,29 +327,7 @@ const RadioPlayer = () => {
             setIsMuted(audioRef.current.muted);
           }
         }}
-        // onLoadedData={() => {
-        //   // On iOS, try to apply pending sync position when audio data is loaded
-        //   if (isIOS && pendingSyncPosition !== null && audioRef.current) {
-        //     try {
-        //       audioRef.current.currentTime = pendingSyncPosition;
-        //       setPendingSyncPosition(null);
-        //     } catch (error) {
-        //       // If it fails here, it will be applied in playAudio during user gesture
-        //       console.warn('Failed to set currentTime on loadedData (iOS):', error);
-        //     }
-        //   }
-        // }}
-        // onCanPlay={() => {
-        //   // Additional opportunity for iOS to set currentTime when audio is ready
-        //   if (isIOS && pendingSyncPosition !== null && audioRef.current && audioRef.current.readyState >= 3) {
-        //     try {
-        //       audioRef.current.currentTime = pendingSyncPosition;
-        //       setPendingSyncPosition(null);
-        //     } catch (error) {
-        //       console.warn('Failed to set currentTime on canPlay (iOS):', error);
-        //     }
-        //   }
-        // }}
+
         preload="auto"
       />
       {mainContent()}
