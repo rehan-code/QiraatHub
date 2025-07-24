@@ -15,9 +15,9 @@ interface Track {
 
 interface NowPlayingData {
   currentTrack: Track | null;
-  currentTime: number;
-  serverTime: number;
-  playlistTotalDuration: number;
+  currentTime?: number; // Optional - only present when fetched from now-playing API
+  serverTime?: number; // Optional - only present when fetched from now-playing API
+  playlistTotalDuration?: number; // Optional - only present when fetched from now-playing API
 }
 
 const RadioPlayer = () => {
@@ -69,7 +69,9 @@ const RadioPlayer = () => {
       }
       
       await audioRef.current.play();
+      // Clear play loading only after successful play
       setIsPlayLoading(false);
+      console.log('Audio started playing, clearing isPlayLoading');
     } catch (error) {
       console.warn('Failed to play audio:', error);
       setIsPlaying(false);
@@ -85,6 +87,9 @@ const RadioPlayer = () => {
     // Detect iOS devices (iPhone, iPad, iPod)
     const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
     setIsIOS(isIOSDevice);
+    
+    // Fetch initial track info on component mount
+    fetchCurrentTrack();
   }, []);
 
   // Track if we're currently fetching to prevent multiple concurrent requests
@@ -94,20 +99,42 @@ const RadioPlayer = () => {
   // Minimum time between fetches in milliseconds (5 seconds)
   const MIN_FETCH_INTERVAL = 5000;
 
-  // Memoize fetchNowPlaying to stabilize its identity for useEffect dependencies
-  const fetchNowPlaying = React.useCallback(async (shouldAutoPlay: boolean = false) => {
+  // Fetch current track info (no timing data) for initial display
+  const fetchCurrentTrack = React.useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fetch('/api/radio/current-track');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to fetch current track info');
+      }
+      const data = await response.json();
+      // Set nowPlaying with just the current track (no timing data)
+      setNowPlaying({
+        currentTrack: data.currentTrack,
+        // timing fields are undefined for current-track API
+      });
+      setError(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An unknown error occurred');
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  // Fetch now playing data with timing info and start playing
+  const fetchNowPlayingAndPlay = React.useCallback(async () => {
+    console.log('fetchNowPlayingAndPlay');
     // Prevent concurrent fetches and rate limit
     const now = Date.now();
     if (isFetchingRef.current || (now - lastFetchTimeRef.current < MIN_FETCH_INTERVAL)) {
-      // If we're rate limited and this was called for autoplay, clear the play loading state
-      if (shouldAutoPlay) {
-        setIsPlayLoading(false);
-      }
+      setIsPlayLoading(false);
       return;
     }
     
     isFetchingRef.current = true;
-    setIsLoading(true);
 
     try {
       const response = await fetch('/api/radio/now-playing');
@@ -117,89 +144,92 @@ const RadioPlayer = () => {
       }
       const data: NowPlayingData = await response.json();
       lastFetchTimeRef.current = now;
-      setNowPlaying(data);
+      // Update nowPlaying with full timing data
+      setNowPlaying({
+        currentTrack: data.currentTrack,
+        currentTime: data.currentTime,
+        serverTime: data.serverTime,
+        playlistTotalDuration: data.playlistTotalDuration,
+      });
       setError(null);
 
-      if (data.currentTrack && audioRef.current) {
+      if (data.currentTrack && audioRef.current && data.currentTime !== undefined) {
         // Convert from API milliseconds to seconds for audio element
         const syncPositionMs = data.currentTime; // In milliseconds from the API
         const syncPositionSec = syncPositionMs / 1000; // Convert to seconds for the audio element
         
-        // If the source URL has changed, we need to set a new track
-        if (audioRef.current.src !== data.currentTrack.url) {
-          if (isIOS) {
-            // On iOS, try a more aggressive approach: reload the audio element entirely
-            // Store the sync position and reload the audio
-            setPendingSyncPosition(syncPositionSec);
-            audioRef.current.load(); // Force reload
-            audioRef.current.src = data.currentTrack.url;
-          } else {
-            // Non-iOS: Standard approach
-            audioRef.current.src = data.currentTrack.url;
-            audioRef.current.currentTime = syncPositionSec;
-          }
-        } else {
-          // For same track, only sync if we're significantly out of sync (>3 seconds difference)
-          // or if we're not actively playing (to avoid interruptions)
-          const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
-          if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
+        // Only do sync logic if we have timing data (from now-playing API)
+        if (data.currentTime !== undefined) {
+          // If the source URL has changed, we need to set a new track
+          if (audioRef.current.src !== data.currentTrack.url) {
             if (isIOS) {
-              // On iOS, for same track sync, try immediate setting first, then store as pending
-              try {
-                audioRef.current.currentTime = syncPositionSec;
-              } catch {
-                setPendingSyncPosition(syncPositionSec);
-              }
+              // On iOS, try a more aggressive approach: reload the audio element entirely
+              // Store the sync position and reload the audio
+              setPendingSyncPosition(syncPositionSec);
+              audioRef.current.load(); // Force reload
+              audioRef.current.src = data.currentTrack.url;
             } else {
+              // Non-iOS: Standard approach
+              audioRef.current.src = data.currentTrack.url;
               audioRef.current.currentTime = syncPositionSec;
+            }
+          } else {
+            // For same track, only sync if we're significantly out of sync (>3 seconds difference)
+            // or if we're not actively playing (to avoid interruptions)
+            const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
+            if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
+              if (isIOS) {
+                // On iOS, for same track sync, try immediate setting first, then store as pending
+                try {
+                  audioRef.current.currentTime = syncPositionSec;
+                } catch {
+                  setPendingSyncPosition(syncPositionSec);
+                }
+              } else {
+                audioRef.current.currentTime = syncPositionSec;
+              }
             }
           }
         }
 
-        if (shouldAutoPlay) {
-          setIsPlaying(true);
-        }
+        // Always set playing to true when this function is called
+        setIsPlaying(true);
       } else if (!data.currentTrack) {
         setError('No track currently scheduled.');
         setIsPlaying(false);
-        if (shouldAutoPlay) {
-          setIsPlayLoading(false);
-        }
+        setIsPlayLoading(false);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       setIsPlaying(false);
-      if (shouldAutoPlay) {
-        setIsPlayLoading(false);
-      }
+      setIsPlayLoading(false);
       // Don't clear nowPlaying on error to prevent UI flickering
     } finally {
-      setIsLoading(false);
       isFetchingRef.current = false;
     }
-  }, [setIsLoading, setNowPlaying, setError, setIsPlaying, isPlaying /* audioRef is stable */]);
+  }, [setNowPlaying, setError, setIsPlaying, isPlaying /* audioRef is stable */]);
 
   useEffect(() => {
-    // Fetch initial track info to display, but don't autoplay
-    fetchNowPlaying(false);
+    // Fetch initial track info to display
+    fetchCurrentTrack();
     
     // Set up a timer to re-sync periodically but only when NOT playing
     // This prevents any interruption during playback
     const intervalId = setInterval(() => {
       // Only fetch if we're not currently playing to avoid interruptions
       if (audioRef.current?.paused) {
-        fetchNowPlaying(false);
+        fetchCurrentTrack();
       }
-    }, 30000); // 30 seconds
+    }, 60000); // 30 seconds
     
     return () => clearInterval(intervalId);
-  }, [fetchNowPlaying]);
+  }, [fetchCurrentTrack]);
 
   // Effect to handle playing/pausing audio based on isPlaying state
   useEffect(() => {
     // Only proceed if we have audio element and track data
     if (!audioRef.current || !nowPlaying?.currentTrack) {
-      // Clear play loading if we don't have the necessary data
+      // Clear play loading if we don't have the necessary data and not currently loading initial data
       if (isPlayLoading && !isLoading) {
         setIsPlayLoading(false);
       }
@@ -207,48 +237,40 @@ const RadioPlayer = () => {
     }
 
     if (isPlaying) {
-      // Make sure we have the right track loaded
-      if (audioRef.current.src !== nowPlaying.currentTrack.url) {
-        audioRef.current.src = nowPlaying.currentTrack.url;
-        // Allow a moment for the new source to load before playing
-        setTimeout(playAudio, 100);
-      } else {
-        // Already has correct source, just play
-        playAudio();
+      // Only proceed if we have timing data (from now-playing API)
+      if (nowPlaying.currentTime !== undefined) {
+        // Make sure we have the right track loaded
+        if (audioRef.current.src !== nowPlaying.currentTrack.url) {
+          audioRef.current.src = nowPlaying.currentTrack.url;
+          // Allow a moment for the new source to load before playing
+          setTimeout(playAudio, 100);
+        } else {
+          // Already has correct source, just play
+          playAudio();
+        }
       }
     } else {
       audioRef.current.pause();
-      // Clear play loading when paused
-      if (isPlayLoading) {
-        setIsPlayLoading(false);
-      }
+      // Don't clear play loading here - let it be cleared by the play attempt or user action
     }
   }, [isPlaying, nowPlaying, isPlayLoading, isLoading]);
 
   const handlePlayPause = async () => {
+    console.log('handlePlayPause');
     // Prevent multiple clicks while loading
-    if (isPlayLoading) return;
+    if (isPlayLoading || isLoading) return;
     
-    // If no track data yet, don't allow play
+    // If no current track info, can't play
     if (!nowPlaying?.currentTrack) {
-      // If still loading initial data, don't start play loading
-      if (!isLoading) {
-        setIsPlayLoading(true);
-        try {
-          await fetchNowPlaying(true);
-        } catch (error) {
-          console.warn('Failed to fetch now playing:', error);
-          setIsPlayLoading(false);
-        }
-      }
       return;
     }
 
     if (!isPlaying) {
       setIsPlayLoading(true);
+      console.log('Setting isPlayLoading to true');
       try {
-        // If currently paused, re-sync and then play
-        await fetchNowPlaying(true);
+        // Fetch timing data and start playing
+        await fetchNowPlayingAndPlay();
       } catch (error) {
         console.warn('Failed to fetch now playing:', error);
         setIsPlayLoading(false);
@@ -256,14 +278,16 @@ const RadioPlayer = () => {
     } else {
       // If currently playing, just pause
       setIsPlaying(false);
-      setIsPlayLoading(false);
     }
   };
 
   // Called when audio track ends
   const handleTrackEnd = () => {
-    // Add a small delay before fetching to prevent rapid successive fetches
-    setTimeout(() => fetchNowPlaying(true), 500); 
+    // When track ends, fetch new timing data and start playing next track
+    setTimeout(() => {
+      setIsPlayLoading(true);
+      fetchNowPlayingAndPlay();
+    }, 500); 
   };
 
 
