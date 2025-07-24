@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Play, Pause, Volume2, VolumeX, } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Loader2 } from 'lucide-react';
 import { Slider } from '@/components/ui/slider';
 
 // This interface should match the one in your API and now-playing route
@@ -28,6 +28,7 @@ const RadioPlayer = () => {
   const [volume, setVolume] = useState(0.75);
   const [isMuted, setIsMuted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isPlayLoading, setIsPlayLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
@@ -38,20 +39,41 @@ const RadioPlayer = () => {
   const playAudio = async () => {
     if (!audioRef.current) return;
     
-    // On iOS, apply pending sync position before playing (user gesture context)
-    if (isIOS && pendingSyncPosition !== null) {
-      try {
-        audioRef.current.currentTime = pendingSyncPosition;
-        setPendingSyncPosition(null);
-      } catch (error) {
-        console.warn('Failed to set currentTime on iOS:', error);
-      }
-    }
-    
     try {
+      // On iOS, apply pending sync position before playing (user gesture context)
+      if (isIOS && pendingSyncPosition !== null) {
+        // Multiple attempts to set currentTime on iOS
+        const maxAttempts = 3;
+        let attempts = 0;
+        
+        while (attempts < maxAttempts && pendingSyncPosition !== null) {
+          try {
+            // Wait a bit for audio to be ready
+            if (audioRef.current.readyState < 2) {
+              await new Promise(resolve => setTimeout(resolve, 100));
+            }
+            
+            audioRef.current.currentTime = pendingSyncPosition;
+            setPendingSyncPosition(null);
+            break;
+          } catch (error) {
+            attempts++;
+            if (attempts >= maxAttempts) {
+              console.warn('Failed to set currentTime on iOS after', maxAttempts, 'attempts:', error);
+              setPendingSyncPosition(null); // Clear to prevent infinite retries
+            } else {
+              await new Promise(resolve => setTimeout(resolve, 50));
+            }
+          }
+        }
+      }
+      
       await audioRef.current.play();
-    } catch {
+      setIsPlayLoading(false);
+    } catch (error) {
+      console.warn('Failed to play audio:', error);
       setIsPlaying(false);
+      setIsPlayLoading(false);
     }
   };
 
@@ -101,13 +123,15 @@ const RadioPlayer = () => {
         
         // If the source URL has changed, we need to set a new track
         if (audioRef.current.src !== data.currentTrack.url) {
-          audioRef.current.src = data.currentTrack.url;
-          
           if (isIOS) {
-            // On iOS, store the sync position to apply after user interaction
+            // On iOS, try a more aggressive approach: reload the audio element entirely
+            // Store the sync position and reload the audio
             setPendingSyncPosition(syncPositionSec);
+            audioRef.current.load(); // Force reload
+            audioRef.current.src = data.currentTrack.url;
           } else {
-            // Non-iOS: Always update currentTime for a new track for proper sync
+            // Non-iOS: Standard approach
+            audioRef.current.src = data.currentTrack.url;
             audioRef.current.currentTime = syncPositionSec;
           }
         } else {
@@ -116,8 +140,12 @@ const RadioPlayer = () => {
           const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
           if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
             if (isIOS) {
-              // On iOS, store the sync position to apply after user interaction
-              setPendingSyncPosition(syncPositionSec);
+              // On iOS, for same track sync, try immediate setting first, then store as pending
+              try {
+                audioRef.current.currentTime = syncPositionSec;
+              } catch {
+                setPendingSyncPosition(syncPositionSec);
+              }
             } else {
               audioRef.current.currentTime = syncPositionSec;
             }
@@ -176,15 +204,20 @@ const RadioPlayer = () => {
     }
   }, [isPlaying, nowPlaying]);
 
-  const handlePlayPause = () => {
+  const handlePlayPause = async () => {
     if (!nowPlaying?.currentTrack) return;
+    
+    // Prevent multiple clicks while loading
+    if (isPlayLoading) return;
 
     if (!isPlaying) {
+      setIsPlayLoading(true);
       // If currently paused, re-sync and then play
-      fetchNowPlaying(true);
+      await fetchNowPlaying(true);
     } else {
       // If currently playing, just pause
       setIsPlaying(false);
+      setIsPlayLoading(false);
     }
   };
 
@@ -236,8 +269,19 @@ const RadioPlayer = () => {
         {/* Playback Controls */}
         <div className="flex items-center">
 
-          <button onClick={handlePlayPause} className="p-2 mx-2 rounded-full hover:bg-yellow-600" aria-label={isPlaying ? 'Pause' : 'Play'}>
-            {isPlaying ? <Pause size={20} fill="currentColor" /> : <Play size={20} fill="currentColor" />}
+          <button 
+            onClick={handlePlayPause} 
+            className="p-2 mx-2 rounded-full hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed" 
+            aria-label={isPlaying ? 'Pause' : 'Play'}
+            disabled={isPlayLoading}
+          >
+            {isPlayLoading ? (
+              <Loader2 size={20} className="animate-spin" />
+            ) : isPlaying ? (
+              <Pause size={20} fill="currentColor" />
+            ) : (
+              <Play size={20} fill="currentColor" />
+            )}
           </button>
 
         </div>
@@ -291,6 +335,17 @@ const RadioPlayer = () => {
             } catch (error) {
               // If it fails here, it will be applied in playAudio during user gesture
               console.warn('Failed to set currentTime on loadedData (iOS):', error);
+            }
+          }
+        }}
+        onCanPlay={() => {
+          // Additional opportunity for iOS to set currentTime when audio is ready
+          if (isIOS && pendingSyncPosition !== null && audioRef.current && audioRef.current.readyState >= 3) {
+            try {
+              audioRef.current.currentTime = pendingSyncPosition;
+              setPendingSyncPosition(null);
+            } catch (error) {
+              console.warn('Failed to set currentTime on canPlay (iOS):', error);
             }
           }
         }}
