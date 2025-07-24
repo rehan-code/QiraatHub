@@ -99,6 +99,10 @@ const RadioPlayer = () => {
     // Prevent concurrent fetches and rate limit
     const now = Date.now();
     if (isFetchingRef.current || (now - lastFetchTimeRef.current < MIN_FETCH_INTERVAL)) {
+      // If we're rate limited and this was called for autoplay, clear the play loading state
+      if (shouldAutoPlay) {
+        setIsPlayLoading(false);
+      }
       return;
     }
     
@@ -158,9 +162,16 @@ const RadioPlayer = () => {
       } else if (!data.currentTrack) {
         setError('No track currently scheduled.');
         setIsPlaying(false);
+        if (shouldAutoPlay) {
+          setIsPlayLoading(false);
+        }
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
+      setIsPlaying(false);
+      if (shouldAutoPlay) {
+        setIsPlayLoading(false);
+      }
       // Don't clear nowPlaying on error to prevent UI flickering
     } finally {
       setIsLoading(false);
@@ -187,7 +198,13 @@ const RadioPlayer = () => {
   // Effect to handle playing/pausing audio based on isPlaying state
   useEffect(() => {
     // Only proceed if we have audio element and track data
-    if (!audioRef.current || !nowPlaying?.currentTrack) return;
+    if (!audioRef.current || !nowPlaying?.currentTrack) {
+      // Clear play loading if we don't have the necessary data
+      if (isPlayLoading && !isLoading) {
+        setIsPlayLoading(false);
+      }
+      return;
+    }
 
     if (isPlaying) {
       // Make sure we have the right track loaded
@@ -201,19 +218,41 @@ const RadioPlayer = () => {
       }
     } else {
       audioRef.current.pause();
+      // Clear play loading when paused
+      if (isPlayLoading) {
+        setIsPlayLoading(false);
+      }
     }
-  }, [isPlaying, nowPlaying]);
+  }, [isPlaying, nowPlaying, isPlayLoading, isLoading]);
 
   const handlePlayPause = async () => {
-    if (!nowPlaying?.currentTrack) return;
-    
     // Prevent multiple clicks while loading
     if (isPlayLoading) return;
+    
+    // If no track data yet, don't allow play
+    if (!nowPlaying?.currentTrack) {
+      // If still loading initial data, don't start play loading
+      if (!isLoading) {
+        setIsPlayLoading(true);
+        try {
+          await fetchNowPlaying(true);
+        } catch (error) {
+          console.warn('Failed to fetch now playing:', error);
+          setIsPlayLoading(false);
+        }
+      }
+      return;
+    }
 
     if (!isPlaying) {
       setIsPlayLoading(true);
-      // If currently paused, re-sync and then play
-      await fetchNowPlaying(true);
+      try {
+        // If currently paused, re-sync and then play
+        await fetchNowPlaying(true);
+      } catch (error) {
+        console.warn('Failed to fetch now playing:', error);
+        setIsPlayLoading(false);
+      }
     } else {
       // If currently playing, just pause
       setIsPlaying(false);
