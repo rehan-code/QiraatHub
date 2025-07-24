@@ -30,11 +30,23 @@ const RadioPlayer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
+  const [pendingSyncPosition, setPendingSyncPosition] = useState<number | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   
   // Helper function to play audio (defined outside hooks)
   const playAudio = async () => {
     if (!audioRef.current) return;
+    
+    // On iOS, apply pending sync position before playing (user gesture context)
+    if (isIOS && pendingSyncPosition !== null) {
+      try {
+        audioRef.current.currentTime = pendingSyncPosition;
+        setPendingSyncPosition(null);
+      } catch (error) {
+        console.warn('Failed to set currentTime on iOS:', error);
+      }
+    }
     
     try {
       await audioRef.current.play();
@@ -47,6 +59,10 @@ const RadioPlayer = () => {
     // Basic check for mobile devices (touch-enabled)
     const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsMobile(mobileCheck);
+    
+    // Detect iOS devices (iPhone, iPad, iPod)
+    const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    setIsIOS(isIOSDevice);
   }, []);
 
   // Track if we're currently fetching to prevent multiple concurrent requests
@@ -87,14 +103,24 @@ const RadioPlayer = () => {
         if (audioRef.current.src !== data.currentTrack.url) {
           audioRef.current.src = data.currentTrack.url;
           
-          // Always update currentTime for a new track for proper sync
-          audioRef.current.currentTime = syncPositionSec;
+          if (isIOS) {
+            // On iOS, store the sync position to apply after user interaction
+            setPendingSyncPosition(syncPositionSec);
+          } else {
+            // Non-iOS: Always update currentTime for a new track for proper sync
+            audioRef.current.currentTime = syncPositionSec;
+          }
         } else {
           // For same track, only sync if we're significantly out of sync (>3 seconds difference)
           // or if we're not actively playing (to avoid interruptions)
           const timeDrift = Math.abs(audioRef.current.currentTime - syncPositionSec);
           if (!isPlaying || audioRef.current.paused || timeDrift > 3) {
-            audioRef.current.currentTime = syncPositionSec;
+            if (isIOS) {
+              // On iOS, store the sync position to apply after user interaction
+              setPendingSyncPosition(syncPositionSec);
+            } else {
+              audioRef.current.currentTime = syncPositionSec;
+            }
           }
         }
 
@@ -254,6 +280,18 @@ const RadioPlayer = () => {
           if (audioRef.current) {
             setVolume(audioRef.current.volume);
             setIsMuted(audioRef.current.muted);
+          }
+        }}
+        onLoadedData={() => {
+          // On iOS, try to apply pending sync position when audio data is loaded
+          if (isIOS && pendingSyncPosition !== null && audioRef.current) {
+            try {
+              audioRef.current.currentTime = pendingSyncPosition;
+              setPendingSyncPosition(null);
+            } catch (error) {
+              // If it fails here, it will be applied in playAudio during user gesture
+              console.warn('Failed to set currentTime on loadedData (iOS):', error);
+            }
           }
         }}
         preload="auto"

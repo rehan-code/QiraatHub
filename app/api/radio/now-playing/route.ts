@@ -11,7 +11,7 @@ export interface Track {
 
 export interface NowPlayingResponse {
   currentTrack: Track | null;
-  currentTime: number; // Playback time in seconds within the currentTrack
+  currentTime: number; // Playback time in milliseconds within the currentTrack
   serverTime: number; // UTC milliseconds timestamp of when this was calculated
   playlistTotalDuration: number;
 }
