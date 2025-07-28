@@ -8,7 +8,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { BookOpen } from "lucide-react";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { BookOpen, Search, Check } from "lucide-react";
+import { allSurahs, SurahInfo } from "@/app/lib/surah-definitions";
+import { cn } from "@/lib/utils";
 
 interface PageContent {
   html_content: string;
@@ -26,6 +29,8 @@ export default function QuranReader() {
   const [font, setFont] = useState("-me-quran");
   const [pageNumber, setPageNumber] = useState(1);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [selectedSurah, setSelectedSurah] = useState<SurahInfo>(allSurahs[0]);
+  const [surahSelectorOpen, setSurahSelectorOpen] = useState(false);
 
   const colorThemes = {
     cream: { light: '#fdfdfa', dark: '#1a1a1a' },
@@ -118,6 +123,13 @@ export default function QuranReader() {
     setFont(value);
   };
 
+  const handleSurahChange = (surah: SurahInfo) => {
+    setSelectedSurah(surah);
+    setSurahSelectorOpen(false);
+    // Navigate to the Surah's starting page
+    setPageNumber(surah.startPage);
+  };
+
   const dynamicStyles = `
     #mushaf-display .quran-line {
       font-family: ${font === "-digital-khatt" ? "digitalkhatt" : "me_quran"} !important;
@@ -140,6 +152,53 @@ export default function QuranReader() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4 pt-0 md:pt-6">
+          {/* Surah Selection */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Surah</label>
+            <Popover open={surahSelectorOpen} onOpenChange={setSurahSelectorOpen}>
+              <PopoverTrigger asChild>
+                <Button
+                  variant="outline"
+                  role="combobox"
+                  aria-expanded={surahSelectorOpen}
+                  className="w-full justify-between text-left font-normal"
+                >
+                  <span className="truncate">{selectedSurah.fullName}</span>
+                  <Search className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-[280px] p-0" align="start">
+                <Command>
+                  <CommandInput placeholder="Search Surah..." className="h-9 outline-none" />
+                  <CommandList>
+                    <CommandEmpty>No Surah found.</CommandEmpty>
+                    <CommandGroup>
+                      {allSurahs.map((surah) => (
+                        <CommandItem
+                          key={surah.number}
+                          value={surah.fullName}
+                          onSelect={() => handleSurahChange(surah)}
+                          className="flex items-center justify-between"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs text-muted-foreground font-mono">{surah.number}</span>
+                            <span className="font-medium">{surah.name}</span>
+                          </div>
+                          <Check
+                            className={cn(
+                              "ml-auto h-4 w-4",
+                              selectedSurah.number === surah.number ? "opacity-100" : "opacity-0"
+                            )}
+                          />
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </CommandList>
+                </Command>
+              </PopoverContent>
+            </Popover>
+          </div>
+          
           <div>
             <label htmlFor="qiraat-select" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Qira&apos;at</label>
             <Select value={qiraat} onValueChange={handleQiraatChange}>
