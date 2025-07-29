@@ -54,22 +54,23 @@ const RadioPlayer = () => {
   // Minimum time between fetches in milliseconds (5 seconds)
   const MIN_FETCH_INTERVAL = 5000;
 
-  // Fetch current track info (no timing data) for initial display
+  // Fetch current track info for initial display
   const fetchCurrentTrack = React.useCallback(async () => {
     setIsLoading(true);
     setError(null);
     
     try {
-      const response = await fetch('/api/radio/current-track');
+      const response = await fetch('/api/radio/now-playing');
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || 'Failed to fetch current track info');
       }
       const data = await response.json();
-      // Set nowPlaying with just the current track (no timing data)
       setNowPlaying({
         currentTrack: data.currentTrack,
-        // timing fields are undefined for current-track API
+        currentTime: data.currentTime,
+        serverTime: data.serverTime,
+        playlistTotalDuration: data.playlistTotalDuration,
       });
       setError(null);
     } catch (err) {
@@ -83,10 +84,7 @@ const RadioPlayer = () => {
     // Basic check for mobile devices (touch-enabled)
     const mobileCheck = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsMobile(mobileCheck);
-    
-    // Fetch initial track info on component mount
-    fetchCurrentTrack();
-  }, [fetchCurrentTrack]);
+  }, []);
 
   // Fetch now playing data with timing info and start playing
   const fetchNowPlayingAndPlay = React.useCallback(async () => {
@@ -154,21 +152,44 @@ const RadioPlayer = () => {
     }
   }, [setNowPlaying, setError, setIsPlaying, isPlaying /* audioRef is stable */]);
 
+  // Ref to track the current sync timeout
+  const syncTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     // Fetch initial track info to display
     fetchCurrentTrack();
-    
-    // Set up a timer to re-sync periodically but only when NOT playing
-    // This prevents any interruption during playback
-    const intervalId = setInterval(() => {
-      // Only fetch if we're not currently playing to avoid interruptions
-      if (audioRef.current?.paused) {
-        fetchCurrentTrack();
-      }
-    }, 60000); // 30 seconds
-    
-    return () => clearInterval(intervalId);
   }, [fetchCurrentTrack]);
+
+  // Always schedule sync when nowPlaying data changes, but only fetch data when paused to keep track info up to date
+  useEffect(() => {
+    // Clear any existing timeout
+    if (syncTimeoutRef.current) {
+      clearTimeout(syncTimeoutRef.current);
+      syncTimeoutRef.current = null;
+    }
+
+    // Schedule sync if we have track data
+    if (nowPlaying?.currentTrack?.duration && nowPlaying?.currentTime !== undefined) {
+      const timeUntilTrackEnds = (nowPlaying.currentTrack.duration - nowPlaying.currentTime);
+      
+      if (timeUntilTrackEnds > 0) {
+        syncTimeoutRef.current = setTimeout(() => {
+          // Only fetch new data if we're paused (play handler updates data during playback)
+          if (audioRef.current?.paused) {
+            fetchCurrentTrack();
+          }
+          syncTimeoutRef.current = null;
+        }, timeUntilTrackEnds);
+      }
+    }
+
+    return () => {
+      if (syncTimeoutRef.current) {
+        clearTimeout(syncTimeoutRef.current);
+        syncTimeoutRef.current = null;
+      }
+    };
+  }, [nowPlaying?.currentTrack?.id, fetchCurrentTrack]);
 
   // Effect to handle playing/pausing audio based on isPlaying state
   useEffect(() => {
