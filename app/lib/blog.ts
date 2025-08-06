@@ -706,7 +706,7 @@ May your duas be accepted and your prayers bring peace to your heart.
 `,
     date: "May 28, 2025",
     author: "qiraathub",
-    imageUrl: "/images/how-to-make-dua-in-sujood.png",
+    imageUrl: "/images/blog/how-to-make-dua-in-sujood.png",
     resources: []
   },
   {
@@ -916,7 +916,115 @@ May Allah accept your supplications and bless you with what is best in this life
 `,
     date: "May 28, 2025",
     author: "qiraathub",
-    imageUrl: "/images/how-to-make-dua.png",
+    imageUrl: "/images/blog/how-to-make-dua.png",
+    resources: []
+  },
+  {
+    slug: "learn-quran-recitation-at-home",
+    title: "Learn Quran Recitation at Home: A Simple Guide for Self‑Study",
+    excerpt: "Learn how to recite the Quran at home with this comprehensive self-study guide. Discover practical tips, structured learning approaches, and resources for mastering Quranic recitation independently",
+    content: `
+# Learn Quran Recitation at Home: A Simple Guide for Self‑Study
+
+Learning how to recite the Qur'an is a dream for many Muslims. The beauty of its words, the flow of its sounds, and the spiritual connection it brings are unmatched. Yet, many people feel this goal is far away. They may not have access to a local teacher or be unsure where to start. For some, busy schedules make it hard to attend regular classes. But the truth is, you can learn Qur'an recitation from home through a simple and clear self‑study approach.
+
+Self‑study means you take control of your learning. You move at your own pace, study at the times that suit you, and repeat lessons as much as you need. For many, it is the most flexible way to begin or improve their Qur'an recitation. The key is to follow a method that is both structured and authentic so you can be confident in your progress.
+
+## Why Qur'an Recitation Matters
+
+Reciting the Qur'an is more than reading words on a page. It is a way to honour the message of Allah. The Prophet ﷺ said that those who recite the Qur'an well will be with the noble angels. This shows the value of learning to recite correctly and beautifully. Good recitation also helps you understand the meaning better. When each letter is pronounced as it should be, its meaning becomes clearer.
+
+It also brings a stronger connection in salah. When you recite with care and precision, you feel the words more deeply. Your heart responds, and the Qur'an becomes part of you in a way that simple reading cannot achieve.
+
+## Common Challenges for Learners
+
+For many learners, the journey to better recitation is exciting but difficult. Some of the most common problems include:
+
+- Finding information scattered across many sources with no clear order.
+    
+- Not knowing which tajwīd rules to learn first.
+    
+- Struggling to hear and copy the correct pronunciation.
+    
+- Feeling unsure about whether the material is authentic.
+    
+- Lacking feedback to know if mistakes are being made.
+    
+
+These challenges often lead to frustration. Without a guide, learners may spend hours searching online but still feel lost. This is why a clear, step‑by‑step self‑study path is so important.
+
+## What a Self‑Study Qur'an Recitation Course Looks Like
+
+A self‑study Qur'an recitation course is more than just a collection of lessons. It is a guided path that helps you move from your current level to confident recitation in small, steady steps. While the exact details can vary, a strong self‑study plan usually includes:
+
+- **A clear starting point** so you know where to begin based on your current skill level.
+    
+- **Lessons that build on each other**, so each step prepares you for the next.
+    
+- **Audio examples** so you can hear correct pronunciation and match it.
+    
+- **Written guidance** explaining tajwīd rules in simple terms.
+    
+- **Practice exercises** so you can apply what you have learned.
+    
+- **Review points** to check your understanding before moving forward.
+    
+
+The benefit of self‑study is that you can review lessons as often as you like, focus on areas you find difficult, and study without feeling rushed.
+
+## The Core Skills You Will Build
+
+When you commit to learning Qur'an recitation at home, there are four main areas you will develop. Each of these is essential for becoming a confident reciter.
+
+1. **Correct Pronunciation (Makharij):** You will learn where each Arabic letter comes from in the mouth or throat and how to pronounce it correctly. This is the foundation of accurate recitation.
+    
+2. **Tajwīd Rules:** These are the rules that guide how letters and words should be read. They protect the meaning of the Qur'an and preserve its beauty.
+    
+3. **Fluency:** As you practise, you will move smoothly from one word to the next without unnecessary pauses or breaks.
+    
+4. **Melodic Flow:** While not required for recitation, adding a gentle rhythm and tone makes it more beautiful and engaging.
+    
+
+## A Step‑by‑Step Journey
+
+If you are starting from the beginning, your journey might look like this:
+
+First, you learn the Arabic alphabet and the basic shapes of each letter. You practise their sounds until you can say them clearly. Then, you begin connecting the letters into simple words. At this stage, you also start learning the basic tajwīd rules such as ghunnah (nasal sound), qalqalah (echoing sound), and ikhfa (hidden sound). These rules make your reading correct and protect the meaning of the words.
+
+Once you are comfortable with the basics, you move on to short surahs. You may already know these by memory, but now you focus on reciting them with correct pronunciation and tajwīd. As your skills grow, you begin reading longer passages, paying attention to fluency and expression. Over time, you start to develop your own natural flow and style while keeping within the rules of recitation.
+
+## Tips for Success in Self‑Study
+
+Learning at home requires discipline and a good routine. Here are some tips to help you succeed:
+
+- **Be consistent**. Even ten minutes every day is better than one long session once a week.
+    
+- **Listen often**. Play recordings of skilled reciters to train your ear.
+    
+- **Record yourself**. Hearing your own recitation will show you where to improve.
+    
+- **Review regularly**. Go back to earlier lessons to keep your foundation strong.
+    
+- **Take small steps**. Focus on one rule or one surah at a time to avoid overwhelm.
+    
+
+These habits make a big difference. The more regular and focused your study, the faster you will progress.
+
+## The Deeper Purpose of Learning
+
+While learn the sounds and rules is important, we learn Qur'an recitation to be closer to Allah. Every letter you recite is an act of worship. Every correction you make is a way of showing respect to the Qur'an. The reward is not only in the skill you gain but in the sincerity you bring to your recitation.
+
+Self‑study also builds patience and humility. It reminds you that learning the Qur'an is a lifelong journey. There will always be more to refine, more beauty to discover, and more meaning to connect with.
+
+## Beginning Your Journey
+
+Starting your self‑study Qur'an recitation course is simple. All you need is the intention to learn and a structured plan to follow. Choose a clear and authentic plenty of opportunities to practise. Then commit to regular study, even if it is just a few minutes each day.
+
+The Qur'an is the most important book in our lives. Learning to recite it well is one of the best gifts you can give yourself. With patience, dedication, and the right approach, you can recite with confidence. All from the comfort of your own home.
+`,
+    date: "Aug 6, 2025",
+    author: "qiraathub",
+    imageUrl: "/images/blog/learn-quran-recitation-at-home.png",
     resources: []
   }
 ];
