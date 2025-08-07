@@ -525,7 +525,7 @@ By delving into these foundational texts, you not only gain insight into the tec
     `,
     date: "Apr 6, 2025",
     author: "qiraathub",
-    imageUrl: "/images/blog/students-learning-quran.png",
+    imageUrl: "/images/blog/dive-deep-into-qiraat-unveiling-two-masterpieces.png",
     resources: [
       {
         title: "Al-Shatibiyyah (English Translation)",
@@ -544,7 +544,7 @@ By delving into these foundational texts, you not only gain insight into the tec
     content: `
 # How to Make Dua in Sujood? A Complete Step-by-Step Guide
 
-![How to Make Dua in Sujood? A Complete Step-by-Step Guide](/images/how-to-make-dua-in-sujood.png)
+![How to Make Dua in Sujood? A Complete Step-by-Step Guide](/images/blog/how-to-make-dua-in-sujood.png)
 
 Sujood, or prostration, is a pivotal part of Muslim prayer, where a worshipper lowers their body to the ground as a symbol of utmost humility and submission to Allah. It is during this sacred moment that a Muslim draws nearest to the Divine, making it the most fitting time to make dua (supplication) — a heartfelt prayer seeking Allah's mercy, guidance, forgiveness, and blessings. 
 
@@ -716,7 +716,7 @@ May your duas be accepted and your prayers bring peace to your heart.
     content: `
 # How to Make a Dua: Complete Guide on How to Ask and Perform Dua Properly
 
-![How to Make a Dua: Complete Guide on How to Ask and Perform Dua Properly](/images/how-to-make-dua.png)
+![How to Make a Dua: Complete Guide on How to Ask and Perform Dua Properly](/images/blog/how-to-make-dua.png)
 
 Dua, or supplication, is a beautiful and powerful act of worship in Islam. It's the direct line of communication between you and Allah, a way to pour out your heart, ask for help, seek forgiveness, or simply express gratitude. But many Muslims, whether new to Islam or lifelong practitioners, ask: **How to make a dua properly? What is the correct way to ask a dua? Can you make dua in English during sujood?**
 
@@ -1025,6 +1025,101 @@ The Qur'an is the most important book in our lives. Learning to recite it well i
     date: "Aug 6, 2025",
     author: "qiraathub",
     imageUrl: "/images/blog/learn-quran-recitation-at-home.png",
+    resources: []
+  },
+  {
+    slug: "ten-qiraat-of-the-quran-explained-simply",
+    title: "The Ten Qiraat of the Qur'an Explained Simply",
+    excerpt: "Discover the ten authentic ways of reciting the Qur'an, their origins, differences, and significance in Islamic tradition explained in simple terms",
+    content: `
+# The Ten Qiraat of the Qur'an Explained Simply
+
+The Qur'an is the same for every Muslim. No matter where you are in the world, the words are the words Allah gave to the Prophet ﷺ. But did you know there are different _ways_ to recite the Qur'an? These ways are called the **Ten Qiraat**.
+
+Each Qiraat is a style of reading passed down by great teachers in an unbroken chain back to the Prophet ﷺ. The words are the same, but the sound may change slightly. Sometimes a letter is read with a different tone, or a word is stretched a little longer. These changes do not change the meaning. They just show the richness of how the Qur'an has been preserved.
+
+## What Does "Qiraat" Mean?
+
+The word "Qiraat" means "readings" or "recitations." In the time of the Prophet ﷺ, the Qur'an was taught to people from different tribes. Each tribe had its own way of speaking Arabic. To make it easy for everyone, the Qur'an was revealed in a way that could be read in several correct ways.
+
+The Prophet ﷺ taught his companions these ways. They taught others, and the chain of teachers continues until today. That is how we still have the Ten Qiraat.
+
+## Why Do We Have Ten Qiraat?
+
+The Ten Qiraat exist because of how the Qur'an was revealed and taught. Allah made the Qur'an easy for different tribes to read. This was a mercy, not a mistake. Having different Qiraat shows:
+
+- **Preservation**: The Qur'an has been passed down with great care.
+- **Unity in diversity**: Muslims may recite slightly differently, but the meaning is always the same.
+- **Connection to the Prophet ﷺ**: Each Qiraat comes from his teaching.
+
+## The Ten Qiraat and Their Famous Imams
+
+Here are the ten recognized Qiraat, each named after a great imam who mastered it:
+
+1. **Hafs 'an 'Asim** – This is the most common worldwide today.
+2. **Warsh 'an Nafi'** – Common in North and West Africa.
+3. **Qalun 'an Nafi'** – Found in parts of Libya and Tunisia.
+4. **Al‑Duri 'an Abu 'Amr** – Used in parts of Sudan and West Africa.
+5. **Khalaf 'an Hamzah** – Preserved by scholars in special study circles.
+6. **Khalaf 'an Ya'qub** – Rare but still taught by certified teachers.
+7. **Shu'bah 'an 'Asim** – Related to Hafs but with some differences.
+8. **Al‑Susi 'an Abu 'Amr** – Another style from the Abu 'Amr tradition.
+9. **Hamzah al‑Zayyat** – A respected tradition among the early reciters.
+10. **Kisai** – One of the well‑known imams of recitation.
+
+Each imam learned from the companions of the Prophet ﷺ or their students. Their students kept the chain alive until today.
+
+## How the Qiraat Are Different
+
+The Ten Qiraat have small differences. They may change:
+
+- How a word is pronounced.
+- Whether a vowel sound is long or short.
+- The way certain letters are read.
+- A pause or stop in a verse.
+
+These changes are small but show the depth of the Qur'an's oral tradition. Even with these changes, the meaning does not change. All Muslims around the world are reading the same Qur'an.
+
+## Hafs and Warsh: The Two You Might Hear Most Often
+
+While there are ten Qiraat, two are especially common:
+
+- **Hafs 'an 'Asim** is the one you will hear most often in Asia, the Middle East, and many parts of the world.
+- **Warsh 'an Nafi'** is very common in Morocco, Algeria, and parts of Africa.
+
+If you travel between these regions, you may notice small differences in how people recite. This is normal and part of the beauty of the Qur'an.
+
+## Why Learning About the Qiraat Matters
+
+Knowing about the Ten Qiraat helps you appreciate the Qur'an more. It shows you:
+
+- How carefully the Qur'an has been preserved through time.
+- How connected we are to Muslims all over the world.
+- How rich and deep the Qur'anic tradition is.
+
+It also gives you a stronger link to the Prophet ﷺ and his companions. They taught these ways so that Muslims everywhere could recite with ease.
+
+## How People Learn the Qiraat
+
+Most Muslims start with one Qiraat, usually Hafs 'an 'Asim. Later, if they want, they can study other Qiraat with a certified teacher. Learning another Qiraat means:
+
+- Mastering your current recitation first.
+- Learning the small changes in pronunciation.
+- Practicing until it feels natural.
+
+This is advanced study and takes time, but it is very rewarding.
+
+## A Gift from Allah
+
+The Ten Qiraat are a mercy from Allah. They make the Qur'an easier for people of different tongues and traditions. They also protect the Qur'an from change because the oral tradition is so strong.
+
+When you hear someone reciting in a different Qiraat, remember: they are reciting the same Qur'an as you. The sound may be different, but the words and meaning are the same.
+
+Learning about the Ten Qiraat is like opening a treasure chest of Qur'anic beauty. It deepens your love for the Book of Allah and your respect for the generations who carried it to us. Whether you stick to one Qiraat or explore others, every recitation brings you closer to the Qur'an — and to the One who revealed it.
+    `,
+    date: "Aug 6, 2025",
+    author: "qiraathub",
+    imageUrl: "/images/blog/ten-qiraat-of-the-quran-explained-simply.png",
     resources: []
   }
 ];
