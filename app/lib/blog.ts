@@ -1398,6 +1398,65 @@ When you practise anywhere and anytime, you make the Qur'an part of your life. A
     author: "qiraathub",
     imageUrl: "/images/blog/how-to-learn-quran-anytime-anywhere.png",
     resources: []
+  },
+  {
+    slug: "unlock-the-world-of-quran-learning-with-qiraathub-academy",
+    title: "Unlock the World of Qur'an Learning with QiraatHub Academy",
+    excerpt: "Discover QiraatHub Academy, our comprehensive online learning platform designed to make authentic Qur'an learning accessible to everyone. Connect with qualified teachers, follow structured courses, and master tajweed and qiraat at your own pace.",
+    content: `
+# Unlock the World of Qur'an Learning with QiraatHub Academy
+
+At **QiraatHub**, we are committed to making Qur'an learning accessible, authentic, and engaging for students worldwide. As part of this mission, we proudly introduce our dedicated learning platform — [**QiraatHub Academy**](https://academy.qiraathub.com/).
+
+Whether you are just beginning your journey of recitation or looking to master advanced tajweed and qiraat, our Academy is designed to give you the guidance, structure, and tools you need.
+
+## What is QiraatHub Academy?
+
+QiraatHub Academy is our **online learning portal** that connects students with qualified teachers of the Qur'an. The platform is designed for anyone who wishes to:
+
+- **Learn proper tajweed from the basics to advanced levels**
+- **Study different qiraat (modes of recitation)**
+- **Take structured courses at their own pace**
+- **Receive 1-to-1 guidance from certified instructors**
+
+Explore it here: [**academy.qiraathub.com**](https://academy.qiraathub.com/)
+
+## Why Choose QiraatHub Academy?
+
+1. **Authentic Teachers** – All instructors are certified in tajweed and qiraat, ensuring that students receive authentic knowledge.
+2. **Structured Learning** – Our curriculum is organized step by step, so you can track your progress easily.
+3. **Flexible Schedule** – Courses are available online, allowing you to learn anytime, anywhere.
+4. **Interactive Resources** – Lessons are supported with practice materials, quizzes, and recitation feedback.
+5. **Global Reach** – Students from different countries can access the same high-quality Qur'an education.
+
+## Who Can Join?
+
+QiraatHub Academy is open to **all age groups and levels**:
+
+- **Beginners learning to recite the Qur'an correctly**
+- **Intermediate learners aiming to improve tajweed and fluency**
+- **Advanced students pursuing mastery in qiraat**
+- **Children & adults who want structured, fun, and engaging Qur'an learning**
+
+## How to Get Started
+
+Joining is simple:
+
+1. **Visit** [**QiraatHub Academy**](https://academy.qiraathub.com/)
+2. **Browse the available courses**
+3. **Register for a program that matches your level**
+4. **Start your learning journey with guidance from our expert teachers**
+
+## Final Thoughts
+
+At **QiraatHub**, we believe the Qur'an is a lifelong companion. By launching **QiraatHub Academy**, we aim to create a global platform where Muslims of all ages can connect, learn, and perfect their recitation.
+
+Ready to begin your Qur'an learning journey? Visit [**academy.qiraathub.com**](https://academy.qiraathub.com/) today and take your first step with QiraatHub Academy.
+    `,
+    date: "Sep 1, 2025",
+    author: "qiraathub",
+    imageUrl: "/images/blog/unlock-the-world-of-quran-learning-with-qiraathub-academy.png",
+    resources: []
   }
 ];
 
