@@ -74,7 +74,7 @@ const SurahDisplayContent = memo(({
                           ? "bg-yellow-50 md:bg-yellow-50 font-bold text-yellow-900 hover:bg-yellow-100 border border-yellow-200"
                           : "hover:bg-gray-50"
                       }`}
-                      onClick={() => onSurahSelect(surah.fullName)}
+                      onPointerUp={() => onSurahSelect(surah.fullName)}
                       data-surah={surah.fullName}
                     >
                       <div className="flex items-center gap-3">
@@ -175,7 +175,13 @@ export default function SurahList() {
               </div>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-[300px] p-0">
+          <SheetContent 
+            side="left" 
+            className="w-[300px] p-0"
+            onOpenAutoFocus={(e) => {
+              e.preventDefault();
+            }}
+          >
             <div className="h-full flex flex-col">
               <SurahDisplayContent 
               searchQuery={searchQuery} 
