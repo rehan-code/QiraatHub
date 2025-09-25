@@ -58,12 +58,19 @@ export default function AudioPlayer({
 
     setLoading(true);
     if (path != "") {
+      // Create audio element and attach listeners
       audioRef.current = new Audio(path);
 
+      // Proactively call load() to ensure metadata fetch begins on iOS
+      try { audioRef.current.load(); } catch {}
+
       audioRef.current.addEventListener("loadedmetadata", () => {
+        // Duration is available as soon as metadata is loaded; consider player ready
         setDuration(audioRef.current?.duration || 0);
+        setLoading(false);
       });
 
+      // Keep canplay as a secondary safety in case metadata was delayed
       audioRef.current.addEventListener("canplay", () => {
         if (audioRef.current?.readyState != 0) {
           setLoading(false);
