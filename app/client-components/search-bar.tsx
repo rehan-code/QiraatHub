@@ -3,7 +3,7 @@
 import { Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface SearchBarProps {
@@ -13,6 +13,7 @@ interface SearchBarProps {
 export default function SearchBar({ onSearch }: SearchBarProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // Debounce search to avoid too many updates
   useEffect(() => {
@@ -45,10 +46,33 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         <Input
           id="surah-search"
           name="surah-search"
+          ref={inputRef}
+          type="search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onPointerDown={() => {
+            // Ensure the input focuses on first tap on iOS/Chromium mobile.
+            if (inputRef.current && document.activeElement !== inputRef.current) {
+              inputRef.current.focus();
+            }
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              // Prevent any default form submission behavior and dismiss keyboard
+              e.preventDefault();
+              // Fire search immediately on Enter (no debounce)
+              onSearch(searchTerm);
+              inputRef.current?.blur();
+            }
+            if (e.key === 'Escape') {
+              e.preventDefault();
+              inputRef.current?.blur();
+            }
+          }}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          inputMode="search"
+          enterKeyHint="search"
           placeholder="Search surah..."
           className={`border-0 bg-transparent pl-10 h-12 pr-10 placeholder:text-gray-400 
             focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors ${
