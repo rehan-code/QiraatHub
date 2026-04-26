@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import "./styles.css";
 import { FaSpinner, FaSun, FaMoon, FaCog } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
@@ -15,11 +15,119 @@ import { cn } from "@/lib/utils";
 
 interface PageContent {
   html_content: string;
-  notes_content: string;
+  notes_content?: string;
 }
 
 interface QuranData {
   [pageNumber: string]: PageContent;
+}
+
+type ParsedWord =
+  | { kind: "word"; text: string; isRed: boolean; ayahClass: string }
+  | { kind: "marker"; text: string };
+
+type ParsedLine =
+  | { kind: "surah_header"; surahNumber: number }
+  | { kind: "basmallah" }
+  | {
+      kind: "quran_line";
+      lineNumber: string | null;
+      pageNumber: string | null;
+      firstWordId: string | null;
+      lastWordId: string | null;
+      lineId: string | null;
+      isCentered: boolean;
+      words: ParsedWord[];
+    };
+
+interface ParsedNote {
+  redText: string;
+  trailingText: string;
+}
+
+function parseQuranHtml(html: string): ParsedLine[] {
+  if (typeof window === "undefined" || !html) return [];
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(`<div id="root">${html}</div>`, "text/html");
+  const root = doc.getElementById("root");
+  if (!root) return [];
+
+  const lines: ParsedLine[] = [];
+  for (const child of Array.from(root.children)) {
+    if (child.classList.contains("surah-name")) {
+      const span = child.querySelector(".surah-name-v4");
+      const match = span?.textContent?.match(/surah(\d+)/);
+      const surahNumber = match ? parseInt(match[1], 10) : 0;
+      lines.push({ kind: "surah_header", surahNumber });
+    } else if (child.classList.contains("bismillah")) {
+      lines.push({ kind: "basmallah" });
+    } else if (child.tagName.toLowerCase() === "p" && child.classList.contains("quran-line")) {
+      const isCentered = child.classList.contains("justify-center");
+      const words: ParsedWord[] = [];
+      for (const el of Array.from(child.children)) {
+        if (el.classList.contains("word")) {
+          const textEl = el.querySelector(".text");
+          const ayahClass = Array.from(el.classList).find((c) => c.startsWith("ayah-")) || "";
+          const innerStyle = textEl?.getAttribute("style") || "";
+          const outerStyle = el.getAttribute("style") || "";
+          const isRed = /color\s*:\s*red/i.test(innerStyle) || /color\s*:\s*red/i.test(outerStyle);
+          words.push({
+            kind: "word",
+            text: textEl?.textContent || "",
+            isRed,
+            ayahClass,
+          });
+        } else if (el.classList.contains("arabic-num-marker")) {
+          words.push({ kind: "marker", text: el.textContent || "" });
+        }
+      }
+      lines.push({
+        kind: "quran_line",
+        lineNumber: child.getAttribute("data-line"),
+        pageNumber: child.getAttribute("data-pag") || child.getAttribute("data-page"),
+        firstWordId: child.getAttribute("data-first-word-id"),
+        lastWordId: child.getAttribute("data-last-word-id"),
+        lineId: child.getAttribute("id"),
+        isCentered,
+        words,
+      });
+    }
+  }
+  return lines;
+}
+
+function parseQuranNotes(html: string): ParsedNote[] {
+  if (typeof window === "undefined" || !html) return [];
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(`<ul id="root">${html}</ul>`, "text/html");
+  const root = doc.getElementById("root");
+  if (!root) return [];
+
+  const notes: ParsedNote[] = [];
+  for (const li of Array.from(root.children)) {
+    const redSpan = li.querySelector("span");
+    const redText = redSpan?.textContent || "";
+    const fullText = li.textContent || "";
+    const trailingText = fullText.slice(redText.length);
+    notes.push({ redText, trailingText });
+  }
+  return notes;
+}
+
+function SurahHeader({ surahNumber }: { surahNumber: number }) {
+  return (
+    <div className="surah-name">
+      <div className="quran-icon surah-header text-center flex justify-center">header</div>
+      <div className="surah-icon text-center flex justify-center">
+        <span className="surah-name-v4 me-2">surah{surahNumber.toString().padStart(3, "0")}</span>
+        <span className="surah-name-v4">surah-icon</span>
+      </div>
+    </div>
+  );
+}
+
+function Basmallah() {
+  return <div className="bismillah text-center flex justify-center"> ﷽</div>;
 }
 
 export default function QuranReader() {
@@ -71,6 +179,15 @@ export default function QuranReader() {
   }, [qiraat, font]);
 
   const pageContent = quranData[pageNumber] ? quranData[pageNumber] : null;
+
+  const parsedLines = useMemo(
+    () => (pageContent ? parseQuranHtml(pageContent.html_content) : []),
+    [pageContent]
+  );
+  const parsedNotes = useMemo(
+    () => (pageContent?.notes_content ? parseQuranNotes(pageContent.notes_content) : []),
+    [pageContent]
+  );
 
   const handleNextPage = useCallback(() => {
     setPageNumber((prev) => Math.min(prev + 1, totalPages));
@@ -133,7 +250,7 @@ export default function QuranReader() {
   const dynamicStyles = `
     #mushaf-display .quran-line {
       font-family: ${font === "-digital-khatt" ? "digitalkhatt" : "me_quran"} !important;
-    }    
+    }
   `;
 
   const toggleDarkMode = () => {
@@ -198,7 +315,7 @@ export default function QuranReader() {
               </PopoverContent>
             </Popover>
           </div>
-          
+
           <div>
             <label htmlFor="qiraat-select" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Qira&apos;at</label>
             <Select value={qiraat} onValueChange={handleQiraatChange}>
@@ -312,23 +429,67 @@ export default function QuranReader() {
                   </div>
               )}
               {!loading && pageContent ? (
-                <>
-                {pageContent.html_content && (
-                  <div className="flex flex-col md:flex-row items-center justify-center">
-                    <div id="mushaf-display" className={`quran-page border-${border}`}>
-                      <div
-                        dangerouslySetInnerHTML={{ __html: pageContent.html_content }}
-                      />
+                <div className="flex flex-col md:flex-row items-center justify-center">
+                  <div id="mushaf-display" className={`quran-page border-${border}`}>
+                    <div className="quran-page-content">
+                      {parsedLines.map((line, index) => {
+                        if (line.kind === "surah_header") {
+                          return <SurahHeader key={index} surahNumber={line.surahNumber} />;
+                        }
+                        if (line.kind === "basmallah") {
+                          return <Basmallah key={index} />;
+                        }
+                        const alignmentClass = line.isCentered
+                          ? "text-center flex justify-center"
+                          : "flex justify-between";
+                        return (
+                          <p
+                            key={index}
+                            className={`quran-line ${alignmentClass}`}
+                            data-pag={line.pageNumber ?? undefined}
+                            data-line={line.lineNumber ?? undefined}
+                            data-first-word-id={line.firstWordId ?? undefined}
+                            data-last-word-id={line.lastWordId ?? undefined}
+                            id={line.lineId ?? undefined}
+                          >
+                            {line.words.map((wordData, wordIndex) => {
+                              if (wordData.kind === "marker") {
+                                return (
+                                  <span key={wordIndex} className="arabic-num-marker">
+                                    {wordData.text}
+                                  </span>
+                                );
+                              }
+                              return (
+                                <span
+                                  key={wordIndex}
+                                  className={`word ${wordData.ayahClass}`.trim()}
+                                >
+                                  <span
+                                    className="text"
+                                    style={wordData.isRed ? { color: "red" } : undefined}
+                                  >
+                                    {wordData.text}
+                                  </span>
+                                </span>
+                              );
+                            })}
+                          </p>
+                        );
+                      })}
                     </div>
-                    {pageContent.notes_content && (
-                        <ul
-                          className="p-4 md:p-8"
-                          dangerouslySetInnerHTML={{ __html: pageContent.notes_content }}
-                        />
-                    )}
                   </div>
-                )}
-                </>
+                  {parsedNotes.length > 0 && (
+                    <ul className="p-4 md:p-8">
+                      {parsedNotes.map((note, index) => (
+                        <li key={index} className="notes">
+                          <span style={{ color: "red" }}>{note.redText}</span>
+                          {note.trailingText}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               ) : (
                 !loading && (
                   <div className="my-4 min-h-[70vh] flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-md">
