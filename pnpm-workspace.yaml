@@ -1,3 +1,9 @@
+# Single-package repo. The explicit packages list keeps pnpm 9 (used by some
+# deploy platforms) happy; allowBuilds answers pnpm 11's build-script gate
+# (all three ship prebuilt binaries, so their install scripts are unneeded).
+packages:
+  - '.'
+
 allowBuilds:
   esbuild: false
   sharp: false
