@@ -230,3 +230,36 @@
 .dark .red-text{
   color: #ff6b6b;
 }
+
+/* Recitation follow-along highlights */
+#mushaf-display .word .text {
+  border-radius: 5px;
+  padding: 0 2px;
+  transition: background-color 0.25s ease;
+}
+
+#mushaf-display .word.recited-ayah .text {
+  background-color: rgba(70, 172, 113, 0.16);
+}
+
+#mushaf-display .word.recited-word .text {
+  background-color: rgba(70, 172, 113, 0.45);
+}
+
+#mushaf-display .arabic-num-marker.recited-ayah {
+  background-color: rgba(70, 172, 113, 0.16);
+  border-radius: 5px;
+  transition: background-color 0.25s ease;
+}
+
+.dark #mushaf-display .word.recited-ayah .text {
+  background-color: rgba(70, 172, 113, 0.28);
+}
+
+.dark #mushaf-display .word.recited-word .text {
+  background-color: rgba(70, 172, 113, 0.55);
+}
+
+.dark #mushaf-display .arabic-num-marker.recited-ayah {
+  background-color: rgba(70, 172, 113, 0.28);
+}

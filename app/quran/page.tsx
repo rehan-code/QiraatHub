@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, memo } from "react";
 import "./styles.css";
 import { FaSpinner, FaSun, FaMoon, FaCog } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
@@ -9,9 +9,15 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { BookOpen, Search, Check } from "lucide-react";
+import { BookOpen, Search, Check, Mic, MicOff, X } from "lucide-react";
 import { allSurahs, SurahInfo } from "@/app/lib/surah-definitions";
 import { cn } from "@/lib/utils";
+import { normalizeArabicWord } from "./recitation/arabic";
+import { buildRecitationIndex, type RecitationIndex } from "./recitation/indexer";
+import {
+  useRecitationFollower,
+  type FollowerSnapshot,
+} from "./recitation/useRecitationFollower";
 
 interface PageContent {
   html_content: string;
@@ -130,6 +136,163 @@ function Basmallah() {
   return <div className="bismillah text-center flex justify-center"> ﷽</div>;
 }
 
+interface QuranLineProps {
+  line: Extract<ParsedLine, { kind: "quran_line" }>;
+  /** Recited-ayah highlight range clipped to this line (span ids), or null. */
+  hlStart: number | null;
+  hlEnd: number | null;
+  hlWord: number | null;
+}
+
+/**
+ * One mushaf line. Span ids are assigned the way the source data numbers
+ * them: sequentially from data-first-word-id across words and ayah markers,
+ * skipping spans that hold only waqf marks — mirroring the recitation
+ * indexer so highlight id ranges line up exactly.
+ */
+const QuranLine = memo(function QuranLine({ line, hlStart, hlEnd, hlWord }: QuranLineProps) {
+  const alignmentClass = line.isCentered
+    ? "text-center flex justify-center"
+    : "flex justify-between";
+  let nextId = line.firstWordId ? parseInt(line.firstWordId, 10) : null;
+  return (
+    <p
+      className={`quran-line ${alignmentClass}`}
+      data-pag={line.pageNumber ?? undefined}
+      data-line={line.lineNumber ?? undefined}
+      data-first-word-id={line.firstWordId ?? undefined}
+      data-last-word-id={line.lastWordId ?? undefined}
+      id={line.lineId ?? undefined}
+    >
+      {line.words.map((wordData, wordIndex) => {
+        let spanId: number | null = null;
+        if (nextId !== null) {
+          if (wordData.kind === "marker" || normalizeArabicWord(wordData.text)) {
+            spanId = nextId;
+            nextId++;
+          }
+        }
+        const inAyah =
+          spanId !== null && hlStart !== null && hlEnd !== null &&
+          spanId >= hlStart && spanId <= hlEnd;
+        const isCurrent = spanId !== null && hlWord !== null && spanId === hlWord;
+        if (wordData.kind === "marker") {
+          return (
+            <span
+              key={wordIndex}
+              className={cn("arabic-num-marker", inAyah && "recited-ayah")}
+              data-wid={spanId ?? undefined}
+            >
+              {wordData.text}
+            </span>
+          );
+        }
+        return (
+          <span
+            key={wordIndex}
+            className={cn(
+              "word",
+              wordData.ayahClass,
+              inAyah && "recited-ayah",
+              isCurrent && "recited-word"
+            )}
+            data-wid={spanId ?? undefined}
+          >
+            <span
+              className="text"
+              style={wordData.isRed ? { color: "red" } : undefined}
+            >
+              {wordData.text}
+            </span>
+          </span>
+        );
+      })}
+    </p>
+  );
+});
+
+function ListeningPill({
+  snapshot,
+  onStop,
+  onDismissError,
+}: {
+  snapshot: FollowerSnapshot;
+  onStop: () => void;
+  onDismissError: () => void;
+}) {
+  if (snapshot.status === "idle") return null;
+
+  if (snapshot.status === "error") {
+    return (
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 max-w-[92vw]">
+        <div className="flex items-center gap-3 rounded-full bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-200 shadow-lg px-4 py-2 text-sm">
+          <span>{snapshot.error}</span>
+          <button
+            onClick={onDismissError}
+            className="shrink-0 rounded-full p-1 hover:bg-red-100 dark:hover:bg-red-900"
+            aria-label="Dismiss"
+          >
+            <X className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const locked = snapshot.phase === "locked" && snapshot.surah !== null;
+  const surahName = locked
+    ? allSurahs[(snapshot.surah as number) - 1]?.name ?? `Surah ${snapshot.surah}`
+    : null;
+
+  return (
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 max-w-[92vw]">
+      <div className="flex items-center gap-3 rounded-full bg-white/95 dark:bg-gray-800/95 backdrop-blur border shadow-lg px-4 py-2">
+        <span className="relative flex h-3 w-3 shrink-0">
+          <span
+            className={cn(
+              "animate-ping absolute inline-flex h-full w-full rounded-full opacity-60",
+              locked ? "bg-green-500" : "bg-red-400"
+            )}
+          />
+          <span
+            className={cn(
+              "relative inline-flex rounded-full h-3 w-3",
+              locked ? "bg-green-500" : "bg-red-500"
+            )}
+          />
+        </span>
+        <div className="flex flex-col min-w-0">
+          <span className="text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap">
+            {snapshot.status === "preparing"
+              ? "Preparing…"
+              : locked
+                ? `${surahName} · Ayah ${snapshot.ayah}`
+                : !snapshot.micActive
+                  ? "Waiting for microphone…"
+                  : "Listening — recite to locate…"}
+          </span>
+          {snapshot.tail && (
+            <span
+              dir="rtl"
+              className="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[16rem]"
+            >
+              {snapshot.tail}
+            </span>
+          )}
+        </div>
+        <button
+          onClick={onStop}
+          className="shrink-0 rounded-full p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300"
+          aria-label="Stop listening"
+          title="Stop listening"
+        >
+          <MicOff className="h-4 w-4" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function QuranReader() {
   const [quranData, setQuranData] = useState<QuranData>({});
   const [loading, setLoading] = useState(true);
@@ -188,6 +351,70 @@ export default function QuranReader() {
     () => (pageContent?.notes_content ? parseQuranNotes(pageContent.notes_content) : []),
     [pageContent]
   );
+
+  // --- Recitation follow-along (listen & jump to the recited ayah) ---
+  const [listenRequested, setListenRequested] = useState(false);
+  const [recitationIndex, setRecitationIndex] = useState<RecitationIndex | null>(null);
+
+  // Build the index lazily on first use and rebuild when the mushaf data
+  // (qiraat/font) changes, so matching always follows the displayed text.
+  useEffect(() => {
+    setRecitationIndex(null);
+    if (!listenRequested || loading || Object.keys(quranData).length === 0) return;
+    let cancelled = false;
+    const timer = setTimeout(() => {
+      if (!cancelled) setRecitationIndex(buildRecitationIndex(quranData));
+    }, 50);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [listenRequested, quranData, loading]);
+
+  const { snapshot, listening, start: startListening, stop: stopListening } =
+    useRecitationFollower(recitationIndex);
+
+  const toggleListening = useCallback(() => {
+    if (listening) {
+      stopListening();
+    } else {
+      setListenRequested(true);
+      startListening();
+    }
+  }, [listening, startListening, stopListening]);
+
+  // Jump to the detected ayah's page whenever the detected position moves.
+  useEffect(() => {
+    if (snapshot.phase !== "locked" || snapshot.page === null) return;
+    setPageNumber((prev) => (prev === snapshot.page ? prev : (snapshot.page as number)));
+  }, [snapshot.phase, snapshot.page, snapshot.surah, snapshot.ayah]);
+
+  // Keep the recited word in view as it advances. Scrolls are instant:
+  // smooth animations get canceled/paused by per-word re-renders and
+  // background tabs, so they can silently never arrive. The delayed
+  // re-check corrects for layout shifts (font loading) right after a page
+  // change; both calls no-op while the word is already in the band.
+  useEffect(() => {
+    if (snapshot.phase !== "locked" || snapshot.wordId === null || loading) return;
+    const ensureVisible = () => {
+      const el = document.querySelector(`[data-wid="${snapshot.wordId}"]`);
+      if (!el) return;
+      const viewportH = Math.max(
+        window.innerHeight || 0,
+        document.documentElement.clientHeight || 0
+      );
+      if (viewportH === 0) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top >= 100 && rect.bottom <= viewportH - 140) return;
+      el.scrollIntoView({ behavior: "auto", block: "center" });
+    };
+    const raf = requestAnimationFrame(ensureVisible);
+    const recheck = setTimeout(ensureVisible, 500);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(recheck);
+    };
+  }, [snapshot.wordId, snapshot.phase, loading, pageNumber]);
 
   const handleNextPage = useCallback(() => {
     setPageNumber((prev) => Math.min(prev + 1, totalPages));
@@ -373,7 +600,25 @@ export default function QuranReader() {
             <Button onClick={handlePreviousPage} disabled={pageNumber === 1} variant="outline">
               Previous &rarr;
             </Button>
-            <Button onClick={toggleDarkMode} variant="ghost" size="icon" className="ml-4">
+            <Button
+              onClick={toggleListening}
+              className={cn(
+                "ml-4 gap-2 font-semibold text-white shadow-md",
+                listening
+                  ? "bg-red-600 hover:bg-red-700 animate-pulse"
+                  : "bg-emerald-600 hover:bg-emerald-700"
+              )}
+              title={
+                listening
+                  ? "Stop follow-along"
+                  : "Recite and the reader finds the ayah and follows along"
+              }
+              aria-label={listening ? "Stop follow-along" : "Start follow-along"}
+            >
+              {listening ? <MicOff className="h-5 w-5" /> : <Mic className="h-5 w-5" />}
+              <span>{listening ? "Listening…" : "Follow along"}</span>
+            </Button>
+            <Button onClick={toggleDarkMode} variant="ghost" size="icon">
               {isDarkMode ? <FaSun className="h-5 w-5" /> : <FaMoon className="h-5 w-5" />}
             </Button>
             <Popover>
@@ -439,42 +684,37 @@ export default function QuranReader() {
                         if (line.kind === "basmallah") {
                           return <Basmallah key={index} />;
                         }
-                        const alignmentClass = line.isCentered
-                          ? "text-center flex justify-center"
-                          : "flex justify-between";
+                        // Clip the recited-ayah highlight to this line so
+                        // unaffected lines keep stable props (memo skips them).
+                        let hlStart: number | null = null;
+                        let hlEnd: number | null = null;
+                        let hlWord: number | null = null;
+                        if (
+                          snapshot.phase === "locked" &&
+                          snapshot.ayahStartId !== null &&
+                          snapshot.ayahEndId !== null &&
+                          line.firstWordId &&
+                          line.lastWordId
+                        ) {
+                          const lineFirst = parseInt(line.firstWordId, 10);
+                          const lineLast = parseInt(line.lastWordId, 10);
+                          if (
+                            snapshot.ayahStartId <= lineLast &&
+                            snapshot.ayahEndId >= lineFirst
+                          ) {
+                            hlStart = snapshot.ayahStartId;
+                            hlEnd = snapshot.ayahEndId;
+                            hlWord = snapshot.wordId;
+                          }
+                        }
                         return (
-                          <p
+                          <QuranLine
                             key={index}
-                            className={`quran-line ${alignmentClass}`}
-                            data-pag={line.pageNumber ?? undefined}
-                            data-line={line.lineNumber ?? undefined}
-                            data-first-word-id={line.firstWordId ?? undefined}
-                            data-last-word-id={line.lastWordId ?? undefined}
-                            id={line.lineId ?? undefined}
-                          >
-                            {line.words.map((wordData, wordIndex) => {
-                              if (wordData.kind === "marker") {
-                                return (
-                                  <span key={wordIndex} className="arabic-num-marker">
-                                    {wordData.text}
-                                  </span>
-                                );
-                              }
-                              return (
-                                <span
-                                  key={wordIndex}
-                                  className={`word ${wordData.ayahClass}`.trim()}
-                                >
-                                  <span
-                                    className="text"
-                                    style={wordData.isRed ? { color: "red" } : undefined}
-                                  >
-                                    {wordData.text}
-                                  </span>
-                                </span>
-                              );
-                            })}
-                          </p>
+                            line={line}
+                            hlStart={hlStart}
+                            hlEnd={hlEnd}
+                            hlWord={hlWord}
+                          />
                         );
                       })}
                     </div>
@@ -504,6 +744,11 @@ export default function QuranReader() {
           </Card>
         </main>
       </div>
+      <ListeningPill
+        snapshot={snapshot}
+        onStop={toggleListening}
+        onDismissError={stopListening}
+      />
     </div>
     </div>
   );
