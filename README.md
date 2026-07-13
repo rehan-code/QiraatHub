@@ -1,5 +1,31 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Recitation follow-along (Quran page)
+
+The Quran reader (`/quran`) has a Tarteel-style follow-along mode: press the
+mic button, recite, and the reader detects the ayah being recited, jumps to
+its page, highlights it word-by-word and keeps scrolling with the reciter.
+
+- Speech capture uses the browser's Web Speech API (Chrome/Edge/Safari;
+  Arabic `ar-SA`). No audio leaves the app besides the browser's own speech
+  service.
+- Matching runs entirely client-side: the loaded mushaf data (per qiraat) is
+  indexed word-by-word (`app/quran/recitation/indexer.ts`), speech is
+  normalized to a diacritic-free skeleton that bridges Uthmani script and
+  recognizer orthography (`arabic.ts`), and a tracker locks onto and follows
+  the recitation, tolerating recognition noise, isti'adha/basmallah, and the
+  Quran's many repeated phrases (`engine.ts`).
+- The engine and indexer are covered by a test suite that runs against the
+  real mushaf data:
+
+```bash
+pnpm test:recitation
+```
+
+For manual testing without a microphone, set `window.__qhFakeSpeechCtor` to a
+scripted `SpeechRecognition` substitute before pressing the mic button (see
+`app/quran/recitation/speech.ts`).
+
 ## Getting Started
 
 First, run the development server:
