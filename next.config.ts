@@ -112,11 +112,9 @@ const nextConfig: NextConfig = {
       permanent: true,
     },
   ],
-  experimental: {
-    turbo: {
-      rules: {
-        "*.mp3": ["file-loader"],
-      },
+  turbopack: {
+    rules: {
+      "*.mp3": ["file-loader"],
     },
   },
   webpack: (config: CustomWebpackConfig, { isServer }) => {
