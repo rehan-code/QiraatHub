@@ -120,12 +120,19 @@ function parseQuranNotes(html: string): ParsedNote[] {
   return notes;
 }
 
+/**
+ * The surah-name font draws the name as a `liga` substitution of the literal
+ * text "surah019"; its individual letters are blank zero-width glyphs. WebKit
+ * only forms ligatures within a single text node, so the name must be one
+ * interpolation — `surah{n}` would emit two nodes and render as nothing in
+ * Safari.
+ */
 function SurahHeader({ surahNumber }: { surahNumber: number }) {
   return (
     <div className="surah-name">
       <div className="quran-icon surah-header text-center flex justify-center">header</div>
       <div className="surah-icon text-center flex justify-center">
-        <span className="surah-name-v4 me-2">surah{surahNumber.toString().padStart(3, "0")}</span>
+        <span className="surah-name-v4 me-2">{`surah${surahNumber.toString().padStart(3, "0")}`}</span>
         <span className="surah-name-v4">surah-icon</span>
       </div>
     </div>
