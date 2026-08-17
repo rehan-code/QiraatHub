@@ -51,6 +51,36 @@ declare global {
     /** Test seam: lets dev tooling substitute a scripted recognizer. */
     __qhFakeSpeechCtor?: SpeechRecognitionCtor;
   }
+  interface Navigator {
+    userAgentData?: { brands?: { brand: string; version: string }[] };
+  }
+}
+
+/**
+ * Chromium forks (Arc, Brave, Vivaldi…) expose `webkitSpeechRecognition` but
+ * are built without Google's speech API keys, so every session captures audio
+ * and then dies with `network` — nothing the user can fix. Chrome and Edge
+ * name themselves in the UA-CH brand list; the forks only claim "Chromium".
+ */
+function isUnbrandedChromium(): boolean {
+  if (typeof navigator === "undefined") return false;
+  const brands = navigator.userAgentData?.brands;
+  if (!brands?.length) return false; // Safari/Firefox don't expose UA-CH
+  return (
+    brands.some((b) => /Chromium/i.test(b.brand)) &&
+    !brands.some((b) => /Google Chrome|Microsoft Edge/i.test(b.brand))
+  );
+}
+
+/** Why recognition can't reach a speech service, in order of likelihood. */
+function speechServiceMessage(): string {
+  if (typeof navigator !== "undefined" && navigator.onLine === false) {
+    return "You appear to be offline. Speech recognition needs a connection — reconnect and try again.";
+  }
+  if (isUnbrandedChromium()) {
+    return "This browser has no speech recognition service. Arc, Brave and similar Chromium browsers ship without it — open the Quran page in Chrome, Edge or Safari to follow along.";
+  }
+  return "The speech recognition service is unreachable. Check your connection, or try Chrome, Edge or Safari.";
 }
 
 function getCtor(): SpeechRecognitionCtor | null {
@@ -110,6 +140,7 @@ export interface SpeechSession {
 
 const RESTART_DELAY_MS = 250;
 const MAX_SILENT_RESTARTS = 6; // consecutive restarts with no results
+const MAX_NETWORK_ERRORS = 3; // consecutive speech-service failures
 
 export function createSpeechSession(
   cb: SpeechSessionCallbacks,
@@ -126,6 +157,8 @@ export function createSpeechSession(
   let instanceFinal = "";
   let gotResultsThisInstance = false;
   let silentRestarts = 0;
+  /** Consecutive speech-service failures; any successful result clears them. */
+  let networkErrors = 0;
   let restartTimer: ReturnType<typeof setTimeout> | null = null;
 
   const fail = (message: string) => {
@@ -164,6 +197,7 @@ export function createSpeechSession(
       if (!active || recognition !== rec) return;
       gotResultsThisInstance = true;
       silentRestarts = 0;
+      networkErrors = 0;
       let finals = "";
       let interim = "";
       for (let i = 0; i < e.results.length; i++) {
@@ -188,9 +222,13 @@ export function createSpeechSession(
         case "audio-capture":
           fail("No microphone was found. Check your audio input and try again.");
           break;
+        case "network":
+          // A browser without a working speech service fails this way on
+          // every attempt, so a short run of them is diagnostic, not a blip.
+          if (++networkErrors >= MAX_NETWORK_ERRORS) fail(speechServiceMessage());
+          break;
         default:
-          // no-speech / aborted / network blips: onend fires next and the
-          // session restarts.
+          // no-speech / aborted: onend fires next and the session restarts.
           break;
       }
     };
@@ -227,6 +265,7 @@ export function createSpeechSession(
       committedFinal = "";
       instanceFinal = "";
       silentRestarts = 0;
+      networkErrors = 0;
       spin();
     },
     stop() {

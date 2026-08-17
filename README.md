@@ -6,9 +6,13 @@ The Quran reader (`/quran`) has a Tarteel-style follow-along mode: press the
 mic button, recite, and the reader detects the ayah being recited, jumps to
 its page, highlights it word-by-word and keeps scrolling with the reciter.
 
-- Speech capture uses the browser's Web Speech API (Chrome/Edge/Safari;
-  Arabic `ar-SA`). No audio leaves the app besides the browser's own speech
-  service.
+- Speech capture uses the browser's Web Speech API (Arabic `ar-SA`). No audio
+  leaves the app besides the browser's own speech service.
+- **Chrome, Edge and Safari only.** Chromium forks — Arc, Brave, Vivaldi —
+  expose `webkitSpeechRecognition` but are built without Google's speech API
+  keys: recognition captures audio, then fails with a `network` error on every
+  attempt. The session detects this and tells the user to switch browsers
+  instead of blaming their microphone or connection.
 - Matching runs entirely client-side: the loaded mushaf data (per qiraat) is
   indexed word-by-word (`app/quran/recitation/indexer.ts`), speech is
   normalized to a diacritic-free skeleton that bridges Uthmani script and
